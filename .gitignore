@@ -1,0 +1,42 @@
+# Build
+dist/
+
+# Cache
+.npm
+.eslintcache
+.stylelintcache
+
+# Dependencies
+node_modules/
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+
+# Environment
+.env
+!.env.example
+!.env.schema
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Misc
+.cache/
+.DS_Store
+
+# Testing
+coverage/
+jest-cache/
+test/e2e/reports/
+test/e2e/results/
+test/e2e/screenshots/
+test/e2e/videos/
+test/jest/.cache/

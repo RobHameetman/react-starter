@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Merge
+
+concurrency: pr-build-${{ github.event.pull_request.number }}
+
+on:
+  pull_request:
+    types: [closed]
+
+env:
+  # General Options
+  region: us-east-1
+  timeout-setup: 10
+  timeout-infrastructure: 30
+  # Environment Variables
+  AWS_CREDENTIALS: ${{ secrets.AWS_CREDENTIALS }}
+  AWS_REGION: ${{ secrets.AWS_REGION || secrets.DEFAULT_AWS_REGION }}
+  AWS_STORAGE_ACCOUNT: ${{ secrets.AWS_STORAGE_ACCOUNT }}
+  AWS_STORAGE_KEY: ${{ secrets.AWS_STORAGE_KEY }}
+  CI_TIMEOUT_SETUP: ${{ secrets.CI_TIMEOUT_SETUP }}
+  CI_TIMEOUT_INFRASTRUCTURE: ${{ secrets.CI_TIMEOUT_INFRASTRUCTURE }}
+  DEFAULT_AWS_REGION: ${{ secrets.DEFAULT_AWS_REGION }}
+  NODE_ENV: development
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  destroy:
+    name: '🔻 [PR]: Destroy'
+    runs-on: ubuntu-20.04
+    container: node:16
+    steps:
+      - name: Init
+        id: init
+        run: |
+          echo "__TIMEOUT_SETUP=${{ env.CI_TIMEOUT_SETUP || fromJSON(env.timeout-setup) }}" >> $GITHUB_ENV
+          echo "__TIMEOUT_INFRASTRUCTURE=${{ env.CI_TIMEOUT_INFRASTRUCTURE || fromJSON(env.timeout-infrastructure) }}" >> $GITHUB_ENV
+
+      - name: Login
+        id: login
+        uses: azure/login@v1
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(inputs.skip) != true
+        with:
+          creds: ${{ secrets.AWS_CREDENTIALS }}
+
+      - name: Destroy
+        id: destroy
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_INFRASTRUCTURE) }}
+        run: |
+          az group delete --name myResourceGroup --yes
+        

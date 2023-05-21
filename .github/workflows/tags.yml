@@ -1,0 +1,95 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Tag
+
+on:
+  workflow_call:
+    inputs:
+      timeout:
+        default: 2
+        description: The number in minutes this job may run before a timeout cancellation occurs.
+        required: false
+        type: number
+    outputs:
+      auditor:
+        description: "The name of the company doing the take-home assessment. (e.g. Omniframe Foundation, Inc.)"
+        value: ${{ jobs.validate.outputs.auditor }}
+      repo:
+        description: "The full url for this repository. (e.g. https://github.com/RobHameetman/example-repo)"
+        value: ${{ jobs.validate.outputs.repo }}
+      project:
+        description: "The name of this project."
+        value: ${{ jobs.validate.outputs.project }}
+
+# Infrastructure Tags
+env:
+  auditor: '{:auditor}'
+  repo: ${{ format('https://github.com/{0}', github.repository) }}
+  project: '{:name}'
+
+jobs:
+  # Note: This job is used to prevent bad tagging in AWS. Please do not edit the
+  # placeholder values on the lines of the 'if' fields.
+  validate:
+    name: Validate
+    runs-on: ubuntu-20.04
+    container:
+      image: node:16
+    if: github.repository.archived != true
+    outputs:
+      auditor: ${{ steps.auditor.outputs.value }}
+      repo: ${{ steps.repo.outputs.value }}
+      project: ${{ steps.project.outputs.value }}
+    steps:
+      - name: Auditor Tag
+        id: auditor
+        timeout-minutes: ${{ fromJSON(inputs.timeout) }}
+        if: >-
+          !contains(env.auditor, '{:auditor}')
+        run: echo "value=${{ env.auditor }}" >> $GITHUB_OUTPUT
+
+      - name: Auditor Tag (Error)
+        if: ${{ steps.auditor.conclusion == 'skipped' }}
+        run: >-
+          echo "'Auditor' tag is required. Please replace the placeholder on
+          line 26 of the .github/workflows/tags.yml file with a valid auditor name." &&
+          exit 1
+
+      - name: Repo Tag
+        id: repo
+        timeout-minutes: ${{ fromJSON(inputs.timeout) }}
+        if: contains(env.repo, github.repository)
+        run: echo "value=${{ env.repo }}" >> $GITHUB_OUTPUT
+
+      - name: Repo Tag (Error)
+        if: ${{ steps.repo.conclusion == 'skipped' }}
+        run: >-
+          echo "'Repo' tag is required. Please confirm that line 27 of the
+          .github/workflows/tags.yml file is setting the value of this tag to
+          ${{ github.repository }}" &&
+          exit 1
+
+      - name: Project Tag
+        id: project
+        timeout-minutes: ${{ fromJSON(inputs.timeout) }}
+        if: >-
+          contains(env.project, github.event.repository.name)
+        run: echo "value=${{ env.project }}" >> $GITHUB_OUTPUT
+
+      - name: Project Tag (Error)
+        if: ${{ steps.project.conclusion == 'skipped' }}
+        run: >-
+          echo "'Project' tag is required. Please confirm that line 28 of the
+          .github/workflows/tags.yml file is setting the value of this tag to
+          ${{ github.event.repository.name }}" &&
+          exit 1
+
+      - name: Validation Successful
+        id: success
+        timeout-minutes: ${{ fromJSON(inputs.timeout) }}
+        run: >
+          echo "STACK_TAGS=[
+          {"Key": "Auditor", "Value": "${{ env.auditor }}"},
+          {"Key": "Repo", "Value": "${{ env.repo }}"},
+          {"Key": "Project", "Value": "${{ env.project }}"}
+          ]" >> $GITHUB_ENV

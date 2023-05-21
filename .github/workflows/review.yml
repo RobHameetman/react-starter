@@ -1,0 +1,117 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Review
+
+concurrency: pr-build-${{ github.event.pull_request.number }}
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+env:
+  # General Options
+  name: {:name}
+  version: 0.0.1
+  node: '{:node}'
+  debug: false
+  stack: ${{ github.event.repository.name }}-${{ github.event.pull_request.number }}-deployment
+  subdomain: ${{ github.event.pull_request.number }}.pr.${{ github.event.repository.name }}
+  hostname: hameetman.dev
+  # APIs
+  geocoding-api: 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress'
+  forecasting-api: 'https://api.weather.gov'
+  # Skip
+  skip-east: false
+  skip-west: false
+  skip-tests: false
+  skip-dev: true
+  skip-qa: true
+  # Timeouts (in minutes)
+  timeout-setup: 10
+  timeout-tests: 30
+  timeout-deployment: 60
+  timeout-cache-invalidation: 10
+  # Environment Variables
+  APP_DEBUG: ${{ vars.APP_DEBUG }}
+  APP_VERSION: 0.0.1
+  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  CI_DEBUG: ${{ vars.CI_DEBUG }}
+  CI_SKIP_EAST: ${{ vars.CI_SKIP_EAST }}
+  CI_SKIP_WEST: ${{ vars.CI_SKIP_WEST }}
+  CI_SKIP_DEV: ${{ vars.CI_SKIP_DEV }}
+  CI_SKIP_QA: ${{ vars.CI_SKIP_QA }}
+  CI_PR_TIMEOUT_SETUP: ${{ vars.CI_PR_TIMEOUT_SETUP }}
+  CI_PR_TIMEOUT_TESTS: ${{ vars.CI_PR_TIMEOUT_TESTS }}
+  CI_PR_TIMEOUT_DEPLOYMENT: ${{ vars.CI_PR_TIMEOUT_DEPLOYMENT}}
+  CI_PR_TIMEOUT_CACHE_INVALIDATIONS: ${{ vars.CI_PR_TIMEOUT_CACHE_INVALIDATIONS }}
+  DEFAULT_AWS_REGION: ${{ vars.DEFAULT_AWS_REGION }}
+  NODE_ENV: production
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  tag:
+    name: TAG
+    if: github.repository.archived != true
+    uses: ./.github/workflows/tags.yml
+
+  test:
+    name: TEST
+    needs: [tag]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/test.yml
+    with:
+      node: ${{ env.node }}
+      skip: ${{ env.CI_SKIP_TESTS || fromJSON(env.skip-tests) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  build:
+    name: BUILD
+    needs: [tag, test]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/build.yml
+    with:
+      node: ${{ env.node }}
+      skip: ${{ env.CI_SKIP_TESTS || fromJSON(env.skip-tests) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  dev:
+    name: DEV
+    needs: [tag, test, build]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: DEV
+      region: east
+      stack: ${{ env.stack }}-dev
+      domain: $${{ env.hostname }}
+      subdomain: $${{ env.subdomain }}-dev
+      skip: ${{ env.CI_SKIP_DEV || env.CI_SKIP_EAST || fromJSON(env.skip-dev) || fromJSON(env.skip-east) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  qa-east:
+    name: 'QA (East)'
+    needs: [tag, build, dev]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: QA
+      region: east
+      stack: ${{ env.stack }}-qae
+      domain: $${{ env.hostname }}
+      subdomain: $${{ env.subdomain }}-qa
+      skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_EAST || fromJSON(env.skip-qa) || fromJSON(env.skip-east) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  qa-west:
+    name: 'QA (West)'
+    needs: [tag, build, dev]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: QA
+      region: west
+      stack: ${{ env.stack }}-qa-west
+      domain: $${{ env.hostname }}
+      subdomain: $${{ env.subdomain }}-qa
+      skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_WEST || fromJSON(env.skip-qa) || fromJSON(env.skip-west) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}

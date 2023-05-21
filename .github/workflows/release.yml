@@ -1,0 +1,144 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Release
+
+on:
+  release:
+    types:
+      - created
+  # push:
+  #   tags:
+  #     - '*.*.*'
+
+env:
+  # General Options
+  name: {:name}
+  version: ${{ github.ref_name }}
+  node: '{:node}'
+  debug: false
+  type: canary
+  # Skip Regions
+  skip-east: false
+  skip-west: false
+  # Skip Environments
+  skip-dev: true
+  skip-qa: false
+  skip-prod: false
+  # Timeouts (in minutes)
+  timeout-setup: 10
+  timeout-tests: 30
+  timeout-deployments: 60
+  timeout-cache-invalidations: 10
+  # Subdomains
+  dev-subdomain: {:subdomain}-dev
+  qa-subdomain: {:subdomain}-qa
+  prod-subdomain: {:subdomain}
+  # Hostnames
+  dev-hostname: {:hostname}
+  qa-hostname: {:hostname}
+  prod-hostname: {:hostname}
+  # Environment Variables
+  APP_DEBUG: ${{ vars.APP_DEBUG }}
+  APP_ENV: PROD
+  APP_VERSION: ${{ github.ref_name }}
+  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  AWS_CREDENTIALS: ${{ secrets.AWS_CREDENTIALS }}
+  AWS_REGION: ${{ vars.AWS_REGION || vars.DEFAULT_AWS_REGION }}
+  CI_DEBUG: ${{ vars.CI_DEBUG }}
+  CI_TYPE: ${{ vars.CI_TYPE }}
+  CI_SKIP_EAST: ${{ vars.CI_SKIP_EAST }}
+  CI_SKIP_WEST: ${{ vars.CI_SKIP_WEST }}
+  CI_SKIP_DEV: ${{ vars.CI_SKIP_DEV }}
+  CI_SKIP_QA: ${{ vars.CI_SKIP_QA }}
+  CI_SKIP_PROD: ${{ vars.CI_SKIP_PROD }}
+  DEFAULT_AWS_REGION: ${{ vars.DEFAULT_AWS_REGION }}
+  NODE_ENV: production
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  tag:
+    name: TAG
+    if: github.repository.archived != true
+    uses: ./.github/workflows/tags.yml
+
+  build:
+    name: BUILD
+    needs: [tag, test]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      node: ${{ env.node }}
+      skip: ${{ env.CI_SKIP_DEV || env.CI_SKIP_EAST || fromJSON(env.skip-dev) || fromJSON(env.skip-east) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  dev:
+    name: DEV
+    needs: [tag, test, build]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: DEV
+      region: east
+      type: ${{ env.CI_TYPE || fromJSON(env.type) }}
+      stack: ${{ github.event.repository.name }}-deployment-dev
+      domain: $${{ env.dev-hostname }}
+      subdomain: $${{ env.dev-subdomain }}
+      skip: ${{ env.CI_SKIP_DEV || env.CI_SKIP_EAST || fromJSON(env.skip-dev) || fromJSON(env.skip-east) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  qa-east:
+    name: 'QA (East)'
+    needs: [tag, build, dev]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: QA
+      region: east
+      type: ${{ env.CI_TYPE || fromJSON(env.type) }}
+      stack: ${{ github.event.repository.name }}-deployment-qa-east
+      domain: $${{ env.qa-hostname }}
+      subdomain: $${{ env.qa-subdomain }}
+      skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_EAST || fromJSON(env.skip-qa) || fromJSON(env.skip-east) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  qa-west:
+    name: 'QA (West)'
+    needs: [tag, build, dev]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: QA
+      region: west
+      stack: ${{ github.event.repository.name }}-deployment-qa-west
+      domain: $${{ env.qa-hostname }}
+      subdomain: $${{ env.qa-subdomain }}
+      skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_WEST || fromJSON(env.skip-qa) || fromJSON(env.skip-west) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  prod-east:
+    name: 'PROD (East)'
+    needs: [tag, build, qa-east, qa-west]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: PROD
+      region: east
+      stack: ${{ github.event.repository.name }}-deployment-prod-east
+      domain: $${{ env.prod-hostname }}
+      subdomain: $${{ env.prod-subdomain }}
+      skip: ${{ env.CI_SKIP_PROD || env.CI_SKIP_EAST || fromJSON(env.skip-prod) || fromJSON(env.skip-east) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+
+  prod-west:
+    name: 'PROD (West)'
+    needs: [tag, build, qa-east, qa-west]
+    if: github.repository.archived != true
+    uses: ./.github/workflows/deploy.yml
+    with:
+      env: PROD
+      region: west
+      stack: ${{ github.event.repository.name }}-deployment-prod-west
+      domain: $${{ env.prod-hostname }}
+      subdomain: $${{ env.prod-subdomain }}
+      skip: ${{ env.CI_SKIP_PROD || env.CI_SKIP_WEST || fromJSON(env.skip-prod) || fromJSON(env.skip-west) }}
+      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}

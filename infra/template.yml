@@ -1,0 +1,374 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  AlarmName:
+    Type: String
+    Description: The name for the CloudWatch alarm monitor.
+    Default: ErrorAlarm
+
+  Auditor:
+    Type: String
+    Description: The name of the company doing the assessment. (e.g. Omniframe Foundation, Inc.)
+    Default: {:auditor}
+
+  BucketName:
+    Type: String
+    Description: The name of the S3 bucket.
+
+  DomainName:
+    Type: String
+    Description: The domain name for the CloudFront distribution.
+
+  Project:
+    Type: String
+    Description: The name of this project.
+    Default: {:name}
+
+  Repo:
+    Type: String
+    Description: The full url for this repository. (e.g. https://github.com/RobHameetman/example-repo)
+    Default: {:repo}
+
+  RolloutInterval:
+    Type: Number
+    Description: The number of minutes each rollout step should wait.
+    Default: 10
+
+  Type:
+    Type: String
+    Description: The type of deployment ("direct", "blue/green", or "canary").
+    Default: canary
+
+Conditions:
+  IsDirectDeployment: !Equals [!Ref Type, "direct"]
+  IsBlueGreenDeployment: !Equals [!Ref Type, "blue/green"]
+  IsCanaryDeployment: !Equals [!Ref Type, "canary"]
+
+Resources:
+  Blue:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub '${BucketName}-blue'
+      VersioningConfiguration:
+        Status: Enabled
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: index.html
+      BucketPolicy:
+        Type: AWS::S3::BucketPolicy
+        Properties:
+          Bucket: !Ref Blue
+          PolicyDocument:
+            Statement:
+              - Sid: AllowCloudFrontAccess
+                Effect: Allow
+                Principal:
+                  CanonicalUser: !GetAtt CDN.DomainName
+                Action: s3:GetObject
+                Resource: !GetAtt Blue.Arn
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  Green:
+    Type: AWS::S3::Bucket
+    Condition: !Or [IsBlueGreenDeployment, IsCanaryDeployment]
+    Properties:
+      BucketName: !Sub '${BucketName}-green'
+      VersioningConfiguration:
+        Status: Enabled
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: index.html
+      BucketPolicy:
+        Type: AWS::S3::BucketPolicy
+        Properties:
+          Bucket: !Ref Green
+          PolicyDocument:
+            Statement:
+              - Sid: AllowCloudFrontAccess
+                Effect: Allow
+                Principal:
+                  CanonicalUser: !GetAtt CDN.DomainName
+                Action: s3:GetObject
+                Resource: !GetAtt Green.Arn
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  DNS:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref DomainName
+      Name: !Ref DomainName
+      Type: A
+      AliasTarget:
+        HostedZoneId: Z2FDTNDATAQYW2  # CloudFront Hosted Zone ID
+        DNSName: !GetAtt CDN.DomainName
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  TrafficRouter:
+    Type: AWS::Serverless::Function
+    Condition: !Or [IsBlueGreenDeployment, IsCanaryDeployment]
+    Properties:
+      CodeUri: ./lambda
+      Handler: index.handler
+      Runtime: nodejs18.x
+      MemorySize: 128
+      Timeout: 5
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+              Resource:
+                - !GetAtt Blue.Arn
+                - !GetAtt Green.Arn
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  ErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Ref AlarmName
+      AlarmDescription: Alarm for detecting error spikes.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref TrafficRouter
+      Statistic: SampleCount
+      Period: 60
+      EvaluationPeriods: !Ref RolloutInterval
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      AlarmActions:
+        - !Ref Rollout
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  Rollout:
+    Type: AWS::StepFunctions::StateMachine
+    Condition: !Or [IsBlueGreenDeployment, IsCanaryDeployment]
+    Properties:
+      DefinitionString:
+        Fn::If:
+          - IsBlueGreenDeployment
+          - !Sub |
+              {
+                "StartAt": "Green",
+                "States": {
+                  "Green": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 1
+                    },
+                  },
+                  "Blue": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 100
+                    },
+                    "End": true
+                  }
+                }
+              }
+          - !Sub |
+              {
+                "StartAt": "P1",
+                "States": {
+                  "P1": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 1
+                    },
+                    "Next": "WaitAtP1"
+                  },
+                  "WaitAtP1": {
+                    "Type": "Wait",
+                    "Seconds": !Ref CanaryDuration,
+                    "Next": "P10"
+                  },
+                  "P10": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 10
+                    },
+                    "Next": "WaitAtP10"
+                  },
+                  "WaitAtP10": {
+                    "Type": "Wait",
+                    "Seconds": !Ref CanaryDuration,
+                    "Next": "P25"
+                  },
+                  "P25": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 25
+                    },
+                    "Next": "WaitAtP25"
+                  },
+                  "WaitAtP25": {
+                    "Type": "Wait",
+                    "Seconds": !Ref CanaryDuration,
+                    "Next": "P50"
+                  },
+                  "P50": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 50
+                    },
+                    "Next": "WaitAtP50"
+                  },
+                  "WaitAtP50": {
+                    "Type": "Wait",
+                    "Seconds": !Ref CanaryDuration,
+                    "Next": "P75"
+                  },
+                  "P75": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 75
+                    },
+                    "Next": "WaitAtP75"
+                  },
+                  "WaitAtP75": {
+                    "Type": "Wait",
+                    "Seconds": !Ref CanaryDuration,
+                    "Next": "P100"
+                  },
+                  "P100": {
+                    "Type": "Task",
+                    "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:TrafficRouter",
+                    "Parameters": {
+                      "RolloutPercentage": 100
+                    },
+                    "End": false
+                  }
+                }
+              }
+      RoleArn: !GetAtt RolloutRole.Arn
+    Metadata:
+      IsBlueGreenDeployment: !Equals [!Ref Type, "blue/green"]
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  RolloutRole:
+    Type: AWS::IAM::Role
+    Condition: !Or [IsBlueGreenDeployment, IsCanaryDeployment]
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: states.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: CloudWatchAccess
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - cloudwatch:GetMetricStatistics
+                  - cloudwatch:PutMetricAlarm
+                Resource: '*'
+        - PolicyName: LambdaInvokeAccess
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                Resource: !GetAtt TrafficRouter.Arn
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  OriginAccess:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties: 
+      CloudFrontOriginAccessIdentityConfig:
+          Comment: string-value
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+  CDN:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Origins:
+          - Id: BlueOrigin
+            DomainName: !GetAtt Blue.DomainName
+            S3OriginConfig:
+              OriginAccessIdentity: !Ref OriginAccess
+          - Id: GreenOrigin
+            Condition: !Or [IsBlueGreenDeployment, IsCanaryDeployment]
+            DomainName: !GetAtt Green.DomainName
+            S3OriginConfig:
+              OriginAccessIdentity: !Ref OriginAccess
+        DefaultCacheBehavior:
+          TargetOriginId: BlueOrigin
+          ViewerProtocolPolicy: redirect-to-https
+        LambdaFunctionAssociations:
+          - EventType: viewer-request
+            LambdaFunctionARN: !GetAtt TrafficRouter.Arn
+    Tags:
+      - Key: Auditor
+        Value: !Ref Auditor
+      - Key: Repo
+        Value: !Ref Repo
+      - Key: Project
+        Value: !Ref Project
+
+Outputs:
+  CloudFrontDistributionId:
+    Value: !Ref CDN

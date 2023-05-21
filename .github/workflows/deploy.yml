@@ -1,0 +1,163 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      env:
+        description: The deployment environment (e.g. DEV, QA, or PROD).
+        required: true
+        type: string
+      region:
+        description: The deployment region (e.g. 'east' or 'west').
+        required: true
+        type: string
+      domain:
+        description: A custom domain name (e.g. '{:hostname}').
+        default: {:hostname}
+        required: false
+        type: string
+      stack:
+        description: The name of the Cloudformation stack.
+        required: true
+        type: string
+      subdomain:
+        description: A custom subdomain name (e.g. '{:subdomain}').
+        default: {:subdomain}
+        required: false
+        type: string
+      type:
+        description: The type of deployment ("direct", "blue/green", or "canary").
+        default: direct
+        required: false
+        type: string
+      dist:
+        description: The directory from which build artifacts will be deployed
+        default: dist/
+        required: false
+        type: string
+      node:
+        description: The version of Node.js used
+        default: '{:node}'
+        required: false
+        type: string
+      skip:
+        description: Skip jobs
+        default: false
+        required: false
+        type: boolean
+      debug:
+        description: Debug jobs
+        default: false
+        required: false
+        type: boolean
+    outputs:
+      storage:
+        description: "The name of the Azure storage account"
+        value: ${{ jobs.hydrate.outputs.storage }}
+      cdn:
+        description: "The CDN distribution ID"
+        value: ${{ jobs.hydrate.outputs.cdn }}
+      cache:
+        description: "The name of the endpoint used for cache invalidation"
+        value: ${{ jobs.hydrate.outputs.cache }}
+      resources:
+        description: "The resource group associated with these items"
+        value: ${{ jobs.hydrate.outputs.resources }}
+
+env:
+  # Timeouts (in minutes)
+  timeout-setup: 10
+  timeout-deployments: 60
+  # Environment Variables
+  APP_DEBUG: ${{ vars.APP_DEBUG }}
+  APP_VERSION: ${{ github.ref_name }}
+  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: ${{ vars.AWS_REGION || vars.DEFAULT_AWS_REGION }}
+  DEFAULT_AWS_REGION: ${{ vars.DEFAULT_AWS_REGION }}
+  NODE_ENV: production
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  deploy:
+    name: Deploy
+    if: github.repository.archived != true
+    environment:
+      name: ${{ inputs.env }}
+      url: https://${{ inputs.subdomain }}.${{ inputs.hostname }}
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION || vars.DEFAULT_AWS_REGION }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    runs-on: ubuntu-20.04
+    container:
+      image: node:${{ inputs.node }}
+    outputs:
+      cdn: ${{ steps.hydrate.outputs.cdn }}
+      cache: ${{ steps.hydrate.outputs.cache }}
+      resources: ${{ steps.hydrate.outputs.resources }}
+    steps:
+      - name: Init
+        id: init
+        run: |
+          echo "__REGION=${{ inputs.region == 'west' && 'us-west-2' || 'us-east-1' }}" >> $GITHUB_ENV
+
+      - name: Debug
+        id: debug
+        if: >-
+          fromJSON(inputs.debug) == true &&
+          fromJSON(inputs.skip) != true
+        run: |
+          echo "RUNNER_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "ACTIONS_RUNNER_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "ACTIONS_STEP_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "APP_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+
+      - name: Setup
+        id: setup
+        uses: actions/download-artifact@v3
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(inputs.skip) != true
+        with:
+          name: build-artifacts
+          path: ${{ inputs.dist }}
+
+      - name: Login
+        id: login
+        uses: aws-actions/configure-aws-credentials@v1
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(inputs.skip) != true
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.__REGION }}
+
+      - name: Deploy
+        id: deploy
+        timeout-minutes: ${{ fromJSON(env.timeout-deployments) }}
+        if: fromJSON(inputs.skip) != true
+        run: |
+          aws cloudformation deploy \
+            --template-file infra/template.yml \
+            --stack-name ${{ inputs.stack }} \
+            --parameter-overrides \
+              Type=${{ inputs.type }} \
+              BucketName=${{ inputs.bucketName }} \
+            --capabilities CAPABILITY_IAM
+
+      - name: Purge
+        id: purge
+        timeout-minutes: ${{ fromJSON(env.timeout-deployments) }}
+        if: >-
+          fromJSON(inputs.skip) != true
+          steps.deploy.outputs.cdn != ''
+        run: aws cloudfront create-invalidation --distribution-id ${{ needs.deploy.outputs.cdn }} --paths "/*"
+
+      - name: Logout
+        id: logout
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(inputs.skip) != true
+        run: aws logout

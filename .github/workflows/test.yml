@@ -1,0 +1,187 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Test
+
+on:
+  workflow_call:
+    inputs:
+      node:
+        description: The version of Node.js used
+        default: '{:node}'
+        required: false
+        type: string
+      e2e:
+        description: Enable e2e testing if false
+        default: true
+        required: false
+        type: boolean
+      skip:
+        description: Skip jobs
+        default: false
+        required: false
+        type: boolean
+      debug:
+        description: Debug jobs
+        default: false
+        required: false
+        type: boolean
+
+env:
+  # Skip
+  skip-unit: false
+  skip-e2e: false
+  # Timeouts (in minutes)
+  timeout-setup: 10
+  timeout-tests: 30
+  # Environment Variables
+  CI_DEBUG: ${{ secrets.CI_SKIP_UNIT_TESTS }}
+  CI_SKIP_UNIT_TESTS: ${{ secrets.CI_SKIP_UNIT_TESTS }}
+  CI_SKIP_E2E: ${{ secrets.CI_SKIP_E2E }}
+  NODE_ENV: production
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  unit:
+    name: Unit
+    if: github.repository.archived != true
+    runs-on: ubuntu-20.04
+    container:
+      image: node:${{ inputs.node }}
+    steps:
+      - name: Init
+        id: init
+        run: |
+          echo "__SKIP=${{ env.CI_SKIP_UNIT_TESTS || fromJSON(env.skip-unit) || fromJSON(inputs.skip) }}" >> $GITHUB_ENV
+          echo "__DEBUG=${{ env.CI_DEBUG || fromJSON(inputs.debug) }}" >> $GITHUB_ENV
+
+      - name: Debug
+        id: debug
+        if: >-
+          fromJSON(env.__DEBUG) == true &&
+          fromJSON(env.__SKIP) != true
+        run: |
+          echo "RUNNER_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "ACTIONS_RUNNER_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "ACTIONS_STEP_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "APP_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV\
+
+      - name: Checkout
+        id: clone
+        uses: actions/checkout@v3
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(env.__SKIP) != true
+
+      - name: Dependencies
+        id: setup
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(env.__SKIP) != true
+        env:
+          # 'development' is required instead of 'production' here so that NPM includes devDependencies (like Jest).
+          NODE_ENV: development
+        run: npm ci --legacy-peer-deps --ignore-scripts
+
+      - name: Cache
+        id: cache
+        uses: actions/cache@v3
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(env.__SKIP) != true
+        env:
+          cache-name: jest-cache
+        with:
+          path: test/jest/.cache
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: CPU
+        id: cpu
+        timeout-minutes: ${{ fromJSON(env.timeout-setup) }}
+        if: fromJSON(env.__SKIP) != true
+        uses: SimenB/github-actions-cpu-cores@v1
+
+      - name: Test
+        id: test
+        timeout-minutes: ${{ fromJSON(env.timeout-tests) }}
+        if: fromJSON(env.__SKIP) != true
+        run: npm test -- --coverage --silent --watchAll=false --maxWorkers=${{ steps.cpu.outputs.count }}
+
+  e2e:
+    name: E2E
+    needs: [test]
+    if: github.repository.archived != true
+    environment:
+      name: E2E
+    runs-on: ubuntu-20.04
+    container:
+      image: cypress/browsers:node16.16.0-chrome105-ff104-edge
+      options: --user 1001
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        browser: [chrome, firefox, edge]
+        config:
+          [
+            { breakpoint: XL, config: 'viewportWidth=1920,viewportHeight=1080' },
+            { breakpoint: LG, config: 'viewportWidth=1400,viewportHeight=1080' },
+            { breakpoint: 'MD', config: 'viewportWidth=1280,viewportHeight=720' },
+            { breakpoint: 'SM', config: 'viewportWidth=960,viewportHeight=720' },
+            { breakpoint: 'XS', config: 'viewportWidth=650,viewportHeight=720' },
+          ]
+    steps:
+      - name: Init
+        id: init
+        run: |
+          echo "__SKIP=${{ env.CI_SKIP_E2E || fromJSON(env.skip-e2e) || fromJSON(inputs.skip) || fromJSON(!inputs.e2e) }}" >> $GITHUB_ENV
+          echo "__DEBUG=${{ env.CI_DEBUG || fromJSON(inputs.debug) }}" >> $GITHUB_ENV
+
+      - name: Debug
+        id: debug
+        if: >-
+          fromJSON(env.__DEBUG) == true &&
+          fromJSON(env.__SKIP) != true
+        run: |
+          echo "RUNNER_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "APP_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "DEBUG=cypress:*" >> $GITHUB_ENV
+
+      - name: Checkout
+        id: clone
+        uses: actions/checkout@v3
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_SETUP) }}
+        if: fromJSON(env.__SKIP) != true
+
+      - name: Dependencies
+        id: setup
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_SETUP) }}
+        if: fromJSON(env.__SKIP) != true
+        env:
+          # 'development' is required instead of 'production' here so that NPM includes devDependencies (like Cypress).
+          NODE_ENV: development
+        run: npm ci --legacy-peer-deps
+
+      - name: Test
+        id: test
+        uses: cypress-io/github-action@v5
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_TESTS) }}
+        if: fromJSON(env.__SKIP) != true
+        env:
+          # 'development' is required instead of 'production' here so that NPM includes devDependencies (like Cypress).
+          NODE_ENV: development
+        with:
+          install: false
+          start: npm run prod
+          wait-on: http://127.0.0.1:8080
+          browser: ${{ matrix.browser }}
+          config: ${{ matrix.config.config }}
+          spec: test/e2e/specs/*
+          config-file: test/e2e/cypress.config.js
+          wait-on-timeout: 180
+
+      - name: Report
+        id: report
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: E2E-${{matrix.browser}}-${{matrix.config.type}}
+          path: |
+            test/e2e/reports/*
+            test/e2e/screenshots/*

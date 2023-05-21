@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=./_schema.json
+
+name: Build
+
+on:
+  workflow_call:
+    inputs:
+      node:
+        description: The version of Node.js used
+        default: '{:node}'
+        required: false
+        type: string
+      skip:
+        description: Skip jobs
+        default: false
+        required: false
+        type: boolean
+      debug:
+        description: Debug jobs
+        default: false
+        required: false
+        type: boolean
+
+env:
+  # Timeouts (in minutes)
+  timeout-setup: 10
+  timeout-deployments: 60
+  # Environment Variables
+  APP_DEBUG: ${{ vars.APP_DEBUG }}
+  APP_VERSION: ${{ github.ref_name }}
+  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  CI_TIMEOUT_SETUP: ${{ vars.CI_TIMEOUT_SETUP }}
+  CI_TIMEOUT_DEPLOYMENTS: ${{ vars.CI_TIMEOUT_DEPLOYMENTS }}
+  NODE_ENV: production
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  build:
+    name: Build
+    if: github.repository.archived != true
+    runs-on: ubuntu-20.04
+    container:
+      image: node:16
+    steps:
+      - name: Init
+        id: init
+        run: |
+          echo "__BYPASS=${{ inputs.skip }}" >> $GITHUB_ENV
+          echo "__REGION=${{ inputs.region == 'west' && 'westus2' || 'eastus' }}" >> $GITHUB_ENV
+          echo "__DEBUG=${{ inputs.debug }}" >> $GITHUB_ENV
+          echo "__TIMEOUT_SETUP=${{ env.CI_TIMEOUT_SETUP || fromJSON(env.timeout-setup) }}" >> $GITHUB_ENV
+          echo "__TIMEOUT_DEPLOYMENTS=${{ env.CI_TIMEOUT_DEPLOYMENTS || fromJSON(env.timeout-deployments) }}" >> $GITHUB_ENV
+
+      - name: Debug
+        id: debug
+        if: >-
+          fromJSON(inputs.debug) == true &&
+          fromJSON(inputs.skip) != true
+        run: |
+          echo "RUNNER_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+          echo "APP_DEBUG=${{ fromJSON(env.__DEBUG) }}" >> $GITHUB_ENV
+
+      - name: Variables
+        id: secrets
+        if: fromJSON(env.secrets-failover) == true
+        run: |
+          echo "APP_NAME=${{ secrets.APP_NAME || env.name }}" >> $GITHUB_ENV &&
+          echo "APP_GEOCODING_SERVICE_ENDPOINT=${{ secrets.APP_GEOCODING_SERVICE_ENDPOINT || env.geocoding-api }}" >> $GITHUB_ENV &&
+          echo "APP_FORECAST_SERVICE_ENDPOINT=${{ secrets.APP_FORECAST_SERVICE_ENDPOINT || env.forecasting-api }}" >> $GITHUB_ENV
+
+      - name: Checkout
+        id: clone
+        uses: actions/checkout@v3
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_SETUP) }}
+        if: fromJSON(env.__BYPASS) != true
+
+      - name: Dependencies
+        id: setup
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_SETUP) }}
+        if: fromJSON(env.__BYPASS) != true
+        env:
+          # 'development' is required instead of 'production' here so that NPM includes devDependencies (like Webpack).
+          NODE_ENV: development
+        run: npm ci --legacy-peer-deps --ignore-scripts
+
+      - name: Build
+        id: build
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_DEPLOYMENTS) }}
+        if: fromJSON(env.__BYPASS) != true
+        run: npm run build
+
+      - name: Cache
+        id: cache
+        timeout-minutes: ${{ fromJSON(env.__TIMEOUT_SETUP) }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: dist
