@@ -21,7 +21,7 @@
 		"prod": "NODE_ENV=production webpack serve --node-env=production --no-open",
 		"postinstall": "husky install",
 		"reset": "rm -rf node_modules/ && npm cache clear --force && npm ci --legacy-peer-deps",
-		"setup": "npm i --legacy-peer-deps && cp .env.example .env",
+		"setup": "sh scripts/setup.sh",
 		"start": "NODE_ENV=development webpack serve --node-env=development",
 		"stop": "lsof -t -i tcp:8080 | xargs kill",
 		"test": "NODE_ENV=test jest --maxWorkers=50%"
