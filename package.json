@@ -9,10 +9,10 @@
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/{:org}/{{repo}}"
+		"url": "git+https://github.com/{{org}}/{{repo}}"
 	},
 	"bugs": {
-		"url": "https://github.com/{:org}/{{repo}}/issues"
+		"url": "https://github.com/{{org}}/{{repo}}/issues"
 	},
 	"scripts": {
 		"build": "rm -rf ./dist/ && NODE_ENV=production webpack --mode=production --node-env=production",

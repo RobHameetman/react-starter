@@ -89,6 +89,7 @@ devDependencies=(
 # Define the list of placeholders
 placeholders=(
   "{{name}}"
+  "{{org}}"
   "{{repo}}"
   "{{description}}"
   "{{subdomain}}"
@@ -112,10 +113,10 @@ injectPlaceholderValues() {
 
 # Inject placeholder values in package.hson
 injectPackageJsonPlaceholderValues() {
-  local placeholder="$1"
-  local value="$2"
-
-  sed -i '' -e "s|$placeholder|$value|g" -e "s/[^\x00-\x7F]//g" {} package.json
+	for placeholder in "${placeholders[@]}"; do
+		value="${!placeholder}"
+		sed -i '' -e "s#\"$placeholder\"#\"$value\"#g" package.json
+	done
 }
 
 # Copy .env.example to .env
@@ -158,7 +159,7 @@ npmjs=$(npm -v)
 npm="${npmjs%%.*}"
 
 # Inject placeholder values for each placeholder in package.json
-injectPackageJsonPlaceholderValues()
+injectPackageJsonPlaceholderValues
 
 # Install dependencies
 # echo "Installing dependencies..."
@@ -169,9 +170,9 @@ injectPackageJsonPlaceholderValues()
 # npm i -D --legacy-peer-deps "${devDependencies[@]}"
 
 # Get dependency versions
-react=$(grep '"version":' node_modules/react/package.json | awk -F'"' '{print $4}')
-typescript=$(grep '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}')
-webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}')
+# react=$(grep '"version":' node_modules/react/package.json | awk -F'"' '{print $4}')
+# typescript=$(grep '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}')
+# webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}')
 
 # Inject placeholder values for each remaining placeholder
 # for placeholder in "${placeholders[@]}"; do
@@ -182,4 +183,4 @@ webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{prin
 # echo "Setting up environment variables..."
 # setupEnvVars
 
-echo "Setup complete!"
+# echo "Setup complete!"
