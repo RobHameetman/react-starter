@@ -1,18 +1,18 @@
 {
-	"name": "{:name}",
+	"name": "{{name}}",
 	"version": "1.0.0",
-	"description": "{:description}",
+	"description": "{{description}}",
 	"author": "Robert H. Hameetman (https://www.robhameetman.com/)",
-	"homepage": "https://{:subdomain}.{:hostname}",
+	"homepage": "https://{{subdomain}}.{{hostname}}",
 	"license": "MIT",
 	"private": true,
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/{:org}/{:repo}"
+		"url": "git+https://github.com/{:org}/{{repo}}"
 	},
 	"bugs": {
-		"url": "https://github.com/{:org}/{:repo}/issues"
+		"url": "https://github.com/{:org}/{{repo}}/issues"
 	},
 	"scripts": {
 		"build": "rm -rf ./dist/ && NODE_ENV=production webpack --mode=production --node-env=production",

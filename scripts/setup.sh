@@ -88,18 +88,18 @@ devDependencies=(
 
 # Define the list of placeholders
 placeholders=(
-  "{:name}"
-  "{:repo}"
-  "{:description}"
-  "{:subdomain}"
-  "{:hostname}"
-  "{:auditor}"
-	"{:nodejs}"
-	"{:node}"
-	"{:npm}"
-  "{:react}"
-  "{:typescript}"
-  "{:webpack}"
+  "{{name}}"
+  "{{repo}}"
+  "{{description}}"
+  "{{subdomain}}"
+  "{{hostname}}"
+  "{{auditor}}"
+	"{{nodejs}}"
+	"{{node}}"
+	"{{npm}}"
+  "{{react}}"
+  "{{typescript}}"
+  "{{webpack}}"
 )
 
 # Inject placeholder values in files
@@ -107,7 +107,15 @@ injectPlaceholderValues() {
   local placeholder="$1"
   local value="$2"
 
-  find . -type f -exec sed -i "s|$placeholder|$value|g" {} +
+  find . -type f ! -path "./node_modules/*" ! -name "scripts/setup.sh" -exec sed -i '' -e "s|$placeholder|$value|g" -e "s/[^\x00-\x7F]//g" {} \;
+}
+
+# Inject placeholder values in package.hson
+injectPackageJsonPlaceholderValues() {
+  local placeholder="$1"
+  local value="$2"
+
+  sed -i '' -e "s|$placeholder|$value|g" -e "s/[^\x00-\x7F]//g" {} package.json
 }
 
 # Copy .env.example to .env
@@ -135,6 +143,7 @@ if [[ $isAssessment == ^[Yy]$ ]]; then
 	read -p "Please enter the name of the organization: " auditor
 fi
 
+name=${name:-$rootDir}
 org=${org:-$defaultOrg}
 repo=${repo:-$defaultRepo}
 hostname=${subdomain:-$defaultHostname}
@@ -148,25 +157,29 @@ node="${nodejs%%.*}"
 npmjs=$(npm -v)
 npm="${npmjs%%.*}"
 
-react=grep -E '"version":' node_modules/react/package.json | awk -F'"' '{print $4}'
-typescript=grep -E '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}'
-webpack=grep -E '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}'
+# Inject placeholder values for each placeholder in package.json
+injectPackageJsonPlaceholderValues()
 
 # Install dependencies
-echo "Installing dependencies..."
-npm i --legacy-peer-deps "${dependencies[@]}"
+# echo "Installing dependencies..."
+# npm i --legacy-peer-deps "${dependencies[@]}"
 
 # Install dev dependencies
-echo "Installing dev dependencies..."
-npm i -D --legacy-peer-deps "${devDependencies[@]}"
+# echo "Installing dev dependencies..."
+# npm i -D --legacy-peer-deps "${devDependencies[@]}"
 
-# Inject placeholder values for each placeholder
-for placeholder in "${placeholders[@]}"; do
-  injectPlaceholderValues "$placeholder" "${!placeholder}"
-done
+# Get dependency versions
+react=$(grep '"version":' node_modules/react/package.json | awk -F'"' '{print $4}')
+typescript=$(grep '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}')
+webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}')
+
+# Inject placeholder values for each remaining placeholder
+# for placeholder in "${placeholders[@]}"; do
+#   injectPlaceholderValues "$placeholder" "${!placeholder}"
+# done
 
 # Copy .env.example to .env
-echo "Setting up environment variables..."
-setupEnvVars
+# echo "Setting up environment variables..."
+# setupEnvVars
 
 echo "Setup complete!"

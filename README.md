@@ -5,16 +5,16 @@
 *** customizing certain parts of this README file.
 -->
 
-# {:name}
+# {{name}}
 
 <div align="center">
-  <a href="https://github.com/{:org}/{:repo}">
+  <a href="https://github.com/{:org}/{{repo}}">
     <img src="./.github/img/logo.png" alt="Logo" width="75" height="112">
   </a>
 
   <p align="center">
     <br />
-    {:description}
+    {{description}}
     <!-- TODO: Delete lines 33–46 -->
     <br />
     <br />
@@ -25,29 +25,29 @@
     <br />
   </p>
   <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/badge/React-v{:react}-%236ADEFE.svg?&logo=react&logoColor=%2361DAFB" alt="React v{:react}">
+    <img src="https://img.shields.io/badge/React-v{{react}}-%236ADEFE.svg?&logo=react&logoColor=%2361DAFB" alt="React v{{react}}">
   </a>
   <a href="https://www.typescriptlang.org/">
-    <img src="https://img.shields.io/badge/TypeScript-v{:typescript}-%23007ACC.svg?&logo=typescript&logoColor=007ACC" alt="TypeScript v{:typescript}">
+    <img src="https://img.shields.io/badge/TypeScript-v{{typescript}}-%23007ACC.svg?&logo=typescript&logoColor=007ACC" alt="TypeScript v{{typescript}}">
   </a>
   <a href="https://webpack.js.org/">
-    <img src="https://img.shields.io/badge/Webpack-v{:webpack}-%238DD6F9.svg?&logo=webpack&logoColor=8DD6F9" alt="Webpack v{:webpack}">
+    <img src="https://img.shields.io/badge/Webpack-v{{webpack}}-%238DD6F9.svg?&logo=webpack&logoColor=8DD6F9" alt="Webpack v{{webpack}}">
   </a>
   <br />
-  <img src="https://img.shields.io/github/actions/workflow/status/{:org}/{:repo}/build.yml?branch=main" alt="Build">
-  <img src="https://img.shields.io/github/actions/workflow/status/{:org}/{:repo}/test.yml?branch=main" alt="Tests">
-  <img src="https://img.shields.io/github/actions/workflow/status/{:org}/{:repo}/deploy.yml?branch=main" alt="w">
-	<img src="https://img.shields.io/github/v/release/{:org}/{:repo}?display_name=tag" alt="CI/CD">
+  <img src="https://img.shields.io/github/actions/workflow/status/{:org}/{{repo}}/build.yml?branch=main" alt="Build">
+  <img src="https://img.shields.io/github/actions/workflow/status/{:org}/{{repo}}/test.yml?branch=main" alt="Tests">
+  <img src="https://img.shields.io/github/actions/workflow/status/{:org}/{{repo}}/deploy.yml?branch=main" alt="w">
+	<img src="https://img.shields.io/github/v/release/{:org}/{{repo}}?display_name=tag" alt="CI/CD">
   <br />
   <p align="center">
     <br />
-    <a href="https://{:subdomain}.{:hostname}">
+    <a href="https://{{subdomain}}.{{hostname}}">
       <img src="https://img.shields.io/badge/Check%20It%20Out-%239CB0B2.svg?style=for-the-badge" alt="Check It Out">
     </a>
-    <a href="https://www.github.com/{:org}/{:repo}">
+    <a href="https://www.github.com/{:org}/{{repo}}">
       <img src="https://img.shields.io/badge/Request%20A%20Feature-%23AECCB3.svg?style=for-the-badge" alt="Request A Feature">
     </a>
-    <a href="https://www.github.com/{:org}/{:repo}">
+    <a href="https://www.github.com/{:org}/{{repo}}">
       <img src="https://img.shields.io/badge/Report%20A%20Defect-%23FFD0CA.svg?style=for-the-badge" alt="Report A Defect">
     </a>
     <br />
@@ -160,8 +160,8 @@ Follow these steps to get the project up and running on your local machine:
 ### 2. Installation
 
 ```bash
-git clone git@github.com:{:org}/{:repo}
-cd {:repo}
+git clone git@github.com:{:org}/{{repo}}
+cd {{repo}}
 npm run setup
 ```
 
@@ -301,9 +301,9 @@ tab in Github.
 ### Releases
 
 This project uses [SemVer](http://semver.org/) for versioning. For the versions
-available, see the [tags on this repository](https://github.com/{:org}/{:repo}/tags).
+available, see the [tags on this repository](https://github.com/{:org}/{{repo}}/tags).
 
-Major versions should have a corresponding release in Github. Click [here](https://github.com/{:org}/{:repo}/releases/new)
+Major versions should have a corresponding release in Github. Click [here](https://github.com/{:org}/{{repo}}/releases/new)
 to create a new release once your version meets acceptance criteria.
 
 <p align="right"><a href="#top">⬆️ back to top</a></p>

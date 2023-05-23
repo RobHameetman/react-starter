@@ -23,9 +23,9 @@ on:
 
 # Infrastructure Tags
 env:
-  auditor: '{:auditor}'
+  auditor: '{{auditor}}'
   repo: ${{ format('https://github.com/{0}', github.repository) }}
-  project: '{:name}'
+  project: '{{name}}'
 
 jobs:
   # Note: This job is used to prevent bad tagging in AWS. Please do not edit the
@@ -45,7 +45,7 @@ jobs:
         id: auditor
         timeout-minutes: ${{ fromJSON(inputs.timeout) }}
         if: >-
-          !contains(env.auditor, '{:auditor}')
+          !contains(env.auditor, '{{auditor}}')
         run: echo "value=${{ env.auditor }}" >> $GITHUB_OUTPUT
 
       - name: Auditor Tag (Error)

@@ -12,9 +12,9 @@ on:
 
 env:
   # General Options
-  name: {:name}
+  name: {{name}}
   version: ${{ github.ref_name }}
-  node: '{:node}'
+  node: '{{node}}'
   debug: false
   type: canary
   # Skip Regions
@@ -30,13 +30,13 @@ env:
   timeout-deployments: 60
   timeout-cache-invalidations: 10
   # Subdomains
-  dev-subdomain: {:subdomain}-dev
-  qa-subdomain: {:subdomain}-qa
-  prod-subdomain: {:subdomain}
+  dev-subdomain: {{subdomain}}-dev
+  qa-subdomain: {{subdomain}}-qa
+  prod-subdomain: {{subdomain}}
   # Hostnames
-  dev-hostname: {:hostname}
-  qa-hostname: {:hostname}
-  prod-hostname: {:hostname}
+  dev-hostname: {{hostname}}
+  qa-hostname: {{hostname}}
+  prod-hostname: {{hostname}}
   # Environment Variables
   APP_DEBUG: ${{ vars.APP_DEBUG }}
   APP_ENV: PROD

@@ -7,7 +7,7 @@ on:
     inputs:
       node:
         description: The version of Node.js used
-        default: '{:node}'
+        default: '{{node}}'
         required: false
         type: string
       skip:

@@ -14,8 +14,8 @@ on:
         required: true
         type: string
       domain:
-        description: A custom domain name (e.g. '{:hostname}').
-        default: {:hostname}
+        description: A custom domain name (e.g. '{{hostname}}').
+        default: {{hostname}}
         required: false
         type: string
       stack:
@@ -23,8 +23,8 @@ on:
         required: true
         type: string
       subdomain:
-        description: A custom subdomain name (e.g. '{:subdomain}').
-        default: {:subdomain}
+        description: A custom subdomain name (e.g. '{{subdomain}}').
+        default: {{subdomain}}
         required: false
         type: string
       type:
@@ -39,7 +39,7 @@ on:
         type: string
       node:
         description: The version of Node.js used
-        default: '{:node}'
+        default: '{{node}}'
         required: false
         type: string
       skip:

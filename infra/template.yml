@@ -10,7 +10,7 @@ Parameters:
   Auditor:
     Type: String
     Description: The name of the company doing the assessment. (e.g. Omniframe Foundation, Inc.)
-    Default: {:auditor}
+    Default: {{auditor}}
 
   BucketName:
     Type: String
@@ -23,12 +23,12 @@ Parameters:
   Project:
     Type: String
     Description: The name of this project.
-    Default: {:name}
+    Default: {{name}}
 
   Repo:
     Type: String
     Description: The full url for this repository. (e.g. https://github.com/RobHameetman/example-repo)
-    Default: {:repo}
+    Default: {{repo}}
 
   RolloutInterval:
     Type: Number

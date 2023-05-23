@@ -10,9 +10,9 @@ on:
 
 env:
   # General Options
-  name: {:name}
+  name: {{name}}
   version: 0.0.1
-  node: '{:node}'
+  node: '{{node}}'
   debug: false
   stack: ${{ github.event.repository.name }}-${{ github.event.pull_request.number }}-deployment
   subdomain: ${{ github.event.pull_request.number }}.pr.${{ github.event.repository.name }}
