@@ -7,6 +7,31 @@ defaultOrg=$(echo "$origin" | sed -e 's/.*://g' -e 's/\.git$//' -e 's/:/\//' -e 
 defaultRepo=$(echo "$origin" | awk -F/ '{print $2}' | sed -e 's/\.git$//' )
 defaultHostname=hameetman.dev
 
+# Get placeholder values
+read -p "Enter the project name ($rootDir): " name
+read -p "Enter the hostname where this project will be deployed ($defaultHostname): " hostname
+read -p "Enter the subdomain where this project will be deployed ($rootDir): " subdomain
+read -p "Enter a 1-2 sentence description: " description
+read -p "Is this project for an interview take-home assessment? (Y/n): " isAssessment
+
+if [[ $isAssessment == ^[Yy]$ ]]; then
+	read -p "Please enter the name of the organization: " auditor
+fi
+
+name=${name:-$rootDir}
+org=${org:-$defaultOrg}
+repo=${repo:-$defaultRepo}
+hostname=${hostname:-$defaultHostname}
+subdomain=${subdomain:-$rootDir}
+auditor=${auditor:-"N/A"}
+
+nodejs=$(node -v)
+nodejs=${nodejs#"v"}
+node="${nodejs%%.*}"
+
+npmjs=$(npm -v)
+npm="${npmjs%%.*}"
+
 # List of dependencies. These are dependencies used at runtime.
 dependencies=(
 	@nextui-org/react,
@@ -113,10 +138,22 @@ injectPlaceholderValues() {
 
 # Inject placeholder values in package.hson
 injectPackageJsonPlaceholderValues() {
-	for placeholder in "${placeholders[@]}"; do
-		value="${!placeholder}"
-		sed -i '' -e "s#\"$placeholder\"#\"$value\"#g" package.json
-	done
+  local packageJsonFile="package.json"
+  local packageJson
+
+  # Read the package.json file
+  packageJson=$(cat "$packageJsonFile")
+
+	# Update placeholder values
+	updatedPackageJson="${packageJson//\{\{name\}\}/$name}"
+	updatedPackageJson="${updatedPackageJson//\{\{description\}\}/}"
+	updatedPackageJson="${updatedPackageJson//\{\{subdomain\}\}/$subdomain}"
+	updatedPackageJson="${updatedPackageJson//\{\{hostname\}\}/$hostname}"
+	updatedPackageJson="${updatedPackageJson//\{\{org\}\}/$org}"
+	updatedPackageJson="${updatedPackageJson//\{\{repo\}\}/$repo}"
+
+	# Overwrite the package.json file with the updated contents
+	echo "$updatedPackageJson" > "$packageJsonFile"
 }
 
 # Copy .env.example to .env
@@ -132,31 +169,6 @@ setupEnvVars() {
 
 	cp .env.example .env
 }
-
-# Get placeholder values
-read -p "Enter the project name ($rootDir): " name
-read -p "Enter the hostname where this project will be deployed ($defaultHostname): " hostname
-read -p "Enter the subdomain where this project will be deployed ($rootDir): " subdomain
-read -p "Enter a 1-2 sentence description: " description
-read -p "Is this project for an interview take-home assessment? (Y/n): " isAssessment
-
-if [[ $isAssessment == ^[Yy]$ ]]; then
-	read -p "Please enter the name of the organization: " auditor
-fi
-
-name=${name:-$rootDir}
-org=${org:-$defaultOrg}
-repo=${repo:-$defaultRepo}
-hostname=${subdomain:-$defaultHostname}
-subdomain=${subdomain:-$rootDir}
-auditor=${auditor:-"N/A"}
-
-nodejs=$(node -v)
-nodejs=${nodejs#"v"}
-node="${nodejs%%.*}"
-
-npmjs=$(npm -v)
-npm="${npmjs%%.*}"
 
 # Inject placeholder values for each placeholder in package.json
 injectPackageJsonPlaceholderValues
