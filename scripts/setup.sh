@@ -162,7 +162,7 @@ restore() {
 			rm .env
 		fi
 
-		# git restore .
+		git restore .
 	fi
 }
 
@@ -201,14 +201,6 @@ inject() {
 
 		updated="${updated//\{\{${key}\}\}/${value}}"
 	done
-
-	# Update placeholder values
-	# updated="${file//\{\{name\}\}/$name}"
-	# updated="${updated//\{\{description\}\}/}"
-	# updated="${updated//\{\{subdomain\}\}/$subdomain}"
-	# updated="${updated//\{\{hostname\}\}/$hostname}"
-	# updated="${updated//\{\{org\}\}/$org}"
-	# updated="${updated//\{\{repo\}\}/$repo}"
 
 	# Overwrite the package.json file with the updated contents
 	echo "$updated" > "$filename"
@@ -257,27 +249,23 @@ setupEnvVars() {
 trap "restore" INT TERM EXIT
 
 # Inject placeholder values for each placeholder in package.json
-# updatePackageJson
+updatePackageJson
 
 # Install dependencies
-# echo "Installing dependencies..."
-# npm i --legacy-peer-deps "${dependencies[@]}"
+echo "Installing dependencies..."
+npm i --legacy-peer-deps "${dependencies[@]}"
 
 # Install dev dependencies
-# echo "Installing dev dependencies..."
-# npm i -D --legacy-peer-deps "${devDependencies[@]}"
+echo "Installing dev dependencies..."
+npm i -D --legacy-peer-deps "${devDependencies[@]}"
 
 # Get dependency versions
-# react=$(grep '"version":' node_modules/react/package.json | awk -F'"' '{print $4}')
-# typescript=$(grep '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}')
-# webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}')
-
-# react="18.0.0"
-# typescript="5.0.0"
-# webpack="5.0.0"
+react=$(grep '"version":' node_modules/react/package.json | awk -F'"' '{print $4}')
+typescript=$(grep '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}')
+webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}')
 
 # Inject placeholder values for each remaining placeholder
-# updateRemainingFiles
+updateRemainingFiles
 
 # Copy .env.example to .env
 echo "Setting up environment variables..."
