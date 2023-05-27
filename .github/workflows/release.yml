@@ -85,6 +85,9 @@ jobs:
       subdomain: $${{ env.dev-subdomain }}
       skip: ${{ env.CI_SKIP_DEV || env.CI_SKIP_EAST || fromJSON(env.skip-dev) || fromJSON(env.skip-east) }}
       debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+      auditor: ${{ jobs.tag.outputs.auditor }}
+      project: ${{ jobs.tag.outputs.project }}
+      repo: ${{ jobs.tag.outputs.repo }}
 
   qa-east:
     name: 'QA (East)'
@@ -100,6 +103,9 @@ jobs:
       subdomain: $${{ env.qa-subdomain }}
       skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_EAST || fromJSON(env.skip-qa) || fromJSON(env.skip-east) }}
       debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+      auditor: ${{ jobs.tags.outputs.auditor }}
+      project: ${{ jobs.tags.outputs.project }}
+      repo: ${{ jobs.tags.outputs.repo }}
 
   qa-west:
     name: 'QA (West)'
@@ -114,6 +120,9 @@ jobs:
       subdomain: $${{ env.qa-subdomain }}
       skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_WEST || fromJSON(env.skip-qa) || fromJSON(env.skip-west) }}
       debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+      auditor: ${{ jobs.tags.outputs.auditor }}
+      project: ${{ jobs.tags.outputs.project }}
+      repo: ${{ jobs.tags.outputs.repo }}
 
   prod-east:
     name: 'PROD (East)'
@@ -128,6 +137,9 @@ jobs:
       subdomain: $${{ env.prod-subdomain }}
       skip: ${{ env.CI_SKIP_PROD || env.CI_SKIP_EAST || fromJSON(env.skip-prod) || fromJSON(env.skip-east) }}
       debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+      auditor: ${{ jobs.tags.outputs.auditor }}
+      project: ${{ jobs.tags.outputs.project }}
+      repo: ${{ jobs.tags.outputs.repo }}
 
   prod-west:
     name: 'PROD (West)'
@@ -142,3 +154,6 @@ jobs:
       subdomain: $${{ env.prod-subdomain }}
       skip: ${{ env.CI_SKIP_PROD || env.CI_SKIP_WEST || fromJSON(env.skip-prod) || fromJSON(env.skip-west) }}
       debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
+      auditor: ${{ jobs.tags.outputs.auditor }}
+      project: ${{ jobs.tags.outputs.project }}
+      repo: ${{ jobs.tags.outputs.repo }}

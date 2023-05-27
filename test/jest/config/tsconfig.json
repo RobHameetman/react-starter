@@ -1,0 +1,15 @@
+{
+	"extends": "../../../tsconfig.json",
+	"include": [
+		"./*.ts",
+		"../matchers/*",
+		"../resources/*",
+		"../../../typings/jest.d.ts",
+		"../../../typings/window.d.ts"
+, "../matchers/misc/toEqualZero", "../matchers/graphql/toQuery", "../matchers/analytics/toCallZendesk"	],
+	"exclude": [
+		"../../e2e/",
+		"../../../node_modules/",
+		"../../../typings/cypress.d.ts"
+	]
+}

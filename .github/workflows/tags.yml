@@ -28,8 +28,6 @@ env:
   project: '{{name}}'
 
 jobs:
-  # Note: This job is used to prevent bad tagging in AWS. Please do not edit the
-  # placeholder values on the lines of the 'if' fields.
   validate:
     name: Validate
     runs-on: ubuntu-20.04
@@ -45,7 +43,8 @@ jobs:
         id: auditor
         timeout-minutes: ${{ fromJSON(inputs.timeout) }}
         if: >-
-          !contains(env.auditor, '{{auditor}}')
+          !contains(env.auditor, '{{') &&
+          !contains(env.auditor, '}}')
         run: echo "value=${{ env.auditor }}" >> $GITHUB_OUTPUT
 
       - name: Auditor Tag (Error)
@@ -73,7 +72,8 @@ jobs:
         id: project
         timeout-minutes: ${{ fromJSON(inputs.timeout) }}
         if: >-
-          contains(env.project, github.event.repository.name)
+          !contains(env.auditor, '{{') &&
+          !contains(env.auditor, '}}')
         run: echo "value=${{ env.project }}" >> $GITHUB_OUTPUT
 
       - name: Project Tag (Error)

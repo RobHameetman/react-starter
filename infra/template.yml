@@ -27,8 +27,8 @@ Parameters:
 
   Repo:
     Type: String
-    Description: The full url for this repository. (e.g. https://github.com/RobHameetman/example-repo)
-    Default: {{repo}}
+    Description: The full url for this repository. (e.g. https://github.com/{{org}}/example-repo)
+    Default: https://github.com/{{org}}/{{repo}}
 
   RolloutInterval:
     Type: Number
@@ -38,7 +38,7 @@ Parameters:
   Type:
     Type: String
     Description: The type of deployment ("direct", "blue/green", or "canary").
-    Default: canary
+    Default: direct
 
 Conditions:
   IsDirectDeployment: !Equals [!Ref Type, "direct"]
@@ -49,7 +49,7 @@ Resources:
   Blue:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub '${BucketName}-blue'
+      BucketName: !If [!Or [IsBlueGreenDeployment, IsCanaryDeployment], !Sub '${BucketName}-blue', !Ref BucketName]
       VersioningConfiguration:
         Status: Enabled
       AccessControl: PublicRead

@@ -87,31 +87,3 @@ jobs:
       subdomain: $${{ env.subdomain }}-dev
       skip: ${{ env.CI_SKIP_DEV || env.CI_SKIP_EAST || fromJSON(env.skip-dev) || fromJSON(env.skip-east) }}
       debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
-
-  qa-east:
-    name: 'QA (East)'
-    needs: [tag, build, dev]
-    if: github.repository.archived != true
-    uses: ./.github/workflows/deploy.yml
-    with:
-      env: QA
-      region: east
-      stack: ${{ env.stack }}-qae
-      domain: $${{ env.hostname }}
-      subdomain: $${{ env.subdomain }}-qa
-      skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_EAST || fromJSON(env.skip-qa) || fromJSON(env.skip-east) }}
-      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}
-
-  qa-west:
-    name: 'QA (West)'
-    needs: [tag, build, dev]
-    if: github.repository.archived != true
-    uses: ./.github/workflows/deploy.yml
-    with:
-      env: QA
-      region: west
-      stack: ${{ env.stack }}-qa-west
-      domain: $${{ env.hostname }}
-      subdomain: $${{ env.subdomain }}-qa
-      skip: ${{ env.CI_SKIP_QA || env.CI_SKIP_WEST || fromJSON(env.skip-qa) || fromJSON(env.skip-west) }}
-      debug: ${{ env.CI_DEBUG || fromJSON(env.debug) }}

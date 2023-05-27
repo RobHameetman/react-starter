@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "react-jsx",
+    "module": "esnext",
+		"moduleResolution": "node",
+    "noImplicitAny": true,
+		"noImplicitThis": true,
+		"outDir": "dist/",
+		"paths": {
+			"@host/*": ["src/app/*"],
+			"@remotes/*": ["src/shared/*"],
+			"@test/*": ["test/resources/*"]
+		},
+		"resolveJsonModule": true,
+		"rootDir": ".",
+		"strict": true,
+    "target": "es5",
+  },
+  "files": ["src/index.ts"],
+	"include": [
+		"src/",
+		"typings/",
+	],
+	"exclude": [
+		"node_modules/",
+		"test/e2e/",
+		"typings/cypress.d.ts"
+	]
+}

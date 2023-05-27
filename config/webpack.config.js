@@ -7,7 +7,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const camelCase = require('lodash/camelCase');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
