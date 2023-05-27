@@ -262,7 +262,7 @@ npm i -D --legacy-peer-deps "${devDependencies[@]}"
 # Get dependency versions
 react=$(grep '"version":' node_modules/react/package.json | awk -F'"' '{print $4}')
 typescript=$(grep '"version":' node_modules/typescript/package.json | awk -F'"' '{print $4}')
-webpack=$(grep '"version":' node_modules/wepback/package.json | awk -F'"' '{print $4}')
+webpack=$(grep '"version":' node_modules/webpack/package.json | awk -F'"' '{print $4}')
 
 # Inject placeholder values for each remaining placeholder
 updateRemainingFiles
