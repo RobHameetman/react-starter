@@ -118,7 +118,7 @@
 		"moduleNameMapper": {
 			"^@app/(.*)$": "<rootDir>/src/$1",
 			"^@test/(.*)$": "<rootDir>/test/resources/$1",
-			"^.+\\\\.module\\\\.(css|sass|scss)$": "identity-obj-proxy"
+			"^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
 		},
 		"preset": "ts-jest",
 		"reporters": [
@@ -132,12 +132,12 @@
 			"<rootDir>/src/**/*.spec.{ts,tsx}"
 		],
 		"transform": {
-			"\\\\.ts?(x)$": "ts-jest",
-			"\\\\.(css|scss)$": "<rootDir>/test/jest/config/styleTransform.ts",
-			"^(?!.*\\\\.(ts|tsx|css|json|cjs)$)": "ts-jest"
+			"\\.ts?(x)$": "ts-jest",
+			"\\.(css|scss)$": "<rootDir>/test/jest/config/styleTransform.ts",
+			"^(?!.*\\.(ts|tsx|css|json|cjs)$)": "ts-jest"
 		},
 		"transformIgnorePatterns": [
-			"^.+\\\\.module\\\\.(css|sass|scss)$",
+			"^.+\\.module\\.(css|sass|scss)$",
 			"node_modules/@adobe/css-tools"
 		]
 	},
