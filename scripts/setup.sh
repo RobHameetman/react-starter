@@ -285,7 +285,6 @@ setupEnvVars() {
 		overwrite=${overwrite:-"N"}
 
 		if ! [[ $overwrite =~ $YES_REGEX ]]; then
-			echo "aborting..."
 			return
 		fi
 	fi
