@@ -43,6 +43,8 @@ SUCCESS=false
 
 # List of dependencies required at runtime.
 dependencies=(
+	@datadog/browser-logs
+	@datadog/browser-rum
 	@nextui-org/react
 	@universe/address-parser
 	@welldone-software/why-did-you-render

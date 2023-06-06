@@ -9,11 +9,7 @@ const TO_HAVE_ROUTE = 'toHaveRoute';
  */
 expect.extend({
 	[TO_HAVE_ROUTE](received, ...args) {
-		const {
-			matcherHint,
-			printExpected,
-			printReceived,
-		} = this.utils;
+		const { matcherHint, printExpected, printReceived } = this.utils;
 
 		const options = {
 			isNot: this.isNot,
@@ -22,7 +18,7 @@ expect.extend({
 
 		const [route, routeWith] = args;
 
-		const hasRoute = ($node = received) => {
+		const hasRoute = ($node = received): boolean => {
 			try {
 				if ($node === null) {
 					throw new Error();
@@ -34,33 +30,37 @@ expect.extend({
 				const isRoute = type.name === 'Route';
 
 				if (isRoute) {
-					return 'path' in props &&
+					return (
+						'path' in props &&
 						props.path === route &&
 						(routeWith
-							? (
-									'element' in $node.props &&
-									$node.props.element.type.name === routeWith
-								)
-							: true);
-				} else if (hasChildren) {
+							? 'element' in $node.props &&
+							  $node.props.element.type.name === routeWith
+							: true)
+					);
+				}
+
+				if (hasChildren) {
 					return props.children instanceof Array
 						? props.children.some(hasRoute)
 						: hasRoute(props.children);
-				} else {
-					return hasRoute(type());
 				}
+
+				return hasRoute(type());
 			} catch {
 				return false;
 			}
 		};
 
-		let pass = hasRoute(received);
+		const pass = hasRoute(received);
 
 		const message = (): string =>
 			`${matcherHint(TO_HAVE_ROUTE, 'received', '', options)}\n\n` +
 			`Expected ${printReceived(received)}${
 				pass ? ' not' : ''
-			} to have route ${printExpected(route)}${routeWith ? ` with ${printExpected(routeWith)}` : ''}\n`;
+			} to have route ${printExpected(route)}${
+				routeWith ? ` with ${printExpected(routeWith)}` : ''
+			}\n`;
 
 		return { pass, message };
 	},

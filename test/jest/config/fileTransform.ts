@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const camelcase = require('camelcase');
 
@@ -6,7 +7,7 @@ const camelcase = require('camelcase');
  * @see http://facebook.github.io/jest/docs/en/webpack.html
  */
 module.exports = {
-	process(_, filename) {
+	process(_: unknown, filename: string) {
 		const assetFilename = JSON.stringify(path.basename(filename));
 
 		if (filename.match(/\.svg$/)) {

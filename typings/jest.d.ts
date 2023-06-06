@@ -1,0 +1,11 @@
+declare namespace jest {
+	/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+	interface Matchers<R, T> {
+		toBeGqlMutation(): T;
+		toBeGqlQuery(): T;
+		toEqualZero(): T;
+		toHaveExactRoute(...args: ReadonlyArray<string>): T;
+		toHaveRoute(...args: ReadonlyArray<string>): T;
+		toQuery(name: string): T;
+	}
+}

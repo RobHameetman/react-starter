@@ -13,8 +13,7 @@
 		"noImplicitThis": true,
 		"outDir": "dist/",
 		"paths": {
-			"@host/*": ["src/app/*"],
-			"@remotes/*": ["src/shared/*"],
+			"@app/*": ["src/*"],
 			"@test/*": ["test/resources/*"]
 		},
 		"resolveJsonModule": true,
