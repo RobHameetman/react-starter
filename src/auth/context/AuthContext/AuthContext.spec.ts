@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { AuthContext, isAuthContext } from './AuthContext';
 
 describe('AuthContext', () => {

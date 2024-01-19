@@ -1,17 +1,20 @@
+const fs = require('fs');
 const path = require('path');
 const FriendlyErrorsPlugin = require('@soda/friendly-errors-webpack-plugin');
 const FastRefresh = require('@pmmmwh/react-refresh-webpack-plugin');
 const FastRefreshTS = require('react-refresh-typescript');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ReactServerWebpackPlugin = require('react-server-dom-webpack/plugin');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { AggressiveMergingPlugin } = require('webpack').optimize;
-const { DefinePlugin, EnvironmentPlugin, IgnorePlugin, ProvidePlugin } = require('webpack');
+const { DefinePlugin, IgnorePlugin, ProvidePlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WebpackDevServerWaitpage = require('webpack-dev-server-waitpage');
 const { default: envs } = require('dotenv-conversion');
@@ -43,10 +46,18 @@ const APP_ENVS = Object.freeze([
 	'PROD',
 ]);
 
-const ENV_FILE_PREFIXES = Object.freeze([
+const ENV_VAR_PREFIXES = Object.freeze([
 	'APP_',
 	'CYPRESS_',
+	'DATADOG_',
 	'REACT_APP_',
+]);
+
+const ENV_VAR_INCLUDES = Object.freeze([
+	'HOST',
+	'NODE_ENV',
+	'PORT',
+	'PUBLIC_PATH',
 ]);
 
 /**
@@ -60,7 +71,12 @@ const isDevelopment = PROCESS_ENV.NODE_ENV === 'development';
  */
 const HOST = PROCESS_ENV.HOST || 'localhost';
 const PORT = PROCESS_ENV.PORT || 8080;
-const ANALYZE_BUNDLE = PROCESS_ENV.ANALYZE_BUNDLE;
+const ANALYZE_BUNDLE = PROCESS_ENV.ANALYZE_BUNDLE || false;
+
+/**
+ * Determine whether or not to use experimental React Server Components.
+ */
+const ENABLE_SERVER_COMPONENTS = PROCESS_ENV.APP_ENABLE_SERVER_COMPONENTS || false;
 
 /**
  * Set the `PUBLIC_PATH` from .env or use `'/'` by default.
@@ -89,11 +105,13 @@ const loadAppEnvVars = (processEnv = PROCESS_ENV) => {
   }
 
 	Object.keys(processEnv).forEach((envVariable) => {
-		const noMatchingPrefix = !ENV_FILE_PREFIXES.some((prefix) =>
+		const noMatchingPrefix = !ENV_VAR_PREFIXES.some((prefix) =>
 			envVariable.includes(prefix),
 		);
 
-		if (noMatchingPrefix) {
+		const notAutomaticallyIncluded = !ENV_VAR_INCLUDES.includes(envVariable);
+
+		if (noMatchingPrefix && notAutomaticallyIncluded) {
 			return;
 		}
 
@@ -107,6 +125,14 @@ const loadAppEnvVars = (processEnv = PROCESS_ENV) => {
 		}
 	});
 
+	if (!envVars['APP_NAME']) {
+		envVars['APP_NAME'] = processEnv['npm_package_name'];
+	}
+
+	if (!envVars['APP_VERSION']) {
+		envVars['APP_VERSION'] = processEnv['npm_package_version'];
+	}
+
 	return envVars;
 };
 
@@ -115,6 +141,7 @@ const STYLE_LOADERS = {
 		default: {
 			loader: 'css-loader',
 			options: {
+				importLoaders: 2,
 				url: false,
 			},
 		},
@@ -146,9 +173,9 @@ const STYLE_LOADERS = {
  * Configure Webpack build pipeline.
  */
 module.exports = () => ({
-	entry: ['./src/polyfills.ts', './src/index.ts'],
+	entry: ['react-server-dom-webpack/client', './src/polyfills.ts', './src/index.ts'],
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(process.cwd(), 'dist'),
 		publicPath: isDevelopment ? `/` : PUBLIC_PATH,
 		filename: isDevelopment ? '[name].js' : '[name].[contenthash].min.js',
 		chunkFilename: isDevelopment ? '[name].js' : '[name].[contenthash].min.js',
@@ -179,6 +206,39 @@ module.exports = () => ({
 		compress: true,
 		devMiddleware: {
 			writeToDisk: PROCESS_ENV.WEBPACK_SERVE_FROM_DISK || isProduction,
+		},
+		onListening: (devServer) => {
+			/**
+			 * Change to `true` to continue experimenting with React Server Components.
+			 */
+			if (false) {
+				const register = require('react-server-dom-webpack/node-register');
+
+				register();
+
+				const { default: ReactApp } = require(path.resolve(process.cwd(), 'dist/bundle.js'));
+
+				const renderApp = (req, res) => {
+					const { renderToPipeableStream } = require('react-server-dom-webpack/server');
+					const React = require('react');
+
+					const manifest = fs.readFileSync(
+						path.resolve(process.cwd(), '/dist/react-client-manifest.json'),
+						'utf8'
+					);
+
+					const moduleMap = JSON.parse(manifest);
+
+					const { pipe } = renderToPipeableStream(
+						React.createElement(ReactApp, props),
+						moduleMap
+					);
+
+					pipe(res);
+				}
+
+				devServer.app.use(renderApp);
+			}
 		},
 		setupMiddlewares: (middlewares, server) => {
 			server.app.use(WebpackDevServerWaitpage(server, { theme: 'dark' }));
@@ -250,19 +310,21 @@ module.exports = () => ({
 			threads: true,
 			cache: isDevelopment,
 		}),
-		new EnvironmentPlugin({
-			...loadAppEnvVars(),
-			BUILD_ENVIRONMENT: PROCESS_ENV.NODE_ENV || undefined,
-			NODE_ENV: PROCESS_ENV.NODE_ENV || 'development',
-			SOURCE_VERSION: PROCESS_ENV.GITHUB_SHA || '',
-			PUBLIC_PATH,
-		}),
+		ENABLE_SERVER_COMPONENTS && new ReactServerWebpackPlugin({ isServer: false }),
 		new CaseSensitivePathsPlugin(),
 		new DefinePlugin({
+			'process.env': JSON.stringify(loadAppEnvVars()),
 			__EVENTS__: 'window.$events',
-			__DEV__: PROCESS_ENV.NODE_ENV === 'development',
-			__PROD__: PROCESS_ENV.NODE_ENV === 'production',
+			__DEBUG__: PROCESS_ENV.DEBUG || PROCESS_ENV.APP_DEBUG,
+			__DEV__: PROCESS_ENV.NODE_ENV === 'development' && (PROCESS_ENV.APP_ENV !== 'QA' || PROCESS_ENV.APP_ENV !== 'PROD'),
+			__PROD__: PROCESS_ENV.NODE_ENV === 'production' && (PROCESS_ENV.APP_ENV === 'QA' || PROCESS_ENV.APP_ENV === 'PROD'),
 			__TEST__: PROCESS_ENV.NODE_ENV === 'test',
+		}),
+		new CopyPlugin({
+			patterns: [
+				{ from: `${process.cwd()}/src/theme/tokens/themes/light/light.css`, to: `${process.cwd()}/dist/themes/light.css` },
+				{ from: `${process.cwd()}/src/theme/tokens/themes/dark/dark.css`, to: `${process.cwd()}/dist/themes/dark.css` },
+			],
 		}),
 		new CleanWebpackPlugin(),
 		isDevelopment && new FastRefresh(),
@@ -349,8 +411,8 @@ module.exports = () => ({
 	},
 	resolve: {
 		alias: {
-			'@app': path.resolve(__dirname, 'src/'),
-			'@test': path.resolve(__dirname, 'test/resources/'),
+			'@app': path.resolve(process.cwd(), 'src/'),
+			'@test': path.resolve(process.cwd(), 'test/resources/'),
 		},
 		extensions: ['.tsx', '.ts', '.css', '.scss', '.js'],
 		fallback: {

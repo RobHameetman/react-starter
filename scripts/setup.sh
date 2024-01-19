@@ -124,24 +124,24 @@ devDependencies=(
 )
 
 packageJsonOrder='{
-	name, 
-	version, 
-	description, 
-	author, 
-	homepage, 
-	license, 
-	private, 
-	main, 
-	repository, 
-	bugs, 
-	scripts, 
-	dependencies, 
-	devDependencies, 
-	browserslist, 
-	eslintConfig, 
-	prettier, 
-	stylelint, 
-	jest, 
+	name,
+	version,
+	description,
+	author,
+	homepage,
+	license,
+	private,
+	main,
+	repository,
+	bugs,
+	scripts,
+	dependencies,
+	devDependencies,
+	browserslist,
+	eslintConfig,
+	prettier,
+	stylelint,
+	jest,
 	postcss
 }'
 
@@ -162,7 +162,7 @@ node="${nodejs%%.*}"
 npmjs=$(npm -v)
 npm="${npmjs%%.*}"
 
-# These are initialized to an empty string because we can only get the once 
+# These are initialized to an empty string because we can only get the once
 # we've finished installing our dependencies.
 react=""
 typescript=""
@@ -282,16 +282,19 @@ updateRemainingFiles() {
 
 # Copy .env.example to .env
 setupEnvVars() {
-	if [ -f ".env" ]; then
-		read -r -p "The .env file already exists. Do you want to overwrite it? (y/N): " overwrite
-		overwrite=${overwrite:-"N"}
+	if [ -f ".env.example" ]; then
+		if [ -f ".env" ]; then
+			read -r -p "The .env file already exists. Do you want to overwrite it? (y/N): " overwrite
+			overwrite=${overwrite:-"N"}
 
-		if ! [[ $overwrite =~ $YES_REGEX ]]; then
-			return
+			if ! [[ $overwrite =~ $YES_REGEX ]]; then
+				echo "aborting..."
+				return
+			fi
 		fi
-	fi
 
-	cp .env.example .env
+		cp .env.example .env
+	fi
 }
 
 correctPackageJsonOrder() {

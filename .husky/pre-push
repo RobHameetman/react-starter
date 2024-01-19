@@ -1,0 +1,4 @@
+#!/bin/sh
+npm run build
+npm test -- --coverage --silent --watchAll=false --maxWorkers=50%
+npm run e2e

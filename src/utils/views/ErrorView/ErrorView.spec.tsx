@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { FC } from 'react';
+import { $FC } from 'react';
 import { renderView } from '@test/utils';
 import { ErrorView } from './ErrorView';
 
 let MockNav: jest.Mock | undefined;
 
 jest.mock('@host/nav', () => {
-	MockNav = jest.fn((({ children }) => <>{children}</>) as FC);
+	MockNav = jest.fn((({ children }) => <>{children}</>) as $FC);
 
 	return {
 		__esModule: true,
-		MemberNav: MockNav,
+		Nav: MockNav,
 	};
 });
 

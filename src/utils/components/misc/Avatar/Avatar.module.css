@@ -1,0 +1,35 @@
+.avatar {
+	align-items: center;
+	border-radius: 50%;
+	display: flex;
+	font-size: 0.875rem;
+	height: 2em;
+	justify-content: center;
+	overflow: hidden;
+	width: 2em;
+
+	&.fallback {
+		background-color: var(--grey-500);
+		color: var(--color-text);
+	}
+
+	&.xs {
+		font-size: 0.625rem;
+	}
+
+	&.sm {
+		font-size: 0.75rem;
+	}
+
+	&.lg {
+		font-size: 1rem;
+	}
+
+	&.xl {
+		font-size: 1.125rem;
+	}
+}
+
+button.avatar {
+	cursor: pointer;
+}

@@ -1,0 +1,15 @@
+/*
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║                        Box Shadows | Design Tokens                        ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ *                        A ditonic scale of box shadows.
+ */
+:root {
+	/* Box Shadows */
+	--box-shadow-1: 0 calc(var(--base-length) * 0.125) calc(var(--base-length) * 0.325) 0 #00000029;
+	--box-shadow-2: 0 calc(var(--base-length) * 0.325) calc(var(--base-length) * 1.125) 0 #00000029;
+
+	/* Relative Box Shadows */
+	--box-shadow-relative-1: 0 calc(var(--relative-base-length) * 0.125) calc(var(--relative-base-length) * 0.325) 0 #00000029;
+	--box-shadow-relative-2: 0 calc(var(--relative-base-length) * 0.325) calc(var(--relative-base-length) * 1.125) 0 #00000029;
+}

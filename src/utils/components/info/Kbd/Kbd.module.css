@@ -1,0 +1,19 @@
+.kbd {
+	background-color: #0000000D;
+	border: 1px solid var(--grey-200);
+	border-radius: var(--relative-border-radius-4);
+	color: currentColor;
+	filter: var(--drop-shadow-center-1);
+	font-size: 0.6em;
+	font-weight: var(--font-weight-light);
+	padding: 0.125em 0.375em;
+
+	abbr {
+		border-bottom: none;
+		text-decoration: none;
+	}
+
+	> *:not(:first-child) {
+		margin-left: 0.125em;
+	}
+}

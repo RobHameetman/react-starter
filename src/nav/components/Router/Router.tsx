@@ -1,4 +1,4 @@
-import { FC, useLayoutEffect, useState } from 'react';
+import { FC, startTransition, useLayoutEffect, useState } from 'react';
 import {
 	RouterProps as ReactRouterProps,
 	Router as ReactRouter,
@@ -26,7 +26,6 @@ interface RouterProps extends Omit<ReactRouterProps, 'location' | 'navigator'> {
  * virtual DOM node.
  */
 export const Router: FC<RouterProps> = ({ history, ...props }) => {
-	console.log('rendering Router.tsx');
 	const [state, setState] = useState({
 		action: history.action,
 		location: history.location,
@@ -44,3 +43,5 @@ export const Router: FC<RouterProps> = ({ history, ...props }) => {
 		/>
 	);
 };
+
+export default Router;

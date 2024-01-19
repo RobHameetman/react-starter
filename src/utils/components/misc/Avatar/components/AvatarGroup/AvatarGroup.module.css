@@ -1,0 +1,32 @@
+.avatarGroup {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 0.3125em;
+
+	&:global(.vertical) {
+		flex-direction: column;
+		width: fit-content;
+	}
+
+	.label {
+		color: var(--primary-color);
+		font-size: 0.875rem;
+		font-weight: var(--font-weight-semibold);
+
+		&.xs {
+			font-size: 0.625rem;
+		}
+
+		&.sm {
+			font-size: 0.75rem;
+		}
+
+		&.lg {
+			font-size: 1rem;
+		}
+
+		&.xl {
+			font-size: 1.125rem;
+		}
+	}
+}

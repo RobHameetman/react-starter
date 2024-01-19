@@ -1,0 +1,13 @@
+.cardBody {
+	align-items: inherit;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	height: auto;
+	overflow-y: auto;
+	padding: 1.25rem 2rem 2.5rem 2rem;
+	place-content: inherit;
+	position: relative;
+	text-align: left;
+	width: 100%;
+}

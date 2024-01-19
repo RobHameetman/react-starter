@@ -4,9 +4,12 @@
 		"./*.ts",
 		"../matchers/*",
 		"../resources/*",
+		"../../../typings/experimental.d.ts",
 		"../../../typings/jest.d.ts",
-		"../../../typings/window.d.ts"
-, "../matchers/misc/toEqualZero", "../matchers/graphql/toQuery", "../matchers/analytics/toCallZendesk"	],
+		"../../../typings/window.d.ts",
+		"../matchers/misc/toEqualZero",
+		"../matchers/graphql/toQuery"
+	],
 	"exclude": [
 		"../../e2e/",
 		"../../../node_modules/",

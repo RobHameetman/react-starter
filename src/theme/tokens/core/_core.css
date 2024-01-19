@@ -1,0 +1,57 @@
+/*
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║                            Core | Design Tokens                           ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ *              A set of core tokens used throughout the design system.
+ */
+:root {
+	/* Lengths */
+	--base-length: 1rem;
+	--relative-base-length: 1em;
+
+	/* Scales */
+	--dodecatonic: 12;
+	--undecatonic: 11;
+	--decatonic: 10;
+	--nonatonic: 9;
+	--octatonic: 8;
+	--heptatonic: 7;
+	--hexatonic: 6;
+	--pentatonic: 5;
+	--tetratonic: 4;
+	--tritonic: 3;
+	--ditonic: 2;
+	--monotonic: 1;
+
+	/* Ratios */
+	--quartic-ratio: 4;
+	--cubic-ratio: 3;
+	--quadratic-ratio: 2;
+	--classic-ratio: 2;
+	--golden-ratio: 1.618033988749895;
+
+	/* Aspect Ratios */
+	--aspect-ratio-21x9: 2.37;
+	--aspect-ratio-2x1: 2;
+	--aspect-ratio-37x20: 1.85;
+	--aspect-ratio-16x9: 1.77;
+	--aspect-ratio-16x10: 1.6;
+	--aspect-ratio-3x2: 1.5;
+	--aspect-ratio-4x3: 1.33;
+	--aspect-ratio-1x1: 1;
+	--aspect-ratio-9x16: 0.5625;
+
+	/* Device Modes */
+	--portrait: var(--aspect-ratio-9x16);
+	--landscape: var(--aspect-ratio-16x9);
+
+	/* Displays */
+	--square: var(--aspect-ratio-1x1);
+	--fullscreen: var(--aspect-ratio-4x3);
+	--dslr: var(--aspect-ratio-3x2);
+	--widescreen: var(--aspect-ratio-16x9);
+	--desktop: var(--aspect-ratio-16x10);
+	--cinematic: var(--aspect-ratio-37x20);
+	--univisium: var(--aspect-ratio-2x1);
+	--anamorphic: var(--aspect-ratio-21x9);
+}

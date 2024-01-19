@@ -1,0 +1,8 @@
+/*
+ * Tailwind somehow always overrides our tokens when these are included in
+ * App.css. Instead, we include them here and import them in App.tsx before
+ * importing App.css to ensure the proper order.
+ */
+/* @import "tailwindcss/base"; */
+/* @import "tailwindcss/components"; */
+@import "tailwindcss/utilities";

@@ -1,6 +1,8 @@
 import { createContext } from 'react';
-import isObject from 'lodash/isObject';
-import isString from 'lodash/isString';
+import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
+import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isString } from '@app/utils/functions/check/js/core/isString';
+import { User, isUser } from '@app/users//types/User';
 
 /**
  * This context/provider is used within the {@link AuthProvider} component to
@@ -8,9 +10,31 @@ import isString from 'lodash/isString';
  */
 export interface AuthContext {
 	/**
-	 * @TODO
+	 * The client ID provided by Cognito to verify the correct user pool.
 	 */
-	readonly key: string;
+	readonly clientId: string;
+
+	/**
+	 * The client secret provided by Cognito to verify the correct user pool.
+	 */
+	readonly clientSecret: string;
+
+	/**
+	 * The URI used to redirect the user after signing in.
+	 */
+	readonly redirectUri: string;
+
+	/**
+	 * Determines if the user is signed in.
+	 * @defaultValue - `false`
+	 */
+	readonly signedIn: boolean;
+
+	/**
+	 * User data returned from the Cognito User Pool.
+	 * @defaultValue - `null`
+	 */
+	readonly user: User | null;
 }
 
 /**
@@ -18,9 +42,29 @@ export interface AuthContext {
  */
 export const INITIAL_AUTH_CONTEXT: AuthContext = Object.freeze({
 	/**
-	 * Default value for {@link AuthContext.key}.
+	 * Default value for {@link AuthContext.clientId}.
 	 */
-	key: '',
+	clientId: '',
+
+	/**
+	 * Default value for {@link AuthContext.clientSecret}.
+	 */
+	clientSecret: '',
+
+	/**
+	 * Default value for {@link AuthContext.redirectUri}.
+	 */
+	redirectUri: '',
+
+	/**
+	 * Default value for {@link AuthContext.signedIn}.
+	 */
+	signedIn: false,
+
+	/**
+	 * Default value for {@link AuthContext.user}.
+	 */
+	user: null,
 });
 
 /**
@@ -33,7 +77,9 @@ export const AuthContext = createContext<AuthContext>(INITIAL_AUTH_CONTEXT);
  *
  * Requirements:
  *   - `value` must be an object.
- *   - `value.key` is required and must be a string.
+ *   - `value.clientId` is required and must be a string.
+ *   - `value.clientSecret` is required and must be a string.
+ *   - `value.redirectUri` is required and must be a string.
  *
  * @param value - An `unknown` value.
  *
@@ -45,7 +91,27 @@ export const isAuthContext = (value: unknown): value is AuthContext =>
 	 */
 	isObject(value) &&
 	/**
-	 * value.key
+	 * value.clientId
 	 */
-	'key' in value &&
-	isString(value.key);
+	'clientId' in value &&
+	isString(value.clientId) &&
+	/**
+	 * value.clientSecret
+	 */
+	'clientSecret' in value &&
+	isString(value.clientSecret) &&
+	/**
+	 * value.redirectUri
+	 */
+	'redirectUri' in value &&
+	isString(value.redirectUri) &&
+	/**
+	 * value.signedIn
+	 */
+	'signedIn' in value &&
+	isBoolean(value.signedIn) &&
+	/**
+	 * value.user
+	 */
+	'user' in value &&
+	(isUser(value.user) || value.user === null);

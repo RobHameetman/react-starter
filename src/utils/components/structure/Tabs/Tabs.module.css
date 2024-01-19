@@ -1,0 +1,26 @@
+/* .tabs {
+	border-bottom: 1px solid var(--tabs-border-color);
+	background-color: var(--tabs-background-color);
+	display: flex;
+	flex-direction: row;
+} */
+
+.tabs {
+	--selector-width: 3px;
+
+	border-bottom: 1px solid var(--tabs-border-color);
+	background-color: var(--tabs-background-color);
+	display: grid;
+	grid-template-rows: 1fr var(--selector-width);
+	justify-content: flex-start;
+	position: relative;
+}
+
+.tabs .selector {
+	background-color: var(--tabs-selector-color);
+	bottom: 0;
+	height: var(--selector-width);
+	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	position: absolute;
+	width: fit-content;
+}

@@ -22,7 +22,7 @@ type Input = Omit<UseLogInput, '_dependencies' | 'severity'>;
 export interface UseLogDebugInput extends Input {
 	/**
 	 * [Optional] Used in tests for mocking and spying.
-	 * @defaultValue `{}`
+	 * @defaultValue - `{}`
 	 */
 	readonly _dependencies?: UseLogDebugDependencies;
 }

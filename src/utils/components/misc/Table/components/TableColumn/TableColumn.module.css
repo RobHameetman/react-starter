@@ -1,0 +1,12 @@
+.tableColumn {
+	background-color: #00000014;
+	padding: 1em 0.75em !important;
+	white-space: nowrap;
+}
+
+.sortButton {
+	min-height: 1.25rem;
+	line-height: 1em;
+	min-width: 2em;
+}
+

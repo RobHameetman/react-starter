@@ -1,7 +1,7 @@
+import { $FC, Suspense } from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router';
-import { FC, Suspense } from 'react';
 
-export const ViewWrapper: FC = ({ children }) => {
+export const ViewWrapper: $FC = ({ children }) => {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
 			<MemoryRouter>

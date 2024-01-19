@@ -14,11 +14,31 @@ declare global {
 
 	namespace NodeJS {
 		type ConvertedProcessEnv = ProcessEnv & {
-			APP_DEBUG?: boolean;
-			APP_ENV?: Envs;
+			/* App */
 			APP_NAME?: string;
+			APP_DEBUG?: boolean;
+			APP_BACKEND_SERVICE?: string;
+			APP_ENABLE_SERVER_COMPONENTS?: boolean;
+			APP_ENV?: Envs;
 			APP_VERSION?: string;
-			APP_ENDPOINT?: string;
+
+			/* Auth */
+			AUTH_ENABLED?: boolean;
+			AUTH_LOGIN_ON_START?: boolean;
+			AUTH_CLIENT_ID?: string;
+			AUTH_CLIENT_SECRET?: string;
+			AUTH_CLIENT_USERNAME?: string;
+			AUTH_USE_REFRESH_TOKEN?: boolean;
+			AUTH_REDIRECT_URI?: string;
+
+			/* Observability */
+			DATADOG_APPLICATION_ID?: string;
+			DATADOG_CLIENT_TOKEN?: string;
+			DATADOG_ENV?: 'development' | 'production';
+			DATADOG_LOGS_ENABLED?: boolean;
+			DATADOG_RUM_ENABLED?: boolean;
+
+			/* Build */
 			HOST?: string;
 			PORT?: number;
 			PUBLIC_PATH?: string;

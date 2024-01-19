@@ -1,0 +1,2921 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> should allow for animations to be disabled explicitly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none notAnimated"
+        id="5"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="5-input"
+          name="5"
+          role="hidden"
+          tabindex="-1"
+          title="5"
+          type="checkbox"
+          value="5"
+        />
+        <div
+          class="container"
+          id="5-container"
+        >
+          <div
+            class="box"
+            id="5-box"
+          />
+          <div
+            class="fill"
+            id="5-fill"
+          />
+          <div
+            class="check"
+            id="5-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="5-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none notAnimated"
+        id="6"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="6-input"
+          name="6"
+          role="hidden"
+          tabindex="-1"
+          title="6"
+          type="checkbox"
+          value="6"
+        />
+        <div
+          class="container"
+          id="6-container"
+        >
+          <div
+            class="box"
+            id="6-box"
+          />
+          <div
+            class="fill"
+            id="6-fill"
+          />
+          <div
+            class="check"
+            id="6-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="6-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md none notAnimated"
+      id="6"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="6-input"
+        name="6"
+        role="hidden"
+        tabindex="-1"
+        title="6"
+        type="checkbox"
+        value="6"
+      />
+      <div
+        class="container"
+        id="6-container"
+      >
+        <div
+          class="box"
+          id="6-box"
+        />
+        <div
+          class="fill"
+          id="6-fill"
+        />
+        <div
+          class="check"
+          id="6-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="6-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should allow the checked state to be controlled externally 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="true"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="7"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          checked=""
+          id="7-input"
+          name="7"
+          role="hidden"
+          tabindex="-1"
+          title="7"
+          type="checkbox"
+          value="7"
+        />
+        <div
+          class="container"
+          id="7-container"
+        >
+          <div
+            class="box"
+            id="7-box"
+          />
+          <div
+            class="fill"
+            id="7-fill"
+          />
+          <div
+            class="check"
+            id="7-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="7-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="true"
+      aria-disabled="false"
+      class="checkbox md none"
+      id="7"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        checked=""
+        id="7-input"
+        name="7"
+        role="hidden"
+        tabindex="-1"
+        title="7"
+        type="checkbox"
+        value="7"
+      />
+      <div
+        class="container"
+        id="7-container"
+      >
+        <div
+          class="box"
+          id="7-box"
+        />
+        <div
+          class="fill"
+          id="7-fill"
+        />
+        <div
+          class="check"
+          id="7-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="7-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should allow the checked state to be controlled externally 2`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="true"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="7"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          checked=""
+          id="7-input"
+          name="7"
+          role="hidden"
+          tabindex="-1"
+          title="7"
+          type="checkbox"
+          value="7"
+        />
+        <div
+          class="container"
+          id="7-container"
+        >
+          <div
+            class="box"
+            id="7-box"
+          />
+          <div
+            class="fill"
+            id="7-fill"
+          />
+          <div
+            class="check"
+            id="7-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="7-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="8"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="8-input"
+          name="8"
+          role="hidden"
+          tabindex="-1"
+          title="8"
+          type="checkbox"
+          value="8"
+        />
+        <div
+          class="container"
+          id="8-container"
+        >
+          <div
+            class="box"
+            id="8-box"
+          />
+          <div
+            class="fill"
+            id="8-fill"
+          />
+          <div
+            class="check"
+            id="8-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="8-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md none"
+      id="8"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="8-input"
+        name="8"
+        role="hidden"
+        tabindex="-1"
+        title="8"
+        type="checkbox"
+        value="8"
+      />
+      <div
+        class="container"
+        id="8-container"
+      >
+        <div
+          class="box"
+          id="8-box"
+        />
+        <div
+          class="fill"
+          id="8-fill"
+        />
+        <div
+          class="check"
+          id="8-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="8-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should come with different styles based on interaction intent 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="12"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="12-input"
+          name="12"
+          role="hidden"
+          tabindex="-1"
+          title="12"
+          type="checkbox"
+          value="12"
+        />
+        <div
+          class="container"
+          id="12-container"
+        >
+          <div
+            class="box"
+            id="12-box"
+          />
+          <div
+            class="fill"
+            id="12-fill"
+          />
+          <div
+            class="check"
+            id="12-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="12-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md none"
+      id="12"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="12-input"
+        name="12"
+        role="hidden"
+        tabindex="-1"
+        title="12"
+        type="checkbox"
+        value="12"
+      />
+      <div
+        class="container"
+        id="12-container"
+      >
+        <div
+          class="box"
+          id="12-box"
+        />
+        <div
+          class="fill"
+          id="12-fill"
+        />
+        <div
+          class="check"
+          id="12-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="12-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should come with different styles based on interaction intent 2`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="12"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="12-input"
+          name="12"
+          role="hidden"
+          tabindex="-1"
+          title="12"
+          type="checkbox"
+          value="12"
+        />
+        <div
+          class="container"
+          id="12-container"
+        >
+          <div
+            class="box"
+            id="12-box"
+          />
+          <div
+            class="fill"
+            id="12-fill"
+          />
+          <div
+            class="check"
+            id="12-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="12-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md error"
+        id="13"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="13-input"
+          name="13"
+          role="hidden"
+          tabindex="-1"
+          title="13"
+          type="checkbox"
+          value="13"
+        />
+        <div
+          class="container"
+          id="13-container"
+        >
+          <div
+            class="box"
+            id="13-box"
+          />
+          <div
+            class="fill"
+            id="13-fill"
+          />
+          <div
+            class="check"
+            id="13-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="13-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md error"
+      id="13"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="13-input"
+        name="13"
+        role="hidden"
+        tabindex="-1"
+        title="13"
+        type="checkbox"
+        value="13"
+      />
+      <div
+        class="container"
+        id="13-container"
+      >
+        <div
+          class="box"
+          id="13-box"
+        />
+        <div
+          class="fill"
+          id="13-fill"
+        />
+        <div
+          class="check"
+          id="13-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="13-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should come with different styles based on interaction intent 3`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="12"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="12-input"
+          name="12"
+          role="hidden"
+          tabindex="-1"
+          title="12"
+          type="checkbox"
+          value="12"
+        />
+        <div
+          class="container"
+          id="12-container"
+        >
+          <div
+            class="box"
+            id="12-box"
+          />
+          <div
+            class="fill"
+            id="12-fill"
+          />
+          <div
+            class="check"
+            id="12-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="12-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md error"
+        id="13"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="13-input"
+          name="13"
+          role="hidden"
+          tabindex="-1"
+          title="13"
+          type="checkbox"
+          value="13"
+        />
+        <div
+          class="container"
+          id="13-container"
+        >
+          <div
+            class="box"
+            id="13-box"
+          />
+          <div
+            class="fill"
+            id="13-fill"
+          />
+          <div
+            class="check"
+            id="13-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="13-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md info"
+        id="14"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="14-input"
+          name="14"
+          role="hidden"
+          tabindex="-1"
+          title="14"
+          type="checkbox"
+          value="14"
+        />
+        <div
+          class="container"
+          id="14-container"
+        >
+          <div
+            class="box"
+            id="14-box"
+          />
+          <div
+            class="fill"
+            id="14-fill"
+          />
+          <div
+            class="check"
+            id="14-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="14-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md info"
+      id="14"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="14-input"
+        name="14"
+        role="hidden"
+        tabindex="-1"
+        title="14"
+        type="checkbox"
+        value="14"
+      />
+      <div
+        class="container"
+        id="14-container"
+      >
+        <div
+          class="box"
+          id="14-box"
+        />
+        <div
+          class="fill"
+          id="14-fill"
+        />
+        <div
+          class="check"
+          id="14-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="14-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should come with different styles based on interaction intent 4`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="12"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="12-input"
+          name="12"
+          role="hidden"
+          tabindex="-1"
+          title="12"
+          type="checkbox"
+          value="12"
+        />
+        <div
+          class="container"
+          id="12-container"
+        >
+          <div
+            class="box"
+            id="12-box"
+          />
+          <div
+            class="fill"
+            id="12-fill"
+          />
+          <div
+            class="check"
+            id="12-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="12-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md error"
+        id="13"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="13-input"
+          name="13"
+          role="hidden"
+          tabindex="-1"
+          title="13"
+          type="checkbox"
+          value="13"
+        />
+        <div
+          class="container"
+          id="13-container"
+        >
+          <div
+            class="box"
+            id="13-box"
+          />
+          <div
+            class="fill"
+            id="13-fill"
+          />
+          <div
+            class="check"
+            id="13-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="13-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md info"
+        id="14"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="14-input"
+          name="14"
+          role="hidden"
+          tabindex="-1"
+          title="14"
+          type="checkbox"
+          value="14"
+        />
+        <div
+          class="container"
+          id="14-container"
+        >
+          <div
+            class="box"
+            id="14-box"
+          />
+          <div
+            class="fill"
+            id="14-fill"
+          />
+          <div
+            class="check"
+            id="14-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="14-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md success"
+        id="15"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="15-input"
+          name="15"
+          role="hidden"
+          tabindex="-1"
+          title="15"
+          type="checkbox"
+          value="15"
+        />
+        <div
+          class="container"
+          id="15-container"
+        >
+          <div
+            class="box"
+            id="15-box"
+          />
+          <div
+            class="fill"
+            id="15-fill"
+          />
+          <div
+            class="check"
+            id="15-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="15-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md success"
+      id="15"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="15-input"
+        name="15"
+        role="hidden"
+        tabindex="-1"
+        title="15"
+        type="checkbox"
+        value="15"
+      />
+      <div
+        class="container"
+        id="15-container"
+      >
+        <div
+          class="box"
+          id="15-box"
+        />
+        <div
+          class="fill"
+          id="15-fill"
+        />
+        <div
+          class="check"
+          id="15-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="15-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should come with different styles based on interaction intent 5`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="12"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="12-input"
+          name="12"
+          role="hidden"
+          tabindex="-1"
+          title="12"
+          type="checkbox"
+          value="12"
+        />
+        <div
+          class="container"
+          id="12-container"
+        >
+          <div
+            class="box"
+            id="12-box"
+          />
+          <div
+            class="fill"
+            id="12-fill"
+          />
+          <div
+            class="check"
+            id="12-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="12-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md error"
+        id="13"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="13-input"
+          name="13"
+          role="hidden"
+          tabindex="-1"
+          title="13"
+          type="checkbox"
+          value="13"
+        />
+        <div
+          class="container"
+          id="13-container"
+        >
+          <div
+            class="box"
+            id="13-box"
+          />
+          <div
+            class="fill"
+            id="13-fill"
+          />
+          <div
+            class="check"
+            id="13-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="13-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md info"
+        id="14"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="14-input"
+          name="14"
+          role="hidden"
+          tabindex="-1"
+          title="14"
+          type="checkbox"
+          value="14"
+        />
+        <div
+          class="container"
+          id="14-container"
+        >
+          <div
+            class="box"
+            id="14-box"
+          />
+          <div
+            class="fill"
+            id="14-fill"
+          />
+          <div
+            class="check"
+            id="14-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="14-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md success"
+        id="15"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="15-input"
+          name="15"
+          role="hidden"
+          tabindex="-1"
+          title="15"
+          type="checkbox"
+          value="15"
+        />
+        <div
+          class="container"
+          id="15-container"
+        >
+          <div
+            class="box"
+            id="15-box"
+          />
+          <div
+            class="fill"
+            id="15-fill"
+          />
+          <div
+            class="check"
+            id="15-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="15-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md warning"
+        id="16"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="16-input"
+          name="16"
+          role="hidden"
+          tabindex="-1"
+          title="16"
+          type="checkbox"
+          value="16"
+        />
+        <div
+          class="container"
+          id="16-container"
+        >
+          <div
+            class="box"
+            id="16-box"
+          />
+          <div
+            class="fill"
+            id="16-fill"
+          />
+          <div
+            class="check"
+            id="16-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="16-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md warning"
+      id="16"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="16-input"
+        name="16"
+        role="hidden"
+        tabindex="-1"
+        title="16"
+        type="checkbox"
+        value="16"
+      />
+      <div
+        class="container"
+        id="16-container"
+      >
+        <div
+          class="box"
+          id="16-box"
+        />
+        <div
+          class="fill"
+          id="16-fill"
+        />
+        <div
+          class="check"
+          id="16-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="16-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should render without props or children 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="1"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="1-input"
+          name="1"
+          role="hidden"
+          tabindex="-1"
+          title="1"
+          type="checkbox"
+          value="1"
+        />
+        <div
+          class="container"
+          id="1-container"
+        >
+          <div
+            class="box"
+            id="1-box"
+          />
+          <div
+            class="fill"
+            id="1-fill"
+          />
+          <div
+            class="check"
+            id="1-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="1-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="2"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="2-input"
+          name="2"
+          role="hidden"
+          tabindex="-1"
+          title="2"
+          type="checkbox"
+          value="2"
+        />
+        <div
+          class="container"
+          id="2-container"
+        >
+          <div
+            class="box"
+            id="2-box"
+          />
+          <div
+            class="fill"
+            id="2-fill"
+          />
+          <div
+            class="check"
+            id="2-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="2-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md none"
+      id="2"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="2-input"
+        name="2"
+        role="hidden"
+        tabindex="-1"
+        title="2"
+        type="checkbox"
+        value="2"
+      />
+      <div
+        class="container"
+        id="2-container"
+      >
+        <div
+          class="box"
+          id="2-box"
+        />
+        <div
+          class="fill"
+          id="2-fill"
+        />
+        <div
+          class="check"
+          id="2-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="2-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should use standardized sizes 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox xs none"
+        id="23"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="23-input"
+          name="23"
+          role="hidden"
+          tabindex="-1"
+          title="23"
+          type="checkbox"
+          value="23"
+        />
+        <div
+          class="container"
+          id="23-container"
+        >
+          <div
+            class="box"
+            id="23-box"
+          />
+          <div
+            class="fill"
+            id="23-fill"
+          />
+          <div
+            class="check"
+            id="23-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="23-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox xs none"
+      id="23"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="23-input"
+        name="23"
+        role="hidden"
+        tabindex="-1"
+        title="23"
+        type="checkbox"
+        value="23"
+      />
+      <div
+        class="container"
+        id="23-container"
+      >
+        <div
+          class="box"
+          id="23-box"
+        />
+        <div
+          class="fill"
+          id="23-fill"
+        />
+        <div
+          class="check"
+          id="23-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="23-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should use standardized sizes 2`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox xs none"
+        id="23"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="23-input"
+          name="23"
+          role="hidden"
+          tabindex="-1"
+          title="23"
+          type="checkbox"
+          value="23"
+        />
+        <div
+          class="container"
+          id="23-container"
+        >
+          <div
+            class="box"
+            id="23-box"
+          />
+          <div
+            class="fill"
+            id="23-fill"
+          />
+          <div
+            class="check"
+            id="23-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="23-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox sm none"
+        id="24"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="24-input"
+          name="24"
+          role="hidden"
+          tabindex="-1"
+          title="24"
+          type="checkbox"
+          value="24"
+        />
+        <div
+          class="container"
+          id="24-container"
+        >
+          <div
+            class="box"
+            id="24-box"
+          />
+          <div
+            class="fill"
+            id="24-fill"
+          />
+          <div
+            class="check"
+            id="24-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="24-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox sm none"
+      id="24"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="24-input"
+        name="24"
+        role="hidden"
+        tabindex="-1"
+        title="24"
+        type="checkbox"
+        value="24"
+      />
+      <div
+        class="container"
+        id="24-container"
+      >
+        <div
+          class="box"
+          id="24-box"
+        />
+        <div
+          class="fill"
+          id="24-fill"
+        />
+        <div
+          class="check"
+          id="24-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="24-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should use standardized sizes 3`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox xs none"
+        id="23"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="23-input"
+          name="23"
+          role="hidden"
+          tabindex="-1"
+          title="23"
+          type="checkbox"
+          value="23"
+        />
+        <div
+          class="container"
+          id="23-container"
+        >
+          <div
+            class="box"
+            id="23-box"
+          />
+          <div
+            class="fill"
+            id="23-fill"
+          />
+          <div
+            class="check"
+            id="23-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="23-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox sm none"
+        id="24"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="24-input"
+          name="24"
+          role="hidden"
+          tabindex="-1"
+          title="24"
+          type="checkbox"
+          value="24"
+        />
+        <div
+          class="container"
+          id="24-container"
+        >
+          <div
+            class="box"
+            id="24-box"
+          />
+          <div
+            class="fill"
+            id="24-fill"
+          />
+          <div
+            class="check"
+            id="24-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="24-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="25"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="25-input"
+          name="25"
+          role="hidden"
+          tabindex="-1"
+          title="25"
+          type="checkbox"
+          value="25"
+        />
+        <div
+          class="container"
+          id="25-container"
+        >
+          <div
+            class="box"
+            id="25-box"
+          />
+          <div
+            class="fill"
+            id="25-fill"
+          />
+          <div
+            class="check"
+            id="25-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="25-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox md none"
+      id="25"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="25-input"
+        name="25"
+        role="hidden"
+        tabindex="-1"
+        title="25"
+        type="checkbox"
+        value="25"
+      />
+      <div
+        class="container"
+        id="25-container"
+      >
+        <div
+          class="box"
+          id="25-box"
+        />
+        <div
+          class="fill"
+          id="25-fill"
+        />
+        <div
+          class="check"
+          id="25-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="25-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should use standardized sizes 4`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox xs none"
+        id="23"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="23-input"
+          name="23"
+          role="hidden"
+          tabindex="-1"
+          title="23"
+          type="checkbox"
+          value="23"
+        />
+        <div
+          class="container"
+          id="23-container"
+        >
+          <div
+            class="box"
+            id="23-box"
+          />
+          <div
+            class="fill"
+            id="23-fill"
+          />
+          <div
+            class="check"
+            id="23-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="23-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox sm none"
+        id="24"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="24-input"
+          name="24"
+          role="hidden"
+          tabindex="-1"
+          title="24"
+          type="checkbox"
+          value="24"
+        />
+        <div
+          class="container"
+          id="24-container"
+        >
+          <div
+            class="box"
+            id="24-box"
+          />
+          <div
+            class="fill"
+            id="24-fill"
+          />
+          <div
+            class="check"
+            id="24-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="24-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="25"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="25-input"
+          name="25"
+          role="hidden"
+          tabindex="-1"
+          title="25"
+          type="checkbox"
+          value="25"
+        />
+        <div
+          class="container"
+          id="25-container"
+        >
+          <div
+            class="box"
+            id="25-box"
+          />
+          <div
+            class="fill"
+            id="25-fill"
+          />
+          <div
+            class="check"
+            id="25-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="25-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox lg none"
+        id="26"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="26-input"
+          name="26"
+          role="hidden"
+          tabindex="-1"
+          title="26"
+          type="checkbox"
+          value="26"
+        />
+        <div
+          class="container"
+          id="26-container"
+        >
+          <div
+            class="box"
+            id="26-box"
+          />
+          <div
+            class="fill"
+            id="26-fill"
+          />
+          <div
+            class="check"
+            id="26-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="26-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox lg none"
+      id="26"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="26-input"
+        name="26"
+        role="hidden"
+        tabindex="-1"
+        title="26"
+        type="checkbox"
+        value="26"
+      />
+      <div
+        class="container"
+        id="26-container"
+      >
+        <div
+          class="box"
+          id="26-box"
+        />
+        <div
+          class="fill"
+          id="26-fill"
+        />
+        <div
+          class="check"
+          id="26-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="26-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<Checkbox /> should use standardized sizes 5`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox xs none"
+        id="23"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="23-input"
+          name="23"
+          role="hidden"
+          tabindex="-1"
+          title="23"
+          type="checkbox"
+          value="23"
+        />
+        <div
+          class="container"
+          id="23-container"
+        >
+          <div
+            class="box"
+            id="23-box"
+          />
+          <div
+            class="fill"
+            id="23-fill"
+          />
+          <div
+            class="check"
+            id="23-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="23-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox sm none"
+        id="24"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="24-input"
+          name="24"
+          role="hidden"
+          tabindex="-1"
+          title="24"
+          type="checkbox"
+          value="24"
+        />
+        <div
+          class="container"
+          id="24-container"
+        >
+          <div
+            class="box"
+            id="24-box"
+          />
+          <div
+            class="fill"
+            id="24-fill"
+          />
+          <div
+            class="check"
+            id="24-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="24-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox md none"
+        id="25"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="25-input"
+          name="25"
+          role="hidden"
+          tabindex="-1"
+          title="25"
+          type="checkbox"
+          value="25"
+        />
+        <div
+          class="container"
+          id="25-container"
+        >
+          <div
+            class="box"
+            id="25-box"
+          />
+          <div
+            class="fill"
+            id="25-fill"
+          />
+          <div
+            class="check"
+            id="25-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="25-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox lg none"
+        id="26"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="26-input"
+          name="26"
+          role="hidden"
+          tabindex="-1"
+          title="26"
+          type="checkbox"
+          value="26"
+        />
+        <div
+          class="container"
+          id="26-container"
+        >
+          <div
+            class="box"
+            id="26-box"
+          />
+          <div
+            class="fill"
+            id="26-fill"
+          />
+          <div
+            class="check"
+            id="26-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="26-label"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        aria-checked="false"
+        aria-disabled="false"
+        class="checkbox xl none"
+        id="27"
+        role="checkbox"
+        tabindex="0"
+      >
+        <input
+          id="27-input"
+          name="27"
+          role="hidden"
+          tabindex="-1"
+          title="27"
+          type="checkbox"
+          value="27"
+        />
+        <div
+          class="container"
+          id="27-container"
+        >
+          <div
+            class="box"
+            id="27-box"
+          />
+          <div
+            class="fill"
+            id="27-fill"
+          />
+          <div
+            class="check"
+            id="27-checkmark"
+          />
+        </div>
+        <label
+          class="label"
+          for="27-label"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-checked="false"
+      aria-disabled="false"
+      class="checkbox xl none"
+      id="27"
+      role="checkbox"
+      tabindex="0"
+    >
+      <input
+        id="27-input"
+        name="27"
+        role="hidden"
+        tabindex="-1"
+        title="27"
+        type="checkbox"
+        value="27"
+      />
+      <div
+        class="container"
+        id="27-container"
+      >
+        <div
+          class="box"
+          id="27-box"
+        />
+        <div
+          class="fill"
+          id="27-fill"
+        />
+        <div
+          class="check"
+          id="27-checkmark"
+        />
+      </div>
+      <label
+        class="label"
+        for="27-label"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

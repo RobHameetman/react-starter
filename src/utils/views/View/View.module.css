@@ -1,3 +1,10 @@
-header {
-	max-height: 5rem;
+.view {
+	display: grid;
+	grid-template-columns: auto 9fr auto;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		'nav nav nav'
+		'sidebar main sidebar'
+		'sidebar footer sidebar';
+	min-height: 100vh;
 }

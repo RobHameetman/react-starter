@@ -1,0 +1,40 @@
+.container {
+	align-items: center;
+	display: flex;
+	flex-grow: 1;
+	padding: 0 0.5rem;
+}
+
+.noValue 
+.match,
+.noMatch {
+	width: 100%;
+}
+
+input {
+	transition: background-color 0.5s;
+}
+
+.noValue > input,
+.match > input,
+.noMatch > input {
+	border-radius: 0.1875rem;
+	padding: 0.1875em 0.1875em 0.1875em 0.25em;
+}
+
+.noValue > input {
+	border: 1px solid #80808024;
+}
+
+.match > input:empty,
+.noMatch > input:empty {
+	color: #353535E3;
+}
+
+.match > input:empty {
+	background-color: #84FA9CB0;
+}
+
+.noMatch > input:empty {
+	background-color: #FA8484B0;
+}

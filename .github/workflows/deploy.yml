@@ -85,7 +85,7 @@ env:
   # Environment Variables
   APP_DEBUG: ${{ vars.APP_DEBUG }}
   APP_VERSION: ${{ github.ref_name }}
-  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  APP_BACKEND_SERVICE: ${{ vars.APP_BACKEND_SERVICE }}
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: ${{ vars.AWS_REGION || vars.DEFAULT_AWS_REGION }}

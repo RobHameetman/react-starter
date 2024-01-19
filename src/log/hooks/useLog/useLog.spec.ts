@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import type { StatusType } from '@datadog/browser-logs';
 import { useLog } from './useLog';
 

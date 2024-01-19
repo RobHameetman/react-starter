@@ -7,7 +7,8 @@ export const useAuth = () => {
 	 */
 
 	return {
-		loading: false,
 		error: null,
+		loading: false,
+		signedIn: true,
 	};
 };

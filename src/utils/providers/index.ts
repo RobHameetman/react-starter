@@ -1,2 +1,2 @@
-export * from './AppProvider';
-export * from './ThemeProvider';
+export * from '../contexts/AppProvider';
+export * from '../contexts/ThemeProvider';

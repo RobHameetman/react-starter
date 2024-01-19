@@ -1,7 +1,10 @@
 import { FC } from 'react';
 import { Route, Routes as Switch } from 'react-router-dom';
 import { useAuth } from '@app/auth/hooks/useAuth';
+import { LoginView, SignupView } from '@app/auth/views';
 import { HomeView } from '@app/home/views/HomeView';
+import { SupportView } from '@app/support/views/SupportView';
+import { NotificationsView, SettingsView } from '@app/users/views';
 import { ErrorView } from '@app/utils/views/ErrorView';
 import { DEFAULT_ERROR_MESSAGE } from '../../constants/DEFAULT_ERROR_MESSAGE';
 
@@ -16,7 +19,6 @@ import { DEFAULT_ERROR_MESSAGE } from '../../constants/DEFAULT_ERROR_MESSAGE';
  * virtual DOM node.
  */
 export const Routes: FC = () => {
-	console.log('loading Routes.tsx');
 	const { loading, error } = useAuth();
 
 	if (!loading && error) {
@@ -25,7 +27,21 @@ export const Routes: FC = () => {
 
 	return (
 		<Switch>
+			{/* Home */}
 			<Route path="/" element={<HomeView />} />
+
+			{/* Auth */}
+			<Route path="/login" element={<LoginView force={__DEV__} />} />
+			<Route path="/join" element={<SignupView force={__DEV__} />} />
+
+			{/* Support */}
+			<Route path="/support" element={<SupportView />} />
+
+			{/* User */}
+			<Route path="/notifications" element={<NotificationsView />} />
+			<Route path="/settings" element={<SettingsView />} />
+
+			{/* Fallback */}
 			<Route
 				path="*"
 				element={<ErrorView name="Error" message={DEFAULT_ERROR_MESSAGE} />}
@@ -33,3 +49,5 @@ export const Routes: FC = () => {
 		</Switch>
 	);
 };
+
+export default Routes;

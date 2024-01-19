@@ -27,6 +27,7 @@ expect.extend({
 			throw new Error(
 				matcherErrorMessage(
 					matcherHint(TO_EQUAL_ZERO, undefined, '', options),
+					/* eslint-disable-next-line new-cap */
 					`${RECEIVED_COLOR('received')} value must be a number`,
 					printWithType('Received', received, printReceived),
 				),

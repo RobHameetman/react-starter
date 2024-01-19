@@ -1,0 +1,293 @@
+@import '../../../../theme/tokens/breakpoints/_breakpoints.css';
+@layer core, variants, overrides;
+
+@layer core {
+	.checkbox {
+		--color: var(--checkbox-color);
+		--color-engaged: var(--checkbox-color-engaged);
+		--strikethrough-color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+		--checkmark-color: var(--white);
+
+		border: 0.1em solid var(--transparent);
+		display: inline-flex;
+		font-size: 0.875rem;
+		justify-content: flex-start;
+		position: relative;
+
+		&:hover {
+			cursor: pointer;
+
+			input[type='checkbox']:not(:disabled) + .container {
+				.box {
+					background-color: var(--checkbox-background-color);
+				}
+			}
+
+			input[type='checkbox']:not(:disabled):checked + .container {
+				.fill {
+					background-color: var(--color-engaged);
+				}
+			}
+
+			&.disabled {
+				cursor: not-allowed;
+			}
+		}
+
+		&.xs {
+			font-size: 0.625rem;
+		}
+
+		&.sm {
+			font-size: 0.75rem;
+		}
+
+		&.lg {
+			font-size: 1rem;
+		}
+
+		&.xl {
+			font-size: 1.125rem;
+		}
+
+		.label {
+			align-self: center;
+			display: inline-flex;
+			color: var(--text-color);
+			transition: color 0.3s ease;
+			font-weight: var(--font-weight-semibold);
+			justify-content: flex-start;
+			max-height: 100%;
+			padding-left: 0.25em;
+			pointer-events: none;
+			position: relative;
+			text-overflow: ellipsis;
+			user-select: none;
+
+			&.strikethrough {
+				color: var(--strikethrough-color);
+			}
+
+			.strikethrough {
+				animation: strikethrough 0.3s ease-in-out forwards;
+				background: var(--strikethrough-color);
+				height: 0.125em;
+				top: calc(50% - 0.5px);
+				position: absolute;
+			}
+		}
+
+		.container {
+			align-items: center;
+			display: flex;
+			height: calc(var(--checkbox-size) * 1.333333);
+			justify-content: center;
+			position: relative;
+			width: calc(var(--checkbox-size) * 1.333333);
+
+			.box {
+				background-color: var(--transparent);
+				border: 0.125rem solid var(--checkbox-background-color);
+				border-radius: var(--checkbox-border-radius);
+				height: var(--checkbox-size);
+				position: absolute;
+				transition: background-color 0.4s ease;
+				width: var(--checkbox-size);
+			}
+
+			.fill {
+				background-color: var(--transparent);
+				border: 0.1em solid var(--transparent);
+				border-radius: var(--checkbox-border-radius);
+				height: var(--checkbox-size);
+				position: absolute;
+				transform: scale(0);
+				transform-origin: center;
+				transition: transform 0.3s ease, background-color 0.2s ease, border 0.2s ease;
+				width: var(--checkbox-size);
+			}
+
+			.check,
+			.dash {
+				height: var(--checkbox-size);
+				position: absolute;
+				width: var(--checkbox-size);
+			}
+		}
+
+		input[type='checkbox'] {
+			display: none;
+		}
+
+		input[type='checkbox']:checked:disabled ~ .label {
+			color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+		}
+
+		input[type='checkbox']:disabled ~ .label {
+			color: color-mix(var(--mix), var(--text-color) 60%, var(--transparent));
+		}
+
+		input[type='checkbox']:checked + .container {
+			.fill {
+				background-color: var(--color);
+				transform: scale(100%);
+			}
+
+			.check {
+				animation: check 0.4s ease 0.3s forwards;
+			}
+
+			.dash {
+				animation: dash 0.2s ease 0.3s forwards;
+			}
+		}
+
+		input[type='checkbox']:checked:disabled + .container {
+			.box {
+				border-color: var(--transparent);
+			}
+
+			.fill {
+				background-color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+			}
+
+			.check,
+			.dash {
+				--checkmark-color: color-mix(var(--mix), var(--white) 60%, var(--transparent));
+			}
+		}
+
+		input[type='checkbox']:not(:checked):disabled + .container {
+			.box {
+				border-color: color-mix(var(--mix), var(--checkbox-background-color) 60%, var(--transparent));
+			}
+
+			.fill {
+				background-color: color-mix(var(--mix), var(--text-color) 60%, var(--transparent));
+			}
+		}
+
+		&.notAnimated {
+			.label {
+				&.strikethrough {
+					text-decoration: line-through;
+				}
+
+				.strikethrough {
+					animation: none;
+					display: none;
+				}
+			}
+
+			.container {
+				.fill {
+					transition: none;
+				}
+
+				.box {
+					transition: none;
+				}
+			}
+
+			input[type='checkbox']:checked + .container {
+				.fill {
+					transform: scale(100%);
+					transition: none;
+				}
+
+				.check {
+					background-color: var(--white);
+					clip-path: polygon(17% 54%, 41% 77%, 82% 36%, 75% 29%, 41% 63%, 23% 46%);
+
+					&.animated {
+						animation: none;
+					}
+				}
+
+				.dash {
+					animation: none;
+					background-color: var(--white);
+					clip-path: polygon(20% 40%, 80% 40%, 80% 60%, 20% 60%);
+				}
+			}
+		}
+	}
+
+	:global(.checkboxGroup) > .checkbox {
+		/* @TODO */
+	}
+
+	:global(.checkboxGroup.vertical) > .checkbox {
+		/* @TODO */
+	}
+
+	.text {
+		align-self: center;
+		display: inline-flex;
+	}
+}
+
+@layer variants {
+	.error{
+		--color: var(--error-color);
+		--color-engaged: var(--error-color-engaged);
+	}
+
+	.info {
+		--color: var(--info-color);
+		--color-engaged: var(--info-color-engaged);
+	}
+
+	.success {
+		--color: var(--success-color);
+		--color-engaged: var(--success-color-engaged);
+	}
+
+	.warning {
+		--color: var(--warning-color);
+		--color-engaged: var(--warning-color-engaged);
+	}
+}
+
+@keyframes check {
+	0% {
+		background-color: var(--transparent);
+		clip-path: polygon(17% 54%, 17% 54%, 23% 46%, 23% 46%, 23% 46%, 23% 46%);
+	}
+	1% {
+		background-color: var(--checkmark-color);
+		clip-path: polygon(17% 54%, 17% 54%, 23% 46%, 23% 46%, 23% 46%, 23% 46%);
+	}
+	40% {
+		background-color: var(--checkmark-color);
+		clip-path: polygon(17% 54%, 41% 77%, 41% 77%, 41% 63%, 41% 63%, 23% 46%);
+	}
+	100% {
+		background-color: var(--checkmark-color);
+		clip-path: polygon(17% 54%, 41% 77%, 82% 36%, 75% 29%, 41% 63%, 23% 46%);
+	}
+}
+
+@keyframes dash {
+	0% {
+		background-color: var(--transparent);
+		clip-path: polygon(17% 54%, 17% 54%, 23% 46%, 23% 46%, 23% 46%, 23% 46%);
+	}
+	1% {
+		background-color: var(--checkmark-color);
+		clip-path: polygon(25% 45%, 25% 45%, 25% 55%, 25% 55%);
+	}
+	100% {
+		background-color: var(--checkmark-color);
+		clip-path: polygon(25% 45%, 75% 45%, 75% 55%, 25% 55%);
+	}
+}
+
+@keyframes strikethrough {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}

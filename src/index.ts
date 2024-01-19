@@ -24,9 +24,7 @@ try {
 		throw new Error(`Did not find any element with ID "${rootId}"`);
 	}
 
-	const { render } = createRoot($root);
-
-	render(createElement(App));
+	createRoot($root).render(createElement(App));
 
 	if (module.hot) {
 		module.hot.accept();
@@ -34,3 +32,5 @@ try {
 } catch (error) {
 	console.error(error);
 }
+
+export default App;

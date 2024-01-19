@@ -1,0 +1,165 @@
+.dark {
+	/* Theme */
+	--app-background-color: var(--slate-900);
+	--content-background-color: var(--app-background-color);
+
+	--focus-color: #0072F5FF;
+	--text-color: var(--slate-100);
+	--text-color-inverse: var(--slate-900);
+	--text-size: var(--body-1-font-size);
+	--icon-color: var(--text-color);
+	--icon-color-inverse: var(--text-color-inverse);
+
+	/* Theme: Forms */
+	--form-background-color: var(--primary-background-color);
+	--form-border: 1px solid var(--secondary-color);
+	--form-border-active: 2px solid var(--tertiary-color);
+	--form-border-hover: 1px solid var(--tertiary-color);
+	--form-text-color: var(--text-color);
+	--form-icon-color: var(--form-text-color);
+	--form-icon-color-engaged: var(--secondary-color-engaged);
+	--form-icon-border-active: 1px solid var(--secondary-color);
+
+	/* Autocomplete */
+	--autocomplete-background-color: var(--secondary-background-color);
+	--autocomplete-border: 1px solid var(--text-color);
+	--autocomplete-border-radius: var(--relative-border-radius-4);
+	--autocomplete-text-color: var(--text-color);
+	--autocomplete-placeholder-color: var(--grey);
+
+	/* Breadcrumbs */
+	--breadcrumb-color: var(--text-color);
+	--breadcrumb-size: 0.875rem;
+
+	/* Buttons */
+	--button-border-radius: var(--relative-border-radius-6);
+	--button-text-color: var(--text-color);
+	--button-text-color-inverse: var(--text-color-inverse);
+	--button-icon-color: var(--button-text-color);
+	--button-icon-color-inverse: var(--button-text-color-inverse);
+
+	/* Card */
+	--card-background-color: var(--content-background-color);
+	--card-border-radius: var(--border-radius-12);
+	--card-divider-color: var(--text-color);
+	--card-shadow: var(--shadow-center-6);
+
+	/* Checkbox */
+	--checkbox-border-radius: var(--relative-border-radius-4);
+	--checkbox-color: var(--slate-400);
+	--checkbox-color-engaged: var(--primary-color);
+	--checkbox-label-color: var(--text-color);
+	--checkbox-label-color-engaged: var(--text-color-engaged);
+	--checkbox-background-color-engaged: var(--secondary-color-engaged);
+
+	/* Divider */
+	--divider-color: var(--text-color);
+	--divider-height: 0.125em;
+
+	/* ErrorPage */
+	--error-page-title-size: 3.75rem;
+	--error-page-subtitle-size: 1.5rem;
+
+	/* Footer */
+	--footer-background-color: var(--black);
+	--footer-text-color: var(--text-color-inverse);
+	--footer-bottom-background-color: var(--tertiary-background-color);
+	--footer-bottom-text-color: var(--text-color-inverse);
+	--footer-logo-width: 19.94rem;
+	--footer-logo-height: 7rem;
+
+	/* Input */
+	--input-background-color: var(--secondary-background-color);
+	--input-border: 1px solid var(--secondary-color);
+	--input-border-engaged: 2px solid var(--tertiary-color);
+	--input-border-radius: var(--relative-border-radius-4);
+	--input-text-color: var(--text-color);
+	--input-placeholder-color: var(--grey);
+
+	/* Link */
+	--link-color: var(--tertiary-color);
+	--link-color-engaged: var(--tertiary-color-engaged);
+
+	/* List */
+	--list-spacing: var(--spacing-8);
+	--list-item-heading-line-height: var(--heading-line-height);
+	--list-item-heading-font-size: 0.875em;
+	--list-item-content-font-size: 0.75em;
+	--list-item-content-line-height: var(--text-line-height);
+	--list-item-content-text-color: var(--text-color);
+
+	/* Loading */
+	--loading-color: var(--primary-color);
+	--loading-duration: 3s;
+	--loading-text-color: var(--text-color);
+	--loading-size: var(--spacing-24);
+
+	/* Logo */
+	--logo-color: var(--text-color);
+	--logo-color-engaged: var(--primary-color-engaged);
+	--logo-divider-color: var(--text-color); /* May not need this one depending on the fate of co-branding */
+	--logo-size: var(--spacing-8);
+
+	/* MenuList */
+	--menu-list-background-color: var(--secondary-background-color);
+	--menu-list-border-radius: var(--border-radius-2);
+	--menu-list-box-shadow: inset 0 0 0 0.0625em var(--off-black);
+	--menu-list-item-line-height: var(--heading-line-height);
+	--menu-list-item-font-size: 0.875em;
+	--menu-list-item-text-color: var(--text-color);
+	--menu-list-item-engaged: var(--secondary-color-engaged);
+	--menu-outlined-border-color: var(--secondary-color);
+
+	/* NavBar */
+	--navbar-border-radius: var(--border-radius-4);
+	--navbar-link-background-color: var(--secondary-background-color);
+	--navbar-link-background-color-engaged: var(--secondary-color-engaged);
+	--navbar-link-border-color-selected: var(--primary-color);
+	--navbar-text-color: var(--text-color);
+
+	/* Overlay */
+	--overlay-color: var(--off-black);
+	--overlay-opacity: 0.5;
+
+	/* Radio */
+	--radio-background-color: var(--grey);
+	--radio-background-selected-color: var(--primary-color);
+	--radio-text-color: var(--text-color);
+	--radio-size: var(--spacing-24);
+
+	/* Select */
+	--select-background-color: var(--secondary-background-color);
+	--select-border: 1px solid var(--text-color);
+	--select-border-radius: var(--relative-border-radius-4);
+	--select-text-color: var(--text-color);
+	--select-placeholder-color: var(--grey);
+
+	/* Tag */
+	--tag-background-color: var(--primary-color);
+	--tag-border: 1px solid var(--primary-color);
+	--tag-border-radius: var(--relative-border-radius-4);
+	--tag-text-color: var(--text-color);
+
+	/* Text Area */
+	--text-area-background-color: var(--secondary-background-color);
+	--text-area-border: 1px solid var(--primary-color);
+	--text-area-border-radius: var(--relative-border-radius-4);
+	--text-area-text-color: var(--text-color);
+	--text-area-placeholder-color: var(--grey);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	color: var(--text-color);
+	font-family: var(--text-font-family);
+	font-size: var(--body-1);
+	font-weight: var(--text-font-weight);
+	line-height: var(--text-line-height);
+	text-rendering: optimizelegibility;
+}

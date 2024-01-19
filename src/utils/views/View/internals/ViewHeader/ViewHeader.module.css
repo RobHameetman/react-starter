@@ -1,0 +1,24 @@
+.header {
+	grid-area: nav;
+	grid-column: span 3;
+	grid-row: 1;
+	max-height: 3.375rem;
+	width: 100%;
+}
+
+.searchBarCommand {
+	margin-right: 0.5em;
+	position: relative;
+	top: 0.1em;
+	vertical-align: middle;
+}
+
+/* .header.sticky {
+	top: 0;
+	position: absolute;
+	z-index: 10;
+} */
+
+.header.sticky {
+	position: sticky;
+}

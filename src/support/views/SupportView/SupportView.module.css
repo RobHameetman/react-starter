@@ -1,0 +1,54 @@
+.content {
+	align-items: center;
+	justify-content: center;
+}
+
+.hero {
+	background-color: var(--primary-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	min-height: 20rem;
+	width: 100%;
+}
+
+.hero .content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero .title {
+	color: var(--white);
+	font: var(--h1);
+	font-size: 2.5rem;
+	font-weight: var(--font-weight-bold);
+	letter-spacing: var(--heading-letter-spacing);
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.hero .search {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.card {
+	display: flex;
+	height: 100%;
+	margin: 2rem auto;
+	max-width: 30rem;
+}
+
+.card .title {
+	align-items: center;
+	color: var(--primary-color);
+	font: var(--h6);
+	font-weight: var(--font-weight-bold);
+	justify-content: center;
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+.card .content {
+	text-align: center;
+}

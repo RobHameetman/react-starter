@@ -28,7 +28,7 @@ env:
   # Environment Variables
   APP_DEBUG: ${{ vars.APP_DEBUG }}
   APP_VERSION: ${{ github.ref_name }}
-  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  APP_BACKEND_SERVICE: ${{ vars.APP_BACKEND_SERVICE }}
   CI_TIMEOUT_SETUP: ${{ vars.CI_TIMEOUT_SETUP }}
   CI_TIMEOUT_DEPLOYMENTS: ${{ vars.CI_TIMEOUT_DEPLOYMENTS }}
   NODE_ENV: production

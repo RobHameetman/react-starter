@@ -6,7 +6,7 @@
  * @returns The value for the given encrypted key or `undefined`.
  */
 export const getItem = (key: string) => {
-	const version = localStorage.getItem(btoa(String(key)));
+	const item = localStorage.getItem(btoa(String(key)));
 
-	return version ? atob(version) : undefined;
+	return item ? atob(item) : undefined;
 };

@@ -49,7 +49,7 @@ export interface UseLogInput {
 	readonly silent?: boolean;
 	/**
 	 * [Optional] Used in tests for mocking and spying.
-	 * @defaultValue `{}`
+	 * @defaultValue - `{}`
 	 */
 	readonly _dependencies?: UseLogDependencies;
 }

@@ -8,13 +8,14 @@ type GlobalThis = Window &
 	};
 
 declare global {
+	/**
+	 * @TODO: Update this type definition if you need to add to the Window object.
+	 */
 	interface Window {
-		/**
-		 * @TODO: Update this type definition if you need to add to the Window object.
-		 */
 		readonly DD_LOGS?: unknown;
-		readonly DD_RUM?: Rum;
-		readonly DD_RUM_SYNTHETICS?: Rum;
+		readonly DD_RUM?: unknown;
+		readonly DD_RUM_SYNTHETICS?: unknown;
+		readonly $events: unknown;
 	}
 }
 

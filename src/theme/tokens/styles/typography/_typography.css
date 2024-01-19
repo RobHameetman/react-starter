@@ -1,0 +1,343 @@
+/*
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║                         Typography | Design Tokens                        ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ *                     A golden dodecatonic typographic scale.
+ */
+@font-face {
+	font-family: 'Titillium Web';
+	src: url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap') format('woff2');
+}
+
+@font-face {
+	font-family: 'OCR B';
+	src: url('https://use.typekit.net/af/48c34d/000000000000000000012e5d/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2'),
+		url('https://use.typekit.net/af/48c34d/000000000000000000012e5d/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff'),
+		url('https://use.typekit.net/af/48c34d/000000000000000000012e5d/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('opentype');
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Jali';
+	src: url('https://use.typekit.net/af/fe1f87/0000000000000000774ee01c/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3') format('woff2'),
+		url('https://use.typekit.net/af/fe1f87/0000000000000000774ee01c/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3') format('woff'),
+		url('https://use.typekit.net/af/fe1f87/0000000000000000774ee01c/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3') format('opentype');
+	font-display: auto;
+	font-style: italic;
+	font-weight: 400;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Jali';
+	src: url('https://use.typekit.net/af/665556/0000000000000000774ee01d/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2'),
+		url('https://use.typekit.net/af/665556/0000000000000000774ee01d/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff'),
+		url('https://use.typekit.net/af/665556/0000000000000000774ee01d/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('opentype');
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+
+
+:root {
+	/* Core: Scalar Typographic Tokens */
+	--typographic-scale-ratio: var(--golden-ratio);
+	--typographic-scale-type: var(--dodecatonic);
+
+	/* xᵢ = rⁱ */
+	--rx1: var(--typographic-scale-ratio);
+	--rx2: calc(var(--rx1) * var(--rx1));
+	--rx3: calc(var(--rx2) * var(--rx1));
+	--rx4: calc(var(--rx3) * var(--rx1));
+	--rx5: calc(var(--rx4) * var(--rx1));
+	--rx6: calc(var(--rx5) * var(--rx1));
+	--rx7: calc(var(--rx6) * var(--rx1));
+	--rx8: calc(var(--rx7) * var(--rx1));
+	--rx9: calc(var(--rx8) * var(--rx1));
+	--rx10: calc(var(--rx9) * var(--rx1));
+	--rx11: calc(var(--rx10) * var(--rx1));
+	--rx12: calc(var(--rx11) * var(--rx1));
+
+	/* x₁ = ¹²√r̅¹̅ */
+	--rx1-0: var(--rx1);
+	--rx1-1: calc(( var(--rx1-0) + calc(var(--rx1-0) / var(--rx1-0)) ) / var(--typographic-scale-type));
+	--rx1-2: calc(( var(--rx1-1) + calc(var(--rx1-0) / var(--rx1-1)) ) / var(--typographic-scale-type));
+	--rx1-3: calc(( var(--rx1-2) + calc(var(--rx1-0) / var(--rx1-2)) ) / var(--typographic-scale-type));
+	--rx1-x: calc(( var(--rx1-3) + calc(var(--rx1-0) / var(--rx1-3)) ) / var(--typographic-scale-type));
+
+	/* x₂ = ¹²√r̅²̅ */
+	--rx2-0: var(--rx2);
+	--rx2-1: calc(( var(--rx2-0) + calc(var(--rx2-0) / var(--rx2-0)) ) / var(--typographic-scale-type));
+	--rx2-2: calc(( var(--rx2-1) + calc(var(--rx2-0) / var(--rx2-1)) ) / var(--typographic-scale-type));
+	--rx2-3: calc(( var(--rx2-2) + calc(var(--rx2-0) / var(--rx2-2)) ) / var(--typographic-scale-type));
+	--rx2-x: calc(( var(--rx2-3) + calc(var(--rx2-0) / var(--rx2-3)) ) / var(--typographic-scale-type));
+
+	/* x₃ = ¹²√r̅³̅ */
+	--rx3-0: var(--rx3);
+	--rx3-1: calc(( var(--rx3-0) + calc(var(--rx3-0) / var(--rx3-0)) ) / var(--typographic-scale-type));
+	--rx3-2: calc(( var(--rx3-1) + calc(var(--rx3-0) / var(--rx3-1)) ) / var(--typographic-scale-type));
+	--rx3-3: calc(( var(--rx3-2) + calc(var(--rx3-0) / var(--rx3-2)) ) / var(--typographic-scale-type));
+	--rx3-x: calc(( var(--rx3-3) + calc(var(--rx3-0) / var(--rx3-3)) ) / var(--typographic-scale-type));
+
+	/* x₄ = ¹²√r̅⁴̅ */
+	--rx4-0: var(--rx4);
+	--rx4-1: calc(( var(--rx4-0) + calc(var(--rx4-0) / var(--rx4-0)) ) / var(--typographic-scale-type));
+	--rx4-2: calc(( var(--rx4-1) + calc(var(--rx4-0) / var(--rx4-1)) ) / var(--typographic-scale-type));
+	--rx4-3: calc(( var(--rx4-2) + calc(var(--rx4-0) / var(--rx4-2)) ) / var(--typographic-scale-type));
+	--rx4-x: calc(( var(--rx4-3) + calc(var(--rx4-0) / var(--rx4-3)) ) / var(--typographic-scale-type));
+
+	/* x₅ = ¹²√r̅⁵̅ */
+	--rx5-0: var(--rx5);
+	--rx5-1: calc(( var(--rx5-0) + calc(var(--rx5-0) / var(--rx5-0)) ) / var(--typographic-scale-type));
+	--rx5-2: calc(( var(--rx5-1) + calc(var(--rx5-0) / var(--rx5-1)) ) / var(--typographic-scale-type));
+	--rx5-3: calc(( var(--rx5-2) + calc(var(--rx5-0) / var(--rx5-2)) ) / var(--typographic-scale-type));
+	--rx5-x: calc(( var(--rx5-3) + calc(var(--rx5-0) / var(--rx5-3)) ) / var(--typographic-scale-type));
+
+	/* x₆ = ¹²√r̅⁶̅ */
+	--rx6-0: var(--rx6);
+	--rx6-1: calc(( var(--rx6-0) + calc(var(--rx6-0) / var(--rx6-0)) ) / var(--typographic-scale-type));
+	--rx6-2: calc(( var(--rx6-1) + calc(var(--rx6-0) / var(--rx6-1)) ) / var(--typographic-scale-type));
+	--rx6-3: calc(( var(--rx6-2) + calc(var(--rx6-0) / var(--rx6-2)) ) / var(--typographic-scale-type));
+	--rx6-x: calc(( var(--rx6-3) + calc(var(--rx6-0) / var(--rx6-3)) ) / var(--typographic-scale-type));
+
+	/* x₇ = ¹²√r̅⁷̅ */
+	--rx7-0: var(--rx7);
+	--rx7-1: calc(( var(--rx7-0) + calc(var(--rx7-0) / var(--rx7-0)) ) / var(--typographic-scale-type));
+	--rx7-2: calc(( var(--rx7-1) + calc(var(--rx7-0) / var(--rx7-1)) ) / var(--typographic-scale-type));
+	--rx7-3: calc(( var(--rx7-2) + calc(var(--rx7-0) / var(--rx7-2)) ) / var(--typographic-scale-type));
+	--rx7-x: calc(( var(--rx7-3) + calc(var(--rx7-0) / var(--rx7-3)) ) / var(--typographic-scale-type));
+
+	/* x₈ = ¹²√r̅⁸̅ */
+	--rx8-0: var(--rx8);
+	--rx8-1: calc(( var(--rx8-0) + calc(var(--rx8-0) / var(--rx8-0)) ) / var(--typographic-scale-type));
+	--rx8-2: calc(( var(--rx8-1) + calc(var(--rx8-0) / var(--rx8-1)) ) / var(--typographic-scale-type));
+	--rx8-3: calc(( var(--rx8-2) + calc(var(--rx8-0) / var(--rx8-2)) ) / var(--typographic-scale-type));
+	--rx8-x: calc(( var(--rx8-3) + calc(var(--rx8-0) / var(--rx8-3)) ) / var(--typographic-scale-type));
+
+	/* x₉ = ¹²√r̅⁹̅ */
+	--rx9-0: var(--rx9);
+	--rx9-1: calc(( var(--rx9-0) + calc(var(--rx9-0) / var(--rx9-0)) ) / var(--typographic-scale-type));
+	--rx9-2: calc(( var(--rx9-1) + calc(var(--rx9-0) / var(--rx9-1)) ) / var(--typographic-scale-type));
+	--rx9-3: calc(( var(--rx9-2) + calc(var(--rx9-0) / var(--rx9-2)) ) / var(--typographic-scale-type));
+	--rx9-x: calc(( var(--rx9-3) + calc(var(--rx9-0) / var(--rx9-3)) ) / var(--typographic-scale-type));
+
+	/* x₁₀ = ¹²√r̅¹̅⁰̅ */
+	--rx10-0: var(--rx10);
+	--rx10-1: calc(( var(--rx10-0) + calc(var(--rx10-0) / var(--rx10-0)) ) / var(--typographic-scale-type));
+	--rx10-2: calc(( var(--rx10-1) + calc(var(--rx10-0) / var(--rx10-1)) ) / var(--typographic-scale-type));
+	--rx10-3: calc(( var(--rx10-2) + calc(var(--rx10-0) / var(--rx10-2)) ) / var(--typographic-scale-type));
+	--rx10-x: calc(( var(--rx10-3) + calc(var(--rx10-0) / var(--rx10-3)) ) / var(--typographic-scale-type));
+
+	/* x₁₁ = ¹²√r̅¹̅¹̅ */
+	--rx11-0: var(--rx11);
+	--rx11-1: calc(( var(--rx11-0) + calc(var(--rx11-0) / var(--rx11-0)) ) / var(--typographic-scale-type));
+	--rx11-2: calc(( var(--rx11-1) + calc(var(--rx11-0) / var(--rx11-1)) ) / var(--typographic-scale-type));
+	--rx11-3: calc(( var(--rx11-2) + calc(var(--rx11-0) / var(--rx11-2)) ) / var(--typographic-scale-type));
+	--rx11-x: calc(( var(--rx11-3) + calc(var(--rx11-0) / var(--rx11-3)) ) / var(--typographic-scale-type));
+
+	/* x₁₂ = ¹²√r̅¹̅²̅ */
+	--rx12-0: var(--rx12);
+	--rx12-1: calc(( var(--rx12-0) + calc(var(--rx12-0) / var(--rx12-0)) ) / var(--typographic-scale-type));
+	--rx12-2: calc(( var(--rx12-1) + calc(var(--rx12-0) / var(--rx12-1)) ) / var(--typographic-scale-type));
+	--rx12-3: calc(( var(--rx12-2) + calc(var(--rx12-0) / var(--rx12-2)) ) / var(--typographic-scale-type));
+	--rx12-x: calc(( var(--rx12-3) + calc(var(--rx12-0) / var(--rx12-3)) ) / var(--typographic-scale-type));
+
+	/* f₀ = 1.125rem / 18px */
+	--f0: var(--base-length);
+
+	/* 1.618033988749895 */
+
+	/* fᵢ = f₀ * ¹²√r̅ⁱ̅ */
+	--f12: calc(var(--f0) * var(--rx12-x)); /* ~61.605px */
+	--f11: calc(var(--f0) * var(--rx11-x)); /* ~46.624px */
+	--f10: calc(var(--f0) * var(--rx10-x)); /* ~36.4235px */
+	--f9: calc(var(--f0) * var(--rx9-x));   /* ~29.3483px */
+	--f8: calc(var(--f0) * var(--rx8-x));   /* ~24.3783px */
+	--f7: calc(var(--f0) * var(--rx7-x));   /* ~20.826px */
+	--f6: calc(var(--f0) * var(--rx6-x));   /* ~18.1772px */
+	--f5: calc(var(--f0) * var(--rx5-x));   /* ~16.0338px */
+	--f4: calc(var(--f0) * var(--rx4-x));   /* ~14.1064px */
+	--f3: calc(var(--f0) * var(--rx3-x));   /* ~12.2242px */
+	--f2: calc(var(--f0) * var(--rx2-x));   /* ~10.3386px*/
+	--f1: calc(var(--f0) * var(--rx1-x));   /* ~8.49577px */
+
+	/* Core: Font Families */
+	--arial: 'Arial';
+	--helvetica: 'Helvetica';
+	--jali: 'Jali';
+	--ocrb: 'OCR B';
+	--titillium: 'Titillium Web';
+
+	/* Core: Font Styles */
+	--normal: normal;
+	--italic: italic;
+	--oblique: oblique;
+
+	/* Core: Font Weights */
+	--font-weight-thin: 100;
+	--font-weight-extralight: 200;
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-extrabold: 800;
+	--font-weight-black: 900;
+
+	/* Core: Line Heights */
+	--line-height-standard: 150%;
+	--line-height-smaller: 130%;
+	--line-height-smallest: 100%;
+
+	/* Core: Letter Spacing */
+	--letter-spacing-condensed: -0.05em;
+	--letter-spacing-standard: 0.012em;
+
+	/* Specialized: Heading Properties */
+	--heading-font-family: var(--ocrb), var(--titillium), var(--helvetica), sans-serif;
+	--heading-font-weight: var(--font-weight-light);
+	--heading-line-height: var(--line-height-smallest);
+	--heading-letter-spacing: var(--letter-spacing-condensed);
+
+	/* Specialized: Body Properties */
+	--text-font-family: var(--jali), var(--helvetica), var(--arial), sans-serif;
+	--text-font-weight: var(--regular);
+	--text-line-height: var(--line-height-standard);
+	--text-letter-spacing: var(--letter-spacing-standard);
+
+	/* Specialized: Heading Sizes */
+	--h1-font-size: var(--f11);
+	--h2-font-size: var(--f10);
+	--h3-font-size: var(--f9);
+	--h4-font-size: var(--f8);
+	--h5-font-size: var(--f7);
+	--h6-font-size: var(--f6);
+
+	/* Specialized: Body Sizes */
+	--text-font-size: var(--f0);
+	--subtext-font-size: 1.125rem;
+
+	/* Specialized: Caption Sizes */
+	--caption-font-size: var(--f4);
+	--subcaption-font-size: var(--f3);
+
+	/* Specialized: Markdown Sizes */
+	--footnote-font-size: var(--f4);
+	--toc-heading-font-size: var(--f6);
+	--toc-entry-font-size: var(--f0);
+
+	/* Specialized: Miscellaneous Sizes */
+	--blockquote-font-size: var(--f7);
+	--code-font-size: var(--f0);
+	--equation-font-size: var(--f5);
+
+	/* Specialized: Table Sizes */
+	--table-heading-font-size: var(--f6);
+	--table-text-font-size: var(--f0);
+	--table-footnote-font-size: var(--f4);
+	--table-page-number-font-size: var(--f0);
+
+	/* Specialized: Headings */
+	--h1: var(--heading-font-weight) var(--h1-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--h2: var(--heading-font-weight) var(--h2-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--h3: var(--heading-font-weight) var(--h3-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--h4: var(--heading-font-weight) var(--h4-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--h5: var(--heading-font-weight) var(--h5-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--h6: var(--heading-font-weight) var(--h6-font-size)/var(--heading-line-height) var(--heading-font-family);
+
+	/* Specialized: Body */
+	--text: var(--text-font-weight) var(--text-font-size)/var(--text-line-height) var(--text-font-family);
+	--subtext: var(--text-font-weight) var(--subtext-font-size)/var(--text-line-height) var(--text-font-family);
+
+	/* Specialized: Caption */
+	--caption: var(--font-weight-bold) var(--caption-font-size)/var(--line-height-smaller) var(--text-font-family);
+	--subcaption: var(--text-font-weight) var(--caption-font-size-relative)/var(--line-height-smaller) var(--text-font-family);
+
+	/* Specialized: Markdown */
+	--footnote: var(--text-font-weight) var(--footnote-font-size)/var(--text-line-height) var(--text-font-family);
+	--toc-heading: var(--heading-font-weight) var(--toc-heading-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--toc-entry: var(--text-font-weight) var(--toc-entry-font-size)/var(--text-line-height) var(--text-font-family);
+
+	/* Specialized: Miscellaneous */
+	--blockquote: var(--text-font-weight) var(--blockquote-font-size)/var(--text-line-height) var(--text-font-family);
+	--code: var(--text-font-weight) var(--code-font-size)/var(--text-line-height) var(--text-font-family);
+	--equation: var(--text-font-weight) var(--equation-font-size)/var(--text-line-height) var(--text-font-family);
+
+	/* Specialized: Table */
+	--table-heading: var(--heading-font-weight) var(--table-heading-font-size)/var(--heading-line-height) var(--heading-font-family);
+	--table-text: var(--text-font-weight) var(--table-text-font-size)/var(--text-line-height) var(--text-font-family);
+	--table-footnote: var(--text-font-weight) var(--table-footnote-font-size)/var(--text-line-height) var(--text-font-family);
+	--table-page-number: var(--text-font-weight) var(--table-page-number-font-size)/var(--text-line-height) var(--text-font-family);
+}
+
+/** NOTE: This is a PostCSS @custom-media query defined in _breakpoints.css **/
+/** SEE: https://www.npmjs.com/package/postcss-custom-media                **/
+@media screen and (--md) {
+	:root {
+		/* Specialized: Heading Sizes */
+		--h1-font-size: var(--f12);
+		--h2-font-size: var(--f11);
+		--h3-font-size: var(--f10);
+		--h4-font-size: var(--f9);
+		--h5-font-size: var(--f8);
+		--h6-font-size: var(--f7);
+	}
+}
+
+.f0 { font-size: var(--f0); }
+.f12 { font-size: var(--f12); }
+.f11 { font-size: var(--f11); }
+.f10 { font-size: var(--f10); }
+.f9 { font-size: var(--f9); }
+.f8 { font-size: var(--f8); }
+.f7 { font-size: var(--f7); }
+.f6 { font-size: var(--f6); }
+.f5 { font-size: var(--f5); }
+.f4 { font-size: var(--f4); }
+.f3 { font-size: var(--f3); }
+.f2 { font-size: var(--f2); }
+.f1 { font-size: var(--f1); }
+
+h1, .h1, .heading-1 {
+	font: var(--h1);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+h2, .h2, .heading-2 {
+	font: var(--h2);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+h3, .h3, .heading-3 {
+	font: var(--h3);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+h4, .h4, .heading-4 {
+	font: var(--h4);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+h5, .h5, .heading-5 {
+	font: var(--h5);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+h6, .h6, .heading-6 {
+	font: var(--h6);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+blockquote, .quote, .blockquote {
+	font: var(--blockquote);
+	letter-spacing: var(--text-letter-spacing);
+}
+
+code, .code {
+	font: var(--code);
+	letter-spacing: var(--text-letter-spacing);
+}

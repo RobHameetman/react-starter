@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useLogError } from '@app/log/hooks/useLogError';
-import { DEFAULT_ERROR } from '../../constants/DEFAULT_ERROR';
+import { DEFAULT_ERROR } from '../../constants/misc/DEFAULT_ERROR';
 import { View } from '../View';
 
 /**
@@ -23,7 +23,7 @@ export const ErrorView: FC<Partial<Error>> = (
 
 	return (
 		<View title="Not Found">
-			<View.NavBar />
+			<View.Header />
 			<View.Content>
 				{/**
 				 * @TODO
@@ -33,3 +33,5 @@ export const ErrorView: FC<Partial<Error>> = (
 		</View>
 	);
 };
+
+export default ErrorView;

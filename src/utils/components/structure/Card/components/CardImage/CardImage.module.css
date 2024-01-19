@@ -1,0 +1,10 @@
+.buttonGroup {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 0.3125em;
+
+	&:global(.vertical) {
+		flex-direction: column;
+		width: fit-content;
+	}
+}

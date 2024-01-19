@@ -1,14 +1,19 @@
-import { FC, ErrorInfo, Suspense, useCallback } from 'react';
+import { FC, ErrorInfo, Suspense, lazy, useCallback } from 'react';
 import { Loading } from '@nextui-org/react';
 import { createBrowserHistory } from 'history';
 import { useLogError } from './log/hooks/useLogError';
-import { Routes } from './nav/components/Routes';
-import { Router } from './nav/components/Router';
-import { CatchError } from './utils/components/CatchError';
-import { useDataDog } from './utils/hooks/useDataDog';
-import { AppProvider } from './utils/providers/AppProvider';
-import { ErrorView } from './utils/views/ErrorView';
+import { CatchError } from './utils/components/misc/CatchError';
+import { useGlobalEvents } from './utils/hooks/global/useGlobalEvents';
+import { useDataDog } from './utils/hooks/misc/useDataDog';
+import './tailwind.css';
 import './App.css';
+
+const AppProvider = lazy(
+	() => import('./utils/contexts/AppProvider/AppProvider'),
+);
+const ErrorView = lazy(() => import('./utils/views/ErrorView/ErrorView'));
+const Router = lazy(() => import('./nav/components/Router/Router'));
+const Routes = lazy(() => import('./nav/components/Routes/Routes'));
 
 /**
  * The {{name}} client deployed at `{{subdomain}}.{{hostname}}`.
@@ -17,13 +22,7 @@ import './App.css';
  * virtual DOM.
  */
 export const App: FC = () => {
-	console.log('rendering app...');
-	/*
-	 * useAppVersion({
-	 * 	envKey: 'APP_VERSION',
-	 * });
-	 */
-
+	useGlobalEvents();
 	useDataDog();
 
 	const history = createBrowserHistory();
@@ -46,3 +45,5 @@ export const App: FC = () => {
 		</Suspense>
 	);
 };
+
+export default App;

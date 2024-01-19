@@ -1,0 +1,125 @@
+.input {
+	background-color: var(--transparent);
+	border: none;
+	box-sizing: content-box;
+	color: currentColor;
+	display: inline-flex;
+	flex: 30 1 auto;
+	font-size: var(--f4);
+	height: 1.1876em;
+	line-height: 1.1876;
+	padding: 0.375em 0 0.4375em;
+}
+
+.input:focus {
+	outline: none;
+}
+
+.input[disabled] {
+	color: var(--lightgrey-400);
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.label {
+	display: flex;
+	flex: 0 0 100%;
+	font-size: 0.75em;
+}
+
+.asterisk {
+	font-size: 1.125em;
+	letter-spacing: 0.00938em;
+	width: 1.125em;
+}
+
+.icon {
+	align-self: center;
+	display: inline-flex;
+	font-size: 1.25em;
+	flex: 1 1 auto;
+	line-height: 100%;
+	margin-right: 0.35em;
+	opacity: 0.9;
+}
+
+.outlined {
+	border-radius: 0.25em;
+	padding: 0 1em;
+}
+
+.outlined:hover {
+	border-color: currentColor;
+}
+
+.outlined .input {
+	transform: translateY(calc(-50% + 0.5em));
+}
+
+.outlined .label {
+	overflow: hidden;
+	transform: translateY(-0.8em);
+}
+
+.outlined .icon {
+	transform: translateY(-50%);
+}
+
+.outline {
+	border: 1px solid var(--lightgrey-400);
+	border-radius: inherit;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0 0.5em;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: -0.3125em;
+}
+
+.input:hover ~ .outline {
+	border: 2px solid currentColor;
+}
+
+.input:focus ~ .outline {
+	border: 2px solid var(--primary);
+	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.outline .label {
+	height: 0.6875em;
+	visibility: hidden;
+}
+
+.outlined .showPasswordBtn {
+	transform: translateY(calc(-50% + 0.65em));
+}
+
+.standard .input {
+	border-bottom: 1px solid currentColor;
+}
+
+.standard .input:hover {
+	border-bottom: 2px solid currentColor;
+	transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.standard .input:focus {
+	border-bottom: 2px solid var(--primary);
+}
+
+.standard .input[disabled] {
+	border-bottom: 1px dotted var(--lightgrey-400);
+}
+
+.focused .label,
+.focused .icon {
+	color: var(--primary);
+	transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}

@@ -1,14 +1,18 @@
-.card {
-	display: flex;
-	margin: 2rem auto;
-	max-width: 30rem;
-}
+@layer core, variants, overrides;
 
-.title {
-	text-align: center;
-}
+@layer overrides {
+	.card {
+		display: flex;
+		margin: 2rem auto;
+		max-width: 30rem;
+	}
 
-.content {
-	align-items: center;
-	justify-content: center;
+	.title {
+		text-align: center;
+	}
+
+	.content {
+		align-items: center;
+		justify-content: center;
+	}
 }

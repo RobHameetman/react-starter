@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 declare module 'react' {
-  export interface $FunctionComponent<P = {}> {
-    (props: PropsWithChildren<P>, context?: unknown): ReturnType<FunctionComponent<P>>;
+	export interface $FunctionComponent<P = {}> {
+		(props: PropsWithChildren<P>, context?: unknown): ReturnType<FunctionComponent<P>>;
 		/**
 		 * Note that we have to use key reference types here instead of simply
 		 * extending the {@link FunctionComponent} type because doing so causes the
@@ -12,7 +12,7 @@ declare module 'react' {
 		contextTypes?: FunctionComponent<P>['contextTypes'];
 		defaultProps?: FunctionComponent<P>['defaultProps'];
 		displayName?: FunctionComponent<P>['displayName'];
-  }
+	}
 
 	export type $FC<P = {}> = $FunctionComponent<P>;
 

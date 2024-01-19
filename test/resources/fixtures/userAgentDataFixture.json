@@ -1,0 +1,9 @@
+{
+	"brands": [
+		{ "brand": "Not.A/Brand", "version": "8" },
+		{ "brand": "Chromium", "version": "114" },
+		{ "brand": "Google Chrome", "version": "114" }
+	],
+	"mobile": "false",
+	"platform": "macOS"
+}

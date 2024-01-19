@@ -1,4 +1,4 @@
-import { Errors } from '@app/utils/types/Errors';
+import { Errors } from '@app/utils/types/misc/Errors';
 import { RequestInput, request as _request } from '../request';
 
 /**
@@ -29,7 +29,7 @@ export interface GetRequestInputDependencies {
 export interface GetRequestInput<T, E = Error | Errors> extends Input<T, E> {
 	/**
 	 * [Optional] Used in tests for mocking and spying.
-	 * @defaultValue `{}`
+	 * @defaultValue - `{}`
 	 */
 	readonly _dependencies?: GetRequestInputDependencies;
 }

@@ -1,0 +1,17 @@
+@layer core, variants, overrides;
+
+@layer core {
+	.cardHeader {
+		align-items: center;
+		color: inherit;
+		display: flex;
+		font: var(--h4);
+		flex-shrink: 0;
+		justify-content: flex-start;
+		letter-spacing: var(--heading-letter-spacing);
+		overflow: hidden;
+		padding: 2rem;
+		width: 100%;
+		z-index: 1;
+	}
+}

@@ -1,0 +1,86 @@
+/*
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║                           Shadows | Design Tokens                         ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ *                 A tridirectional dodecatonic scale of drop shadows.
+ */
+:root {
+	/* Shadows */
+	--shadow-left-1: drop-shadow(0.0625rem 0.0625rem 0.0625rem var(--black-fade-80));
+	--shadow-left-2: drop-shadow(0.125rem 0.125rem 0.125rem var(--black-fade-80));
+	--shadow-left-3: drop-shadow(0.1875rem 0.1875rem 0.25rem var(--black-fade-80));
+	--shadow-left-4: drop-shadow(0.25rem 0.25rem 0.3125rem var(--black-fade-80));
+	--shadow-left-5: drop-shadow(0.3125rem 0.3125rem 0.4375rem var(--black-fade-80));
+	--shadow-left-6: drop-shadow(0.375rem 0.375rem 0.5rem var(--black-fade-80));
+	--shadow-left-7: drop-shadow(0.4375rem 0.4375rem 0.625rem var(--black-fade-80));
+	--shadow-left-8: drop-shadow(0.5rem 0.5rem 0.75rem var(--black-fade-80));
+	--shadow-left-9: drop-shadow(0.5625rem 0.5625rem 0.875rem var(--black-fade-80));
+	--shadow-left-10: drop-shadow(0.625rem 0.625rem 0.9375rem var(--black-fade-80));
+	--shadow-left-11: drop-shadow(0.6875rem 0.6875rem 1rem var(--black-fade-80));
+	--shadow-left-12: drop-shadow(0.75rem 0.75rem 1.125rem var(--black-fade-80));
+
+	--shadow-center-1: drop-shadow(0 0.0625rem 0.0625rem var(--black-fade-80));
+	--shadow-center-2: drop-shadow(0 0.125rem 0.125rem var(--black-fade-80));
+	--shadow-center-3: drop-shadow(0 0.1875rem 0.25rem var(--black-fade-80));
+	--shadow-center-4: drop-shadow(0 0.25rem 0.3125rem var(--black-fade-80));
+	--shadow-center-5: drop-shadow(0 0.3125rem 0.4375rem var(--black-fade-80));
+	--shadow-center-6: drop-shadow(0 0.375rem 0.5rem var(--black-fade-80));
+	--shadow-center-7: drop-shadow(0 0.4375rem 0.625rem var(--black-fade-80));
+	--shadow-center-8: drop-shadow(0 0.5rem 0.75rem var(--black-fade-80));
+	--shadow-center-9: drop-shadow(0 0.5625rem 0.875rem var(--black-fade-80));
+	--shadow-center-10: drop-shadow(0 0.625rem 0.9375rem var(--black-fade-80));
+	--shadow-center-11: drop-shadow(0 0.6875rem 1rem var(--black-fade-80));
+	--shadow-center-12: drop-shadow(0 0.75rem 1.125rem var(--black-fade-80));
+
+	--shadow-right-1: drop-shadow(-0.0625rem -0.0625rem 0.0625rem var(--black-fade-80));
+	--shadow-right-2: drop-shadow(-0.125rem -0.125rem 0.125rem var(--black-fade-80));
+	--shadow-right-3: drop-shadow(-0.1875rem -0.1875rem 0.25rem var(--black-fade-80));
+	--shadow-right-4: drop-shadow(-0.25rem -0.25rem 0.3125rem var(--black-fade-80));
+	--shadow-right-5: drop-shadow(-0.3125rem -0.3125rem 0.4375rem var(--black-fade-80));
+	--shadow-right-6: drop-shadow(-0.375rem -0.375rem 0.5rem var(--black-fade-80));
+	--shadow-right-7: drop-shadow(-0.4375rem -0.4375rem 0.625rem var(--black-fade-80));
+	--shadow-right-8: drop-shadow(-0.5rem -0.5rem 0.75rem var(--black-fade-80));
+	--shadow-right-9: drop-shadow(-0.5625rem -0.5625rem 0.875rem var(--black-fade-80));
+	--shadow-right-10: drop-shadow(-0.625rem -0.625rem 0.9375rem var(--black-fade-80));
+	--shadow-right-11: drop-shadow(-0.6875rem -0.6875rem 1rem var(--black-fade-80));
+	--shadow-right-12: drop-shadow(-0.75rem -0.75rem 1.125rem var(--black-fade-80));
+}
+
+.shadow-left-1 { filter: var(--shadow-left-1); }
+.shadow-left-2 { filter: var(--shadow-left-2); }
+.shadow-left-3 { filter: var(--shadow-left-3); }
+.shadow-left-4 { filter: var(--shadow-left-4); }
+.shadow-left-5 { filter: var(--shadow-left-5); }
+.shadow-left-6 { filter: var(--shadow-left-6); }
+.shadow-left-7 { filter: var(--shadow-left-7); }
+.shadow-left-8 { filter: var(--shadow-left-8); }
+.shadow-left-9 { filter: var(--shadow-left-9); }
+.shadow-left-10 {	filter: var(--shadow-left-10); }
+.shadow-left-11 {	filter: var(--shadow-left-11); }
+.shadow-left-12 {	filter: var(--shadow-left-12); }
+
+.shadow-center-1 { filter: var(--shadow-center-1); }
+.shadow-center-2 { filter: var(--shadow-center-2); }
+.shadow-center-3 { filter: var(--shadow-center-3); }
+.shadow-center-4 { filter: var(--shadow-center-4); }
+.shadow-center-5 { filter: var(--shadow-center-5); }
+.shadow-center-6 { filter: var(--shadow-center-6); }
+.shadow-center-7 { filter: var(--shadow-center-7); }
+.shadow-center-8 { filter: var(--shadow-center-8); }
+.shadow-center-9 { filter: var(--shadow-center-9); }
+.shadow-center-10 {	filter: var(--shadow-center-10); }
+.shadow-center-11 {	filter: var(--shadow-center-11); }
+.shadow-center-12 {	filter: var(--shadow-center-12); }
+
+.shadow-right-1 { filter: var(--shadow-right-1); }
+.shadow-right-2 { filter: var(--shadow-right-2); }
+.shadow-right-3 { filter: var(--shadow-right-3); }
+.shadow-right-4 { filter: var(--shadow-right-4); }
+.shadow-right-5 { filter: var(--shadow-right-5); }
+.shadow-right-6 { filter: var(--shadow-right-6); }
+.shadow-right-7 { filter: var(--shadow-right-7); }
+.shadow-right-8 { filter: var(--shadow-right-8); }
+.shadow-right-9 { filter: var(--shadow-right-9); }
+.shadow-right-10 {	filter: var(--shadow-right-10); }
+.shadow-right-11 {	filter: var(--shadow-right-11); }
+.shadow-right-12 {	filter: var(--shadow-right-12); }

@@ -1,0 +1,201 @@
+@import '../../../../theme/tokens/breakpoints/_breakpoints.css';
+@layer core, variants, overrides;
+
+@layer core {
+	.radio {
+		--color: var(--radio-color);
+		--color-engaged: var(--radio-color-engaged);
+		--strikethrough-color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+
+		border: 0.1em solid var(--transparent);
+		display: inline-flex;
+		font-size: 0.875rem;
+		justify-content: flex-start;
+		position: relative;
+
+		&:hover {
+			cursor: pointer;
+
+			input[type='radio']:not(:disabled) + .container {
+				.box {
+					background-color: color-mix(var(--mix), var(--radio-text-color) 60%, var(--transparent));
+				}
+			}
+
+			input[type='radio']:not(:disabled):checked + .container {
+				.box {
+					border: 0.125rem solid var(--color-engaged);
+					background-color: transparent;
+				}
+
+				.fill {
+					background-color: var(--color-engaged);
+				}
+			}
+
+			&.disabled {
+				cursor: not-allowed;
+			}
+		}
+
+		&.xs {
+			font-size: 0.625rem;
+		}
+
+		&.sm {
+			font-size: 0.75rem;
+		}
+
+		&.lg {
+			font-size: 1rem;
+		}
+
+		&.xl {
+			font-size: 1.125rem;
+		}
+
+		.label {
+			align-self: center;
+			display: inline-flex;
+			color: var(--radio-text-color);
+			transition: color 0.3s ease;
+			font-weight: var(--font-weight-semibold);
+			justify-content: flex-start;
+			max-height: 100%;
+			padding-left: 0.25em;
+			pointer-events: none;
+			position: relative;
+			text-overflow: ellipsis;
+			user-select: none;
+		}
+
+		.container {
+			align-items: center;
+			display: flex;
+			height: calc(var(--radio-size) * 1.333333);
+			justify-content: center;
+			position: relative;
+			width: calc(var(--radio-size) * 1.333333);
+
+			.box {
+				background-color: var(--transparent);
+				border: 0.125rem solid var(--radio-text-color);
+				border-radius: 50%;
+				height: var(--radio-size);
+				position: absolute;
+				transition: background-color 0.4s ease;
+				width: var(--radio-size);
+			}
+
+			.fill {
+				background-color: var(--transparent);
+				border: 0.1em solid var(--transparent);
+				border-radius: 50%;
+				height: var(--radio-size);
+				position: absolute;
+				transform: scale(0);
+				transform-origin: center;
+				transition: transform 0.3s ease, background-color 0.2s ease, border 0.2s ease;
+				width: var(--radio-size);
+			}
+		}
+
+		input[type='radio'] {
+			display: none;
+		}
+
+		input[type='radio']:checked:disabled ~ .label {
+			color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+		}
+
+		input[type='radio']:disabled ~ .label {
+			color: color-mix(var(--mix), var(--radio-text-color) 60%, var(--transparent));
+		}
+
+		input[type='radio']:checked + .container {
+			.box {
+				border-color: var(--color);
+			}
+
+			.fill {
+				animation: check 0.2s ease 0.3s forwards;
+				background-color: var(--color);
+				transform: scale(50%);
+			}
+		}
+
+		input[type='radio']:checked:disabled + .container {
+			.box {
+				border-color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+			}
+
+			.fill {
+				background-color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+			}
+		}
+
+		input[type='radio']:not(:checked):disabled + .container {
+			.box {
+				border-color: color-mix(var(--mix), var(--radio-text-color) 60%, var(--transparent));
+			}
+
+			.fill {
+				background-color: color-mix(var(--mix), var(--radio-text-color) 60%, var(--transparent));
+			}
+		}
+
+		&.notAnimated {
+			.container {
+				.fill {
+					transition: none;
+				}
+
+				.box {
+					transition: none;
+				}
+			}
+
+			input[type='radio']:checked + .container {
+				.fill {
+					transform: scale(50%);
+					transition: none;
+				}
+			}
+		}
+	}
+
+	:global(.radioGroup) > .radio {
+		/* @TODO */
+	}
+
+	:global(.radioGroup.vertical) > .radio {
+		/* @TODO */
+	}
+
+	.text {
+		align-self: center;
+		display: inline-flex;
+	}
+}
+
+@layer variants {
+	.error{
+		--color: var(--error-color);
+		--color-engaged: var(--error-color-engaged);
+	}
+
+	.info {
+		--color: var(--info-color);
+		--color-engaged: var(--info-color-engaged);
+	}
+
+	.success {
+		--color: var(--success-color);
+		--color-engaged: var(--success-color-engaged);
+	}
+
+	.warning {
+		--color: var(--warning-color);
+		--color-engaged: var(--warning-color-engaged);
+	}
+}

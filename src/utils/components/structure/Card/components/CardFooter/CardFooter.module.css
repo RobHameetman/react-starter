@@ -1,0 +1,11 @@
+.cardFooter {
+	align-items: center;
+	border-bottom-left-radius: var(--card-border-radius);
+	border-bottom-right-radius: var(--card-border-radius);
+	color: inherit;
+	display: flex;
+	height: auto;
+	overflow: hidden;
+	padding: 2rem;
+	width: 100%;
+}

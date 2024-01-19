@@ -329,7 +329,7 @@ Resources:
 
   OriginAccess:
     Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-    Properties: 
+    Properties:
       CloudFrontOriginAccessIdentityConfig:
           Comment: string-value
     Tags:

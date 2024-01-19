@@ -38,7 +38,7 @@ describe('getItem()', () => {
 	});
 
 	it('should use an encrypted key', () => {
-		expect(btoa).toHaveBeenCalled();
+		expect(btoa).toHaveBeenCalledWith(String(key));
 	});
 
 	it('should return a decrypted value', () => {

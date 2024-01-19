@@ -41,7 +41,7 @@ env:
   APP_DEBUG: ${{ vars.APP_DEBUG }}
   APP_ENV: PROD
   APP_VERSION: ${{ github.ref_name }}
-  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  APP_BACKEND_SERVICE: ${{ vars.APP_BACKEND_SERVICE }}
   AWS_CREDENTIALS: ${{ secrets.AWS_CREDENTIALS }}
   AWS_REGION: ${{ vars.AWS_REGION || vars.DEFAULT_AWS_REGION }}
   CI_DEBUG: ${{ vars.CI_DEBUG }}

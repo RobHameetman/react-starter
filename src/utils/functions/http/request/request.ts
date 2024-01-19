@@ -1,6 +1,6 @@
-import isObject from 'lodash/isObject';
-import noop from 'lodash/noop';
-import { Errors, areErrors } from '@app/utils/types/Errors';
+import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { noop } from '@app/utils/functions/misc/noop';
+import { Errors, areErrors } from '@app/utils/types/misc/Errors';
 
 /**
  * A type alias used to avoid line breaks on line 27.
@@ -36,25 +36,27 @@ export interface RequestInput<T, E = Error | Errors> extends RequestOptions {
 	readonly body?: Record<string, unknown> | BodyInit;
 	/**
 	 * [Optional] An object of query parameters to include in the request URL.
-	 * @defaultValue `{}`
+	 * @defaultValue - `{}`
 	 */
 	readonly queryParams?: Record<string, string>;
 	/**
 	 * [Optional] Specify whether or not the response will be text instead of JSON.
-	 * @defaultValue `false`
+	 * @defaultValue - `false`
 	 */
 	readonly text?: boolean;
 	/**
 	 * [Optional] A callback function to execute when the request fails.
+	 * @defaultValue - A no-op function.
 	 */
 	readonly onError?: (err: E) => void;
 	/**
 	 * [Optional] A callback function to execute when the request succeeds.
+	 * @defaultValue - A no-op function.
 	 */
 	readonly onSuccess?: (data: T) => void;
 	/**
 	 * [Optional] Used in tests for mocking and spying.
-	 * @defaultValue `{}`
+	 * @defaultValue - `{}`
 	 */
 	readonly _dependencies?: RequestInputDependencies;
 }

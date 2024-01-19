@@ -26,6 +26,7 @@ expect.extend({
 			throw new Error(
 				matcherErrorMessage(
 					matcherHint(TO_BE_GQL_MUTATION, undefined, '', options),
+					/* eslint-disable-next-line new-cap */
 					`${RECEIVED_COLOR(
 						'received',
 					)} value must be a valid GraphQL DocumentNode`,

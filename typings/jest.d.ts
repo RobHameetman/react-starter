@@ -6,6 +6,7 @@ declare namespace jest {
 		toEqualZero(): T;
 		toHaveExactRoute(...args: ReadonlyArray<string>): T;
 		toHaveRoute(...args: ReadonlyArray<string>): T;
+		toHaveTabIndex(expected: number): T;
 		toQuery(name: string): T;
 	}
 }

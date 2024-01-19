@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should not regress 1`] = `"<div class=\\"mh0 mb2 mt4 relative flex flex-wrap standard\\"><input aria-label=\\"\\" autocomplete=\\"on\\" class=\\"input\\" id=\\"\\" name=\\"\\" placeholder=\\"\\" type=\\"text\\" value=\\"\\"></div>"`;

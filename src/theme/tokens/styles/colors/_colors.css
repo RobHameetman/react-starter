@@ -1,0 +1,347 @@
+/*
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║                         Typography | Design Tokens                        ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ *                A nonatonic scalar system of tonal gradients and
+ *                   palettes of heterogenous chromaticities.
+ */
+:root {
+	/* Core: Interpolation Tokens */
+	--srgb: in srgb;
+	--srgbl: in srgb-lab;
+	--lab: in lab;
+	--oklab: in oklab;
+	--xyz: in xyz;
+	--xyz50: in xyz-d50;
+	--xyz65: in xyz-d65;
+
+	--hsl-long: in hsl longer hue;
+	--hsl-short: in hsl shorter hue;
+	--hsl-inc: in hsl increasing hue;
+	--hsl-dec: in hsl decreasing hue;
+
+	--hwb-long: in hwb longer hue;
+	--hwb-short: in hwb shorter hue;
+	--hwb-inc: in hwb increasing hue;
+	--hwb-dec: in hwb decreasing hue;
+
+	--lch-long: in lch longer hue;
+	--lch-short: in lch shorter hue;
+	--lch-inc: in lch increasing hue;
+	--lch-dec: in lch decreasing hue;
+
+	--oklch-long: in oklch longer hue;
+	--oklch-short: in oklch shorter hue;
+	--oklch-inc: in oklch increasing hue;
+	--oklch-dec: in oklch decreasing hue;
+
+	--mix: var(--srgb);
+
+	/* Core: One-off Color Tokens */
+	--current: currentColor;
+	--transparent: transparent;
+	--black: #000000FF;
+	--white: #FFFFFFFF;
+	--grey: #B5B5B5FF;
+	--light-grey: #F5F5F5FF;
+	--dark-grey: #363636FF;
+
+	/* Core: Scalar Color Tokens */
+	--amber: #FFC700FF;
+	--amber-light: #FFDD66FF;
+	--amber-dark: #997700FF;
+
+	--azure: #3064B8FF;
+	--azure-light: #3A79DEFF;
+	--azure-dark: #152C52FF;
+
+	--crimson: #A3002CFF;
+	--crimson-light: #C90036FF;
+	--crimson-dark: #3D0010FF;
+
+	--emerald: #188049FF;
+	--emerald-light: #27CC74FF;
+	--emerald-dark: #0C4024FF;
+
+	--slate: #3A3E45FF;
+	--slate-light: #A5AFC4FF;
+	--slate-dark: #2B2E33FF;
+
+	/* Core: Current Tokens */
+	--current-fade-10: color-mix(var(--mix), var(--current) 90%, var(--transparent));
+	--current-fade-20: color-mix(var(--mix), var(--current) 80%, var(--transparent));
+	--current-fade-30: color-mix(var(--mix), var(--current) 70%, var(--transparent));
+	--current-fade-40: color-mix(var(--mix), var(--current) 60%, var(--transparent));
+	--current-fade-50: color-mix(var(--mix), var(--current) 50%, var(--transparent));
+	--current-fade-60: color-mix(var(--mix), var(--current) 40%, var(--transparent));
+	--current-fade-70: color-mix(var(--mix), var(--current) 30%, var(--transparent));
+	--current-fade-80: color-mix(var(--mix), var(--current) 20%, var(--transparent));
+	--current-fade-90: color-mix(var(--mix), var(--current) 10%, var(--transparent));
+
+	/* Core: Black Tokens */
+	--black-100: color-mix(var(--mix), var(--black) 99%, var(--white));
+	--black-200: color-mix(var(--mix), var(--black) 98%, var(--white));
+	--black-300: color-mix(var(--mix), var(--black) 97%, var(--white));
+	--black-400: color-mix(var(--mix), var(--black) 96%, var(--white));
+	--black-500: color-mix(var(--mix), var(--black) 95%, var(--white));
+	--black-600: color-mix(var(--mix), var(--black) 94%, var(--white));
+	--black-700: color-mix(var(--mix), var(--black) 93%, var(--white));
+	--black-800: color-mix(var(--mix), var(--black) 92%, var(--white));
+	--black-900: color-mix(var(--mix), var(--black) 91%, var(--white));
+
+	--black-fade-10: color-mix(var(--mix), var(--black) 90%, var(--transparent));
+	--black-fade-20: color-mix(var(--mix), var(--black) 80%, var(--transparent));
+	--black-fade-30: color-mix(var(--mix), var(--black) 70%, var(--transparent));
+	--black-fade-40: color-mix(var(--mix), var(--black) 60%, var(--transparent));
+	--black-fade-50: color-mix(var(--mix), var(--black) 50%, var(--transparent));
+	--black-fade-60: color-mix(var(--mix), var(--black) 40%, var(--transparent));
+	--black-fade-70: color-mix(var(--mix), var(--black) 30%, var(--transparent));
+	--black-fade-80: color-mix(var(--mix), var(--black) 20%, var(--transparent));
+	--black-fade-90: color-mix(var(--mix), var(--black) 10%, var(--transparent));
+
+	/* Core: White Tokens */
+	--white-100: color-mix(var(--mix), var(--white) 99%, var(--black));
+	--white-200: color-mix(var(--mix), var(--white) 98%, var(--black));
+	--white-300: color-mix(var(--mix), var(--white) 97%, var(--black));
+	--white-400: color-mix(var(--mix), var(--white) 96%, var(--black));
+	--white-500: color-mix(var(--mix), var(--white) 95%, var(--black));
+	--white-600: color-mix(var(--mix), var(--white) 94%, var(--black));
+	--white-700: color-mix(var(--mix), var(--white) 93%, var(--black));
+	--white-800: color-mix(var(--mix), var(--white) 92%, var(--black));
+	--white-900: color-mix(var(--mix), var(--white) 91%, var(--black));
+
+	--white-fade-10: color-mix(var(--mix), var(--white) 90%, var(--transparent));
+	--white-fade-20: color-mix(var(--mix), var(--white) 80%, var(--transparent));
+	--white-fade-30: color-mix(var(--mix), var(--white) 70%, var(--transparent));
+	--white-fade-40: color-mix(var(--mix), var(--white) 60%, var(--transparent));
+	--white-fade-50: color-mix(var(--mix), var(--white) 50%, var(--transparent));
+	--white-fade-60: color-mix(var(--mix), var(--white) 40%, var(--transparent));
+	--white-fade-70: color-mix(var(--mix), var(--white) 30%, var(--transparent));
+	--white-fade-80: color-mix(var(--mix), var(--white) 20%, var(--transparent));
+	--white-fade-90: color-mix(var(--mix), var(--white) 10%, var(--transparent));
+
+	/* Core: Amber Tokens */
+	--amber-100: color-mix(var(--mix), var(--amber) 0%, var(--amber-light));
+	--amber-200: color-mix(var(--mix), var(--amber) 25%, var(--amber-light));
+	--amber-300: color-mix(var(--mix), var(--amber) 50%, var(--amber-light));
+	--amber-400: color-mix(var(--mix), var(--amber) 75%, var(--amber-light));
+	--amber-500: color-mix(var(--mix), var(--amber) 100%, var(--amber-light));
+	--amber-600: color-mix(var(--mix), var(--amber) 75%, var(--amber-dark));
+	--amber-700: color-mix(var(--mix), var(--amber) 50%, var(--amber-dark));
+	--amber-800: color-mix(var(--mix), var(--amber) 25%, var(--amber-dark));
+	--amber-900: color-mix(var(--mix), var(--amber) 0%, var(--amber-dark));
+
+	--amber-fade-10: color-mix(var(--mix), var(--amber) 90%, var(--transparent));
+	--amber-fade-20: color-mix(var(--mix), var(--amber) 80%, var(--transparent));
+	--amber-fade-30: color-mix(var(--mix), var(--amber) 70%, var(--transparent));
+	--amber-fade-40: color-mix(var(--mix), var(--amber) 60%, var(--transparent));
+	--amber-fade-50: color-mix(var(--mix), var(--amber) 50%, var(--transparent));
+	--amber-fade-60: color-mix(var(--mix), var(--amber) 40%, var(--transparent));
+	--amber-fade-70: color-mix(var(--mix), var(--amber) 30%, var(--transparent));
+	--amber-fade-80: color-mix(var(--mix), var(--amber) 20%, var(--transparent));
+	--amber-fade-90: color-mix(var(--mix), var(--amber) 10%, var(--transparent));
+
+	/* Core: Azure Tokens */
+	--azure-100: color-mix(var(--mix), var(--azure) 0%, var(--azure-light));
+	--azure-200: color-mix(var(--mix), var(--azure) 25%, var(--azure-light));
+	--azure-300: color-mix(var(--mix), var(--azure) 50%, var(--azure-light));
+	--azure-400: color-mix(var(--mix), var(--azure) 75%, var(--azure-light));
+	--azure-500: color-mix(var(--mix), var(--azure) 100%, var(--azure-light));
+	--azure-600: color-mix(var(--mix), var(--azure) 75%, var(--azure-dark));
+	--azure-700: color-mix(var(--mix), var(--azure) 50%, var(--azure-dark));
+	--azure-800: color-mix(var(--mix), var(--azure) 25%, var(--azure-dark));
+	--azure-900: color-mix(var(--mix), var(--azure) 0%, var(--azure-dark));
+
+	--azure-fade-10: color-mix(var(--mix), var(--azure) 90%, var(--transparent));
+	--azure-fade-20: color-mix(var(--mix), var(--azure) 80%, var(--transparent));
+	--azure-fade-30: color-mix(var(--mix), var(--azure) 70%, var(--transparent));
+	--azure-fade-40: color-mix(var(--mix), var(--azure) 60%, var(--transparent));
+	--azure-fade-50: color-mix(var(--mix), var(--azure) 50%, var(--transparent));
+	--azure-fade-60: color-mix(var(--mix), var(--azure) 40%, var(--transparent));
+	--azure-fade-70: color-mix(var(--mix), var(--azure) 30%, var(--transparent));
+	--azure-fade-80: color-mix(var(--mix), var(--azure) 20%, var(--transparent));
+	--azure-fade-90: color-mix(var(--mix), var(--azure) 10%, var(--transparent));
+
+	/* Core: Crimson Tokens */
+	--crimson-100: color-mix(var(--mix), var(--crimson) 0%, var(--crimson-light));
+	--crimson-200: color-mix(var(--mix), var(--crimson) 25%, var(--crimson-light));
+	--crimson-300: color-mix(var(--mix), var(--crimson) 50%, var(--crimson-light));
+	--crimson-400: color-mix(var(--mix), var(--crimson) 75%, var(--crimson-light));
+	--crimson-500: color-mix(var(--mix), var(--crimson) 100%, var(--crimson-light));
+	--crimson-600: color-mix(var(--mix), var(--crimson) 75%, var(--crimson-dark));
+	--crimson-700: color-mix(var(--mix), var(--crimson) 50%, var(--crimson-dark));
+	--crimson-800: color-mix(var(--mix), var(--crimson) 25%, var(--crimson-dark));
+	--crimson-900: color-mix(var(--mix), var(--crimson) 0%, var(--crimson-dark));
+
+	--crimson-fade-10: color-mix(var(--mix), var(--crimson) 90%, var(--transparent));
+	--crimson-fade-20: color-mix(var(--mix), var(--crimson) 80%, var(--transparent));
+	--crimson-fade-30: color-mix(var(--mix), var(--crimson) 70%, var(--transparent));
+	--crimson-fade-40: color-mix(var(--mix), var(--crimson) 60%, var(--transparent));
+	--crimson-fade-50: color-mix(var(--mix), var(--crimson) 50%, var(--transparent));
+	--crimson-fade-60: color-mix(var(--mix), var(--crimson) 40%, var(--transparent));
+	--crimson-fade-70: color-mix(var(--mix), var(--crimson) 30%, var(--transparent));
+	--crimson-fade-80: color-mix(var(--mix), var(--crimson) 20%, var(--transparent));
+	--crimson-fade-90: color-mix(var(--mix), var(--crimson) 10%, var(--transparent));
+
+	/* Core: Emerald Tokens */
+	--emerald-100: color-mix(var(--mix), var(--emerald) 0%, var(--emerald-light));
+	--emerald-200: color-mix(var(--mix), var(--emerald) 25%, var(--emerald-light));
+	--emerald-300: color-mix(var(--mix), var(--emerald) 50%, var(--emerald-light));
+	--emerald-400: color-mix(var(--mix), var(--emerald) 75%, var(--emerald-light));
+	--emerald-500: color-mix(var(--mix), var(--emerald) 100%, var(--emerald-light));
+	--emerald-600: color-mix(var(--mix), var(--emerald) 75%, var(--emerald-dark));
+	--emerald-700: color-mix(var(--mix), var(--emerald) 50%, var(--emerald-dark));
+	--emerald-800: color-mix(var(--mix), var(--emerald) 25%, var(--emerald-dark));
+	--emerald-900: color-mix(var(--mix), var(--emerald) 0%, var(--emerald-dark));
+
+	--emerald-fade-10: color-mix(var(--mix), var(--emerald) 90%, var(--transparent));
+	--emerald-fade-20: color-mix(var(--mix), var(--emerald) 80%, var(--transparent));
+	--emerald-fade-30: color-mix(var(--mix), var(--emerald) 70%, var(--transparent));
+	--emerald-fade-40: color-mix(var(--mix), var(--emerald) 60%, var(--transparent));
+	--emerald-fade-50: color-mix(var(--mix), var(--emerald) 50%, var(--transparent));
+	--emerald-fade-60: color-mix(var(--mix), var(--emerald) 40%, var(--transparent));
+	--emerald-fade-70: color-mix(var(--mix), var(--emerald) 30%, var(--transparent));
+	--emerald-fade-80: color-mix(var(--mix), var(--emerald) 20%, var(--transparent));
+	--emerald-fade-90: color-mix(var(--mix), var(--emerald) 10%, var(--transparent));
+
+	/* Core: Slate Tokens */
+	--slate-100: color-mix(var(--mix), var(--slate) 0%, var(--slate-light));
+	--slate-200: color-mix(var(--mix), var(--slate) 25%, var(--slate-light));
+	--slate-300: color-mix(var(--mix), var(--slate) 50%, var(--slate-light));
+	--slate-400: color-mix(var(--mix), var(--slate) 75%, var(--slate-light));
+	--slate-500: color-mix(var(--mix), var(--slate) 100%, var(--slate-light));
+	--slate-600: color-mix(var(--mix), var(--slate) 75%, var(--slate-dark));
+	--slate-700: color-mix(var(--mix), var(--slate) 50%, var(--slate-dark));
+	--slate-800: color-mix(var(--mix), var(--slate) 25%, var(--slate-dark));
+	--slate-900: color-mix(var(--mix), var(--slate) 0%, var(--slate-dark));
+
+	--slate-fade-10: color-mix(var(--mix), var(--slate) 90%, var(--transparent));
+	--slate-fade-20: color-mix(var(--mix), var(--slate) 80%, var(--transparent));
+	--slate-fade-30: color-mix(var(--mix), var(--slate) 70%, var(--transparent));
+	--slate-fade-40: color-mix(var(--mix), var(--slate) 60%, var(--transparent));
+	--slate-fade-50: color-mix(var(--mix), var(--slate) 50%, var(--transparent));
+	--slate-fade-60: color-mix(var(--mix), var(--slate) 40%, var(--transparent));
+	--slate-fade-70: color-mix(var(--mix), var(--slate) 30%, var(--transparent));
+	--slate-fade-80: color-mix(var(--mix), var(--slate) 20%, var(--transparent));
+	--slate-fade-90: color-mix(var(--mix), var(--slate) 10%, var(--transparent));
+
+	/* Core: Grey Tokens */
+	--grey-100: color-mix(var(--mix), var(--grey) 60%, var(--white));
+	--grey-200: color-mix(var(--mix), var(--grey) 70%, var(--white));
+	--grey-300: color-mix(var(--mix), var(--grey) 80%, var(--white));
+	--grey-400: color-mix(var(--mix), var(--grey) 90%, var(--white));
+	--grey-500: color-mix(var(--mix), var(--grey) 100%, var(--white));
+	--grey-600: color-mix(var(--mix), var(--grey) 90%, var(--black));
+	--grey-700: color-mix(var(--mix), var(--grey) 80%, var(--black));
+	--grey-800: color-mix(var(--mix), var(--grey) 70%, var(--black));
+	--grey-900: color-mix(var(--mix), var(--grey) 60%, var(--black));
+
+	--grey-fade-10: color-mix(var(--mix), var(--grey) 90%, var(--transparent));
+	--grey-fade-20: color-mix(var(--mix), var(--grey) 80%, var(--transparent));
+	--grey-fade-30: color-mix(var(--mix), var(--grey) 70%, var(--transparent));
+	--grey-fade-40: color-mix(var(--mix), var(--grey) 60%, var(--transparent));
+	--grey-fade-50: color-mix(var(--mix), var(--grey) 50%, var(--transparent));
+	--grey-fade-60: color-mix(var(--mix), var(--grey) 40%, var(--transparent));
+	--grey-fade-70: color-mix(var(--mix), var(--grey) 30%, var(--transparent));
+	--grey-fade-80: color-mix(var(--mix), var(--grey) 20%, var(--transparent));
+	--grey-fade-90: color-mix(var(--mix), var(--grey) 10%, var(--transparent));
+
+	/* Core: Light Grey Tokens */
+	--light-grey-100: color-mix(var(--mix), var(--light-grey) 92%, var(--white));
+	--light-grey-200: color-mix(var(--mix), var(--light-grey) 94%, var(--white));
+	--light-grey-300: color-mix(var(--mix), var(--light-grey) 96%, var(--white));
+	--light-grey-400: color-mix(var(--mix), var(--light-grey) 98%, var(--white));
+	--light-grey-500: color-mix(var(--mix), var(--light-grey) 100%, var(--white));
+	--light-grey-600: color-mix(var(--mix), var(--light-grey) 98%, var(--black));
+	--light-grey-700: color-mix(var(--mix), var(--light-grey) 96%, var(--black));
+	--light-grey-800: color-mix(var(--mix), var(--light-grey) 94%, var(--black));
+	--light-grey-900: color-mix(var(--mix), var(--light-grey) 92%, var(--black));
+
+	--light-grey-fade-10: color-mix(var(--mix), var(--light-grey) 90%, var(--transparent));
+	--light-grey-fade-20: color-mix(var(--mix), var(--light-grey) 80%, var(--transparent));
+	--light-grey-fade-30: color-mix(var(--mix), var(--light-grey) 70%, var(--transparent));
+	--light-grey-fade-40: color-mix(var(--mix), var(--light-grey) 60%, var(--transparent));
+	--light-grey-fade-50: color-mix(var(--mix), var(--light-grey) 50%, var(--transparent));
+	--light-grey-fade-60: color-mix(var(--mix), var(--light-grey) 40%, var(--transparent));
+	--light-grey-fade-70: color-mix(var(--mix), var(--light-grey) 30%, var(--transparent));
+	--light-grey-fade-80: color-mix(var(--mix), var(--light-grey) 20%, var(--transparent));
+	--light-grey-fade-90: color-mix(var(--mix), var(--light-grey) 10%, var(--transparent));
+
+	/* Core: Dark Grey Tokens */
+	--dark-grey-100: color-mix(var(--mix), var(--dark-grey) 92%, var(--white));
+	--dark-grey-200: color-mix(var(--mix), var(--dark-grey) 94%, var(--white));
+	--dark-grey-300: color-mix(var(--mix), var(--dark-grey) 96%, var(--white));
+	--dark-grey-400: color-mix(var(--mix), var(--dark-grey) 98%, var(--white));
+	--dark-grey-500: color-mix(var(--mix), var(--dark-grey) 100%, var(--white));
+	--dark-grey-600: color-mix(var(--mix), var(--dark-grey) 98%, var(--black));
+	--dark-grey-700: color-mix(var(--mix), var(--dark-grey) 96%, var(--black));
+	--dark-grey-800: color-mix(var(--mix), var(--dark-grey) 94%, var(--black));
+	--dark-grey-900: color-mix(var(--mix), var(--dark-grey) 92%, var(--black));
+
+	--dark-grey-fade-10: color-mix(var(--mix), var(--dark-grey) 90%, var(--transparent));
+	--dark-grey-fade-20: color-mix(var(--mix), var(--dark-grey) 80%, var(--transparent));
+	--dark-grey-fade-30: color-mix(var(--mix), var(--dark-grey) 70%, var(--transparent));
+	--dark-grey-fade-40: color-mix(var(--mix), var(--dark-grey) 60%, var(--transparent));
+	--dark-grey-fade-50: color-mix(var(--mix), var(--dark-grey) 50%, var(--transparent));
+	--dark-grey-fade-60: color-mix(var(--mix), var(--dark-grey) 40%, var(--transparent));
+	--dark-grey-fade-70: color-mix(var(--mix), var(--dark-grey) 30%, var(--transparent));
+	--dark-grey-fade-80: color-mix(var(--mix), var(--dark-grey) 20%, var(--transparent));
+	--dark-grey-fade-90: color-mix(var(--mix), var(--dark-grey) 10%, var(--transparent));
+
+	/* Specialized: Priority Tokens */
+	--primary-color: var(--crimson);
+	--primary-color-engaged: var(--crimson-200);
+	--secondary-color: var(--azure);
+	--secondary-color-engaged: var(--azure-200);
+	--tertiary-color: var(--slate);
+	--tertiary-color-engaged: var(--slate-200);
+
+	--primary-fade-10: color-mix(var(--mix), var(--primary-color) 90%, var(--transparent));
+	--primary-fade-20: color-mix(var(--mix), var(--primary-color) 80%, var(--transparent));
+	--primary-fade-30: color-mix(var(--mix), var(--primary-color) 70%, var(--transparent));
+	--primary-fade-40: color-mix(var(--mix), var(--primary-color) 60%, var(--transparent));
+	--primary-fade-50: color-mix(var(--mix), var(--primary-color) 50%, var(--transparent));
+	--primary-fade-60: color-mix(var(--mix), var(--primary-color) 40%, var(--transparent));
+	--primary-fade-70: color-mix(var(--mix), var(--primary-color) 30%, var(--transparent));
+	--primary-fade-80: color-mix(var(--mix), var(--primary-color) 20%, var(--transparent));
+	--primary-fade-90: color-mix(var(--mix), var(--primary-color) 10%, var(--transparent));
+
+	--secondary-fade-10: color-mix(var(--mix), var(--secondary-color) 90%, var(--transparent));
+	--secondary-fade-20: color-mix(var(--mix), var(--secondary-color) 80%, var(--transparent));
+	--secondary-fade-30: color-mix(var(--mix), var(--secondary-color) 70%, var(--transparent));
+	--secondary-fade-40: color-mix(var(--mix), var(--secondary-color) 60%, var(--transparent));
+	--secondary-fade-50: color-mix(var(--mix), var(--secondary-color) 50%, var(--transparent));
+	--secondary-fade-60: color-mix(var(--mix), var(--secondary-color) 40%, var(--transparent));
+	--secondary-fade-70: color-mix(var(--mix), var(--secondary-color) 30%, var(--transparent));
+	--secondary-fade-80: color-mix(var(--mix), var(--secondary-color) 20%, var(--transparent));
+	--secondary-fade-90: color-mix(var(--mix), var(--secondary-color) 10%, var(--transparent));
+
+	--tertiary-fade-10: color-mix(var(--mix), var(--tertiary-color) 90%, var(--transparent));
+	--tertiary-fade-20: color-mix(var(--mix), var(--tertiary-color) 80%, var(--transparent));
+	--tertiary-fade-30: color-mix(var(--mix), var(--tertiary-color) 70%, var(--transparent));
+	--tertiary-fade-40: color-mix(var(--mix), var(--tertiary-color) 60%, var(--transparent));
+	--tertiary-fade-50: color-mix(var(--mix), var(--tertiary-color) 50%, var(--transparent));
+	--tertiary-fade-60: color-mix(var(--mix), var(--tertiary-color) 40%, var(--transparent));
+	--tertiary-fade-70: color-mix(var(--mix), var(--tertiary-color) 30%, var(--transparent));
+	--tertiary-fade-80: color-mix(var(--mix), var(--tertiary-color) 20%, var(--transparent));
+	--tertiary-fade-90: color-mix(var(--mix), var(--tertiary-color) 10%, var(--transparent));
+
+	/* Specialized: Intent Tokens */
+	--error-color: var(--crimson-300);
+	--error-color-engaged: var(--crimson-100);
+	--info-color: var(--azure-300);
+	--info-color-engaged: var(--azure-100);
+	--success-color: var(--emerald-300);
+	--success-color-engaged: var(--emerald-100);
+	--warning-color: var(--amber-300);
+	--warning-color-engaged: var(--amber-100);
+	--disabled-color: var(--grey-200);
+
+	/* Specialized: Social Brand Tokens */
+	--github-color: #181717FF;
+	--github-color-engaged: #323131FF;
+	--google-color: #4285F4FF;
+	--google-color-engaged: #5C9FFFFF;
+	--linkedin-color: #0A66C2FF;
+	--linkedin-color-engaged: #2480DCFF;
+}

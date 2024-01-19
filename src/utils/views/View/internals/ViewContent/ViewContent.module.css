@@ -1,0 +1,21 @@
+.content {
+	background-color: var(--content-background-color);
+	grid-area: main;
+	grid-column: 2;
+	grid-row: 2 / 3;
+	/* min-height: calc(100% - 22.75rem); */
+	/* min-height: 100%; */
+}
+
+.content.mobile {
+	min-height: 100%;
+	/* padding-top: 4.75rem; */
+}
+
+@layer core {
+	@media screen and (max-width: 80rem) {
+		.content {
+			padding: 0 1rem;
+		}
+	}
+}

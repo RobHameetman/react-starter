@@ -1,0 +1,292 @@
+@layer core, variants, overrides;
+
+@layer core {
+	.button {
+		--color: var(--primary-color);
+		--color-engaged: var(--primary-color-engaged);
+
+		background-color: var(--color);
+		border-radius: var(--button-border-radius);
+		border: 0.1em solid var(--transparent);
+		color: var(--white);
+		display: inline-flex;
+		font: var(--font-weight-semibold) 1rem;
+		font-size: 0.875rem;
+		height: 2em;
+		justify-content: center;
+		overflow: hidden;
+		padding: 0 0.75em;
+		position: relative;
+		transition: background-color 0.5s ease,
+			border-color 0.5s ease,
+			color 0.5s ease,
+			transform 0.2s ease-in-out;
+		vertical-align: middle;
+
+		&.xs {
+			font-size: 0.625rem;
+
+			&:not(.auto) {
+				min-width: 5rem;
+			}
+		}
+
+		&.sm {
+			font-size: 0.75rem;
+
+			&:not(.auto) {
+				min-width: 6.25rem;
+			}
+		}
+
+		&.lg {
+			font-size: 1rem;
+
+			&:not(.auto) {
+				min-width: 8.75rem;
+			}
+		}
+
+		&.xl {
+			font-size: 1.125rem;
+
+			&:not(.auto) {
+				min-width: 10rem;
+			}
+		}
+
+		&:not(.auto) {
+			min-width: 7.5rem;
+		}
+
+		&.alignLeft {
+			justify-content: flex-start;
+		}
+
+		&.alignRight {
+			justify-content: flex-end;
+		}
+
+		&.fullWidth {
+			flex: 0 0 100%;
+			width: 100%;
+
+			&:first-child {
+				margin: 0 0 0.3125em 0;
+			}
+
+			&:last-child {
+				margin: 0.3125em 0 0 0;
+			}
+
+			&:not(:first-child):not(:last-child) {
+				margin: 0.3125em 0;
+			}
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover,
+		&:not(.disabled):global(.active) {
+			background-color: var(--color-engaged);
+
+			&.outlined {
+				border-color: var(--color);
+				background-color: var(--color-engaged);
+				color: var(--white);
+			}
+
+			&.transparent {
+				background-color: color-mix(var(--mix), var(--color) 60%, var(--transparent));
+			}
+		}
+
+		&:not(.fullWidth):not(:first-child) {
+			margin-left: 0.3125em;
+		}
+
+		&:not(.disabled):focus-visible {
+			box-shadow: inset 0 0 0 2px var(--focus-color);
+		}
+
+		&.rounded {
+			border-radius: var(--border-radius-28);
+		}
+
+		&.outlined {
+			border: 0.125em solid var(--color);
+			border-radius: 0.33em;
+			background-color: var(--transparent);
+			color: var(--color);
+		}
+
+		&.transparent {
+			border: none;
+			border-radius: 0.33em;
+			background-color: var(--transparent);
+			color: var(--button-text-color);
+		}
+
+		.icon {
+			align-self: center;
+			display: inline-flex;
+			font-size: 1.25em;
+			opacity: 0.9;
+
+			&.iconSpacing {
+				margin-right: 0.35em;
+			}
+		}
+
+		.text {
+			align-self: center;
+			display: inline-flex;
+		}
+	}
+
+	:global(.buttonGroup) > .button {
+		&:not(.auto) {
+			min-width: 5em;
+		}
+
+		&:not(.outlined):not(.disabled):active,
+		&:not(.outlined):not(.disabled):global(.active) {
+			border: 0.1em solid var(--black-fade-80);
+			/* This fixes a bug where the button flashes a black border when pressed */
+			transition: background-color 0.5s ease,
+				color 0.5s ease,
+				transform 0.2s ease-in-out
+		}
+
+		&:first-child {
+			border-radius: var(--button-border-radius) 0 0 var(--button-border-radius);
+		}
+
+		&:not(:first-child) {
+			margin-left: 0;
+		}
+
+		&:not(:first-child):not(:last-child) {
+			border-radius: 0;
+		}
+
+		&:last-child {
+			border-radius: 0 var(--button-border-radius) var(--button-border-radius) 0;
+		}
+
+		&:hover {
+			&.outlined {
+				&:first-child {
+					border-right: 0.1em solid var(--color-engaged);
+				}
+
+				&:not(:first-child):not(:last-child) {
+					border-left: 0.1em solid var(--color-engaged);
+					border-right: 0.1em solid var(--color-engaged);
+				}
+
+				&:last-child {
+					border-left: 0.1em solid var(--color-engaged);
+				}
+			}
+		}
+
+		&.outlined {
+			&:first-child {
+				border-right: 0.1em solid var(--color);
+			}
+
+			&:not(:first-child):not(:last-child) {
+				border-left: 0.1em solid var(--color);
+				border-right: 0.1em solid var(--color);
+			}
+
+			&:last-child {
+				border-left: 0.1em solid var(--color);
+			}
+		}
+
+		&.fullWidth {
+			flex: unset;
+			margin: unset;
+			width: unset;
+		}
+	}
+
+	:global(.buttonGroup.vertical) > .button {
+		&:first-child {
+			border-radius: var(--button-border-radius) var(--button-border-radius) 0 0;
+		}
+
+		&:not(:first-child) {
+			margin-left: 0;
+		}
+
+		&:not(:first-child):not(:last-child) {
+			border-radius: 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 var(--button-border-radius) var(--button-border-radius);
+		}
+
+		&.outlined {
+			--border: 0.125em solid var(--color);
+
+			border: var(--border);
+
+			&:first-child {
+				border-right: var(--border);
+				border-bottom: 0.1em solid var(--color);
+			}
+
+			&:not(:first-child):not(:last-child) {
+				border-right: var(--border);
+				border-left: var(--border);
+				border-top: 0.1em solid var(--color);
+				border-bottom: 0.1em solid var(--color);
+			}
+
+			&:last-child {
+				border-left: var(--border);
+				border-top: 0.1em solid var(--color);
+			}
+		}
+	}
+
+	.disabledHover:hover {
+		cursor: not-allowed !important;
+	}
+}
+
+@layer variants {
+	.error{
+		--color: var(--error-color);
+		--color-engaged: var(--error-color-engaged);
+	}
+
+	.info {
+		--color: var(--info-color);
+		--color-engaged: var(--info-color-engaged);
+	}
+
+	.success {
+		--color: var(--success-color);
+		--color-engaged: var(--success-color-engaged);
+	}
+
+	.warning {
+		--color: var(--warning-color);
+		--color-engaged: var(--warning-color-engaged);
+	}
+}

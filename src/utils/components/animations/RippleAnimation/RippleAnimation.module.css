@@ -1,0 +1,55 @@
+.ripple {
+	animation: var(--ripple);
+	background-color: var(--ripple-color);
+	border-radius: 50%;
+	display: block;
+	height: 2em;
+	pointer-events: none;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 2em;
+}
+
+/*
+ * Note: The params below are calculated at design-time. If you change the size
+ */
+@keyframes ripple {
+	0% {
+		--fade: 40%;
+
+		transform: scale(1, 1);
+		background-color: color-mix(var(--mix), var(--ripple-color) var(--fade), var(--transparent));
+	}
+	20% {
+		--change: 0.33492;
+		--fade: 26.6032%;
+
+		transform: scale(33.492);
+		background-color: color-mix(var(--mix), var(--ripple-color) var(--fade), var(--transparent));
+	}
+	40% {
+		--change: 0.579632;
+		--fade: 16.81472%;
+
+		transform: scale(57.9632);
+		background-color: color-mix(var(--mix), var(--ripple-color) var(--fade), var(--transparent));
+	}
+	60% {
+		--change: 0.769421;
+		--fade: 9.22316%;
+
+		transform: scale(76.9421);
+		background-color: color-mix(var(--mix), var(--ripple-color) var(--fade), var(--transparent));
+	}
+	80% {
+		--change: 0.914213;
+		--fade: 3.43148%;
+
+		transform: scale(91.4213);
+		background-color: color-mix(var(--mix), var(--ripple-color) var(--fade), var(--transparent));
+	}
+	100% {
+		transform: scale(100);
+		background-color: var(--transparent);
+	}
+}

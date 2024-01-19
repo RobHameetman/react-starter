@@ -1,5 +1,37 @@
+@import './theme/tokens/_index.css';
+
+:root {
+	--nextui--navbarContainerMaxWidth: 100% !important;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+html {
+	height: 100%;
+	min-height: 100vh;
+	min-width: 100vw;
+	overflow: hidden;
+	width: 100%;
+}
+
+body {
+	position: absolute;
+	/* overflow: hidden; */
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+svg:active,
+svg:focus {
+	outline: none;
+}
+
+fieldset {
+	border: none;
 }

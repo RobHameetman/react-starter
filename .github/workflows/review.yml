@@ -34,7 +34,7 @@ env:
   # Environment Variables
   APP_DEBUG: ${{ vars.APP_DEBUG }}
   APP_VERSION: 0.0.1
-  APP_ENDPOINT: ${{ vars.APP_ENDPOINT }}
+  APP_BACKEND_SERVICE: ${{ vars.APP_BACKEND_SERVICE }}
   CI_DEBUG: ${{ vars.CI_DEBUG }}
   CI_SKIP_EAST: ${{ vars.CI_SKIP_EAST }}
   CI_SKIP_WEST: ${{ vars.CI_SKIP_WEST }}

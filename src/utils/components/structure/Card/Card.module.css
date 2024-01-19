@@ -1,0 +1,42 @@
+@import '../../../../theme/tokens/breakpoints/_breakpoints.css';
+@layer core, variants, overrides;
+
+@layer core {
+	.card {
+		background: var(--card-background-color);
+		border-radius: var(--card-border-radius);
+		box-sizing: border-box;
+		color: var(--text-color);
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		margin: 0;
+		max-width: 30rem;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		width: 100%;
+	}
+
+	&.fullWidth {
+		max-width: unset;
+	}
+}
+
+@layer variants {
+	.bordered {
+		border: 1px solid var(--card-divider-color);
+	}
+
+	.shadow {
+		filter: var(--card-shadow);
+	}
+}
+
+@media (--sm-down) {
+	@layer core {
+		.card {
+			max-width: 100%;
+		}
+	}
+}

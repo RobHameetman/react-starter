@@ -1,0 +1,5 @@
+.formButtons {
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 0.75rem;
+}

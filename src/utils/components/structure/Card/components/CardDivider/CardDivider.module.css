@@ -1,0 +1,5 @@
+.cardDivider {
+	background: var(--card-divider-color);
+	display: block;
+	height: 1px;
+}
