@@ -1,2 +1,2 @@
-declare module '@app';
-declare module '@test';
+declare module '@';
+declare module '@@';

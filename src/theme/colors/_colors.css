@@ -1,0 +1,95 @@
+:root {
+	/* Core: One-off Color Tokens */
+	--transparent: transparent;
+	--orange: #E7651CFF;
+	--orange-shade: #D56829FF;
+	--off-black: #170B01FF;
+	--off-black-tint-10: #170B011A;
+	--off-black-tint-20: #170B0133;
+	--off-white: #F8F2E9FF;
+	--off-white-tint: #FEFEFDFF;
+
+	/* Core: Pastels */
+	--sand: #D7D1BDFF;
+	--peach: #F6CA9EFF;
+	--lemon: #FDF18BFF;
+	--mint: #ABE69EFF;
+	--blush: #ECBDFBFF;
+	--sky: #ACE5FDFF;
+
+	/* Core: Velvets */
+	--redwood: #BF6B4DFF;
+	--burgundy: #A43D38FF;
+	--gold: #C29832FF;
+	--forest: #366445FF;
+	--ruby: #B62D8BFF;
+	--sapphire: #3862BDFF;
+
+	/* Core: Velvet Shades */
+	--sapphire-shade: #1C315FFF;
+
+	/* Core: System Blue */
+	--blue: #0F50C1FF;
+	--blue-tint: #E7EEF9FF;
+	--blue-shade: #093074FF;
+
+	/* Core: System Green */
+	--green: #276A2DFF;
+	--green-tint: #E9F0EAFF;
+	--green-shade: #17401BFF;
+
+	/* Core: System Red */
+	--red: #AD0F0FFF;
+	--red-tint: #F7E7E7FF;
+	--red-shade: #680909FF;
+
+	/* Core: System Yellow */
+	--yellow: #E2A403FF;
+	--yellow-tint: #FCF6E6FF;
+	--yellow-shade: #886202FF;
+
+	/* Core: System Grey */
+	--grey: #8D8D8DFF;
+	--grey-tint: #F4F4F4FF;
+	--grey-shade: #555555FF;
+
+	/* Specialized Background Tokens */
+	--background-color-1: var(--sand);
+	--background-color-2: var(--peach);
+	--background-color-3: var(--lemon);
+	--background-color-4: var(--mint);
+	--background-color-5: var(--blush);
+	--background-color-6: var(--sky);
+
+	/* Specialized: Graphic Background Tokens */
+	--graphic-background-color-1: var(--redwood);
+	--graphic-background-color-2: var(--burgundy);
+	--graphic-background-color-3: var(--gold);
+	--graphic-background-color-4: var(--forest);
+	--graphic-background-color-5: var(--ruby);
+	--graphic-background-color-6: var(--sapphire);
+
+	/* Specialized: Interaction Brand Tokens */
+	--primary-color: var(--orange);
+	--primary-color-engaged: var(--orange-shade);
+	--secondary-color: var(--off-black);
+	--secondary-color-engaged: var(--off-black-tint-20);
+	--tertiary-color: var(--sapphire);
+	--tertiary-color-engaged: var(--sapphire-shade);
+
+	/* Specialized: Interaction Intent Tokens */
+	--danger-color: var(--red);
+	--danger-color-tint: var(--red-tint);
+	--danger-color-engaged: var(--red-shade);
+	--info-color: var(--blue);
+	--info-color-tint: var(--blue-tint);
+	--info-color-engaged: var(--blue-shade);
+	--success-color: var(--green);
+	--success-color-tint: var(--green-tint);
+	--success-color-engaged: var(--green-shade);
+	--warning-color: var(--yellow);
+	--warning-color-tint: var(--yellow-tint);
+	--warning-color-engaged: var(--yellow-shade);
+	--disabled-color: var(--grey);
+	--disabled-color-tint: var(--grey-tint);
+}

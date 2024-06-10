@@ -1,0 +1,25 @@
+:root {
+	/* Border Radii */
+	--border-radius-2: calc(var(--spacing-8) / 4);
+	--border-radius-4: calc(var(--spacing-16) / 4);
+	--border-radius-6: calc(var(--spacing-24) / 4);
+	--border-radius-8: calc(var(--spacing-32) / 4);
+	--border-radius-10: calc(var(--spacing-40) / 4);
+	--border-radius-12: calc(var(--spacing-48) / 4);
+	--border-radius-14: calc(var(--spacing-56) / 4);
+	--border-radius-16: calc(var(--spacing-64) / 4);
+	--border-radius-18: calc(var(--spacing-72) / 4);
+	--border-radius-28: calc(var(--spacing-112) / 4);
+
+	/* Relative Border Radii */
+	--relative-border-radius-2: calc(var(--relative-spacing-8) / 4);
+	--relative-border-radius-4: calc(var(--relative-spacing-16) / 4);
+	--relative-border-radius-6: calc(var(--relative-spacing-24) / 4);
+	--relative-border-radius-8: calc(var(--relative-spacing-32) / 4);
+	--relative-border-radius-10: calc(var(--relative-spacing-40) / 4);
+	--relative-border-radius-12: calc(var(--relative-spacing-48) / 4);
+	--relative-border-radius-14: calc(var(--relative-spacing-56) / 4);
+	--relative-border-radius-16: calc(var(--relative-spacing-64) / 4);
+	--relative-border-radius-18: calc(var(--relative-spacing-72) / 4);
+	--relative-border-radius-28: calc(var(--relative-spacing-112) / 4);
+}
