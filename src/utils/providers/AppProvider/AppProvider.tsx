@@ -1,5 +1,5 @@
 import { $FC } from 'react';
-import { AuthProvider } from '@app/auth';
+import { AuthProvider } from '@/auth';
 import { History } from 'history';
 import { ThemeProvider } from '../ThemeProvider';
 

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useLogError } from '@app/log/hooks/useLogError';
-import { DEFAULT_ERROR } from '../../constants/misc/DEFAULT_ERROR';
+import { useLogError } from '@/log/hooks/useLogError';
+import { DEFAULT_ERROR } from '../../constants/DEFAULT_ERROR';
 import { View } from '../View';
 
 /**

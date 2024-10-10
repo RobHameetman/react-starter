@@ -1,6 +1,6 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { noop } from '@app/utils/functions/misc/noop';
-import { Errors, areErrors } from '@app/utils/types/misc/Errors';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { noop } from '@/utils/functions/misc/noop';
+import { Errors, areErrors } from '@/utils/types/misc/Errors';
 
 /**
  * A type alias used to avoid line breaks on line 27.

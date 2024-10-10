@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { Route, Routes as Switch } from 'react-router-dom';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { LoginView, SignupView } from '@app/auth/views';
-import { HomeView } from '@app/home/views/HomeView';
-import { SupportView } from '@app/support/views/SupportView';
-import { NotificationsView, SettingsView } from '@app/users/views';
-import { ErrorView } from '@app/utils/views/ErrorView';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { LoginView, SignupView } from '@/auth/views';
+import { HomeView } from '@/home/views/HomeView';
+import { SupportView } from '@/support/views/SupportView';
+import { NotificationsView, SettingsView } from '@/users/views';
+import { ErrorView } from '@/utils/views/ErrorView';
 import { DEFAULT_ERROR_MESSAGE } from '../../constants/DEFAULT_ERROR_MESSAGE';
 
 /**

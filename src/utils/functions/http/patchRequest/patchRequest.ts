@@ -1,4 +1,4 @@
-import { Errors } from '@app/utils/types/misc/Errors';
+import { Errors } from '@/utils/types/Errors';
 import { RequestInput, request as _request } from '../request';
 
 /**

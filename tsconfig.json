@@ -13,8 +13,8 @@
 		"noImplicitThis": true,
 		"outDir": "dist/",
 		"paths": {
-			"@app/*": ["src/*"],
-			"@test/*": ["test/resources/*"]
+			"@/*": ["src/*"],
+			"@@/*": ["test/resources/*"]
 		},
 		"resolveJsonModule": true,
 		"rootDir": ".",

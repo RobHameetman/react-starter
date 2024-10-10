@@ -1,14 +1,14 @@
 import { FC, ChangeEventHandler, useCallback, useRef, useState } from 'react';
 // import { Card } from '@nextui-org/react';
-import { Button } from '@app/utils/components/misc/Button';
-import { Checkbox } from '@app/utils/components/forms/Checkbox';
-import { Radio } from '@app/utils/components/forms/Radio';
-import { Card } from '@app/utils/components/structure/Card';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { useBreakpoints } from '@app/utils/hooks/misc/useBreakpoints';
-import { PressEventHandler } from '@app/utils/types/handlers/PressEventHandler';
-import { HoverEventHandler } from '@app/utils/types/handlers/HoverEventHandler';
-import { View } from '@app/utils/views/View';
+import { Button } from '@/utils/components/misc/Button';
+import { Checkbox } from '@/utils/components/forms/Checkbox';
+import { Radio } from '@/utils/components/forms/Radio';
+import { Card } from '@/utils/components/structure/Card';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { useBreakpoints } from '@/utils/hooks/misc/useBreakpoints';
+import { PressEventHandler } from '@/utils/types/handlers/PressEventHandler';
+import { HoverEventHandler } from '@/utils/types/handlers/HoverEventHandler';
+import { View } from '@/utils/views/View';
 import styles from './HomeView.module.css';
 
 interface MyComponentProps {
