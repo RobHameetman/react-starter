@@ -20,10 +20,10 @@
   "scripts": {
     "build": "rm -rf ./dist/ && NODE_ENV=production webpack --config=./config/webpack.config.js --mode=production --node-env=production",
     "e2e": "npm stop && (npm run prod&) && cypress run -C test/e2e/cypress.config.js && npm stop",
-    "format": "NODE_ENV=production eslint ./src --ext=ts,tsx --fix && stylelint src --fix --cache",
+    "format": "NODE_ENV=production eslint ./src --config ./config/eslint.config.js --ext=ts,tsx --fix && stylelint src --fix --cache",
     "prod": "NODE_ENV=production webpack serve --config=./config/webpack.config.js --node-env=production --no-open",
     "postinstall": "husky install",
-    "reset": "rm -rf node_modules/ && npm cache clear --force && [[ -f package-lock.json ]] && npm ci --legacy-peer-deps || npm i --legacy-peer-deps",
+    "reset": "rm -rf node_modules/ && npm cache clear --force && [[ -f package-lock.json ]] && npm ci || npm i",
     "setup": "sh scripts/setup.sh",
     "start": "NODE_ENV=development node --conditions=react-server ./node_modules/.bin/webpack serve --config=./config/webpack.config.js --node-env=development",
     "stop": "lsof -t -i tcp:8080 | xargs kill",
@@ -34,12 +34,14 @@
   "browserslist": [
     "defaults"
   ],
-  "eslintConfig": {
+  "eslint": {
     "extends": "@rob.hameetman",
-    "ignorePatterns": [
+		"plugins": [
+			"import"
+		],
+    "ignores": [
       "tailwind.config.js",
-      "webpack.config.js",
-      "src/forecast/types/SevenDayForecast",
+      "config/webpack.config.js",
       "typings/"
     ],
     "rules": {
@@ -56,6 +58,10 @@
           "**/__test__/**",
           "*.spec.ts?(x)"
         ],
+				"plugins": [
+					"@typescript-eslint",
+					"import"
+				],
         "rules": {
           "no-proto": "off",
           "@typescript-eslint/no-empty-function": "off",

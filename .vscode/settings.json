@@ -1,6 +1,10 @@
 {
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"javascript.updateImportsOnFileMove.enabled": "always",
+	"eslint.useFlatConfig": true,
+	"eslint.options": {
+		"overrideConfigFile": "../config/eslint.config.js"
+	},
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
 		"source.fixAll.stylelint": "explicit"

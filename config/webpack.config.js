@@ -19,6 +19,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WebpackDevServerWaitpage = require('webpack-dev-server-waitpage');
 const { default: envs } = require('dotenv-conversion');
 const dotenv = require('dotenv');
+const eslintConfig = require('./eslint.config.js');
 
 /**
  * Here we use dotenv-conversion to cast env variable values into their expected
@@ -89,7 +90,7 @@ const PUBLIC_PATH = (PROCESS_ENV.PUBLIC_PATH || '').endsWith('/')
  * Include variables with supported prefixes in the runtime environment and
  * provide environment-specific overrides.
  *
- * @param {Record<string, string | number | boolean | null>} processEnv 
+ * @param {Record<string, string | number | boolean | null>} processEnv
  *
  * @returns The loaded process env object with environment-specific suffixes
  * taking precedent over non-suffixed variables.
@@ -298,6 +299,7 @@ module.exports = () => ({
 				isDevelopment && '/src/!(*.spec.ts?(x))',
 			].filter(Boolean),
 			extensions: ['js', 'jsx', 'ts', 'tsx'],
+			baseConfig: eslintConfig,
 			failOnWarning: isProduction,
 			lintDirtyModulesOnly: isDevelopment,
 			threads: true,
