@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { mockEnterEventHandler } from '@app/utils/types/handlers/EnterEventHandler/__test__';
+import { mockEnterEventHandler } from '@/utils/types/handlers/EnterEventHandler/__test__';
 
 export const fakeEnterable = ({
 	...overrideProps
@@ -7,19 +7,19 @@ export const fakeEnterable = ({
 	const enterable: Record<string, unknown> = {};
 
 	faker.helpers.maybe(() => {
-		enterable.onEnter = mockEnterEventHandler();
+		enterable.onPressEnter = mockEnterEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		enterable.onEnterCapture = mockEnterEventHandler();
+		enterable.onPressEnterCapture = mockEnterEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		enterable.onEnterUp = mockEnterEventHandler();
+		enterable.onPressEnterUp = mockEnterEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		enterable.onEnterUpCapture = mockEnterEventHandler();
+		enterable.onPressEnterUpCapture = mockEnterEventHandler();
 	});
 
 	return {

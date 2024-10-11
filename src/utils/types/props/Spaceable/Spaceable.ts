@@ -1,8 +1,8 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 import {
 	SpaceEventHandler,
 	isSpaceEventHandler,
-} from '@app/utils/types/handlers/SpaceEventHandler';
+} from '@/utils/types/handlers/SpaceEventHandler';
 
 /**
  * A compositional prop type for React components that allow you to trigger an
@@ -17,8 +17,8 @@ import {
  *   readonly text: string;
  * }
  *
- * export const MyComponent: FC<MyComponentProps> = ({ onSpace = noop, text }) => (
- *   <div onKeyDown={onSpace}>
+ * export const MyComponent: FC<MyComponentProps> = ({ onPressSpace = noop, text }) => (
+ *   <div onKeyDown={onPressSpace}>
  * 	   {text}
  *   </div>
  * );
@@ -29,27 +29,27 @@ export interface Spaceable<T = Element> {
 	 * [Optional] Handle an event when the 'Space' key is pressed.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onSpace?: SpaceEventHandler<T>;
+	readonly onPressSpace?: SpaceEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Space' key is pressed during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onSpaceCapture?: SpaceEventHandler<T>;
+	readonly onPressSpaceCapture?: SpaceEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Space' key is released.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onSpaceUp?: SpaceEventHandler<T>;
+	readonly onPressSpaceUp?: SpaceEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Space' key is released during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onSpaceUpCapture?: SpaceEventHandler<T>;
+	readonly onPressSpaceUpCapture?: SpaceEventHandler<T>;
 }
 
 /**
@@ -57,10 +57,10 @@ export interface Spaceable<T = Element> {
  *
  * Requirements:
  *   - `value` must be an object.
- *   - `value.onSpace()` is optional and must be a valid {@link SpaceEventHandler} if provided.
- *   - `value.onSpaceCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
- *   - `value.onSpaceUp()` is optional and must be a valid {@link SpaceEventHandler} if provided.
- *   - `value.onSpaceUpCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
+ *   - `value.onPressSpace()` is optional and must be a valid {@link SpaceEventHandler} if provided.
+ *   - `value.onPressSpaceCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
+ *   - `value.onPressSpaceUp()` is optional and must be a valid {@link SpaceEventHandler} if provided.
+ *   - `value.onPressSpaceUpCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -78,22 +78,22 @@ export const isSpaceable = <T = Element>(
 	 */
 	isObject(value) &&
 	/**
-	 * value.onSpace()
+	 * value.onPressSpace()
 	 */
-	('onSpace' in value ? isSpaceEventHandler(value.onSpace) : true) &&
+	('onPressSpace' in value ? isSpaceEventHandler(value.onPressSpace) : true) &&
 	/**
-	 * value.onSpaceCapture()
+	 * value.onPressSpaceCapture()
 	 */
-	('onSpaceCapture' in value
-		? isSpaceEventHandler(value.onSpaceCapture)
+	('onPressSpaceCapture' in value
+		? isSpaceEventHandler(value.onPressSpaceCapture)
 		: true) &&
 	/**
-	 * value.onSpaceUp()
+	 * value.onPressSpaceUp()
 	 */
-	('onSpaceUp' in value ? isSpaceEventHandler(value.onSpaceUp) : true) &&
+	('onPressSpaceUp' in value ? isSpaceEventHandler(value.onPressSpaceUp) : true) &&
 	/**
-	 * value.onSpaceUpCapture()
+	 * value.onPressSpaceUpCapture()
 	 */
-	('onSpaceUpCapture' in value
-		? isSpaceEventHandler(value.onSpaceUpCapture)
+	('onPressSpaceUpCapture' in value
+		? isSpaceEventHandler(value.onPressSpaceUpCapture)
 		: true);

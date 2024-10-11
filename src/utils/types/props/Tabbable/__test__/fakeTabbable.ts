@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { mockTabEventHandler } from '@app/utils/types/handlers/TabEventHandler/__test__';
-import { mockTabBackEventHandler } from '@app/utils/types/handlers/TabBackEventHandler/__test__';
+import { mockTabEventHandler } from '@/utils/types/handlers/TabEventHandler/__test__';
+import { mockTabBackEventHandler } from '@/utils/types/handlers/TabBackEventHandler/__test__';
 
 export const fakeTabbable = ({
 	...overrideProps
@@ -8,35 +8,35 @@ export const fakeTabbable = ({
 	const tabbable: Record<string, unknown> = {};
 
 	faker.helpers.maybe(() => {
-		tabbable.onTab = mockTabEventHandler();
+		tabbable.onPressTab = mockTabEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabCapture = mockTabEventHandler();
+		tabbable.onPressTabCapture = mockTabEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabBack = mockTabBackEventHandler();
+		tabbable.onPressTabBack = mockTabBackEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabBackCapture = mockTabBackEventHandler();
+		tabbable.onPressTabBackCapture = mockTabBackEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabUp = mockTabEventHandler();
+		tabbable.onPressTabUp = mockTabEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabUpCapture = mockTabEventHandler();
+		tabbable.onPressTabUpCapture = mockTabEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabBackUp = mockTabBackEventHandler();
+		tabbable.onPressTabBackUp = mockTabBackEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		tabbable.onTabBackUpCapture = mockTabBackEventHandler();
+		tabbable.onPressTabBackUpCapture = mockTabBackEventHandler();
 	});
 
 	return {

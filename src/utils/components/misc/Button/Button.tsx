@@ -1,11 +1,10 @@
-import { ReactElement, useRef } from 'react';
+import { ReactElement, useId, useRef } from 'react';
 import { Alignment, isAlignment } from '@app/theme/enums/Alignments';
 import { Intents } from '@app/theme/enums/Intents';
 import { Sizes } from '@app/theme/enums/Sizes';
 import { prefersReducedMotion } from '@app/utils/functions/accessibility/prefersReducedMotion';
 import { cssClasses } from '@app/utils/functions/misc/cssClasses';
 import { noop } from '@app/utils/functions/misc/noop';
-import { uniqueId } from '@app/utils/functions/misc/uniqueId';
 import { capitalize } from '@app/utils/functions/string/capitalize';
 import { useControlProp } from '@app/utils/hooks/react/useControlProp';
 import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
@@ -109,7 +108,7 @@ export const Button: CC<ButtonComponents, ButtonProps> = ({
 	fill = ButtonFills.filled,
 	fullWidth = false,
 	icon: _icon = null,
-	id = uniqueId(),
+	id,
 	intent: _intent = Intents.none,
 	rounded = false,
 	submit = false,
@@ -121,18 +120,11 @@ export const Button: CC<ButtonComponents, ButtonProps> = ({
 	onFocusCapture = noop,
 	onPress = noop,
 	onPressCapture = noop,
-	onPressChange = noop,
-	onPressChangeCapture = noop,
-	onPressEnd = noop,
-	onPressEndCapture = noop,
-	onPressStart = noop,
-	onPressStartCapture = noop,
-	onPressUp = noop,
-	onPressUpCapture = noop,
 	...props
 }) => {
 	const As = useSemanticAsProp({ as: _as });
 	const ref = useRef<typeof As>(null);
+	const defaultId = useId();
 
 	const { active = null, toggle = false, activate = noop } = useButtonContext();
 
@@ -162,14 +154,6 @@ export const Button: CC<ButtonComponents, ButtonProps> = ({
 			onPress(e);
 		},
 		onPressCapture,
-		onPressChange,
-		onPressChangeCapture,
-		onPressEnd,
-		onPressEndCapture,
-		onPressStart,
-		onPressStartCapture,
-		onPressUp,
-		onPressUpCapture,
 	});
 
 	const css = cssClasses(
@@ -197,7 +181,7 @@ export const Button: CC<ButtonComponents, ButtonProps> = ({
 	return (
 		<As
 			className={css}
-			id={id}
+			id={id || defaultId}
 			role="button"
 			disabled={disabled}
 			type={submit ? 'submit' : 'button'}

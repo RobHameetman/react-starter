@@ -1,3 +1,7 @@
+export * from './ArrowDownEvent';
+export * from './ArrowLeftEvent';
+export * from './ArrowRightEvent';
+export * from './ArrowUpEvent';
 export * from './CloseEvent';
 export * from './EnterEvent';
 export * from './EscapeEvent';

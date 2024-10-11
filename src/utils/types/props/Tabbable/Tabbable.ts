@@ -1,12 +1,12 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 import {
 	TabEventHandler,
 	isTabEventHandler,
-} from '@app/utils/types/handlers/TabEventHandler';
+} from '@/utils/types/handlers/TabEventHandler';
 import {
 	TabBackEventHandler,
 	isTabBackEventHandler,
-} from '@app/utils/types/handlers/TabBackEventHandler';
+} from '@/utils/types/handlers/TabBackEventHandler';
 
 /**
  * A compositional prop type for React components that allow you to trigger an
@@ -21,8 +21,8 @@ import {
  *   readonly text: string;
  * }
  *
- * export const MyComponent: FC<MyComponentProps> = ({ onTab = noop, text }) => (
- *   <div onKeyDown={onTab}>
+ * export const MyComponent: FC<MyComponentProps> = ({ onPressTab = noop, text }) => (
+ *   <div onKeyDown={onPressTab}>
  * 	   {text}
  *   </div>
  * );
@@ -33,53 +33,53 @@ export interface Tabbable<T = Element> {
 	 * [Optional] Handle an event when the 'Tab' key is pressed.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTab?: TabEventHandler<T>;
+	readonly onPressTab?: TabEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is pressed during capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabCapture?: TabEventHandler<T>;
+	readonly onPressTabCapture?: TabEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is pressed while holding the
 	 * 'Shift' key.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabBack?: TabBackEventHandler<T>;
+	readonly onPressTabBack?: TabBackEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is pressed while holding the
 	 * 'Shift' key during capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabBackCapture?: TabBackEventHandler<T>;
+	readonly onPressTabBackCapture?: TabBackEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is released.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabUp?: TabEventHandler<T>;
+	readonly onPressTabUp?: TabEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is released during capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabUpCapture?: TabEventHandler<T>;
+	readonly onPressTabUpCapture?: TabEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is released while holding the
 	 * 'Shift' key.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabBackUp?: TabBackEventHandler<T>;
+	readonly onPressTabBackUp?: TabBackEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Tab' key is released while holding the
 	 * 'Shift' key during capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onTabBackUpCapture?: TabBackEventHandler<T>;
+	readonly onPressTabBackUpCapture?: TabBackEventHandler<T>;
 }
 
 /**
@@ -87,14 +87,14 @@ export interface Tabbable<T = Element> {
  *
  * Requirements:
  *   - `value` must be an object.
- *   - `value.onTab()` is optional and must be a valid {@link TabEventHandler} if provided.
- *   - `value.onTabCapture()` is optional and must be a valid {@link TabEventHandler} if provided.
- *   - `value.onTabBack()` is optional and must be a valid {@link TabBackEventHandler} if provided.
- *   - `value.onTabBackCapture()` is optional and must be a valid {@link TabBackEventHandler} if provided.
- *   - `value.onTabUp()` is optional and must be a valid {@link TabEventHandler} if provided.
- *   - `value.onTabUpCapture()` is optional and must be a valid {@link TabEventHandler} if provided.
- *   - `value.onTabBackUp()` is optional and must be a valid {@link TabBackEventHandler} if provided.
- *   - `value.onTabBackUpCapture()` is optional and must be a valid {@link TabBackEventHandler} if provided.
+ *   - `value.onPressTab()` is optional and must be a valid {@link TabEventHandler} if provided.
+ *   - `value.onPressTabCapture()` is optional and must be a valid {@link TabEventHandler} if provided.
+ *   - `value.onPressTabBack()` is optional and must be a valid {@link TabBackEventHandler} if provided.
+ *   - `value.onPressTabBackCapture()` is optional and must be a valid {@link TabBackEventHandler} if provided.
+ *   - `value.onPressTabUp()` is optional and must be a valid {@link TabEventHandler} if provided.
+ *   - `value.onPressTabUpCapture()` is optional and must be a valid {@link TabEventHandler} if provided.
+ *   - `value.onPressTabBackUp()` is optional and must be a valid {@link TabBackEventHandler} if provided.
+ *   - `value.onPressTabBackUpCapture()` is optional and must be a valid {@link TabBackEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -110,40 +110,40 @@ export const isTabbable = <T = Element>(value: unknown): value is Tabbable<T> =>
 	 */
 	isObject(value) &&
 	/**
-	 * value.onTab()
+	 * value.onPressTab()
 	 */
-	('onTab' in value ? isTabEventHandler(value.onTab) : true) &&
+	('onPressTab' in value ? isTabEventHandler(value.onPressTab) : true) &&
 	/**
-	 * value.onTabCapture()
+	 * value.onPressTabCapture()
 	 */
-	('onTabCapture' in value ? isTabEventHandler(value.onTabCapture) : true) &&
+	('onPressTabCapture' in value ? isTabEventHandler(value.onPressTabCapture) : true) &&
 	/**
-	 * value.onTabBack()
+	 * value.onPressTabBack()
 	 */
-	('onTabBack' in value ? isTabBackEventHandler(value.onTabBack) : true) &&
+	('onPressTabBack' in value ? isTabBackEventHandler(value.onPressTabBack) : true) &&
 	/**
-	 * value.onTabBackCapture()
+	 * value.onPressTabBackCapture()
 	 */
-	('onTabBackCapture' in value
-		? isTabBackEventHandler(value.onTabBackCapture)
+	('onPressTabBackCapture' in value
+		? isTabBackEventHandler(value.onPressTabBackCapture)
 		: true) &&
 	/**
-	 * value.onTabUp()
+	 * value.onPressTabUp()
 	 */
-	('onTabUp' in value ? isTabEventHandler(value.onTabUp) : true) &&
+	('onPressTabUp' in value ? isTabEventHandler(value.onPressTabUp) : true) &&
 	/**
-	 * value.onTabUpCapture()
+	 * value.onPressTabUpCapture()
 	 */
-	('onTabUpCapture' in value
-		? isTabEventHandler(value.onTabUpCapture)
+	('onPressTabUpCapture' in value
+		? isTabEventHandler(value.onPressTabUpCapture)
 		: true) &&
 	/**
-	 * value.onTabBackUp()
+	 * value.onPressTabBackUp()
 	 */
-	('onTabBackUp' in value ? isTabBackEventHandler(value.onTabBackUp) : true) &&
+	('onPressTabBackUp' in value ? isTabBackEventHandler(value.onPressTabBackUp) : true) &&
 	/**
-	 * value.onTabBackUpCapture()
+	 * value.onPressTabBackUpCapture()
 	 */
-	('onTabBackUpCapture' in value
-		? isTabBackEventHandler(value.onTabBackUpCapture)
+	('onPressTabBackUpCapture' in value
+		? isTabBackEventHandler(value.onPressTabBackUpCapture)
 		: true);

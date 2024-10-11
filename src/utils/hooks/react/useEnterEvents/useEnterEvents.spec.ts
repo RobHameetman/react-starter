@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react';
-import { fakeEnterEvent } from '@app/utils/types/events/EnterEvent/__test__';
+import { fakeEnterEvent } from '@/utils/types/events/EnterEvent/__test__';
 import {
 	EnterEventHandler,
 	isEnterEventHandler as isEnterHandler,
-} from '@app/utils/types/handlers/EnterEventHandler';
-import { onTest } from '@test/utils/onTest';
+} from '@/utils/types/handlers/EnterEventHandler';
+import { onTest } from '@@/utils/onTest';
 import { useEnterEvents } from './useEnterEvents';
 
 describe('useEnterEvents()', () => {

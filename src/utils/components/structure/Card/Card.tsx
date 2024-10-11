@@ -73,14 +73,6 @@ export const Card: CC<CardComponents, CardProps> = ({
 	variant = CardVariants.bordered,
 	onPress = noop,
 	onPressCapture = noop,
-	onPressChange = noop,
-	onPressChangeCapture = noop,
-	onPressEnd = noop,
-	onPressEndCapture = noop,
-	onPressStart = noop,
-	onPressStartCapture = noop,
-	onPressUp = noop,
-	onPressUpCapture = noop,
 	...props
 }) => {
 	const As = useSemanticAsProp({ as: _as });
@@ -97,14 +89,6 @@ export const Card: CC<CardComponents, CardProps> = ({
 			onPress(e);
 		},
 		onPressCapture,
-		onPressChange,
-		onPressChangeCapture,
-		onPressEnd,
-		onPressEndCapture,
-		onPressStart,
-		onPressStartCapture,
-		onPressUp,
-		onPressUpCapture,
 	});
 
 	const css = cssClasses(

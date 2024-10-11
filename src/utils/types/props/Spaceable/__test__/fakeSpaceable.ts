@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { mockSpaceEventHandler } from '@app/utils/types/handlers/SpaceEventHandler/__test__';
+import { mockSpaceEventHandler } from '@/utils/types/handlers/SpaceEventHandler/__test__';
 
 export const fakeSpaceable = ({
 	...overrideProps
@@ -7,19 +7,19 @@ export const fakeSpaceable = ({
 	const spaceable: Record<string, unknown> = {};
 
 	faker.helpers.maybe(() => {
-		spaceable.onSpace = mockSpaceEventHandler();
+		spaceable.onPressSpace = mockSpaceEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		spaceable.onSpaceCapture = mockSpaceEventHandler();
+		spaceable.onPressSpaceCapture = mockSpaceEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		spaceable.onSpaceUp = mockSpaceEventHandler();
+		spaceable.onPressSpaceUp = mockSpaceEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		spaceable.onSpaceUpCapture = mockSpaceEventHandler();
+		spaceable.onPressSpaceUpCapture = mockSpaceEventHandler();
 	});
 
 	return {

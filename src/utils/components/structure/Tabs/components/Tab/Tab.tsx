@@ -189,7 +189,7 @@ export const Tab: $FC<TabProps> = ({
 					)}
 					{name}
 					{Boolean(badge) && (
-						<Badge className="ml-1" size="xs" color="primary">
+						<Badge className="ml-1" size="sm" color="primary">
 							{badge}
 						</Badge>
 					)}

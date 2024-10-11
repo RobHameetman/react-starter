@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { mockEscapeEventHandler } from '@app/utils/types/handlers/EscapeEventHandler/__test__';
+import { mockEscapeEventHandler } from '@/utils/types/handlers/EscapeEventHandler/__test__';
 
 export const fakeEscapable = ({
 	...overrideProps
@@ -7,19 +7,19 @@ export const fakeEscapable = ({
 	const escapable: Record<string, unknown> = {};
 
 	faker.helpers.maybe(() => {
-		escapable.onEscape = mockEscapeEventHandler();
+		escapable.onPressEscape = mockEscapeEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		escapable.onEscapeCapture = mockEscapeEventHandler();
+		escapable.onPressEscapeCapture = mockEscapeEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		escapable.onEscapeUp = mockEscapeEventHandler();
+		escapable.onPressEscapeUp = mockEscapeEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		escapable.onEscapeUpCapture = mockEscapeEventHandler();
+		escapable.onPressEscapeUpCapture = mockEscapeEventHandler();
 	});
 
 	return {

@@ -1,8 +1,8 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 import {
 	EscapeEventHandler,
 	isEscapeEventHandler,
-} from '@app/utils/types/handlers/EscapeEventHandler';
+} from '@/utils/types/handlers/EscapeEventHandler';
 
 /**
  * A compositional prop type for React components that allow you to trigger an
@@ -17,8 +17,8 @@ import {
  *   readonly text: string;
  * }
  *
- * export const MyComponent: FC<MyComponentProps> = ({ onEscape = noop, text }) => (
- *   <div onKeyDown={onEscape}>
+ * export const MyComponent: FC<MyComponentProps> = ({ onPressEscape = noop, text }) => (
+ *   <div onKeyDown={onPressEscape}>
  * 	   {text}
  *   </div>
  * );
@@ -29,27 +29,27 @@ export interface Escapable<T = Element> {
 	 * [Optional] Handle an event when the 'Escape' key is pressed.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onEscape?: EscapeEventHandler<T>;
+	readonly onPressEscape?: EscapeEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Escape' key is pressed during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onEscapeCapture?: EscapeEventHandler<T>;
+	readonly onPressEscapeCapture?: EscapeEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Escape' key is released.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onEscapeUp?: EscapeEventHandler<T>;
+	readonly onPressEscapeUp?: EscapeEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Escape' key is released during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onEscapeUpCapture?: EscapeEventHandler<T>;
+	readonly onPressEscapeUpCapture?: EscapeEventHandler<T>;
 }
 
 /**
@@ -57,10 +57,10 @@ export interface Escapable<T = Element> {
  *
  * Requirements:
  *   - `value` must be an object.
- *   - `value.onEscape()` is optional and must be a valid {@link EscapeEventHandler} if provided.
- *   - `value.onEscapeCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
- *   - `value.onEscapeUp()` is optional and must be a valid {@link EscapeEventHandler} if provided.
- *   - `value.onEscapeUpCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
+ *   - `value.onPressEscape()` is optional and must be a valid {@link EscapeEventHandler} if provided.
+ *   - `value.onPressEscapeCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
+ *   - `value.onPressEscapeUp()` is optional and must be a valid {@link EscapeEventHandler} if provided.
+ *   - `value.onPressEscapeUpCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -78,22 +78,22 @@ export const isEscapable = <T = Element>(
 	 */
 	isObject(value) &&
 	/**
-	 * value.onEscape()
+	 * value.onPressEscape()
 	 */
-	('onEscape' in value ? isEscapeEventHandler(value.onEscape) : true) &&
+	('onPressEscape' in value ? isEscapeEventHandler(value.onPressEscape) : true) &&
 	/**
-	 * value.onEscapeCapture()
+	 * value.onPressEscapeCapture()
 	 */
-	('onEscapeCapture' in value
-		? isEscapeEventHandler(value.onEscapeCapture)
+	('onPressEscapeCapture' in value
+		? isEscapeEventHandler(value.onPressEscapeCapture)
 		: true) &&
 	/**
-	 * value.onEscapeUp()
+	 * value.onPressEscapeUp()
 	 */
-	('onEscapeUp' in value ? isEscapeEventHandler(value.onEscapeUp) : true) &&
+	('onPressEscapeUp' in value ? isEscapeEventHandler(value.onPressEscapeUp) : true) &&
 	/**
-	 * value.onEscapeUpCapture()
+	 * value.onPressEscapeUpCapture()
 	 */
-	('onEscapeUpCapture' in value
-		? isEscapeEventHandler(value.onEscapeUpCapture)
+	('onPressEscapeUpCapture' in value
+		? isEscapeEventHandler(value.onPressEscapeUpCapture)
 		: true);
