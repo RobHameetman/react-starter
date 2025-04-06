@@ -17,7 +17,7 @@ const { AggressiveMergingPlugin } = require('webpack').optimize;
 const { DefinePlugin, IgnorePlugin, ProvidePlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WebpackDevServerWaitpage = require('webpack-dev-server-waitpage');
-const { default: envs } = require('dotenv-conversion');
+const envs = require('dotenv-conversion');
 const dotenv = require('dotenv');
 const eslintConfig = require('./eslint.config.js');
 
@@ -26,7 +26,7 @@ const eslintConfig = require('./eslint.config.js');
  * types, either a string or number or boolean or null. Env variables with no
  * value are cast as `''` rather than `undefined`.
  */
-envs.make(dotenv.config());
+const { parsed } = envs.convert(dotenv.config());
 
 /**
  * We do not want to override process.env in memory, so we create a copy with
@@ -34,7 +34,10 @@ envs.make(dotenv.config());
  *
  * @type {Record<string, string | number | boolean | null>}
  */
-const PROCESS_ENV = envs.getenv();
+const PROCESS_ENV = Object.freeze({
+	...parsed,
+	NODE_ENV: process.env.NODE_ENV,
+});
 
 /**
  * Allowed values for the `APP_ENV` environment variable.
