@@ -1,4 +1,4 @@
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 import { TABLE_CACHE_KEY } from './TABLE_CACHE_KEY';
 
 describe('TABLE_CACHE_KEY', () => {

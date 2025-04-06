@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { fakeMousable } from '@app/utils/types/props/Mousable/__test__';
+import { fakeMousable } from '@/utils/types/props/Mousable/__test__';
 
 export const fakeDraggable = ({
 	...overrideProps

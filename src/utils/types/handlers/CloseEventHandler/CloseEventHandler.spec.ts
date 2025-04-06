@@ -1,4 +1,4 @@
-import { fakeCloseEvent } from '@app/utils/types/events/CloseEvent/__test__';
+import { fakeCloseEvent } from '@/utils/types/events/CloseEvent/__test__';
 import { isCloseEventHandler } from './CloseEventHandler';
 import { mockCloseEventHandler } from './__test__';
 

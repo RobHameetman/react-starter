@@ -1,5 +1,5 @@
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 
 /**
  * Determines how the table state should render based on whether or not specific

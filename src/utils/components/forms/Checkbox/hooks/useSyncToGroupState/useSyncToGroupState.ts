@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 import { useCheckboxContext as _useCheckboxContext } from '../useCheckboxContext';
 
 /**

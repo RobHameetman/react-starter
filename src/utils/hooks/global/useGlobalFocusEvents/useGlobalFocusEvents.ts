@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { handleGlobalFocusEvents as _handleGlobalFocusEvents } from '@app/utils/functions/events/focus/handleGlobalFocusEvents';
-import { overrideNativeFocus as _overrideNativeFocus } from '@app/utils/functions/events/focus/overrideNativeFocus';
+import { noop } from '@/utils/functions/misc/noop';
+import { handleGlobalFocusEvents as _handleGlobalFocusEvents } from '@/utils/functions/events/focus/handleGlobalFocusEvents';
+import { overrideNativeFocus as _overrideNativeFocus } from '@/utils/functions/events/focus/overrideNativeFocus';
 
 /**
  * Functional dependencies used in the {@link useGlobalFocusEvents()} hook. This

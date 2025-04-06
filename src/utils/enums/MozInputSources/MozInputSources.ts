@@ -1,4 +1,4 @@
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
 
 /**
  * A list of all possible {@link MozInputSource} values. This is a non-standard

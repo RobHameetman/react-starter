@@ -1,4 +1,4 @@
-import { fakePressEvent } from '@app/utils/types/events/PressEvent/__test__';
+import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
 import { isPressEventHandler } from './PressEventHandler';
 import { mockPressEventHandler } from './__test__';
 

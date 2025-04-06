@@ -1,10 +1,10 @@
-import { fakeDragEvent } from '@app/utils/functions/check/react/isDragEvent/__test__';
-import { noop } from '@app/utils/functions/misc/noop';
+import { fakeDragEvent } from '@/utils/functions/check/react/isDragEvent/__test__';
+import { noop } from '@/utils/functions/misc/noop';
 import { onTest } from '@test/utils/onTest';
 import { handleGlobalDragEvents } from './handleGlobalDragEvents';
 
-jest.mock('@app/utils/functions/misc/noop', () => ({
-	...jest.requireActual('@app/utils/functions/misc/noop'),
+jest.mock('@/utils/functions/misc/noop', () => ({
+	...jest.requireActual('@/utils/functions/misc/noop'),
 	noop: jest.fn(),
 }));
 

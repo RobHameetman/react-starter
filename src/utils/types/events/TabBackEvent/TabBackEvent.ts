@@ -1,4 +1,4 @@
-import { TabEvent, isTabEvent } from '@app/utils/types/events/TabEvent';
+import { TabEvent, isTabEvent } from '@/utils/types/events/TabEvent';
 
 /**
  * A compositional event type for React components that allow you to trigger an

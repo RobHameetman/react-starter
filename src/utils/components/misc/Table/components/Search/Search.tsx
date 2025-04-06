@@ -1,8 +1,8 @@
 import { useLayoutEffect } from 'react';
-import { Input, InputTypes } from '@app/utils/components/forms/Input';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { SearchIcon } from '@app/utils/icons/SearchIcon';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { Input, InputTypes } from '@/utils/components/forms/Input';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import { SearchIcon } from '@/utils/icons/SearchIcon';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import { SearchMatch } from '../SearchMatch';
 import { isSearchable } from '../../functions';
 import { useTable } from '../../hooks';

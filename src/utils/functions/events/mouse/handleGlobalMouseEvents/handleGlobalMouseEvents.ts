@@ -1,5 +1,5 @@
-import { noop } from '@app/utils/functions/misc/noop';
-import { manageVirtualClickModality } from '@app/utils/functions/events/interactions/manageVirtualClickModality';
+import { noop } from '@/utils/functions/misc/noop';
+import { manageVirtualClickModality } from '@/utils/functions/events/interactions/manageVirtualClickModality';
 
 /**
  * Handle mouse events from the global `window` object. This handler is attached

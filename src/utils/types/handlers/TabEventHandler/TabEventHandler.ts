@@ -1,6 +1,6 @@
 import { EventHandler, KeyboardEventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
-import { TabEvent, isTabEvent } from '@app/utils/types/events/TabEvent';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
+import { TabEvent, isTabEvent } from '@/utils/types/events/TabEvent';
 
 /**
  * A compositional event handler type for React components that allow you to

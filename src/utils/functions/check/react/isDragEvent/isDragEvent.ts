@@ -1,6 +1,6 @@
 import type { DragEvent } from 'react';
-import { isMouseEvent } from '@app/utils/functions/check/react/isMouseEvent';
-import { isDragEventType } from '@app/utils/enums/DragEventTypes';
+import { isMouseEvent } from '@/utils/functions/check/react/isMouseEvent';
+import { isDragEventType } from '@/utils/enums/DragEventTypes';
 
 /**
  * Checks that an `unknown` value is a {@link DragEvent}. This type guard is

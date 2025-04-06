@@ -1,5 +1,5 @@
-import { HAS_UNICODE_REGEX } from '@app/utils/constants/unicode/regex/HAS_UNICODE_REGEX';
-import { UNICODE_STRING_REGEX } from '@app/utils/constants/unicode/regex/UNICODE_STRING_REGEX';
+import { HAS_UNICODE_REGEX } from '@/utils/constants/unicode/regex/HAS_UNICODE_REGEX';
+import { UNICODE_STRING_REGEX } from '@/utils/constants/unicode/regex/UNICODE_STRING_REGEX';
 
 /**
  * Convert the first character of `string` value to uppercase and the remaining

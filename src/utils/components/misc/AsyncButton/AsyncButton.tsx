@@ -1,9 +1,9 @@
 import { $FC, useMemo } from 'react';
-import { ErrorIcon } from '@app/utils/icons/ErrorIcon';
-import { SuccessIcon } from '@app/utils/icons/SuccessIcon';
-import { LoadingElipsisAnimation } from '@app/utils/components/animations/LoadingElipsisAnimation';
-import { useControlProp } from '@app/utils/hooks/react/useControlProp';
-import { Button, ButtonProps } from '@app/utils/components/misc/Button';
+import { ErrorIcon } from '@/utils/icons/ErrorIcon';
+import { SuccessIcon } from '@/utils/icons/SuccessIcon';
+import { LoadingElipsisAnimation } from '@/utils/components/animations/LoadingElipsisAnimation';
+import { useControlProp } from '@/utils/hooks/react/useControlProp';
+import { Button, ButtonProps } from '@/utils/components/misc/Button';
 
 /**
  * Prop types for the {@link AsyncButton} component.

@@ -1,4 +1,4 @@
-import { words } from '@app/utils/functions/string/words';
+import { words } from '@/utils/functions/string/words';
 
 /**
  * Convert a string to snake-case.

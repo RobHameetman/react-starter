@@ -1,7 +1,7 @@
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 import { areNavigatorUABrandVersions } from '../areNavigatorUABrandVersions';
 
 /**

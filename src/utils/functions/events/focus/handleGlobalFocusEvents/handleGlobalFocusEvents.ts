@@ -1,6 +1,6 @@
-import { handleWindowBlur } from '@app/utils/functions/events/focus/handleWindowBlur';
-import { manageFocusModality } from '@app/utils/functions/events/interactions/manageFocusModality';
-import { noop } from '@app/utils/functions/misc/noop';
+import { handleWindowBlur } from '@/utils/functions/events/focus/handleWindowBlur';
+import { manageFocusModality } from '@/utils/functions/events/interactions/manageFocusModality';
+import { noop } from '@/utils/functions/misc/noop';
 
 /**
  * Handle focus events from the global `window` object. This handler is attached

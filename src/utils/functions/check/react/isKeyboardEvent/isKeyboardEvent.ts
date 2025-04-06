@@ -1,7 +1,7 @@
 import type { KeyboardEvent } from 'react';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isKeyboardEventType } from '@app/utils/enums/KeyboardEventTypes';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isKeyboardEventType } from '@/utils/enums/KeyboardEventTypes';
 
 /**
  * Checks that an `unknown` value is a {@link KeyboardEvent}. This type guard is

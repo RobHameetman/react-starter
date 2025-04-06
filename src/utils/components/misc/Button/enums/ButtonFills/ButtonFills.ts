@@ -1,4 +1,4 @@
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
 
 /**
  * A set of styles for the `<Button />` component.

@@ -1,4 +1,4 @@
-import { isMac } from '@app/utils/functions/agent/device/isMac';
+import { isMac } from '@/utils/functions/agent/device/isMac';
 
 /**
  * A function to determine if a `'keydown'` or `'keyup'` event is unmodified and

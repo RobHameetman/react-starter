@@ -1,6 +1,6 @@
 import type { DOMAttributes } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { capitalize } from '@app/utils/functions/string/capitalize';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { capitalize } from '@/utils/functions/string/capitalize';
 
 /**
  * The type of event target used in the {@link dispatchReactEvent()} function.

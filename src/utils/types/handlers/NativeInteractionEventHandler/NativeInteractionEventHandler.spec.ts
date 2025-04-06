@@ -1,4 +1,4 @@
-import { fakeNativeInteractionEvent } from '@app/utils/types/events/NativeInteractionEvent/__test__';
+import { fakeNativeInteractionEvent } from '@/utils/types/events/NativeInteractionEvent/__test__';
 import { isNativeInteractionEventHandler } from './NativeInteractionEventHandler';
 import { mockNativeInteractionEventHandler } from './__test__';
 

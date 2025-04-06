@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { handleGlobalPointerEvents as _handleGlobalPointerEvents } from '@app/utils/functions/events/pointer/handleGlobalPointerEvents';
+import { noop } from '@/utils/functions/misc/noop';
+import { handleGlobalPointerEvents as _handleGlobalPointerEvents } from '@/utils/functions/events/pointer/handleGlobalPointerEvents';
 
 /**
  * Functional dependencies used in the {@link useGlobalPointerEvents()} hook.

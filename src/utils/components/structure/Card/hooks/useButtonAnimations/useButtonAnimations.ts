@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
-import { createRipple as _createRipple } from '@app/utils/functions/animations/createRipple';
-import { getPressPosition as _getPressPosition } from '@app/utils/functions/events/press/getPressPosition';
-import { noop } from '@app/utils/functions/misc/noop';
-import type { PressEvent } from '@app/utils/types/events/PressEvent';
+import { createRipple as _createRipple } from '@/utils/functions/animations/createRipple';
+import { getPressPosition as _getPressPosition } from '@/utils/functions/events/press/getPressPosition';
+import { noop } from '@/utils/functions/misc/noop';
+import type { PressEvent } from '@/utils/types/events/PressEvent';
 
 /**
  * Functional dependencies used in the {@link useButtonAnimations()} hook. This

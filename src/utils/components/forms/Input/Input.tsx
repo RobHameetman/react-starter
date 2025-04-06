@@ -1,20 +1,20 @@
 import { ReactElement, forwardRef, useCallback, useState } from 'react';
-import { Button, ButtonStyles } from '@app/utils/components/misc/Button';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { noop } from '@app/utils/functions/misc/noop';
-import { useFocus } from '@app/utils/hooks/react/useFocus';
-import { VisibilityOffIcon } from '@app/utils/icons/VisibilityOffIcon';
-import { VisibilityOnIcon } from '@app/utils/icons/VisibilityOnIcon';
-import { Changeable } from '@app/utils/types/props/Changeable';
-import { Disablable } from '@app/utils/types/props/Disablable';
-import { Errorable } from '@app/utils/types/props/Errorable';
-import { Expansible } from '@app/utils/types/props/Expansible';
-import { Focusable } from '@app/utils/types/props/Focusable';
-import { Loadable } from '@app/utils/types/props/Loadable';
-import { Nameable } from '@app/utils/types/props/Nameable';
-import { Requirable } from '@app/utils/types/props/Requirable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import { Valuable } from '@app/utils/types/props/Valuable';
+import { Button, ButtonStyles } from '@/utils/components/misc/Button';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import { noop } from '@/utils/functions/misc/noop';
+import { useFocus } from '@/utils/hooks/react/useFocus';
+import { VisibilityOffIcon } from '@/utils/icons/VisibilityOffIcon';
+import { VisibilityOnIcon } from '@/utils/icons/VisibilityOnIcon';
+import { Changeable } from '@/utils/types/props/Changeable';
+import { Disablable } from '@/utils/types/props/Disablable';
+import { Errorable } from '@/utils/types/props/Errorable';
+import { Expansible } from '@/utils/types/props/Expansible';
+import { Focusable } from '@/utils/types/props/Focusable';
+import { Loadable } from '@/utils/types/props/Loadable';
+import { Nameable } from '@/utils/types/props/Nameable';
+import { Requirable } from '@/utils/types/props/Requirable';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import { Valuable } from '@/utils/types/props/Valuable';
 import styles from './Input.module.css';
 
 export enum InputTypes {

@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react';
-import { fakeEscapeEvent } from '@app/utils/types/events/EscapeEvent/__test__';
+import { fakeEscapeEvent } from '@/utils/types/events/EscapeEvent/__test__';
 import {
 	EscapeEventHandler,
 	isEscapeEventHandler as isEscapeHandler,
-} from '@app/utils/types/handlers/EscapeEventHandler';
+} from '@/utils/types/handlers/EscapeEventHandler';
 import { onTest } from '@test/utils/onTest';
 import { useEscapeEvents } from './useEscapeEvents';
 

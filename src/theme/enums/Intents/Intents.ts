@@ -1,4 +1,4 @@
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 
 /**
  * A set of standardized interaction intents for components that the user may

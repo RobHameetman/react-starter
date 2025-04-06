@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { KeyboardEventHandler, useCallback, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { useBreakpoints } from '@app/utils/hooks';
-import { Stylable, Testable } from '@app/utils/types/props';
+import { useBreakpoints } from '@/utils/hooks';
+import { Stylable, Testable } from '@/utils/types/props';
 import { ViewContent, ViewFooter, ViewHeader, ViewSidebar } from './internals';
 import { DOCUMENT_TITLE_TEMPLATE } from '../../constants';
 import { CC } from '../../types';

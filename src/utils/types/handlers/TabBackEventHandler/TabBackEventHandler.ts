@@ -1,10 +1,10 @@
 import { EventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
 import {
 	TabBackEvent,
 	isTabBackEvent,
-} from '@app/utils/types/events/TabBackEvent';
-import { TabEventHandler } from '@app/utils/types/handlers/TabEventHandler';
+} from '@/utils/types/events/TabBackEvent';
+import { TabEventHandler } from '@/utils/types/handlers/TabEventHandler';
 
 /**
  * A compositional event handler type for React components that allow you to

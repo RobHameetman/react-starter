@@ -1,7 +1,7 @@
-import { interactionModalityListeners as _interactionModalityListeners } from '@app/utils/functions/events/interactions/interactionModalityListeners';
-import { interactionModality as _interactionModality } from '@app/utils/functions/events/interactions/interactionModality';
-import { interactionStates as _interactionStates } from '@app/utils/functions/events/interactions/interactionStates';
-import { isUnmodifiedKeypress } from '@app/utils/functions/events/keyboard/isUnmodifiedKeypress';
+import { interactionModalityListeners as _interactionModalityListeners } from '@/utils/functions/events/interactions/interactionModalityListeners';
+import { interactionModality as _interactionModality } from '@/utils/functions/events/interactions/interactionModality';
+import { interactionStates as _interactionStates } from '@/utils/functions/events/interactions/interactionStates';
+import { isUnmodifiedKeypress } from '@/utils/functions/events/keyboard/isUnmodifiedKeypress';
 
 /**
  * Functional dependencies used in the {@link manageKeyboardModality()}

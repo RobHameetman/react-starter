@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { isArray } from '@app/utils/functions/check/js/core/isArray';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { withId } from '@app/utils/hocs/withId';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import type { Identifiable } from '@app/utils/types/props/Identifiable';
-import { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { isArray } from '@/utils/functions/check/js/core/isArray';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import { withId } from '@/utils/hocs/withId';
+import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
+import type { Identifiable } from '@/utils/types/props/Identifiable';
+import { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import { KBD_MAP } from './constants';
 import { KbdModifier } from './enums';
 import styles from './Kbd.module.css';

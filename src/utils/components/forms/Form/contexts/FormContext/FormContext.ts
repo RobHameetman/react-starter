@@ -1,7 +1,7 @@
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 import { createContext } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
 import { FormModes } from '../../enums';
 import { CachedForm, FormField, FormFields, isCachedForm } from '../../types';
 

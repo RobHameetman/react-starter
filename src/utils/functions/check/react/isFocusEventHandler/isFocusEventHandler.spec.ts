@@ -1,4 +1,4 @@
-import { fakeFocusEvent } from '@app/utils/functions/check/react/isFocusEvent/__test__';
+import { fakeFocusEvent } from '@/utils/functions/check/react/isFocusEvent/__test__';
 import { isFocusEventHandler } from './isFocusEventHandler';
 import { mockFocusEventHandler } from './__test__';
 

@@ -1,5 +1,5 @@
-import { isIphone as _isIphone } from '@app/utils/functions/agent/device/isIphone';
-import { isIpad as _isIpad } from '@app/utils/functions/agent/device/isIpad';
+import { isIphone as _isIphone } from '@/utils/functions/agent/device/isIphone';
+import { isIpad as _isIpad } from '@/utils/functions/agent/device/isIpad';
 
 /**
  * Functional dependencies used in the {@link isIOS()} function. This object is

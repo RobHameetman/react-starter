@@ -4,11 +4,11 @@ import {
 	SetStateAction,
 	createContext,
 } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { noop } from '@app/utils/functions/misc/noop';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { noop } from '@/utils/functions/misc/noop';
 import { ChangeTabHandler } from '../../types';
 
 /**

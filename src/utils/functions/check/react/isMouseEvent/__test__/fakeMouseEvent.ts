@@ -1,8 +1,8 @@
 import type { MouseEvent } from 'react';
 import { faker } from '@faker-js/faker';
-import { fakeUIEvent } from '@app/utils/functions/check/react/isUIEvent/__test__';
-import { randomMouseEventType } from '@app/utils/enums/MouseEventTypes/__test__';
-import { randomMozInputSource } from '@app/utils/enums/MozInputSources/__test__';
+import { fakeUIEvent } from '@/utils/functions/check/react/isUIEvent/__test__';
+import { randomMouseEventType } from '@/utils/enums/MouseEventTypes/__test__';
+import { randomMozInputSource } from '@/utils/enums/MozInputSources/__test__';
 
 export const fakeMouseEvent = <T = Element>({
 	capturing = false,

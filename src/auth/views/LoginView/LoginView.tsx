@@ -1,9 +1,9 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, Grid, Input, Link, Loading } from '@nextui-org/react';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { GithubIcon, GoogleIcon, LinkedinIcon } from '@app/utils/icons';
-import { View } from '@app/utils/views/View';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { GithubIcon, GoogleIcon, LinkedinIcon } from '@/utils/icons';
+import { View } from '@/utils/views/View';
 import styles from './LoginView.module.css';
 
 /**

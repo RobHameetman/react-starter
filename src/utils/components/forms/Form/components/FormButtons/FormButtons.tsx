@@ -1,6 +1,6 @@
 import { $FC } from 'react';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './FormButtons.module.css';
 
 /**

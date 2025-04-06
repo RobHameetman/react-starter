@@ -1,6 +1,6 @@
 import { $FC, ReactNode } from 'react';
-import { uniqueId } from '@app/utils/functions/misc/uniqueId';
-import type { CC } from '@app/utils/types/react/CC';
+import { uniqueId } from '@/utils/functions/misc/uniqueId';
+import type { CC } from '@/utils/types/react/CC';
 
 /**
  * Type aliases used below to infer the prop types of a component or compound

@@ -1,4 +1,4 @@
-import { isNonEmptyArray } from '@app/utils/functions/check/js/specialized/isNonEmptyArray';
+import { isNonEmptyArray } from '@/utils/functions/check/js/specialized/isNonEmptyArray';
 import { isNonEmptyObject } from '../../check/js/specialized';
 
 export const cssClasses = (...args: ReadonlyArray<unknown>) => {

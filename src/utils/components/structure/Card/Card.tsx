@@ -1,15 +1,15 @@
 import { useRef } from 'react';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { noop } from '@app/utils/functions/misc/noop';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import { usePressEvents } from '@app/utils/hooks/react/usePressEvents/usePressEvents';
-import type { Expansible } from '@app/utils/types/props/Expansible';
-import type { Hoverable } from '@app/utils/types/props/Hoverable';
-import type { Identifiable } from '@app/utils/types/props/Identifiable';
-import type { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Pressable } from '@app/utils/types/props/Pressable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import { CC } from '@app/utils/types/react/CC';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import { noop } from '@/utils/functions/misc/noop';
+import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
+import { usePressEvents } from '@/utils/hooks/react/usePressEvents/usePressEvents';
+import type { Expansible } from '@/utils/types/props/Expansible';
+import type { Hoverable } from '@/utils/types/props/Hoverable';
+import type { Identifiable } from '@/utils/types/props/Identifiable';
+import type { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Pressable } from '@/utils/types/props/Pressable';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import { CC } from '@/utils/types/react/CC';
 import {
 	CardBody,
 	CardDivider,

@@ -1,8 +1,8 @@
-import { DomNodeTypes } from '@app/utils/enums/DomNodeTypes';
-import { isNode } from '@app/utils/functions/check/dom/isNode';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
-import { Attr, isAttr } from '@app/utils/types/dom/Attr';
+import { DomNodeTypes } from '@/utils/enums/DomNodeTypes';
+import { isNode } from '@/utils/functions/check/dom/isNode';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
+import { Attr, isAttr } from '@/utils/types/dom/Attr';
 
 /**
  * Represents a list of {@link Attr} nodes, potentially with a particular

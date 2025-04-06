@@ -1,6 +1,6 @@
 import type { UIEvent, UIEventHandler } from 'react';
-import { isEventHandler } from '@app/utils/functions/check/react/isEventHandler';
-import { isUIEvent } from '@app/utils/functions/check/react/isUIEvent';
+import { isEventHandler } from '@/utils/functions/check/react/isEventHandler';
+import { isUIEvent } from '@/utils/functions/check/react/isUIEvent';
 
 /**
  * Checks that an `unknown` value is a {@link UIEventHandler} function.

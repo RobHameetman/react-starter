@@ -1,7 +1,7 @@
 import type { PointerEvent } from 'react';
-import { isMouseEvent } from '@app/utils/functions/check/react/isMouseEvent';
-import { isPointerType } from '@app/utils/enums/PointerTypes';
-import { isPointerEventType } from '@app/utils/enums/PointerEventTypes';
+import { isMouseEvent } from '@/utils/functions/check/react/isMouseEvent';
+import { isPointerType } from '@/utils/enums/PointerTypes';
+import { isPointerEventType } from '@/utils/enums/PointerEventTypes';
 
 /**
  * Checks that an `unknown` value is a {@link PointerEvent}. This type guard is

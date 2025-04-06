@@ -1,7 +1,7 @@
 import { PointerEventHandler } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { Mousable, isMousable } from '@app/utils/types/props/Mousable';
-import { Touchable, isTouchable } from '@app/utils/types/props/Touchable';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { Mousable, isMousable } from '@/utils/types/props/Mousable';
+import { Touchable, isTouchable } from '@/utils/types/props/Touchable';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

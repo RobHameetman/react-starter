@@ -1,7 +1,7 @@
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
 import { FormFields } from '../FormFields';
 
 export type FormFieldValidationFn<T> = (

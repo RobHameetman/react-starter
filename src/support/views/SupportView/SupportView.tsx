@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, Grid, Input, Link } from '@nextui-org/react';
-import { Card } from '@app/utils/components/structure/Card';
-import { View } from '@app/utils/views/View';
+import { Card } from '@/utils/components/structure/Card';
+import { View } from '@/utils/views/View';
 import styles from './SupportView.module.css';
 
 /**

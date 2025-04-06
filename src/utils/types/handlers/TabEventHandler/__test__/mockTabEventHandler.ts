@@ -1,6 +1,6 @@
-import { noop } from '@app/utils/functions/misc';
-import { TabEvent, isTabEvent } from '@app/utils/types/events/TabEvent';
-import { fakeTabEvent } from '@app/utils/types/events/TabEvent/__test__';
+import { noop } from '@/utils/functions/misc';
+import { TabEvent, isTabEvent } from '@/utils/types/events/TabEvent';
+import { fakeTabEvent } from '@/utils/types/events/TabEvent/__test__';
 
 export const mockTabEventHandler = <T = Element>(
 	callback: (e: TabEvent<T>) => void = noop,

@@ -1,13 +1,13 @@
-import { fakeKeyboardEvent } from '@app/utils/functions/check/react/isKeyboardEvent/__test__';
-import { manageKeyboardModality } from '@app/utils/functions/events/interactions/manageKeyboardModality';
+import { fakeKeyboardEvent } from '@/utils/functions/check/react/isKeyboardEvent/__test__';
+import { manageKeyboardModality } from '@/utils/functions/events/interactions/manageKeyboardModality';
 import { onTest } from '@test/utils/onTest';
 import { handleGlobalKeyboardEvents } from './handleGlobalKeyboardEvents';
 
 jest.mock(
-	'@app/utils/functions/events/interactions/manageKeyboardModality',
+	'@/utils/functions/events/interactions/manageKeyboardModality',
 	() => ({
 		...jest.requireActual(
-			'@app/utils/functions/events/interactions/manageKeyboardModality',
+			'@/utils/functions/events/interactions/manageKeyboardModality',
 		),
 		manageKeyboardModality: jest.fn(),
 	}),

@@ -1,5 +1,5 @@
-import { UnicodeCharacterRanges as Ranges } from '@app/utils/enums/UnicodeCharacterRanges';
-import { UnicodeCaptureGroups as Groups } from '@app/utils/enums/UnicodeCaptureGroups';
+import { UnicodeCharacterRanges as Ranges } from '@/utils/enums/UnicodeCharacterRanges';
+import { UnicodeCaptureGroups as Groups } from '@/utils/enums/UnicodeCaptureGroups';
 
 /**
  * Used for matching complex Unicode strings instead of String.toUpperCase('')

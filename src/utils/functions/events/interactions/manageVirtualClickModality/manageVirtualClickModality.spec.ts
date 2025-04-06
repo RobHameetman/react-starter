@@ -1,4 +1,4 @@
-import { fakePointerEvent } from '@app/utils/functions/check/react/isPointerEvent/__test__';
+import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
 import { onTest } from '@test/utils/onTest';
 import { manageVirtualClickModality } from './manageVirtualClickModality';
 

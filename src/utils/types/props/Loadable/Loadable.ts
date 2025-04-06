@@ -1,6 +1,6 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

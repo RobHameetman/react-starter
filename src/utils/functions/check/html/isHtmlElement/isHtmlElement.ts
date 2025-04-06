@@ -1,6 +1,6 @@
-import { isElement } from '@app/utils/functions/check/dom/isElement';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { isElement } from '@/utils/functions/check/dom/isElement';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is an {@link HTMLElement}.

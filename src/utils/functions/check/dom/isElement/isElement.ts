@@ -1,6 +1,6 @@
-import { DomNodeTypes } from '@app/utils/enums/DomNodeTypes';
-import { isNode } from '@app/utils/functions/check/dom/isNode';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { DomNodeTypes } from '@/utils/enums/DomNodeTypes';
+import { isNode } from '@/utils/functions/check/dom/isNode';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is an {@link Element}.

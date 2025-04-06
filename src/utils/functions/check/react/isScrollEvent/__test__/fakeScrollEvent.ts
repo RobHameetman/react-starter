@@ -1,6 +1,6 @@
 import type { UIEvent } from 'react';
-import { randomScrollEventType } from '@app/utils/enums/ScrollEventTypes/__test__';
-import { fakeUIEvent } from '@app/utils/functions/check/react/isUIEvent/__test__';
+import { randomScrollEventType } from '@/utils/enums/ScrollEventTypes/__test__';
+import { fakeUIEvent } from '@/utils/functions/check/react/isUIEvent/__test__';
 
 export const fakeScrollEvent = <T = Element>({
 	capturing = false,

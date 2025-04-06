@@ -1,5 +1,5 @@
-import { managePointerModality } from '@app/utils/functions/events/interactions/managePointerModality';
-import { noop } from '@app/utils/functions/misc/noop';
+import { managePointerModality } from '@/utils/functions/events/interactions/managePointerModality';
+import { noop } from '@/utils/functions/misc/noop';
 
 /**
  * Handle pointer events from the global `window` object. This handler is

@@ -1,6 +1,6 @@
-import { isNode } from '@app/utils/functions/check/dom/isNode';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { isNode } from '@/utils/functions/check/dom/isNode';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is a {@link NodeList}.

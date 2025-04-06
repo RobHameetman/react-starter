@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { randomSize } from '@app/theme/enums/Sizes/__test__';
+import { randomSize } from '@/theme/enums/Sizes/__test__';
 
 export const fakeSizable = ({
 	...overrideProps

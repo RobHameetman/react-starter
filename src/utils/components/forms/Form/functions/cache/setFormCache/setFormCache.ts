@@ -1,5 +1,5 @@
-import { setItem } from '@app/utils/functions/storage/setItem';
-import { snakeCase } from '@app/utils/functions/string/snakeCase';
+import { setItem } from '@/utils/functions/storage/setItem';
+import { snakeCase } from '@/utils/functions/string/snakeCase';
 import { CachedForm } from '../../../types';
 
 /**

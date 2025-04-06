@@ -1,9 +1,9 @@
 import { FocusEventHandler, useCallback } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { isFocusVisible as _isFocusVisible } from '@app/utils/functions/events/focus/isFocusVisible';
-import { isCapturing as _isCapturing } from '@app/utils/functions/events/phases/isCapturing';
-import type { Disablable } from '@app/utils/types/props/Disablable';
-import type { Focusable } from '@app/utils/types/props/Focusable';
+import { noop } from '@/utils/functions/misc/noop';
+import { isFocusVisible as _isFocusVisible } from '@/utils/functions/events/focus/isFocusVisible';
+import { isCapturing as _isCapturing } from '@/utils/functions/events/phases/isCapturing';
+import type { Disablable } from '@/utils/types/props/Disablable';
+import type { Focusable } from '@/utils/types/props/Focusable';
 
 /**
  * A type alias used to avoid a line break in the 'extends' clause below.

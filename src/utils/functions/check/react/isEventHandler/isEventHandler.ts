@@ -1,6 +1,6 @@
 import type { SyntheticEvent, EventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
-import { isSyntheticEvent } from '@app/utils/functions/check/react/isSyntheticEvent';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
+import { isSyntheticEvent } from '@/utils/functions/check/react/isSyntheticEvent';
 
 /**
  * A type alias used to resolve a type error on line `34`.

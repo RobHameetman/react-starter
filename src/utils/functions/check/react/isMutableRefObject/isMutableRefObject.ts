@@ -1,5 +1,5 @@
 import { MutableRefObject } from 'react';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 
 /**
  * Checks that an `unknown` value is a {@link MutableRefObject}.

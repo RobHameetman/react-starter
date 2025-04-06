@@ -1,4 +1,4 @@
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 
 /**
  * Handle scroll events from the global `window` object. This handler is

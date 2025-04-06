@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { isNewContext } from '@app/path/to/NewContext';
+import { isNewContext } from '@/path/to/NewContext';
 import { useNewContext } from './useNewContext';
 import { MockNewProvider } from './__test__';
 

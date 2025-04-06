@@ -1,4 +1,4 @@
-import { NewContext } from '@app/path/to/NewContext';
+import { NewContext } from '@/path/to/NewContext';
 import { useContext } from 'react';
 
 /**

@@ -1,4 +1,4 @@
-import { Func } from '@app/utils/types/misc/Func';
+import { Func } from '@/utils/types/misc/Func';
 import { onTest } from '@test/utils/onTest';
 import { interactionStates } from './interactionStates';
 

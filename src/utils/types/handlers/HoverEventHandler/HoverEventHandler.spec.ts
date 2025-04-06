@@ -1,4 +1,4 @@
-import { fakeHoverEvent } from '@app/utils/types/events/HoverEvent/__test__';
+import { fakeHoverEvent } from '@/utils/types/events/HoverEvent/__test__';
 import { isHoverEventHandler } from './HoverEventHandler';
 import { mockHoverEventHandler } from './__test__';
 

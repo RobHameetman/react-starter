@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { handleGlobalDragEvents as _handleGlobalDragEvents } from '@app/utils/functions/events/drag/handleGlobalDragEvents';
+import { noop } from '@/utils/functions/misc/noop';
+import { handleGlobalDragEvents as _handleGlobalDragEvents } from '@/utils/functions/events/drag/handleGlobalDragEvents';
 
 /**
  * Functional dependencies used in the {@link useGlobalDragEvents()} hook.

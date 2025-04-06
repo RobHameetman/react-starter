@@ -1,4 +1,4 @@
-import { isApple } from '@app/utils/functions/agent/device/isApple';
+import { isApple } from '@/utils/functions/agent/device/isApple';
 import { KbdModifiers } from '../../enums/KbdModifiers';
 
 export const KBD_MAP: Record<KbdModifiers, string> = Object.freeze({

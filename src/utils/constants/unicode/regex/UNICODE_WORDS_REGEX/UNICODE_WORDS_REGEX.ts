@@ -1,5 +1,5 @@
-import { UnicodeCaptureGroups as Groups } from '@app/utils/enums/UnicodeCaptureGroups';
-import { UnicodeRegexInputs as Inputs } from '@app/utils/enums/UnicodeRegexInputs';
+import { UnicodeCaptureGroups as Groups } from '@/utils/enums/UnicodeCaptureGroups';
+import { UnicodeRegexInputs as Inputs } from '@/utils/enums/UnicodeRegexInputs';
 
 /**
  * @TODO

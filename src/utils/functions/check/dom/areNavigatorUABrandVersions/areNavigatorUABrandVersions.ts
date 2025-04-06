@@ -1,4 +1,4 @@
-import { isArray } from '@app/utils/functions/check/js/core/isArray';
+import { isArray } from '@/utils/functions/check/js/core/isArray';
 import { isNavigatorUABrandVersion } from '../isNavigatorUABrandVersion';
 
 /**

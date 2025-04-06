@@ -1,7 +1,7 @@
 import type { UIEvent } from 'react';
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isSyntheticEvent } from '@app/utils/functions/check/react/isSyntheticEvent';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isSyntheticEvent } from '@/utils/functions/check/react/isSyntheticEvent';
 
 /**
  * Checks that an `unknown` value is a {@link UIEvent}. This type guard is

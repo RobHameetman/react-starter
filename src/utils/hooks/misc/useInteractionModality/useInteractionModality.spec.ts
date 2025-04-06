@@ -1,7 +1,7 @@
 import { FocusEventHandler } from 'react';
 import { renderHook } from '@testing-library/react';
-import { fakeFocusEvent } from '@app/utils/functions/check/react/isFocusEvent/__test__';
-import { isFocusEventHandler as isFocusHandler } from '@app/utils/functions/check/react/isFocusEventHandler';
+import { fakeFocusEvent } from '@/utils/functions/check/react/isFocusEvent/__test__';
+import { isFocusEventHandler as isFocusHandler } from '@/utils/functions/check/react/isFocusEventHandler';
 import { onTest } from '@test/utils/onTest';
 import { useFocusEvents } from './useInteractionModality';
 

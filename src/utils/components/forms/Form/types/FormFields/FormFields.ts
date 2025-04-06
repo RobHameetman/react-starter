@@ -1,4 +1,4 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 import { FormField, isFormField } from '../FormField';
 
 /**

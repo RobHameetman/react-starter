@@ -1,6 +1,6 @@
-import { interactionModalityListeners as _interactionModalityListeners } from '@app/utils/functions/events/interactions/interactionModalityListeners';
-import { interactionModality as _interactionModality } from '@app/utils/functions/events/interactions/interactionModality';
-import { interactionStates as _interactionStates } from '@app/utils/functions/events/interactions/interactionStates';
+import { interactionModalityListeners as _interactionModalityListeners } from '@/utils/functions/events/interactions/interactionModalityListeners';
+import { interactionModality as _interactionModality } from '@/utils/functions/events/interactions/interactionModality';
+import { interactionStates as _interactionStates } from '@/utils/functions/events/interactions/interactionStates';
 
 /**
  * Functional dependencies used in the {@link manageFocusModality()} function.

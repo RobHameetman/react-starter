@@ -5,10 +5,10 @@ import {
 	SetStateAction,
 	useCallback,
 } from 'react';
-import { ChangeEvent } from '@app/utils/events/ChangeEvent';
-import { dispatchReactEvent as _dispatchReactEvent } from '@app/utils/functions/events/misc/dispatchReactEvent';
-import { isCapturing as _isCapturing } from '@app/utils/functions/events/phases/isCapturing';
-import { noop } from '@app/utils/functions/misc/noop';
+import { ChangeEvent } from '@/utils/events/ChangeEvent';
+import { dispatchReactEvent as _dispatchReactEvent } from '@/utils/functions/events/misc/dispatchReactEvent';
+import { isCapturing as _isCapturing } from '@/utils/functions/events/phases/isCapturing';
+import { noop } from '@/utils/functions/misc/noop';
 import { useRadioContext as _useRadioContext } from '../useRadioContext';
 import { setNativeInputValue as _setNativeInputValue } from '../../functions';
 

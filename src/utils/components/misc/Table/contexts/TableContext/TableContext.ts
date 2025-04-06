@@ -1,8 +1,8 @@
 import { ChangeEventHandler, createContext } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
-import { noop } from '@app/utils/functions/misc/noop';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
+import { noop } from '@/utils/functions/misc/noop';
 import { SortOrder, SortType } from '../../enums';
 import {
 	ChangePageHandler,

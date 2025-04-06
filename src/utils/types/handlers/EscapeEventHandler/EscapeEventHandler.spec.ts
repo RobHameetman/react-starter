@@ -1,4 +1,4 @@
-import { fakeEscapeEvent } from '@app/utils/types/events/EscapeEvent/__test__';
+import { fakeEscapeEvent } from '@/utils/types/events/EscapeEvent/__test__';
 import { isEscapeEventHandler } from './EscapeEventHandler';
 import { mockEscapeEventHandler } from './__test__';
 

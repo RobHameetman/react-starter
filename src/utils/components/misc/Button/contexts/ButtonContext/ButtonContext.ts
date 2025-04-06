@@ -1,9 +1,9 @@
 import { createContext } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
-import { noop } from '@app/utils/functions/misc/noop';
-import { PressEventHandler } from '@app/utils/types/handlers/PressEventHandler';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
+import { noop } from '@/utils/functions/misc/noop';
+import { PressEventHandler } from '@/utils/types/handlers/PressEventHandler';
 
 /**
  * A shared state for button groups.

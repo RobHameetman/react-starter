@@ -1,22 +1,22 @@
 import { faker } from '@faker-js/faker';
-import { fakeMouseEvent } from '@app/utils/functions/check/react/isMouseEvent/__test__';
-import { manageVirtualClickModality } from '@app/utils/functions/events/interactions/manageVirtualClickModality';
-import { noop } from '@app/utils/functions/misc/noop';
+import { fakeMouseEvent } from '@/utils/functions/check/react/isMouseEvent/__test__';
+import { manageVirtualClickModality } from '@/utils/functions/events/interactions/manageVirtualClickModality';
+import { noop } from '@/utils/functions/misc/noop';
 import { onTest } from '@test/utils/onTest';
 import { handleGlobalMouseEvents } from './handleGlobalMouseEvents';
 
 jest.mock(
-	'@app/utils/functions/events/interactions/manageVirtualClickModality',
+	'@/utils/functions/events/interactions/manageVirtualClickModality',
 	() => ({
 		...jest.requireActual(
-			'@app/utils/functions/events/interactions/manageVirtualClickModality',
+			'@/utils/functions/events/interactions/manageVirtualClickModality',
 		),
 		manageVirtualClickModality: jest.fn(),
 	}),
 );
 
-jest.mock('@app/utils/functions/misc/noop', () => ({
-	...jest.requireActual('@app/utils/functions/misc/noop'),
+jest.mock('@/utils/functions/misc/noop', () => ({
+	...jest.requireActual('@/utils/functions/misc/noop'),
 	noop: jest.fn(),
 }));
 

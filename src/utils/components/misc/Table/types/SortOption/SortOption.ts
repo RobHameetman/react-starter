@@ -1,5 +1,5 @@
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 import { SortOrder, isSortOrder } from '../../enums';
 
 /**

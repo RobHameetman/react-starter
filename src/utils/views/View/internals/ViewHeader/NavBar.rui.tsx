@@ -1,14 +1,14 @@
 import { $FC } from 'react';
 import { Avatar, Dropdown, Navbar, Input, Link } from '@nextui-org/react';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { Kbd } from '@app/utils/components/info/Kbd';
-import { Button } from '@app/utils/components/misc/Button';
-import { Logo } from '@app/utils/components/misc/Logo';
-import { useBreakpoints } from '@app/utils/hooks/misc/useBreakpoints';
-import { DarkModeIcon } from '@app/utils/icons/DarkModeIcon';
-import { LightModeIcon } from '@app/utils/icons/LightModeIcon';
-import { useTheme } from '@app/utils/hooks/misc/useTheme';
-import { Stylable, Testable } from '@app/utils/types/props';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { Kbd } from '@/utils/components/info/Kbd';
+import { Button } from '@/utils/components/misc/Button';
+import { Logo } from '@/utils/components/misc/Logo';
+import { useBreakpoints } from '@/utils/hooks/misc/useBreakpoints';
+import { DarkModeIcon } from '@/utils/icons/DarkModeIcon';
+import { LightModeIcon } from '@/utils/icons/LightModeIcon';
+import { useTheme } from '@/utils/hooks/misc/useTheme';
+import { Stylable, Testable } from '@/utils/types/props';
 import styles from './NavBar.module.css';
 
 const Command: $FC = () => (

@@ -1,9 +1,9 @@
 import { KeyboardEventHandler, useCallback } from 'react';
-import { isCapturing as _isCapturing } from '@app/utils/functions/events/phases/isCapturing';
-import { noop } from '@app/utils/functions/misc/noop';
-import { isTabEvent as _isTabEvent } from '@app/utils/types/events/TabEvent';
-import { isTabBackEvent as _isTabBackEvent } from '@app/utils/types/events/TabBackEvent';
-import type { Tabbable } from '@app/utils/types/props/Tabbable';
+import { isCapturing as _isCapturing } from '@/utils/functions/events/phases/isCapturing';
+import { noop } from '@/utils/functions/misc/noop';
+import { isTabEvent as _isTabEvent } from '@/utils/types/events/TabEvent';
+import { isTabBackEvent as _isTabBackEvent } from '@/utils/types/events/TabBackEvent';
+import type { Tabbable } from '@/utils/types/props/Tabbable';
 
 /**
  * Functional dependencies used in the {@link useTabEvents()} hook. This object

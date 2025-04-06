@@ -1,9 +1,9 @@
-import { InteractionModality } from '@app/utils/enums/InteractionModalities';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
+import { InteractionModality } from '@/utils/enums/InteractionModalities';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
 import {
 	NativeInteractionEvent,
 	isNativeInteractionEvent,
-} from '@app/utils/types/events/NativeInteractionEvent';
+} from '@/utils/types/events/NativeInteractionEvent';
 
 /**
  * An event handler used in the `initGlobalEventHandlers` function to determine

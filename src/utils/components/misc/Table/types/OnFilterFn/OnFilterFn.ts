@@ -1,5 +1,5 @@
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 
 /**
  * A callback triggered when data in the table is filtered.

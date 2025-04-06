@@ -1,5 +1,5 @@
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isNumberGreaterThanZero } from '@app/utils/functions/check/js/specialized/isNumberGreaterThanZero';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isNumberGreaterThanZero } from '@/utils/functions/check/js/specialized/isNumberGreaterThanZero';
 import { TableCache, isTableCache } from '../TableCache';
 import { TableStateData, isTableStateData } from '../TableStateData';
 import {

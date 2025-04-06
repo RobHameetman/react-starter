@@ -1,6 +1,6 @@
-import { DomNodeTypes } from '@app/utils/enums/DomNodeTypes';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { DomNodeTypes } from '@/utils/enums/DomNodeTypes';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is an {@link Attr} node.

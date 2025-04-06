@@ -1,6 +1,6 @@
 import { Component, ErrorInfo, FC, PropsWithChildren, ReactNode } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { ErrorView } from '@app/utils/views/ErrorView';
+import { noop } from '@/utils/functions/misc/noop';
+import { ErrorView } from '@/utils/views/ErrorView';
 
 export interface CatchErrorProps {
 	readonly as?: string | ReactNode | FC<Partial<Error>>;

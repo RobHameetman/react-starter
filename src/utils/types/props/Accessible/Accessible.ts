@@ -1,5 +1,5 @@
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * A compositional prop type for React components with a common set of

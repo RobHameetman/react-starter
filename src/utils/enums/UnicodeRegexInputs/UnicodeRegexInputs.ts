@@ -1,6 +1,6 @@
-import { UnicodeCharacterRanges as Ranges } from '@app/utils/enums/UnicodeCharacterRanges';
-import { UnicodeCaptureGroups as Groups } from '@app/utils/enums/UnicodeCaptureGroups';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
+import { UnicodeCharacterRanges as Ranges } from '@/utils/enums/UnicodeCharacterRanges';
+import { UnicodeCaptureGroups as Groups } from '@/utils/enums/UnicodeCaptureGroups';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
 
 /**
  * Composite regular expression strings for matching specific combinations of

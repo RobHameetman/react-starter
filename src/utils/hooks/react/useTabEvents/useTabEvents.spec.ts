@@ -1,13 +1,13 @@
 import { renderHook } from '@testing-library/react';
-import { fakeTabEvent } from '@app/utils/types/events/TabEvent/__test__';
+import { fakeTabEvent } from '@/utils/types/events/TabEvent/__test__';
 import {
 	TabEventHandler,
 	isTabEventHandler as isTabHandler,
-} from '@app/utils/types/handlers/TabEventHandler';
+} from '@/utils/types/handlers/TabEventHandler';
 import {
 	TabBackEventHandler,
 	isTabBackEventHandler as isTabBackHandler,
-} from '@app/utils/types/handlers/TabBackEventHandler';
+} from '@/utils/types/handlers/TabBackEventHandler';
 import { onTest } from '@test/utils/onTest';
 import { useTabEvents } from './useTabEvents';
 

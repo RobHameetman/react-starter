@@ -1,5 +1,5 @@
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
+import { isString } from '@/utils/functions/check/js/core/isString';
 
 /**
  * Checks that an `unknown` value is a valid {@link Date} input. This type-guard

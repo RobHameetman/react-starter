@@ -1,6 +1,6 @@
 import { DragEventHandler } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { Mousable, isMousable } from '@app/utils/types/props/Mousable';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { Mousable, isMousable } from '@/utils/types/props/Mousable';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

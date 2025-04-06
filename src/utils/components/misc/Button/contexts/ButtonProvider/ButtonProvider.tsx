@@ -1,5 +1,5 @@
 import { $FC, useCallback, useState } from 'react';
-import { PressEventHandler } from '@app/utils/types/handlers/PressEventHandler';
+import { PressEventHandler } from '@/utils/types/handlers/PressEventHandler';
 import { ButtonContext } from '../ButtonContext';
 
 /**

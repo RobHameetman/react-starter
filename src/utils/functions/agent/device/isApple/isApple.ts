@@ -1,5 +1,5 @@
-import { isIOS as _isIOS } from '@app/utils/functions/agent/device/isIOS';
-import { isMac as _isMac } from '@app/utils/functions/agent/device/isMac';
+import { isIOS as _isIOS } from '@/utils/functions/agent/device/isIOS';
+import { isMac as _isMac } from '@/utils/functions/agent/device/isMac';
 
 /**
  * Functional dependencies used in the {@link isApple()} function. This object

@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import { fakeSyntheticEvent } from '@app/utils/functions/check/react/isSyntheticEvent/__test__';
+import { fakeSyntheticEvent } from '@/utils/functions/check/react/isSyntheticEvent/__test__';
 
 export const fakeChangeEvent = <T = Element>({ ...overrideProps } = {}) =>
 	({

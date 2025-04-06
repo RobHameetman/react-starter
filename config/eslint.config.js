@@ -1,7 +1,7 @@
 /**
  * This config file reintroduces support for configuration in package.json files.
  */
-const pkgJson = require('../package.json');
+const pkgJson = await import('../package.json', { assert: { type: 'json' } });
 
 const defaultConfig = 'recommended';
 
@@ -24,7 +24,7 @@ const importFrom = extendsConfig
 		: pkgJson[eslintConfig].extends
 	: '@rob.hameetman/eslint-plugin';
 
-const { configs, plugin } = require(importFrom);
+const { configs, plugin } = await import(importFrom);
 
 module.exports = [
 	...(configs[config] instanceof Array ? configs[config] : []),

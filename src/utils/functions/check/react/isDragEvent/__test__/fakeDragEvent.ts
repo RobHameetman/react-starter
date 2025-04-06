@@ -1,6 +1,6 @@
 import type { DragEvent } from 'react';
-import { randomDragEventType } from '@app/utils/enums/DragEventTypes/__test__';
-import { fakeUIEvent } from '@app/utils/functions/check/react/isUIEvent/__test__';
+import { randomDragEventType } from '@/utils/enums/DragEventTypes/__test__';
+import { fakeUIEvent } from '@/utils/functions/check/react/isUIEvent/__test__';
 
 export const fakeDragEvent = <T = Element>({
 	capturing = false,

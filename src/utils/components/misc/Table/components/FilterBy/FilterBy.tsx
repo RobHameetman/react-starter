@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useLayoutEffect } from 'react';
 import { MenuItem, Select } from '@material-ui/core';
-import { uniqueId } from '@app/utils/functions/misc/uniqueId';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { uniqueId } from '@/utils/functions/misc/uniqueId';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import { useTable } from '../../hooks';
 import { OnFilterFn } from '../../types';
 import { FilterIcon } from '../../../../icons';

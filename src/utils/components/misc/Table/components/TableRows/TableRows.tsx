@@ -1,7 +1,7 @@
 import { FC, ReactElement, useLayoutEffect, useState } from 'react';
 import * as Mui from '@material-ui/core';
 import * as MuiLab from '@material-ui/lab';
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 import { useTable } from '../../hooks';
 
 export interface TableRowsProps {

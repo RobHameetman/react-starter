@@ -1,6 +1,6 @@
 import type { FocusEvent, FocusEventHandler } from 'react';
-import { isFocusEvent } from '@app/utils/functions/check/react/isFocusEvent';
-import { isEventHandler } from '@app/utils/functions/check/react/isEventHandler';
+import { isFocusEvent } from '@/utils/functions/check/react/isFocusEvent';
+import { isEventHandler } from '@/utils/functions/check/react/isEventHandler';
 
 /**
  * Checks that an `unknown` value is a {@link FocusEventHandler} function.

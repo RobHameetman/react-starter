@@ -1,5 +1,5 @@
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
 
 /**
  * A set of predefined sizes for components. This is used in the `Sizable`

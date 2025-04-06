@@ -1,5 +1,5 @@
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is a function which does not return a value.

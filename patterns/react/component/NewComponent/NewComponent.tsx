@@ -1,8 +1,8 @@
 import { $FC } from 'react';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import type { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { As } from '@/utils/components/structure/As';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import type { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './NewComponent.module.css';
 
 type ComposedProps = Polymorphic & Stylable;
@@ -28,12 +28,13 @@ export const NewComponent: $FC<NewComponentProps> = ({
 	prop = false,
 	...props
 }) => {
-	const As = useSemanticAsProp({ as: _as });
 	const css = cssClasses(styles.newComponent, className);
 
 	return (
-		<As className={css} {...props}>
+		<As element={_as} className={css} {...props}>
 			{children}
 		</As>
 	);
 };
+
+export default NewComponent;

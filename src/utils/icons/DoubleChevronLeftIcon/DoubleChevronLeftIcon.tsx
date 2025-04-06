@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
-import { uniqueId } from '@app/utils/functions/misc/uniqueId';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { uniqueId } from '@/utils/functions/misc/uniqueId';
+import type { Stylable } from '@/utils/types/props/Stylable';
 
 /**
  * Compositional prop types for the {@link DoubleChevronLeftIcon} component.

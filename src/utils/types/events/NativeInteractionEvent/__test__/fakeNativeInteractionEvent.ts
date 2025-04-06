@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
-import { randomFocusEventType } from '@app/utils/enums/FocusEventTypes/__test__';
-import { randomKeyboardEventType } from '@app/utils/enums/KeyboardEventTypes/__test__';
-import { randomMouseEventType } from '@app/utils/enums/MouseEventTypes/__test__';
-import { randomPointerEventType } from '@app/utils/enums/PointerEventTypes/__test__';
+import { randomFocusEventType } from '@/utils/enums/FocusEventTypes/__test__';
+import { randomKeyboardEventType } from '@/utils/enums/KeyboardEventTypes/__test__';
+import { randomMouseEventType } from '@/utils/enums/MouseEventTypes/__test__';
+import { randomPointerEventType } from '@/utils/enums/PointerEventTypes/__test__';
 import { NativeInteractionEvent } from '../NativeInteractionEvent';
 
 export const fakeNativeInteractionEvent = ({

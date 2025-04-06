@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
-import { DomNodeType, DomNodeTypes } from '@app/utils/enums/DomNodeTypes';
-import { randomDomNodeType } from '@app/utils/enums/DomNodeTypes/__test__';
-import { fakeNodeList } from '@app/utils/functions/check/dom/isNodeList/__test__';
+import { DomNodeType, DomNodeTypes } from '@/utils/enums/DomNodeTypes';
+import { randomDomNodeType } from '@/utils/enums/DomNodeTypes/__test__';
+import { fakeNodeList } from '@/utils/functions/check/dom/isNodeList/__test__';
 import { fakeEventTarget } from '../../isEventTarget/__test__';
 
 const xml = () =>

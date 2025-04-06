@@ -1,9 +1,9 @@
 import { createContext } from 'react';
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { noop } from '@app/utils/functions/misc/noop';
-import { Theme, isTheme } from '@app/theme/types/Theme';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { noop } from '@/utils/functions/misc/noop';
+import { Theme, isTheme } from '@/theme/types/Theme';
 
 /**
  * `ThemeContext` holds any global state related to users and their current

@@ -1,4 +1,4 @@
-import { interactionStates as _interactionStates } from '@app/utils/functions/events/interactions/interactionStates';
+import { interactionStates as _interactionStates } from '@/utils/functions/events/interactions/interactionStates';
 
 /**
  * Functional dependencies used in the {@link handleWindowBlur()} function. This

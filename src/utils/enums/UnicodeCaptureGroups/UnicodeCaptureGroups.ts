@@ -1,5 +1,5 @@
-import { UnicodeCharacterRanges as Ranges } from '@app/utils/enums/UnicodeCharacterRanges';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
+import { UnicodeCharacterRanges as Ranges } from '@/utils/enums/UnicodeCharacterRanges';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
 
 /**
  * Regular expression strings for various Unicode character categories. Each

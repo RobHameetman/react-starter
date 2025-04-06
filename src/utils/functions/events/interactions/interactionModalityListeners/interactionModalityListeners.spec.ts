@@ -1,6 +1,6 @@
-import { NativeInteractionEvent } from '@app/utils/types/events/NativeInteractionEvent';
-import { fakeNativeInteractionEvent } from '@app/utils/types/events/NativeInteractionEvent/__test__';
-import { Func } from '@app/utils/types/misc/Func';
+import { NativeInteractionEvent } from '@/utils/types/events/NativeInteractionEvent';
+import { fakeNativeInteractionEvent } from '@/utils/types/events/NativeInteractionEvent/__test__';
+import { Func } from '@/utils/types/misc/Func';
 import { onTest } from '@test/utils/onTest';
 import { interactionModalityListeners } from './interactionModalityListeners';
 

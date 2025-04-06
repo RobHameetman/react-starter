@@ -1,5 +1,5 @@
-import { isNumberGreaterThanZero } from '@app/utils/functions/check/js/specialized/isNumberGreaterThanZero';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isNumberGreaterThanZero } from '@/utils/functions/check/js/specialized/isNumberGreaterThanZero';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 
 /**
  * A configuration object for paginating data.

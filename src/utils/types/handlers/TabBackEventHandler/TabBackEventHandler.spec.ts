@@ -1,4 +1,4 @@
-import { fakeTabBackEvent } from '@app/utils/types/events/TabBackEvent/__test__';
+import { fakeTabBackEvent } from '@/utils/types/events/TabBackEvent/__test__';
 import { isTabBackEventHandler } from './TabBackEventHandler';
 import { mockTabBackEventHandler } from './__test__';
 

@@ -5,7 +5,7 @@ import {
 	useEffect,
 	useState,
 } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 
 /**
  * Destructured arguments provided to the {@link useFocus()} function.

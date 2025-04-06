@@ -1,8 +1,8 @@
 import { createContext } from 'react';
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { User, isUser } from '@app/users//types/User';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { User, isUser } from '@/users//types/User';
 
 /**
  * This context/provider is used within the {@link AuthProvider} component to

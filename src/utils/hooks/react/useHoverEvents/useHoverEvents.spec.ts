@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react';
-import { fakeHoverEvent } from '@app/utils/types/events/HoverEvent/__test__';
+import { fakeHoverEvent } from '@/utils/types/events/HoverEvent/__test__';
 import {
 	HoverEventHandler,
 	isHoverEventHandler as isHoverHandler,
-} from '@app/utils/types/handlers/HoverEventHandler';
+} from '@/utils/types/handlers/HoverEventHandler';
 import { onTest } from '@test/utils/onTest';
 import { useHoverEvents } from './useHoverEvents';
 

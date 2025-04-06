@@ -1,6 +1,6 @@
 import type { TouchEvent } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isTouchEventType } from '@app/utils/enums/TouchEventTypes';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isTouchEventType } from '@/utils/enums/TouchEventTypes';
 
 /**
  * Checks that an `unknown` value is a {@link TouchEvent}. This type guard is

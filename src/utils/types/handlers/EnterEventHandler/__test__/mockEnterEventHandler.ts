@@ -1,6 +1,6 @@
-import { noop } from '@app/utils/functions/misc';
-import { EnterEvent, isEnterEvent } from '@app/utils/types/events/EnterEvent';
-import { fakeEnterEvent } from '@app/utils/types/events/EnterEvent/__test__';
+import { noop } from '@/utils/functions/misc';
+import { EnterEvent, isEnterEvent } from '@/utils/types/events/EnterEvent';
+import { fakeEnterEvent } from '@/utils/types/events/EnterEvent/__test__';
 
 export const mockEnterEventHandler = <T = Element>(
 	callback: (e: EnterEvent<T>) => void = noop,

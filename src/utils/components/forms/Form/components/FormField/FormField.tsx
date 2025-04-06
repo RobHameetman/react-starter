@@ -9,10 +9,10 @@ import {
 	useEffect,
 	useState,
 } from 'react';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { noop } from '@app/utils/functions/misc/noop';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import { Polymorphic } from '@app/utils/types/props/Polymorphic';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { noop } from '@/utils/functions/misc/noop';
+import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
+import { Polymorphic } from '@/utils/types/props/Polymorphic';
 import { FormModes } from '../../enums';
 import { useForm } from '../../hooks';
 import { FormField as Field } from '../../types';

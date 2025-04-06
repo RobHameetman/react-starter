@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
-import { DomNodeTypes } from '@app/utils/enums/DomNodeTypes';
-import { fakeEventTarget } from '@app/utils/functions/check/dom/isEventTarget/__test__';
-import { fakeDomNodeNamespace } from '@app/utils/enums/DomNodeNamespaces/__test__';
+import { DomNodeTypes } from '@/utils/enums/DomNodeTypes';
+import { fakeEventTarget } from '@/utils/functions/check/dom/isEventTarget/__test__';
+import { fakeDomNodeNamespace } from '@/utils/enums/DomNodeNamespaces/__test__';
 
 const NAME_PROPS = Object.freeze(['localName', 'name', 'nodeName']);
 const VALUE_PROPS = Object.freeze(['nodeValue', 'textContent', 'value']);

@@ -1,9 +1,9 @@
 import {
 	CloseEventHandler,
 	isCloseEventHandler,
-} from '@app/utils/types/handlers/CloseEventHandler';
-import { Escapable, isEscapable } from '@app/utils/types/props/Escapable';
-import { Pressable, isPressable } from '@app/utils/types/props/Pressable';
+} from '@/utils/types/handlers/CloseEventHandler';
+import { Escapable, isEscapable } from '@/utils/types/props/Escapable';
+import { Pressable, isPressable } from '@/utils/types/props/Pressable';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

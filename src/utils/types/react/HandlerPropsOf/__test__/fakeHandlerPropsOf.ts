@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { mockEnterEventHandler } from '@app/utils/types/handlers/EnterEventHandler/__test__';
-import { fakeHandlerPropName } from '@app/utils/types/react/HandlerPropName/__test__';
+import { mockEnterEventHandler } from '@/utils/types/handlers/EnterEventHandler/__test__';
+import { fakeHandlerPropName } from '@/utils/types/react/HandlerPropName/__test__';
 import { HandlerPropsOf } from '../HandlerPropsOf';
 
 export const fakeHandlerPropsOf = <P>({

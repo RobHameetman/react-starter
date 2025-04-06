@@ -1,4 +1,4 @@
-import { isString } from '@app/utils/functions/check/js/specialized/isString';
+import { isString } from '@/utils/functions/check/js/specialized/isString';
 
 /**
  * @TODO

@@ -1,5 +1,5 @@
 import { MouseEvent, PointerEvent } from 'react';
-import { isAndroid as _isAndroid } from '@app/utils/functions/agent/device/isAndroid';
+import { isAndroid as _isAndroid } from '@/utils/functions/agent/device/isAndroid';
 
 /**
  * Functional dependencies used in the {@link isVirtualClick()} function. This

@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef } from 'react';
-import { Positionable } from '@app/utils/types/props/Positionable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { Positionable } from '@/utils/types/props/Positionable';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './RippleAnimation.module.css';
 
 /**

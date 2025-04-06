@@ -1,9 +1,9 @@
-import { isEventHandler } from '@app/utils/functions/check/react/isEventHandler';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isEventHandler } from '@/utils/functions/check/react/isEventHandler';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 import {
 	HandlerPropName,
 	isHandlerPropName,
-} from '@app/utils/types/react/HandlerPropName';
+} from '@/utils/types/react/HandlerPropName';
 
 /**
  * From props of type `P`, pick a set of props extracted from keys of `P` which

@@ -1,5 +1,5 @@
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * A compositional prop type for React components that have a disabled state.

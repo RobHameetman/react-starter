@@ -1,4 +1,4 @@
-import { interactionModality as _interactionModality } from '@app/utils/functions/events/interactions/interactionModality';
+import { interactionModality as _interactionModality } from '@/utils/functions/events/interactions/interactionModality';
 
 /**
  * Functional dependencies used in the {@link isFocusVisible()} function. This

@@ -1,4 +1,4 @@
-import { PressEvent } from '@app/utils/types/events/PressEvent';
+import { PressEvent } from '@/utils/types/events/PressEvent';
 
 /**
  * Destructured arguments provided to the {@link createRipple()} function.

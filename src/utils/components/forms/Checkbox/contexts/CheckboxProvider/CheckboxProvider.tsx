@@ -1,5 +1,5 @@
 import { $FC, useCallback, useState } from 'react';
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 import { CheckboxContext } from '../CheckboxContext';
 
 type AddToGroupValue = CheckboxContext['addToGroupValue'];

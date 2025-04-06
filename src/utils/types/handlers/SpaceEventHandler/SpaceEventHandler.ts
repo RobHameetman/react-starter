@@ -1,6 +1,6 @@
 import { EventHandler, KeyboardEventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
-import { SpaceEvent, isSpaceEvent } from '@app/utils/types/events/SpaceEvent';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
+import { SpaceEvent, isSpaceEvent } from '@/utils/types/events/SpaceEvent';
 
 /**
  * A compositional event handler type for React components that allow you to

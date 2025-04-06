@@ -1,4 +1,4 @@
-import { CC } from '@app/utils/types/react/CC';
+import { CC } from '@/utils/types/react/CC';
 import {
 	TableBody,
 	TableCell,

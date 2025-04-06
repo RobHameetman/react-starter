@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
 import { MOZ_INPUT_SOURCES, MozInputSources } from '../MozInputSources';
 
 type Input = number | { min?: number; max?: number };

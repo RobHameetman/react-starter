@@ -1,7 +1,7 @@
-import { isMac as _isMac } from '@app/utils/functions/agent/device/isMac';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
-import { criteriaCount as _criteriaCount } from '@app/utils/functions/misc/criteriaCount';
-import { hasUserAgentPlatform as _hasUserAgentPlatform } from '@app/utils/functions/misc/hasUserAgentPlatform';
+import { isMac as _isMac } from '@/utils/functions/agent/device/isMac';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
+import { criteriaCount as _criteriaCount } from '@/utils/functions/misc/criteriaCount';
+import { hasUserAgentPlatform as _hasUserAgentPlatform } from '@/utils/functions/misc/hasUserAgentPlatform';
 
 /**
  * Functional dependencies used in the {@link isIpad()} function. This object is

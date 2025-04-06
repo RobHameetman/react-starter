@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { snakeCase } from '@app/utils/functions/string/snakeCase';
+import { snakeCase } from '@/utils/functions/string/snakeCase';
 
 export const fakeNameable = ({
 	...overrideProps

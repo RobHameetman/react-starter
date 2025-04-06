@@ -1,5 +1,5 @@
-import { removeItem } from '@app/utils/functions/storage/removeItem';
-import { snakeCase } from '@app/utils/functions/string/snakeCase';
+import { removeItem } from '@/utils/functions/storage/removeItem';
+import { snakeCase } from '@/utils/functions/string/snakeCase';
 
 /**
  * Delete the form cache from LocalStorage.

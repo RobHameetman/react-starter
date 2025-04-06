@@ -1,32 +1,31 @@
 import { useRef, useState } from 'react';
-import { Intents } from '@app/theme/enums/Intents';
-import { Sizes } from '@app/theme/enums/Sizes';
-import { prefersReducedMotion } from '@app/utils/functions/accessibility/prefersReducedMotion';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { noop } from '@app/utils/functions/misc/noop';
-import { withId } from '@app/utils/hocs/withId';
-import { useControlProp } from '@app/utils/hooks/react/useControlProp';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import { useFocusEvents } from '@app/utils/hooks/react/useFocusEvents';
-import { useHoverEvents } from '@app/utils/hooks/react/useHoverEvents';
-import { usePressEvents } from '@app/utils/hooks/react/usePressEvents';
-import type { Accessible } from '@app/utils/types/props/Accessible';
-import type { Animatable } from '@app/utils/types/props/Animatable';
-import type { Changeable } from '@app/utils/types/props/Changeable';
-import type { Disablable } from '@app/utils/types/props/Disablable';
-import type { Focusable } from '@app/utils/types/props/Focusable';
-import type { Hoverable } from '@app/utils/types/props/Hoverable';
-import type { Identifiable } from '@app/utils/types/props/Identifiable';
-import type { Intentable } from '@app/utils/types/props/Intentable';
-import type { Nameable } from '@app/utils/types/props/Nameable';
-import type { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Pressable } from '@app/utils/types/props/Pressable';
-import type { Requirable } from '@app/utils/types/props/Requirable';
-import type { Sizable } from '@app/utils/types/props/Sizable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import type { Valuable } from '@app/utils/types/props/Valuable';
-import { CC } from '@app/utils/types/react/CC';
+import { Intents } from '@/theme/enums/Intents';
+import { Sizes } from '@/theme/enums/Sizes';
+import { prefersReducedMotion } from '@/utils/functions/accessibility/prefersReducedMotion';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import { noop } from '@/utils/functions/misc/noop';
+import { withId } from '@/utils/hocs/withId';
+import { useControlProp } from '@/utils/hooks/react/useControlProp';
+import { useFocusEvents } from '@/utils/hooks/react/useFocusEvents';
+import { useHoverEvents } from '@/utils/hooks/react/useHoverEvents';
+import { usePressEvents } from '@/utils/hooks/react/usePressEvents';
+import type { Accessible } from '@/utils/types/props/Accessible';
+import type { Animatable } from '@/utils/types/props/Animatable';
+import type { Changeable } from '@/utils/types/props/Changeable';
+import type { Disablable } from '@/utils/types/props/Disablable';
+import type { Focusable } from '@/utils/types/props/Focusable';
+import type { Hoverable } from '@/utils/types/props/Hoverable';
+import type { Identifiable } from '@/utils/types/props/Identifiable';
+import type { Intentable } from '@/utils/types/props/Intentable';
+import type { Nameable } from '@/utils/types/props/Nameable';
+import type { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Pressable } from '@/utils/types/props/Pressable';
+import type { Requirable } from '@/utils/types/props/Requirable';
+import type { Sizable } from '@/utils/types/props/Sizable';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import type { Valuable } from '@/utils/types/props/Valuable';
+import { CC } from '@/utils/types/react/CC';
 import { CheckboxGroup } from './components';
 import {
 	useCheckboxContext,
@@ -100,9 +99,8 @@ export interface CheckboxComponents {
 /**
  * @TODO - A short description of the component here.
  */
-export const Checkbox: CC<CheckboxComponents, CheckboxProps> = withId(
-	({
-		as: _as = 'div',
+export const Checkbox: CC<CheckboxComponents, CheckboxProps> = ({
+		as: As = 'div',
 		animated = !prefersReducedMotion(),
 		checked: _checked = false,
 		children,
@@ -125,7 +123,6 @@ export const Checkbox: CC<CheckboxComponents, CheckboxProps> = withId(
 		onPress = noop,
 		...extraProps
 	}) => {
-		const As = useSemanticAsProp({ as: _as });
 		const inputRef = useRef<HTMLInputElement>(null);
 
 		const { getGroupValue = () => null } = useCheckboxContext();
@@ -248,7 +245,6 @@ export const Checkbox: CC<CheckboxComponents, CheckboxProps> = withId(
 				</label>
 			</As>
 		);
-	},
-);
+	};
 
 Checkbox.Group = CheckboxGroup;

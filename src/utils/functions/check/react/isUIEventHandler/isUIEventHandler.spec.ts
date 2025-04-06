@@ -1,4 +1,4 @@
-import { fakeUIEvent } from '@app/utils/functions/check/react/isUIEvent/__test__';
+import { fakeUIEvent } from '@/utils/functions/check/react/isUIEvent/__test__';
 import { isUIEventHandler } from './isUIEventHandler';
 import { mockUIEventHandler } from './__test__';
 

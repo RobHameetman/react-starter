@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { useTheme } from '@nextui-org/react';
-import type { Stylable } from '@app/utils/types/props';
+import type { Stylable } from '@/utils/types/props';
 import styles from './Logo.module.css';
 
 /**

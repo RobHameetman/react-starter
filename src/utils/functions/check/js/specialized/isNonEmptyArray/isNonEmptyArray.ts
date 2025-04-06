@@ -1,4 +1,4 @@
-import { isArray } from '@app/utils/functions/check/js/core/isArray';
+import { isArray } from '@/utils/functions/check/js/core/isArray';
 
 /**
  * Checks that an `unknown` value is a non-empty {@link Array}. This type-guard

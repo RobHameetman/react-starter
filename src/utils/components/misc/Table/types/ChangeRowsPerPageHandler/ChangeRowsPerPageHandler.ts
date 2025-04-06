@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
 
 /**
  * A function provided by the `useTabs()` hook to pass into a tab's `onClick`

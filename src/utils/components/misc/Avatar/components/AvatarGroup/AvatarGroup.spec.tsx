@@ -1,10 +1,10 @@
 import { act, waitFor } from '@testing-library/react';
 import { matchMediaSpy } from '@test/spies/misc/matchMediaSpy';
 import { onTest } from '@test/utils/onTest';
-import { Intent } from '@app/theme/enums/Intents';
-import { randomIntent } from '@app/theme/enums/Intents/__test__/randomIntent';
-import { Size } from '@app/theme/enums/Sizes';
-import { randomSize } from '@app/theme/enums/Sizes/__test__/randomSize';
+import { Intent } from '@/theme/enums/Intents';
+import { randomIntent } from '@/theme/enums/Intents/__test__/randomIntent';
+import { Size } from '@/theme/enums/Sizes';
+import { randomSize } from '@/theme/enums/Sizes/__test__/randomSize';
 import { anyRadioButton, render } from './__test__';
 import { RadioGroup } from './AvatarGroup';
 import { Radio } from '../../Radio';

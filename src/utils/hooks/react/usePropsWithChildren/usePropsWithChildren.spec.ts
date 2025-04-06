@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 import { mockCloneElement } from '@test/mocks/react/mockCloneElement';
 import { mockUseLayoutEffect } from '@test/mocks/react/mockUseLayoutEffect';
 import { usePropsWithChildren } from './usePropsWithChildren';

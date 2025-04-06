@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import type { Size } from '@app/theme/enums/Sizes';
-import type { Sizable } from '@app/utils/types/props/Sizable';
+import type { Size } from '@/theme/enums/Sizes';
+import type { Sizable } from '@/utils/types/props/Sizable';
 
 const firstChildProps = { size: 'md' as Size };
 const secondChildProps = { size: 'md' as Size };

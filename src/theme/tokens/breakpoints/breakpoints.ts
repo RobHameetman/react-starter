@@ -1,4 +1,4 @@
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 
 export enum Breakpoints {
 	XS = 650,

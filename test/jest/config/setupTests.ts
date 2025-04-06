@@ -8,7 +8,7 @@
  *
  * @see https://github.com/testing-library/jest-dom
  */
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { configure } from '@testing-library/react';
 import { performance } from 'perf_hooks';
 import '../matchers';

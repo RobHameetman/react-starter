@@ -1,4 +1,4 @@
-import { manageKeyboardModality } from '@app/utils/functions/events/interactions/manageKeyboardModality';
+import { manageKeyboardModality } from '@/utils/functions/events/interactions/manageKeyboardModality';
 
 /**
  * Handle keyboard events from the global `window` object. This handler is

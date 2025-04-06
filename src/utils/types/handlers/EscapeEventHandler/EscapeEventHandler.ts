@@ -1,9 +1,9 @@
 import { EventHandler, KeyboardEventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
 import {
 	EscapeEvent,
 	isEscapeEvent,
-} from '@app/utils/types/events/EscapeEvent';
+} from '@/utils/types/events/EscapeEvent';
 
 /**
  * A compositional event handler type for React components that allow you to

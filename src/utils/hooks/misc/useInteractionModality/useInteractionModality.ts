@@ -1,13 +1,13 @@
 import { FocusEventHandler, useCallback, useEffect, useState } from 'react';
-import type { InteractionModality } from '@app/utils/enums/InteractionModalities';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
-import { isFocusVisible as _isFocusVisible } from '@app/utils/functions/events/focus/isFocusVisible';
-import { interactionModality } from '@app/utils/functions/events/interactions/interactionModality';
-import { interactionModalityListeners } from '@app/utils/functions/events/interactions/interactionModalityListeners';
-import { isCapturing as _isCapturing } from '@app/utils/functions/events/phases/isCapturing';
-import { noop } from '@app/utils/functions/misc/noop';
-import type { Disablable } from '@app/utils/types/props/Disablable';
-import type { Changeable } from '@app/utils/types/props/Changeable';
+import type { InteractionModality } from '@/utils/enums/InteractionModalities';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
+import { isFocusVisible as _isFocusVisible } from '@/utils/functions/events/focus/isFocusVisible';
+import { interactionModality } from '@/utils/functions/events/interactions/interactionModality';
+import { interactionModalityListeners } from '@/utils/functions/events/interactions/interactionModalityListeners';
+import { isCapturing as _isCapturing } from '@/utils/functions/events/phases/isCapturing';
+import { noop } from '@/utils/functions/misc/noop';
+import type { Disablable } from '@/utils/types/props/Disablable';
+import type { Changeable } from '@/utils/types/props/Changeable';
 
 /**
  * A type alias used to avoid a line break in the 'extends' clause below.

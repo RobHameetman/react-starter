@@ -1,9 +1,9 @@
 import { $FC, useCallback, useState } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 import {
 	AsyncButton,
 	AsyncButtonProps,
-} from '@app/utils/components/misc/AsyncButton';
+} from '@/utils/components/misc/AsyncButton';
 import { FormModes } from '../../enums';
 import { useForm } from '../../hooks';
 import { FormFields } from '../../types';

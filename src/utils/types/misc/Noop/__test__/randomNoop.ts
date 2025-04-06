@@ -1,4 +1,4 @@
-import { noop as _noop } from '@app/utils/functions/misc/noop';
+import { noop as _noop } from '@/utils/functions/misc/noop';
 import { faker } from '@faker-js/faker';
 
 export const randomNoop = () => {

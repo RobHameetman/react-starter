@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { handleGlobalKeyboardEvents as _handleGlobalKeyboardEvents } from '@app/utils/functions/events/keyboard/handleGlobalKeyboardEvents';
+import { noop } from '@/utils/functions/misc/noop';
+import { handleGlobalKeyboardEvents as _handleGlobalKeyboardEvents } from '@/utils/functions/events/keyboard/handleGlobalKeyboardEvents';
 
 /**
  * Functional dependencies used in the {@link useGlobalKeyboardEvents()} hook.

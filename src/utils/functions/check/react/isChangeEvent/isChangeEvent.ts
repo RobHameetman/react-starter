@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * Checks that an `unknown` value is a {@link ChangeEvent}. This type guard is

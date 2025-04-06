@@ -1,4 +1,4 @@
-import { fakeEnterEvent } from '@app/utils/types/events/EnterEvent/__test__';
+import { fakeEnterEvent } from '@/utils/types/events/EnterEvent/__test__';
 import { isEnterEventHandler } from './EnterEventHandler';
 import { mockEnterEventHandler } from './__test__';
 

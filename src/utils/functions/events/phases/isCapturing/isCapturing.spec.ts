@@ -1,4 +1,4 @@
-import { fakeSyntheticEvent as fakeEvent } from '@app/utils/functions/check/react/isSyntheticEvent/__test__';
+import { fakeSyntheticEvent as fakeEvent } from '@/utils/functions/check/react/isSyntheticEvent/__test__';
 import { isCapturing } from './isCapturing';
 
 const {

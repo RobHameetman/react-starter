@@ -1,7 +1,7 @@
-import { isEdge as _isEdge } from '@app/utils/functions/agent/browser/isEdge';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
-import { criteriaCount as _criteriaCount } from '@app/utils/functions/misc/criteriaCount';
-import { hasUserAgentBrand as _hasUserAgentBrand } from '@app/utils/functions/misc/hasUserAgentBrand';
+import { isEdge as _isEdge } from '@/utils/functions/agent/browser/isEdge';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
+import { criteriaCount as _criteriaCount } from '@/utils/functions/misc/criteriaCount';
+import { hasUserAgentBrand as _hasUserAgentBrand } from '@/utils/functions/misc/hasUserAgentBrand';
 
 /**
  * Functional dependencies used in the {@link isChrome()} function. This object

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { InteractionModality } from '@app/utils/enums/InteractionModalities';
+import { InteractionModality } from '@/utils/enums/InteractionModalities';
 import { onTest } from '@test/utils/onTest';
 import { isFocusVisible } from './isFocusVisible';
 

@@ -1,5 +1,5 @@
-import { isNull } from '@app/utils/functions/check/js/core/isNull';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { isNull } from '@/utils/functions/check/js/core/isNull';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is `undefined` or `null`. This type-guard is

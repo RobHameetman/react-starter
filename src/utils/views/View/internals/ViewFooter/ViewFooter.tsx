@@ -1,7 +1,7 @@
 import { $FC } from 'react';
 import { Avatar, Grid, useTheme } from '@nextui-org/react';
-import { useBreakpoints } from '@app/utils/hooks/misc/useBreakpoints';
-import type { Stylable } from '@app/utils/types/props';
+import { useBreakpoints } from '@/utils/hooks/misc/useBreakpoints';
+import type { Stylable } from '@/utils/types/props';
 import styles from './Footer.module.css';
 
 /**

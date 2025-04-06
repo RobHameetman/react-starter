@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
-import { fakePressEvent } from '@app/utils/types/events/PressEvent/__test__';
-import { isPressEventHandler } from '@app/utils/types/handlers/PressEventHandler';
+import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
+import { isPressEventHandler } from '@/utils/types/handlers/PressEventHandler';
 import { usePressEvents } from './usePressEvents';
 
 describe('usePressEvents()', () => {

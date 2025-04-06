@@ -1,5 +1,5 @@
-import { DomNodeNamespaces } from '@app/utils/enums';
-import { fakeNode } from '@app/utils/functions/check/dom/isNode/__test__';
+import { DomNodeNamespaces } from '@/utils/enums';
+import { fakeNode } from '@/utils/functions/check/dom/isNode/__test__';
 import { isHTMLElement } from './isElement';
 
 describe('isHTMLElement()', () => {

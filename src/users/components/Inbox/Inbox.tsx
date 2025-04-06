@@ -1,9 +1,8 @@
 import { $FC } from 'react';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import { Table } from '@app/utils/components/misc/Table';
-import { Search } from '@app/utils/components/misc/Table/components/Search';
+import { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import { Table } from '@/utils/components/misc/Table';
+import { Search } from '@/utils/components/misc/Table/components/Search';
 import styles from './Inbox.module.css';
 
 type ComposedProps = Polymorphic & Stylable;
@@ -23,20 +22,18 @@ export interface InboxProps extends ComposedProps {
  * @TODO - A short description of the component here.
  */
 export const Inbox: $FC<InboxProps> = ({
-	as: _as = 'div',
+	as: As = Table,
 	className = '',
 	children,
 	prop = false,
 }) => {
-	const RootNodeAs = useSemanticAsProp({ as: _as });
-
 	const cssOverride = className ? ` ${className}` : '';
 
 	return (
-		<Table name="Inbox" initialData={[]} sortOptions={{}}>
+		<As name="Inbox" initialData={[]} sortOptions={{}}>
 			<Table.Toolbar>
 				<Search searchAgainst={() => ''} />
 			</Table.Toolbar>
-		</Table>
+		</As>
 	);
 };

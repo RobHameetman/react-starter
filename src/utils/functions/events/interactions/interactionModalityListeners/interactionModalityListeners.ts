@@ -1,6 +1,6 @@
-import { NativeInteractionEvent } from '@app/utils/types/events/NativeInteractionEvent';
-import { NativeInteractionEventHandler } from '@app/utils/types/handlers/NativeInteractionEventHandler';
-import { InteractionModality } from '@app/utils/enums/InteractionModalities';
+import { NativeInteractionEvent } from '@/utils/types/events/NativeInteractionEvent';
+import { NativeInteractionEventHandler } from '@/utils/types/handlers/NativeInteractionEventHandler';
+import { InteractionModality } from '@/utils/enums/InteractionModalities';
 
 /**
  * A set of interaction modality listeners which are triggered when the current

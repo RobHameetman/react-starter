@@ -1,5 +1,5 @@
-import { capitalize } from '@app/utils/functions/string/capitalize';
-import { words } from '@app/utils/functions/string/words';
+import { capitalize } from '@/utils/functions/string/capitalize';
+import { words } from '@/utils/functions/string/words';
 
 /**
  * Convert a string to camel-case.

@@ -1,9 +1,9 @@
 import { MouseEventHandler, PointerEventHandler, useCallback } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { isCapturing as _isCapturing } from '@app/utils/functions/events/phases/isCapturing';
-import { isHoverEvent as _isHoverEvent } from '@app/utils/types/events/HoverEvent';
-import type { Disablable } from '@app/utils/types/props/Disablable';
-import type { Hoverable } from '@app/utils/types/props/Hoverable';
+import { noop } from '@/utils/functions/misc/noop';
+import { isCapturing as _isCapturing } from '@/utils/functions/events/phases/isCapturing';
+import { isHoverEvent as _isHoverEvent } from '@/utils/types/events/HoverEvent';
+import type { Disablable } from '@/utils/types/props/Disablable';
+import type { Hoverable } from '@/utils/types/props/Hoverable';
 
 /**
  * A type alias used to avoid a line break in the 'extends' clause below.

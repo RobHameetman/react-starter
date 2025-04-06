@@ -1,5 +1,5 @@
-import { Size, isSize } from '@app/theme/enums/Sizes';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { Size, isSize } from '@/theme/enums/Sizes';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * A compositional prop type for React components that have an ID.

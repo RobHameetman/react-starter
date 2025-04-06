@@ -1,7 +1,7 @@
 import type { KeyboardEvent } from 'react';
 import { faker } from '@faker-js/faker';
-import { fakeUIEvent } from '@app/utils/functions/check/react/isUIEvent/__test__';
-import { randomKeyboardEventType } from '@app/utils/enums/KeyboardEventTypes/__test__';
+import { fakeUIEvent } from '@/utils/functions/check/react/isUIEvent/__test__';
+import { randomKeyboardEventType } from '@/utils/enums/KeyboardEventTypes/__test__';
 
 const modifier = (modified = false) =>
 	faker.helpers.arrayElement(

@@ -1,22 +1,22 @@
 import { faker } from '@faker-js/faker';
-import { fakePointerEvent } from '@app/utils/functions/check/react/isPointerEvent/__test__';
-import { managePointerModality } from '@app/utils/functions/events/interactions/managePointerModality';
-import { noop } from '@app/utils/functions/misc/noop';
+import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
+import { managePointerModality } from '@/utils/functions/events/interactions/managePointerModality';
+import { noop } from '@/utils/functions/misc/noop';
 import { onTest } from '@test/utils/onTest';
 import { handleGlobalPointerEvents } from './handleGlobalPointerEvents';
 
 jest.mock(
-	'@app/utils/functions/events/interactions/managePointerModality',
+	'@/utils/functions/events/interactions/managePointerModality',
 	() => ({
 		...jest.requireActual(
-			'@app/utils/functions/events/interactions/managePointerModality',
+			'@/utils/functions/events/interactions/managePointerModality',
 		),
 		managePointerModality: jest.fn(),
 	}),
 );
 
-jest.mock('@app/utils/functions/misc/noop', () => ({
-	...jest.requireActual('@app/utils/functions/misc/noop'),
+jest.mock('@/utils/functions/misc/noop', () => ({
+	...jest.requireActual('@/utils/functions/misc/noop'),
 	noop: jest.fn(),
 }));
 

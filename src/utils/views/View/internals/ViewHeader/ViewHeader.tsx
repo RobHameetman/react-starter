@@ -1,16 +1,16 @@
 import { $FC } from 'react';
 import { Dropdown, Navbar, Input, Link } from '@nextui-org/react';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { Kbd } from '@app/utils/components/info/Kbd';
-import { Avatar } from '@app/utils/components/misc/Avatar';
-import { Button } from '@app/utils/components/misc/Button';
-import { Logo } from '@app/utils/components/misc/Logo';
-import { useBreakpoints } from '@app/utils/hooks/misc/useBreakpoints';
-import { DarkModeIcon } from '@app/utils/icons/DarkModeIcon';
-import { LightModeIcon } from '@app/utils/icons/LightModeIcon';
-import { useTheme } from '@app/utils/hooks/misc/useTheme';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import type { Testable } from '@app/utils/types/props/Testable';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { Kbd } from '@/utils/components/info/Kbd';
+import { Avatar } from '@/utils/components/misc/Avatar';
+import { Button } from '@/utils/components/misc/Button';
+import { Logo } from '@/utils/components/misc/Logo';
+import { useBreakpoints } from '@/utils/hooks/misc/useBreakpoints';
+import { DarkModeIcon } from '@/utils/icons/DarkModeIcon';
+import { LightModeIcon } from '@/utils/icons/LightModeIcon';
+import { useTheme } from '@/utils/hooks/misc/useTheme';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import type { Testable } from '@/utils/types/props/Testable';
 import styles from './ViewHeader.module.css';
 
 const Command: $FC = () => (

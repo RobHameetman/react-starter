@@ -1,4 +1,4 @@
-import { PressEvent } from '@app/utils/types/events/PressEvent';
+import { PressEvent } from '@/utils/types/events/PressEvent';
 import { getPressPositionX } from '../getPressPositionX';
 import { getPressPositionY } from '../getPressPositionY';
 

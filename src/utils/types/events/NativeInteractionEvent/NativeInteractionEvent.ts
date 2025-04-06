@@ -1,8 +1,8 @@
-import { isFocusEventType } from '@app/utils/enums/FocusEventTypes';
-import { isKeyboardEventType } from '@app/utils/enums/KeyboardEventTypes';
-import { isMouseEventType } from '@app/utils/enums/MouseEventTypes';
-import { isPointerEventType } from '@app/utils/enums/PointerEventTypes';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isFocusEventType } from '@/utils/enums/FocusEventTypes';
+import { isKeyboardEventType } from '@/utils/enums/KeyboardEventTypes';
+import { isMouseEventType } from '@/utils/enums/MouseEventTypes';
+import { isPointerEventType } from '@/utils/enums/PointerEventTypes';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * A native interaction event is an event, either concrete or virtual, which

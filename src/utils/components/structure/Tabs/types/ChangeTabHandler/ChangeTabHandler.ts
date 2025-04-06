@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 
 /**
  * A function provided by the `useTabs()` hook that can be used to change the

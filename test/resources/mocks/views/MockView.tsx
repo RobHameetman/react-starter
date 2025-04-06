@@ -1,5 +1,5 @@
 import { $FC } from 'react';
-import { View, ViewProps } from '@app/utils';
+import { View, ViewProps } from '@/utils';
 
 jest.mock('@host/nav', () => {
 	return {

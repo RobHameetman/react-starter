@@ -1,9 +1,9 @@
 import { FC, MouseEventHandler, useCallback } from 'react';
 import * as Mui from '@material-ui/core';
-import { useRouter } from '@app/nav/hooks/useRouter';
-import { noop } from '@app/utils/functions/misc/noop';
-import { uniqueId } from '@app/utils/functions/misc/uniqueId';
-import { isNoop } from '@app/utils/types/misc/Noop';
+import { useRouter } from '@/nav/hooks/useRouter';
+import { noop } from '@/utils/functions/misc/noop';
+import { uniqueId } from '@/utils/functions/misc/uniqueId';
+import { isNoop } from '@/utils/types/misc/Noop';
 import styles from './TableRow.module.css';
 
 export interface TableRowProps {

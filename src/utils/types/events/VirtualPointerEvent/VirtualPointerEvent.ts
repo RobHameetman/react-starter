@@ -1,5 +1,5 @@
 import { PointerEvent } from 'react';
-import { isPointerEvent } from '@app/utils/functions/check/react/isPointerEvent';
+import { isPointerEvent } from '@/utils/functions/check/react/isPointerEvent';
 
 /**
  * A compositional event type for React components that allow you to trigger an

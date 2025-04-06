@@ -1,4 +1,4 @@
-import { fakeSpaceEvent } from '@app/utils/types/events/SpaceEvent/__test__';
+import { fakeSpaceEvent } from '@/utils/types/events/SpaceEvent/__test__';
 import { isSpaceEventHandler } from './SpaceEventHandler';
 import { mockSpaceEventHandler } from './__test__';
 

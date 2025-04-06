@@ -1,8 +1,8 @@
 import {
 	GetRequestInput,
 	getRequest as _getRequest,
-} from '@app/utils/functions/http/getRequest';
-import { Errors } from '@app/utils/types/misc/Errors';
+} from '@/utils/functions/http/getRequest';
+import { Errors } from '@/utils/types/misc/Errors';
 
 /**
  * @TODO - Import this from elsewhere.

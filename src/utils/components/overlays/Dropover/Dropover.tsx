@@ -1,8 +1,8 @@
-import { cssClasses } from '@app/utils/functions/misc/cssClasses';
-import { useSemanticAsProp } from '@app/utils/hooks/react/useSemanticAsProp';
-import { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import { CC } from '@app/utils/types/react/CC';
+import { cssClasses } from '@/utils/functions/misc/cssClasses';
+import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
+import { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import { CC } from '@/utils/types/react/CC';
 import styles from './Dropover.module.css';
 
 type ComposedProps = Polymorphic & Stylable;

@@ -1,8 +1,8 @@
 import type { PointerEvent } from 'react';
 import { faker } from '@faker-js/faker';
-import { randomPointerType } from '@app/utils/enums/PointerTypes/__test__';
-import { randomPointerEventType } from '@app/utils/enums/PointerEventTypes/__test__';
-import { fakeMouseEvent } from '@app/utils/functions/check/react/isMouseEvent/__test__';
+import { randomPointerType } from '@/utils/enums/PointerTypes/__test__';
+import { randomPointerEventType } from '@/utils/enums/PointerEventTypes/__test__';
+import { fakeMouseEvent } from '@/utils/functions/check/react/isMouseEvent/__test__';
 
 export const fakePointerEvent = <T = Element>({
 	capturing = false,

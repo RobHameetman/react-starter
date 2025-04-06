@@ -45,7 +45,6 @@ SUCCESS=false
 dependencies=(
 	@datadog/browser-logs
 	@datadog/browser-rum
-	@nextui-org/react
 	@universe/address-parser
 	@welldone-software/why-did-you-render
 	core-js
@@ -67,12 +66,14 @@ devDependencies=(
 	@pmmmwh/react-refresh-webpack-plugin
 	@rob.hameetman/eslint-config
 	@soda/friendly-errors-webpack-plugin
+	@tailwindcss/nesting
 	@testing-library/jest-dom
 	@testing-library/react
 	@testing-library/react-hooks
 	@testing-library/user-event
 	@types/cypress
 	@types/fetch-mock
+	@types/jest
 	@types/lodash
 	@types/node
 	@types/react
@@ -94,7 +95,6 @@ devDependencies=(
 	eslint
 	eslint-plugin-react
 	eslint-webpack-plugin
-	# fetch-mock
 	html-webpack-plugin
 	husky
 	identity-obj-proxy
@@ -103,15 +103,20 @@ devDependencies=(
 	mini-css-extract-plugin
 	node-sass
 	postcss
+	postcss-custom-media
+	postcss-import
 	postcss-loader
+	postcss-preset-env
 	process
 	react-refresh
 	react-refresh-typescript
+	react-server-dom-webpack
 	sass-loader
 	style-loader
 	stylelint
 	stylelint-config-recommended
 	stylelint-webpack-plugin
+	tailwindcss
 	terser-webpack-plugin
 	ts-jest
 	ts-loader
@@ -119,7 +124,6 @@ devDependencies=(
 	webpack
 	webpack-bundle-analyzer
 	webpack-cli
-	webpack-dev-server
 	webpack-dev-server-waitpage
 )
 

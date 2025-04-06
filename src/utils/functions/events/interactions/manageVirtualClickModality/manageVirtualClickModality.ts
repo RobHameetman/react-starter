@@ -1,6 +1,6 @@
-import { isVirtualClick } from '@app/utils/functions/accessibility/isVirtualClick';
-import { interactionModality as _interactionModality } from '@app/utils/functions/events/interactions/interactionModality';
-import { interactionStates as _interactionStates } from '@app/utils/functions/events/interactions/interactionStates';
+import { isVirtualClick } from '@/utils/functions/accessibility/isVirtualClick';
+import { interactionModality as _interactionModality } from '@/utils/functions/events/interactions/interactionModality';
+import { interactionStates as _interactionStates } from '@/utils/functions/events/interactions/interactionStates';
 
 /**
  * Functional dependencies used in the {@link manageVirtualClickModality()}

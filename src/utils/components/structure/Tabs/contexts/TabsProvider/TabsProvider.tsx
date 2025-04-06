@@ -1,6 +1,6 @@
 import { $FC, useCallback, useRef, useState } from 'react';
-import { useRouter } from '@app/nav/hooks/useRouter';
-import { snakeCase } from '@app/utils/functions/string/snakeCase';
+import { useRouter } from '@/nav/hooks/useRouter';
+import { snakeCase } from '@/utils/functions/string/snakeCase';
 import { INITIAL_TABS_CONTEXT, TabsContext } from '../TabsContext';
 import { ChangeTabHandler } from '../../types';
 

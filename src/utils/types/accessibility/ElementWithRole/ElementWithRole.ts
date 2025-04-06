@@ -1,5 +1,5 @@
-import { isHtmlElement } from '@app/utils/functions/check/html/isHtmlElement';
-import { Attributes } from '@app/utils/types/dom/Attributes';
+import { isHtmlElement } from '@/utils/functions/check/html/isHtmlElement';
+import { Attributes } from '@/utils/types/dom/Attributes';
 
 /**
  * Represents an HTML element that has a specific role.

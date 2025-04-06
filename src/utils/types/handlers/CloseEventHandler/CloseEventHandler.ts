@@ -1,6 +1,6 @@
 import { EventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
-import { CloseEvent, isCloseEvent } from '@app/utils/types/events/CloseEvent';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
+import { CloseEvent, isCloseEvent } from '@/utils/types/events/CloseEvent';
 
 /**
  * A compositional event handler type for React components that allow you to

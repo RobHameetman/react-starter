@@ -1,11 +1,11 @@
 import { $FC, useCallback, useState } from 'react';
 import { Grid } from '@nextui-org/react';
-import { Button } from '@app/utils/components/misc/Button';
-import { DoubleChevronLeftIcon } from '@app/utils/icons/DoubleChevronLeftIcon';
-import { DoubleChevronRightIcon } from '@app/utils/icons/DoubleChevronRightIcon';
-import type { Polymorphic } from '@app/utils/types/props/Polymorphic';
-import type { Stylable } from '@app/utils/types/props/Stylable';
-import type { Testable } from '@app/utils/types/props/Testable';
+import { Button } from '@/utils/components/misc/Button';
+import { DoubleChevronLeftIcon } from '@/utils/icons/DoubleChevronLeftIcon';
+import { DoubleChevronRightIcon } from '@/utils/icons/DoubleChevronRightIcon';
+import type { Polymorphic } from '@/utils/types/props/Polymorphic';
+import type { Stylable } from '@/utils/types/props/Stylable';
+import type { Testable } from '@/utils/types/props/Testable';
 import { useBreakpoints, useSemanticAsProp } from '../../../../hooks';
 import styles from './Sidebar.module.css';
 

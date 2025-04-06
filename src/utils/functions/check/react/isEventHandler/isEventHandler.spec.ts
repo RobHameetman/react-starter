@@ -1,4 +1,4 @@
-import { fakeSyntheticEvent } from '@app/utils/functions/check/react/isSyntheticEvent/__test__';
+import { fakeSyntheticEvent } from '@/utils/functions/check/react/isSyntheticEvent/__test__';
 import { isEventHandler } from './isEventHandler';
 import { mockEventHandler } from './__test__';
 

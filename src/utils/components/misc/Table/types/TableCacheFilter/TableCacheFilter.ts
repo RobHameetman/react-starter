@@ -1,6 +1,6 @@
-import { isArray } from '@app/utils/functions/check/js/core/isArray';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isArray } from '@/utils/functions/check/js/core/isArray';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 
 /**
  * A configuration object for filtering data.

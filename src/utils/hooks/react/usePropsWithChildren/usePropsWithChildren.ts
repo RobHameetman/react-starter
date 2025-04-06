@@ -1,6 +1,6 @@
 import { Children, PropsWithChildren, cloneElement, useEffect } from 'react';
-import { isFunction as _isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isReactElement as _isReactElement } from '@app/utils/functions/check/react/isReactElement';
+import { isFunction as _isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isReactElement as _isReactElement } from '@/utils/functions/check/react/isReactElement';
 
 /**
  * Functional dependencies used in the {@link usePropsWithChildren()} hook. This object

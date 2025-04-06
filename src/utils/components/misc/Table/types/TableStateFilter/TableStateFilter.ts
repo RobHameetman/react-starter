@@ -1,4 +1,4 @@
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 import { OnFilterFn } from '../OnFilterFn';
 import { SearchAgainstFn } from '../SearchAgainstFn';
 import { TableCacheFilter, isTableCacheFilter } from '../TableCacheFilter';

@@ -1,5 +1,5 @@
-import { isMouseEvent } from '@app/utils/functions/check/react/isMouseEvent';
-import { PressEvent } from '@app/utils/types/events/PressEvent';
+import { isMouseEvent } from '@/utils/functions/check/react/isMouseEvent';
+import { PressEvent } from '@/utils/types/events/PressEvent';
 
 /**
  * Returns the Y position of a user interaction from a given event.

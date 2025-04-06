@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './LoadingElipsisAnimation.module.css';
 
 /**

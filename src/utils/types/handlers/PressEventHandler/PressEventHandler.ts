@@ -1,6 +1,6 @@
 import { EventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
-import { PressEvent, isPressEvent } from '@app/utils/types/events/PressEvent';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
+import { PressEvent, isPressEvent } from '@/utils/types/events/PressEvent';
 
 /**
  * A compositional event handler type for React components that allow you to

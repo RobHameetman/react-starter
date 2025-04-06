@@ -1,6 +1,6 @@
 import { EventHandler } from 'react';
-import { isVoidFunction } from '@app/utils/functions/check/js/specialized/isVoidFunction';
-import { HoverEvent, isHoverEvent } from '@app/utils/types/events/HoverEvent';
+import { isVoidFunction } from '@/utils/functions/check/js/specialized/isVoidFunction';
+import { HoverEvent, isHoverEvent } from '@/utils/types/events/HoverEvent';
 
 /**
  * A compositional event handler type for React components that allow you to

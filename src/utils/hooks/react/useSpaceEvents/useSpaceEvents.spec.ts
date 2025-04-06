@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react';
-import { fakeSpaceEvent } from '@app/utils/types/events/SpaceEvent/__test__';
+import { fakeSpaceEvent } from '@/utils/types/events/SpaceEvent/__test__';
 import {
 	SpaceEventHandler,
 	isSpaceEventHandler as isSpaceHandler,
-} from '@app/utils/types/handlers/SpaceEventHandler';
+} from '@/utils/types/handlers/SpaceEventHandler';
 import { onTest } from '@test/utils/onTest';
 import { useSpaceEvents } from './useSpaceEvents';
 

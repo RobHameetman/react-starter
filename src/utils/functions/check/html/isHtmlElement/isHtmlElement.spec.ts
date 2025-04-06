@@ -1,4 +1,4 @@
-import { fakeNode } from '@app/utils/functions/check/dom/isNode/__test__';
+import { fakeNode } from '@/utils/functions/check/dom/isNode/__test__';
 import { isHtmlElement } from './isHtmlElement';
 import { $div, $svg } from './__test__';
 

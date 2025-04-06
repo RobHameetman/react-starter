@@ -1,9 +1,9 @@
-import { noop } from '@app/utils/functions/misc';
+import { noop } from '@/utils/functions/misc';
 import {
 	EscapeEvent,
 	isEscapeEvent,
-} from '@app/utils/types/events/EscapeEvent';
-import { fakeEscapeEvent } from '@app/utils/types/events/EscapeEvent/__test__';
+} from '@/utils/types/events/EscapeEvent';
+import { fakeEscapeEvent } from '@/utils/types/events/EscapeEvent/__test__';
 
 export const mockEscapeEventHandler = <T = Element>(
 	callback: (e: EscapeEvent<T>) => void = noop,

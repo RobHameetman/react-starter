@@ -1,4 +1,4 @@
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 import { isSortOption, SortOption } from '../SortOption';
 import { SortType, isSortType } from '../../enums';
 

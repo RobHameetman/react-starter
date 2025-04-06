@@ -1,6 +1,6 @@
-import { InteractionModality } from '@app/utils/enums/InteractionModalities';
-import { randomInteractionModality } from '@app/utils/enums/InteractionModalities/__test__';
-import { Func } from '@app/utils/types/misc/Func';
+import { InteractionModality } from '@/utils/enums/InteractionModalities';
+import { randomInteractionModality } from '@/utils/enums/InteractionModalities/__test__';
+import { Func } from '@/utils/types/misc/Func';
 import { onTest } from '@test/utils/onTest';
 import { interactionModality } from './interactionModality';
 

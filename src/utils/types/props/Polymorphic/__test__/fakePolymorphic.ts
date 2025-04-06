@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { faker } from '@faker-js/faker';
-import { fakeReactElement } from '@app/utils/functions/check/react/isReactElement/__test__';
+import { fakeReactElement } from '@/utils/functions/check/react/isReactElement/__test__';
 
 export const fakePolymorphic = ({
 	...overrideProps

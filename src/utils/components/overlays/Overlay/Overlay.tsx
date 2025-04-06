@@ -7,9 +7,9 @@ import {
 	useMemo,
 } from 'react';
 import { createPortal } from 'react-dom';
-import { noop } from '@app/utils/functions/misc/noop';
-import { Clickable } from '@app/utils/types/props/Clickable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { noop } from '@/utils/functions/misc/noop';
+import { Clickable } from '@/utils/types/props/Clickable';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './Overlay.module.css';
 
 /**

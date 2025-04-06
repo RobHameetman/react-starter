@@ -1,4 +1,4 @@
-import { fakeKeyboardEvent } from '@app/utils/functions/check/react/isKeyboardEvent/__test__';
+import { fakeKeyboardEvent } from '@/utils/functions/check/react/isKeyboardEvent/__test__';
 import { EnterEvent } from '../EnterEvent';
 
 export const fakeEnterEvent = <T = Element>({

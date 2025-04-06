@@ -1,5 +1,5 @@
-import { Intents, Intent, isIntent } from '@app/theme/enums/Intents';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { Intents, Intent, isIntent } from '@/theme/enums/Intents';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * A compositional prop type for React components that may have a specific intent

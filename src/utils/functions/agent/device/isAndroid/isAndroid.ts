@@ -1,8 +1,8 @@
-import { isChrome as _isChrome } from '@app/utils/functions/agent/browser/isChrome';
-import { isGecko as _isGecko } from '@app/utils/functions/agent/engines/isGecko';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
-import { criteriaCount as _criteriaCount } from '@app/utils/functions/misc/criteriaCount';
-import { hasUserAgentBrand as _hasUserAgentBrand } from '@app/utils/functions/misc/hasUserAgentBrand';
+import { isChrome as _isChrome } from '@/utils/functions/agent/browser/isChrome';
+import { isGecko as _isGecko } from '@/utils/functions/agent/engines/isGecko';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
+import { criteriaCount as _criteriaCount } from '@/utils/functions/misc/criteriaCount';
+import { hasUserAgentBrand as _hasUserAgentBrand } from '@/utils/functions/misc/hasUserAgentBrand';
 
 /**
  * Functional dependencies used in the {@link isAndroid()} function. This object is

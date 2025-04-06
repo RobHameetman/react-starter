@@ -1,11 +1,11 @@
 import { $FC, Children, ReactElement, useLayoutEffect } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { useQueryParams } from '@app/nav/hooks/useQueryParams';
-import { noop } from '@app/utils/functions/misc/noop';
-import { snakeCase } from '@app/utils/functions/string/snakeCase';
-import { Noop, isNoop } from '@app/utils/types/misc/Noop';
-import type { Identifiable } from '@app/utils/types/props/Identifiable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { useQueryParams } from '@/nav/hooks/useQueryParams';
+import { noop } from '@/utils/functions/misc/noop';
+import { snakeCase } from '@/utils/functions/string/snakeCase';
+import { Noop, isNoop } from '@/utils/types/misc/Noop';
+import type { Identifiable } from '@/utils/types/props/Identifiable';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import { TabProps } from './components';
 import { useTabs } from './hooks';
 import { ContentRenderFn, TabsRenderFn } from './types';

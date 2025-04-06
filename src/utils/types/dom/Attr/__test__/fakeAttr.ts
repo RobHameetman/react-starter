@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { fakeNode } from '@app/utils/functions/check/dom/isNode/__test__';
+import { fakeNode } from '@/utils/functions/check/dom/isNode/__test__';
 import { Attr } from '../Attr';
 
 export const fakeAttr = <K extends string = string, V extends string = string>({

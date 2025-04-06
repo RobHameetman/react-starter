@@ -1,6 +1,6 @@
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 import isUndefined from 'lodash/isUndefined';
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 
 /**
  * A no-op function. No-op functions are useful in cases where a function is

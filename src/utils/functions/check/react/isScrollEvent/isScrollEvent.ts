@@ -1,6 +1,6 @@
 import type { UIEvent } from 'react';
-import { isUIEvent } from '@app/utils/functions/check/react/isUIEvent';
-import { isScrollEventType } from '@app/utils/enums/ScrollEventTypes';
+import { isUIEvent } from '@/utils/functions/check/react/isUIEvent';
+import { isScrollEventType } from '@/utils/enums/ScrollEventTypes';
 
 /**
  * Checks that an `unknown` value is a {@link ScrollEvent}. This type guard is

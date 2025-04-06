@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 import { isNonEmptyArray } from './isNonEmptyArray';
 
 const isStringOrNumber = (value: unknown): value is string | number =>

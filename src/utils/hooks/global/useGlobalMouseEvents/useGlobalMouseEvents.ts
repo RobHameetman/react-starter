@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { handleGlobalMouseEvents as _handleGlobalMouseEvents } from '@app/utils/functions/events/mouse/handleGlobalMouseEvents';
+import { noop } from '@/utils/functions/misc/noop';
+import { handleGlobalMouseEvents as _handleGlobalMouseEvents } from '@/utils/functions/events/mouse/handleGlobalMouseEvents';
 
 /**
  * Functional dependencies used in the {@link useGlobalMouseEvents()} hook.

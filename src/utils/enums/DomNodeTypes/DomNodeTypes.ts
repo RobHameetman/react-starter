@@ -1,4 +1,4 @@
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 
 /**
  * A list of all possible {@link DomNodeType} values.

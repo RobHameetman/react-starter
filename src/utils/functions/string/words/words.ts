@@ -1,6 +1,6 @@
-import { ASCII_WORDS_REGEX } from '@app/utils/constants/unicode/regex/ASCII_WORDS_REGEX';
-import { IS_UNICODE_REGEX } from '@app/utils/constants/unicode/regex/IS_UNICODE_REGEX';
-import { UNICODE_WORDS_REGEX } from '@app/utils/constants/unicode/regex/UNICODE_WORDS_REGEX';
+import { ASCII_WORDS_REGEX } from '@/utils/constants/unicode/regex/ASCII_WORDS_REGEX';
+import { IS_UNICODE_REGEX } from '@/utils/constants/unicode/regex/IS_UNICODE_REGEX';
+import { UNICODE_WORDS_REGEX } from '@/utils/constants/unicode/regex/UNICODE_WORDS_REGEX';
 
 /**
  * Split a string into an array of words.

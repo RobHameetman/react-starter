@@ -1,8 +1,8 @@
 import {
 	EscapeEvent,
 	isEscapeEvent,
-} from '@app/utils/types/events/EscapeEvent';
-import { PressEvent, isPressEvent } from '@app/utils/types/events/PressEvent';
+} from '@/utils/types/events/EscapeEvent';
+import { PressEvent, isPressEvent } from '@/utils/types/events/PressEvent';
 
 /**
  * A compositional event type for React components that allow you to trigger an

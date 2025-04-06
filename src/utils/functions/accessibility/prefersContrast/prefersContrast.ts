@@ -1,4 +1,4 @@
-import { hasMediaQuery as _hasMediaQuery } from '@app/utils/functions/misc/hasMediaQuery';
+import { hasMediaQuery as _hasMediaQuery } from '@/utils/functions/misc/hasMediaQuery';
 
 /**
  * Functional dependencies used in the {@link prefersContrast()} function. This

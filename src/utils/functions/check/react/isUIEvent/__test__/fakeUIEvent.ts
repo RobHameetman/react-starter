@@ -1,6 +1,6 @@
 import type { AbstractView, UIEvent } from 'react';
 import { faker } from '@faker-js/faker';
-import { fakeSyntheticEvent } from '@app/utils/functions/check/react/isSyntheticEvent/__test__';
+import { fakeSyntheticEvent } from '@/utils/functions/check/react/isSyntheticEvent/__test__';
 
 export const fakeUIEvent = <T = Element>({
 	capturing = false,

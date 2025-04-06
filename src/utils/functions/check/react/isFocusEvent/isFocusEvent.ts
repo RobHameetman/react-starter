@@ -1,6 +1,6 @@
 import type { FocusEvent } from 'react';
-import { isFocusEventType } from '@app/utils/enums/FocusEventTypes';
-import { isSyntheticEvent } from '@app/utils/functions/check/react/isSyntheticEvent';
+import { isFocusEventType } from '@/utils/enums/FocusEventTypes';
+import { isSyntheticEvent } from '@/utils/functions/check/react/isSyntheticEvent';
 
 /**
  * Checks that an `unknown` value is a {@link FocusEvent}. This type guard is

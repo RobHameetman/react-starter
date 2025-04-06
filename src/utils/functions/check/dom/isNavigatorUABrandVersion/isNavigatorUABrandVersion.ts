@@ -1,5 +1,5 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isString } from '@/utils/functions/check/js/core/isString';
 
 /**
  * Checks that an `unknown` value is a {@link NavigatorUABrandVersion}.

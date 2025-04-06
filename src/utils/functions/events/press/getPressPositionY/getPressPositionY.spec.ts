@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { fakePressEvent } from '@app/utils/types/events/PressEvent/__test__';
-import { isPointerEvent } from '@app/utils/functions';
+import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
+import { isPointerEvent } from '@/utils/functions';
 import { getPressPositionY } from './getPressPositionY';
 
 describe('getPressPositionY()', () => {

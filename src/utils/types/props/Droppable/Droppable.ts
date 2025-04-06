@@ -1,7 +1,7 @@
 import { DragEventHandler } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { Draggable } from '@app/utils/types/props/Draggable';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { Draggable } from '@/utils/types/props/Draggable';
 
 /**
  * A type alias for the props that are common to {@link Droppable} and

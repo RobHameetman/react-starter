@@ -1,4 +1,4 @@
-import { Attr, isAttr } from '@app/utils/types/dom/Attr';
+import { Attr, isAttr } from '@/utils/types/dom/Attr';
 
 /**
  * Represents a "role" attribute on an HTML element as a DOM node.

@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { fakeHtmlElement } from '@app/utils/functions/check/html/isHtmlElement/__test__';
-import { fakeAttributes } from '@app/utils/types/dom/Attributes/__test__';
+import { fakeHtmlElement } from '@/utils/functions/check/html/isHtmlElement/__test__';
+import { fakeAttributes } from '@/utils/types/dom/Attributes/__test__';
 import { ElementWithRole } from '../ElementWithRole';
 
 export const fakeElementWithRole = <T extends string>({

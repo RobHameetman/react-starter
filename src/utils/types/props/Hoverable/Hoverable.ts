@@ -1,8 +1,8 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { HoverEventHandler } from '@app/utils/types/handlers/HoverEventHandler';
-import { Mousable } from '@app/utils/types/props/Mousable';
-import { Pointerable } from '@app/utils/types/props/Pointerable';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { HoverEventHandler } from '@/utils/types/handlers/HoverEventHandler';
+import { Mousable } from '@/utils/types/props/Mousable';
+import { Pointerable } from '@/utils/types/props/Pointerable';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

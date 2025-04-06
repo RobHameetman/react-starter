@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isReactElement } from '@app/utils/functions/check/react/isReactElement';
+import type { ReactElement, createElement } from 'react';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isReactElement } from '@/utils/functions/check/react/isReactElement';
 
 /**
  * A compositional prop type for React components that can be any HTML element
@@ -14,18 +14,14 @@ import { isReactElement } from '@app/utils/functions/check/react/isReactElement'
  * @example
  * ```TSX
  * export interface MyComponentProps extends Polymorphic {
- *   readonly text: string;
+ *   readonly children: string;
  * }
  *
- * export const MyComponent: $FC<MyComponentProps> = ({ as: _as = 'div', text, ...props }) => {
- *   const As = useSemanticAsProp({ as: _as });
- *
- *   return (
- *     <As {...props}>
- * 	     {text}
- *     </As>
- *   );
- * };
+ * export const MyComponent: $FC<MyComponentProps> = ({ as: As = 'div', children, ...props }) => (
+ *   <As {...props}>
+ * 	   {children}
+ *   </As>
+ * );
  * ```
  */
 export interface Polymorphic extends Record<string, unknown> {
@@ -33,7 +29,7 @@ export interface Polymorphic extends Record<string, unknown> {
 	 * [Optional] Semantic "as" prop. Override the root node.
 	 * @defaultValue - `'aside'`
 	 */
-	readonly as?: ReactElement<unknown, string> | keyof JSX.IntrinsicElements;
+	readonly as?: Parameters<typeof createElement<Record<string, unknown>>>[0];
 }
 
 /**

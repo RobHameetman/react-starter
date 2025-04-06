@@ -1,4 +1,4 @@
-import { fakeElement } from '@app/utils/functions/check/dom/isElement/__test__';
+import { fakeElement } from '@/utils/functions/check/dom/isElement/__test__';
 
 export const fakeHtmlElement = ({
 	ssr = typeof window === 'undefined',

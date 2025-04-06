@@ -1,9 +1,9 @@
-import { noop } from '@app/utils/functions/misc';
+import { noop } from '@/utils/functions/misc';
 import {
 	TabBackEvent,
 	isTabBackEvent,
-} from '@app/utils/types/events/TabBackEvent';
-import { fakeTabBackEvent } from '@app/utils/types/events/TabBackEvent/__test__';
+} from '@/utils/types/events/TabBackEvent';
+import { fakeTabBackEvent } from '@/utils/types/events/TabBackEvent/__test__';
 
 export const mockTabBackEventHandler = <T = Element>(
 	callback: (e: TabBackEvent<T>) => void = noop,

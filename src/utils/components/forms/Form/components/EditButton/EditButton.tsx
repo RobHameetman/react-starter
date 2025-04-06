@@ -1,6 +1,6 @@
-import { noop } from '@app/utils/functions/misc/noop';
+import { noop } from '@/utils/functions/misc/noop';
 import React, { FC, useCallback } from 'react';
-import { Button, ButtonProps } from '@app/utils/components/misc/Button';
+import { Button, ButtonProps } from '@/utils/components/misc/Button';
 import { FormModes } from '../../enums';
 import { useForm } from '../../hooks';
 

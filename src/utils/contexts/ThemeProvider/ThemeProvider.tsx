@@ -1,11 +1,11 @@
 import { $FC, useCallback, useEffect, useState } from 'react';
 import { NextUIProvider } from '@nextui-org/react';
-import { switchTheme } from '@app/theme/functions/switchTheme';
-import { themeIsLoaded } from '@app/theme/functions/themeIsLoaded';
-import { useMediaQuery } from '@app/utils/hooks/misc/useMediaQuery';
-import { getItem } from '@app/utils/functions/storage/getItem';
-import { removeItem } from '@app/utils/functions/storage/removeItem';
-import { setItem } from '@app/utils/functions/storage/setItem';
+import { switchTheme } from '@/theme/functions/switchTheme';
+import { themeIsLoaded } from '@/theme/functions/themeIsLoaded';
+import { useMediaQuery } from '@/utils/hooks/misc/useMediaQuery';
+import { getItem } from '@/utils/functions/storage/getItem';
+import { removeItem } from '@/utils/functions/storage/removeItem';
+import { setItem } from '@/utils/functions/storage/setItem';
 import { ThemeContext } from '../ThemeContext';
 
 /**

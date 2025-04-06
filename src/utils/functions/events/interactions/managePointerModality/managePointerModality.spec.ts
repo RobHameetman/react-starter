@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
-import { InteractionModality } from '@app/utils/enums/InteractionModalities';
-import { randomInteractionModality } from '@app/utils/enums/InteractionModalities/__test__';
-import { fakePointerEvent } from '@app/utils/functions/check/react/isPointerEvent/__test__';
+import { InteractionModality } from '@/utils/enums/InteractionModalities';
+import { randomInteractionModality } from '@/utils/enums/InteractionModalities/__test__';
+import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
 import { onTest } from '@test/utils/onTest';
 import { managePointerModality } from './managePointerModality';
 

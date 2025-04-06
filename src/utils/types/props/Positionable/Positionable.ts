@@ -1,5 +1,5 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
 
 /**
  * A compositional prop type for React components that allow you to position the

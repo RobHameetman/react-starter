@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { handleGlobalScrollEvents as _handleGlobalScrollEvents } from '@app/utils/functions/events/scroll/handleGlobalScrollEvents';
+import { noop } from '@/utils/functions/misc/noop';
+import { handleGlobalScrollEvents as _handleGlobalScrollEvents } from '@/utils/functions/events/scroll/handleGlobalScrollEvents';
 
 /**
  * Functional dependencies used in the {@link useGlobalScrollEvents()} hook.

@@ -1,4 +1,4 @@
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * Checks that an `unknown` value is a non-empty {@link object}. This type-guard

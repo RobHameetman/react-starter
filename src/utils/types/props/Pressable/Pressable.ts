@@ -1,12 +1,12 @@
 import {
 	PressEventHandler,
 	isPressEventHandler,
-} from '@app/utils/types/handlers/PressEventHandler';
+} from '@/utils/types/handlers/PressEventHandler';
 import {
 	Keyboardable,
 	isKeyboardable,
-} from '@app/utils/types/props/Keyboardable';
-import { Pointerable, isPointerable } from '@app/utils/types/props/Pointerable';
+} from '@/utils/types/props/Keyboardable';
+import { Pointerable, isPointerable } from '@/utils/types/props/Pointerable';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

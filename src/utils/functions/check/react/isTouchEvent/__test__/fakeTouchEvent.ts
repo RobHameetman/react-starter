@@ -1,7 +1,7 @@
 import type { TouchEvent } from 'react';
 import { faker } from '@faker-js/faker';
-import { fakeUIEvent } from '@app/utils/functions/check/react/isUIEvent/__test__';
-import { randomTouchEventType } from '@app/utils/enums/TouchEventTypes/__test__';
+import { fakeUIEvent } from '@/utils/functions/check/react/isUIEvent/__test__';
+import { randomTouchEventType } from '@/utils/enums/TouchEventTypes/__test__';
 
 export const fakeTouch = ({ ...overrideProps }: Record<string, unknown> = {}) =>
 	({

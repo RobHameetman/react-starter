@@ -8,12 +8,12 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { Badge } from '@nextui-org/react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { snakeCase } from '@app/utils/functions/string/snakeCase';
-import { useControlProp } from '@app/utils/hooks/react/useControlProp';
-import { Noop, isNoop } from '@app/utils/types/misc/Noop';
-import type { Identifiable } from '@app/utils/types/props/Identifiable';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { noop } from '@/utils/functions/misc/noop';
+import { snakeCase } from '@/utils/functions/string/snakeCase';
+import { useControlProp } from '@/utils/hooks/react/useControlProp';
+import { Noop, isNoop } from '@/utils/types/misc/Noop';
+import type { Identifiable } from '@/utils/types/props/Identifiable';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import { ChangeTabHandler, TabRenderFn } from '../../types';
 import { useTabs } from '../../hooks/useTabs';
 import styles from './Tab.module.css';

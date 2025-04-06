@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { fakePressEvent } from '@app/utils/types/events/PressEvent/__test__';
+import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
 import { createRipple } from './createRipple';
 
 let counter = 0;

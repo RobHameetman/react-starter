@@ -1,5 +1,5 @@
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
-import { isNonEmptyString } from '@app/utils/functions/check/js/specialized/isNonEmptyString';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isNonEmptyString } from '@/utils/functions/check/js/specialized/isNonEmptyString';
 import { TableCacheFilter, isTableCacheFilter } from '../TableCacheFilter';
 import {
 	TableCachePagination,

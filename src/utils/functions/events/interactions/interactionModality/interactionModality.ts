@@ -1,4 +1,4 @@
-import { InteractionModality } from '@app/utils/enums/InteractionModalities';
+import { InteractionModality } from '@/utils/enums/InteractionModalities';
 
 /**
  * The current interaction modality in the global application state.

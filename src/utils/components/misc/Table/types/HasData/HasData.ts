@@ -1,5 +1,5 @@
-import { isArray } from '@app/utils/functions/check/js/core/isArray';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isArray } from '@/utils/functions/check/js/core/isArray';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
 
 /**
  * An interface which describes any object which has data contained in a `data`

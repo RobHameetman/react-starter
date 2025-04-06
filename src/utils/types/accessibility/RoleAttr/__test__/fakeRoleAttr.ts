@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { fakeNode } from '@app/utils/functions/check/dom/isNode/__test__';
-import { fakeAttr } from '@app/utils/types/dom/Attr/__test__';
+import { fakeNode } from '@/utils/functions/check/dom/isNode/__test__';
+import { fakeAttr } from '@/utils/types/dom/Attr/__test__';
 import { RoleAttr } from '../RoleAttr';
 
 export const fakeRoleAttr = <V extends string = string>({

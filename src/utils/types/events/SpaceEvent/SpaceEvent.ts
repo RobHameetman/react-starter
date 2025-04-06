@@ -1,6 +1,6 @@
 import { KeyboardEvent, PointerEvent } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isKeyboardEvent } from '@app/utils/functions/check/react/isKeyboardEvent';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isKeyboardEvent } from '@/utils/functions/check/react/isKeyboardEvent';
 
 /**
  * A compositional event type for React components that allow you to trigger an

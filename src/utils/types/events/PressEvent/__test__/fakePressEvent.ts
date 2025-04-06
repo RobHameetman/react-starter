@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker';
-import { isMouseEventType } from '@app/utils/enums/MouseEventTypes';
-import { isTouchEventType } from '@app/utils/enums/TouchEventTypes';
-import { fakeMouseEvent } from '@app/utils/functions/check/react/isMouseEvent/__test__';
-import { fakePointerEvent } from '@app/utils/functions/check/react/isPointerEvent/__test__';
-import { fakeEnterEvent } from '@app/utils/types/events/EnterEvent/__test__';
-import { fakeSpaceEvent } from '@app/utils/types/events/SpaceEvent/__test__';
+import { isMouseEventType } from '@/utils/enums/MouseEventTypes';
+import { isTouchEventType } from '@/utils/enums/TouchEventTypes';
+import { fakeMouseEvent } from '@/utils/functions/check/react/isMouseEvent/__test__';
+import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
+import { fakeEnterEvent } from '@/utils/types/events/EnterEvent/__test__';
+import { fakeSpaceEvent } from '@/utils/types/events/SpaceEvent/__test__';
 import { PressEvent } from '../PressEvent';
 
 export const fakePressEvent = <T = HTMLElement>({

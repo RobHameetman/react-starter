@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isReactElement } from '@app/utils/functions/check/react/isReactElement';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isReactElement } from '@/utils/functions/check/react/isReactElement';
 
 /**
  * A function provided to the `renderTab` prop of the `<Tab />` component. This

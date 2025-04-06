@@ -1,6 +1,6 @@
 import { MouseEventHandler, PointerEventHandler } from 'react';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 
 /**
  * A compositional prop type for React components that allow you to trigger an

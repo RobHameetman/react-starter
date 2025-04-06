@@ -1,28 +1,28 @@
 import { faker } from '@faker-js/faker';
-import { fakeFocusEvent } from '@app/utils/functions/check/react/isFocusEvent/__test__';
-import { handleWindowBlur } from '@app/utils/functions/events/focus/handleWindowBlur';
-import { manageFocusModality } from '@app/utils/functions/events/interactions/manageFocusModality';
-import { noop } from '@app/utils/functions/misc/noop';
+import { fakeFocusEvent } from '@/utils/functions/check/react/isFocusEvent/__test__';
+import { handleWindowBlur } from '@/utils/functions/events/focus/handleWindowBlur';
+import { manageFocusModality } from '@/utils/functions/events/interactions/manageFocusModality';
+import { noop } from '@/utils/functions/misc/noop';
 import { onTest } from '@test/utils/onTest';
 import { handleGlobalFocusEvents } from './handleGlobalFocusEvents';
 
-jest.mock('@app/utils/functions/events/focus/handleWindowBlur', () => ({
-	...jest.requireActual('@app/utils/functions/events/focus/handleWindowBlur'),
+jest.mock('@/utils/functions/events/focus/handleWindowBlur', () => ({
+	...jest.requireActual('@/utils/functions/events/focus/handleWindowBlur'),
 	handleWindowBlur: jest.fn(),
 }));
 
 jest.mock(
-	'@app/utils/functions/events/interactions/manageFocusModality',
+	'@/utils/functions/events/interactions/manageFocusModality',
 	() => ({
 		...jest.requireActual(
-			'@app/utils/functions/events/interactions/manageFocusModality',
+			'@/utils/functions/events/interactions/manageFocusModality',
 		),
 		manageFocusModality: jest.fn(),
 	}),
 );
 
-jest.mock('@app/utils/functions/misc/noop', () => ({
-	...jest.requireActual('@app/utils/functions/misc/noop'),
+jest.mock('@/utils/functions/misc/noop', () => ({
+	...jest.requireActual('@/utils/functions/misc/noop'),
 	noop: jest.fn(),
 }));
 

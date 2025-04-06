@@ -1,7 +1,7 @@
 import { FormEventHandler, MouseEvent, useCallback } from 'react';
-import { noop } from '@app/utils/functions/misc/noop';
-import { CC } from '@app/utils/types/react/CC';
-import type { Stylable } from '@app/utils/types/props/Stylable';
+import { noop } from '@/utils/functions/misc/noop';
+import { CC } from '@/utils/types/react/CC';
+import type { Stylable } from '@/utils/types/props/Stylable';
 import {
 	FormButtons,
 	CloseButton,

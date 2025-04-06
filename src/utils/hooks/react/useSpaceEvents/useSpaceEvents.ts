@@ -1,8 +1,8 @@
 import { KeyboardEventHandler, useCallback } from 'react';
-import { isCapturing as _isCapturing } from '@app/utils/functions/events/phases/isCapturing';
-import { noop } from '@app/utils/functions/misc/noop';
-import { isSpaceEvent as _isSpaceEvent } from '@app/utils/types/events/SpaceEvent';
-import type { Spaceable } from '@app/utils/types/props/Spaceable';
+import { isCapturing as _isCapturing } from '@/utils/functions/events/phases/isCapturing';
+import { noop } from '@/utils/functions/misc/noop';
+import { isSpaceEvent as _isSpaceEvent } from '@/utils/types/events/SpaceEvent';
+import type { Spaceable } from '@/utils/types/props/Spaceable';
 
 /**
  * Functional dependencies used in the {@link useSpaceEvents()} hook. This object

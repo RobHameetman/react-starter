@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { capitalize } from '@app/utils/functions/string/capitalize';
+import { capitalize } from '@/utils/functions/string/capitalize';
 import { dispatchReactEvent } from './dispatchReactEvent';
 
 let hasReactPropsKey = true;

@@ -1,4 +1,4 @@
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
 
 /**
  * Checks that an `unknown` value is a {@link number} greater than zero. This

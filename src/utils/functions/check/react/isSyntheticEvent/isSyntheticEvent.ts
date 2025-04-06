@@ -1,9 +1,9 @@
 import type { SyntheticEvent } from 'react';
-import { isBoolean } from '@app/utils/functions/check/js/core/isBoolean';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isNumber } from '@app/utils/functions/check/js/core/isNumber';
-import { isString } from '@app/utils/functions/check/js/core/isString';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
+import { isBoolean } from '@/utils/functions/check/js/core/isBoolean';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isNumber } from '@/utils/functions/check/js/core/isNumber';
+import { isString } from '@/utils/functions/check/js/core/isString';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
 
 /**
  * Checks that an `unknown` value is a {@link SyntheticEvent}. This type guard is

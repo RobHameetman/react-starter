@@ -1,7 +1,7 @@
 import { createContext } from 'react';
-import { isFunction } from '@app/utils/functions/check/js/core/isFunction';
-import { isObject } from '@app/utils/functions/check/js/core/isObject';
-import { noop } from '@app/utils/functions/misc/noop';
+import { isFunction } from '@/utils/functions/check/js/core/isFunction';
+import { isObject } from '@/utils/functions/check/js/core/isObject';
+import { noop } from '@/utils/functions/misc/noop';
 
 /**
  * A shared state for checkbox groups.

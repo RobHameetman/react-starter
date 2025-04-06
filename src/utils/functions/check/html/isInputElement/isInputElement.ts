@@ -1,5 +1,5 @@
-import { isHtmlElement } from '@app/utils/functions/check/html/isHtmlElement';
-import { isUndefined } from '@app/utils/functions/check/js/core/isUndefined';
+import { isHtmlElement } from '@/utils/functions/check/html/isHtmlElement';
+import { isUndefined } from '@/utils/functions/check/js/core/isUndefined';
 
 /**
  * Checks that an `unknown` value is an {@link HTMLInputElement}.

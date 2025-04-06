@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { Button } from '@app/utils/components/misc/Button';
-import { ButtonFills } from '@app/utils/components/misc/Button/enums/ButtonFills';
-import { View } from '@app/utils/views/View';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { Button } from '@/utils/components/misc/Button';
+import { ButtonFills } from '@/utils/components/misc/Button/enums/ButtonFills';
+import { View } from '@/utils/views/View';
 import { Inbox } from '../../components/Inbox';
 import styles from './NotificationsView.module.css';
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Routes } from './Routes';
 
-jest.mock('@app/auth', () => {
+jest.mock('@/auth', () => {
 	return {
 		__esModule: true,
 		useAuth: jest.fn(() => () => ({

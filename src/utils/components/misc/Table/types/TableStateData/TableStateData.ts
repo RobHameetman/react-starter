@@ -1,6 +1,6 @@
-import { isArray } from '@app/utils/functions/check/js/core/isArray';
-import { isNonEmptyObject } from '@app/utils/functions/check/js/specialized/isNonEmptyObject';
-import { isNumberGreaterThanZero } from '@app/utils/functions/check/js/specialized/isNumberGreaterThanZero';
+import { isArray } from '@/utils/functions/check/js/core/isArray';
+import { isNonEmptyObject } from '@/utils/functions/check/js/specialized/isNonEmptyObject';
+import { isNumberGreaterThanZero } from '@/utils/functions/check/js/specialized/isNumberGreaterThanZero';
 import { PaginatedData, isPaginatedData } from '../PaginatedData';
 
 /**

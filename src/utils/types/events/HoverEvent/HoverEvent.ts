@@ -1,7 +1,7 @@
 import { MouseEvent, PointerEvent } from 'react';
-import { isHoverEventType } from '@app/utils/enums/HoverEventTypes';
-import { isMouseEvent } from '@app/utils/functions/check/react/isMouseEvent';
-import { isPointerEvent } from '@app/utils/functions/check/react/isPointerEvent';
+import { isHoverEventType } from '@/utils/enums/HoverEventTypes';
+import { isMouseEvent } from '@/utils/functions/check/react/isMouseEvent';
+import { isPointerEvent } from '@/utils/functions/check/react/isPointerEvent';
 
 /**
  * A compositional event type for React components that allow you to trigger an

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Card } from '@nextui-org/react';
-import { useAuth } from '@app/auth/hooks/useAuth';
-import { View } from '@app/utils/views/View';
-import { Tabs } from '@app/utils/components/structure/Tabs';
-import { Tab } from '@app/utils/components/structure/Tabs/components/Tab';
-import { withTabsProvider } from '@app/utils/components/structure/Tabs/hocs/withTabsProvider';
+import { useAuth } from '@/auth/hooks/useAuth';
+import { View } from '@/utils/views/View';
+import { Tabs } from '@/utils/components/structure/Tabs';
+import { Tab } from '@/utils/components/structure/Tabs/components/Tab';
+import { withTabsProvider } from '@/utils/components/structure/Tabs/hocs/withTabsProvider';
 import styles from './SettingsView.module.css';
 
 /**

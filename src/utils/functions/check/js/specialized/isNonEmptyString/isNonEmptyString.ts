@@ -1,4 +1,4 @@
-import { isString } from '@app/utils/functions/check/js/core/isString';
+import { isString } from '@/utils/functions/check/js/core/isString';
 
 /**
  * Checks that an `unknown` value is a non-empty {@link string}. This type-guard

@@ -1,10 +1,10 @@
 import { MouseEvent, PointerEvent, TouchEvent } from 'react';
-import { isPressEventType } from '@app/utils/enums/PressEventTypes';
-import { isMouseEvent } from '@app/utils/functions/check/react/isMouseEvent';
-import { isPointerEvent } from '@app/utils/functions/check/react/isPointerEvent';
-import { isTouchEvent } from '@app/utils/functions/check/react/isTouchEvent';
-import { EnterEvent, isEnterEvent } from '@app/utils/types/events/EnterEvent';
-import { SpaceEvent, isSpaceEvent } from '@app/utils/types/events/SpaceEvent';
+import { isPressEventType } from '@/utils/enums/PressEventTypes';
+import { isMouseEvent } from '@/utils/functions/check/react/isMouseEvent';
+import { isPointerEvent } from '@/utils/functions/check/react/isPointerEvent';
+import { isTouchEvent } from '@/utils/functions/check/react/isTouchEvent';
+import { EnterEvent, isEnterEvent } from '@/utils/types/events/EnterEvent';
+import { SpaceEvent, isSpaceEvent } from '@/utils/types/events/SpaceEvent';
 
 /**
  * A compositional event type for React components that allow you to trigger an

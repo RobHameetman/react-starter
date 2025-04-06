@@ -1,8 +1,8 @@
 import {
 	EscapeEvent,
 	isEscapeEvent,
-} from '@app/utils/types/events/EscapeEvent';
-import { PressEvent, isPressEvent } from '@app/utils/types/events/PressEvent';
+} from '@/utils/types/events/EscapeEvent';
+import { PressEvent, isPressEvent } from '@/utils/types/events/PressEvent';
 
 type RoleOf<T> = T extends Element ? T['role'] : never;
 type HasLinkRole<T> = RoleOf<T> extends 'link' ? T : never;

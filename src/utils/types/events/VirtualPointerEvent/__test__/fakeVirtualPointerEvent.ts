@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { fakePointerEvent } from '@app/utils/functions/check/react/isPointerEvent/__test__';
+import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
 import { VirtualPointerEvent } from '../VirtualPointerEvent';
 
 export const fakeVirtualPointerEvent = <T = Element>({
