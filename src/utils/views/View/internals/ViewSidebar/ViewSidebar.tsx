@@ -1,5 +1,5 @@
 import { $FC, useCallback, useState } from 'react';
-import { Grid } from '@nextui-org/react';
+// import { Grid } from '@nextui-org/react';
 import { Button } from '@/utils/components/misc/Button';
 import { DoubleChevronLeftIcon } from '@/utils/icons/DoubleChevronLeftIcon';
 import { DoubleChevronRightIcon } from '@/utils/icons/DoubleChevronRightIcon';
@@ -7,7 +7,7 @@ import type { Polymorphic } from '@/utils/types/props/Polymorphic';
 import type { Stylable } from '@/utils/types/props/Stylable';
 import type { Testable } from '@/utils/types/props/Testable';
 import { useBreakpoints, useSemanticAsProp } from '../../../../hooks';
-import styles from './Sidebar.module.css';
+import styles from './ViewSidebar.module.css';
 
 /**
  * Compositional prop types for the {@link ViewSidebar} component.
@@ -55,8 +55,8 @@ export interface ViewSidebarProps extends ComposedProps {
  *
  * @returns A rendered page/view-level sidebar.
  */
-export const Sidebar: $FC<SidebarProps> = ({
-	as: _as = 'aside',
+export const ViewSidebar: $FC<ViewSidebarProps> = ({
+	as: As = 'aside',
 	className = '',
 	children,
 	elastic = false,
@@ -66,8 +66,6 @@ export const Sidebar: $FC<SidebarProps> = ({
 	...props
 }) => {
 	const [expanded, setExpanded] = useState(expand);
-
-	const As = useSemanticAsProp({ as: _as });
 	const { isMobile } = useBreakpoints();
 
 	const cssOverride = className ? ` ${className}` : '';
@@ -75,7 +73,7 @@ export const Sidebar: $FC<SidebarProps> = ({
 		(elastic && expanded) || !elastic ? ` ${styles.expanded}` : '';
 
 	const handleClickSizeToggle = useCallback(() => {
-		setExpanded((currentlyExpanded) => !currentlyExpanded);
+		setExpanded((currentlyExpanded: boolean) => !currentlyExpanded);
 	}, []);
 
 	return (
@@ -112,3 +110,5 @@ export const Sidebar: $FC<SidebarProps> = ({
 		</As>
 	);
 };
+
+export default ViewSidebar;

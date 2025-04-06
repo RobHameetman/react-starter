@@ -233,3 +233,5 @@ export const ViewHeader: $FC<Record<string, unknown>> = ({
 		</Navbar>
 	);
 };
+
+export default ViewHeader;

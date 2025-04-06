@@ -59,3 +59,5 @@ export const ViewContent: $FC<ViewContentProps> = ({
 		</As>
 	);
 };
+
+export default ViewContent;

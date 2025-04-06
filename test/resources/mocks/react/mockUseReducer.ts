@@ -1,5 +1,5 @@
 export const mockUseReducer = jest.fn(
-	(reducer: (state, action) => unknown, initialState) => {
+	(reducer: <S, A>(state: S, action: A) => unknown, initialState) => {
 		let state = initialState;
 
 		const dispatch = jest.fn((action) => {
