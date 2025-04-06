@@ -416,8 +416,8 @@ module.exports = () => ({
 	},
 	resolve: {
 		alias: {
-			'@app': path.resolve(process.cwd(), 'src/'),
-			'@test': path.resolve(process.cwd(), 'test/resources/'),
+			'@': path.resolve(process.cwd(), 'src/'),
+			'@@': path.resolve(process.cwd(), 'test/resources/'),
 		},
 		extensions: ['.tsx', '.ts', '.css', '.scss', '.js'],
 		fallback: {
