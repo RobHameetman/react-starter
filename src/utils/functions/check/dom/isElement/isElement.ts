@@ -18,3 +18,5 @@ export const isElement = (value: unknown): value is Element =>
 	 */
 	(!isUndefined(window) && value instanceof Element) ||
 	isNode(value, DomNodeTypes.ELEMENT_NODE);
+
+export default isElement;

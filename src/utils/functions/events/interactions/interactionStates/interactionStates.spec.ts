@@ -1,5 +1,5 @@
 import { Func } from '@/utils/types/misc/Func';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { interactionStates } from './interactionStates';
 
 describe('interactionStates()', () => {

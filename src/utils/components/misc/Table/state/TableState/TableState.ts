@@ -95,7 +95,7 @@ export const getTableState = (name: string): TableState | undefined =>
 /**
  * Update the collection of table states in memory.
  */
-export const setTableState = (name: string, state: TableState): void => {
+export const setTableState = (name: string, state: TableState) => {
 	if (state !== __TABLES__[name]) {
 		__TABLES__ = Object.freeze({
 			...__TABLES__,
@@ -107,6 +107,6 @@ export const setTableState = (name: string, state: TableState): void => {
 /**
  * Clear all table states in memory.
  */
-export const clearTableStates = (): void => {
+export const clearTableStates = () => {
 	__TABLES__ = Object.freeze({});
 };

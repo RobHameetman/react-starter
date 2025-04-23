@@ -88,3 +88,5 @@ export const isCloseable = <T = HTMLElement>(
 	('onCloseCapture' in value
 		? isCloseEventHandler<T>(value.onCloseCapture, event)
 		: true);
+
+export default Closeable;

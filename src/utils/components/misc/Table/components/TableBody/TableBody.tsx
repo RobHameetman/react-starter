@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
-import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
-import * as Mui from '@material-ui/core';
+import { $FC } from 'react';
+import { Breakpoint } from '@/theme/tokens/breakpoints';
 
 export interface TableBodyProps {
 	/**
@@ -11,12 +10,13 @@ export interface TableBodyProps {
 	readonly width: Breakpoint;
 }
 
-export const TableBody: FC<TableBodyProps> = ({ children, width }) => {
+export const TableBody: $FC<TableBodyProps> = ({ children, width }) => {
 	return (
-		<Mui.TableContainer>
-			<Mui.Table size={Mui.isWidthUp('sm', width) ? 'medium' : 'small'}>
+		// <Mui.TableContainer>
+			// <table size={Mui.isWidthUp('sm', width) ? 'medium' : 'small'}>
+			<table>
 				{children}
-			</Mui.Table>
-		</Mui.TableContainer>
+			</table>
+		// </Mui.TableContainer>
 	);
 };

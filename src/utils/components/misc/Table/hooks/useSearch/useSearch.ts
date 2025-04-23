@@ -13,7 +13,6 @@ import {
 	updateSearchInput,
 } from '../../functions';
 import { SearchAgainstFn, TableState } from '../../types';
-import { Hook } from '../../../../../types';
 
 export interface UseSearchResult {
 	readonly setSearchable: () => void;
@@ -21,10 +20,7 @@ export interface UseSearchResult {
 	readonly setSearchAgainstFn: (searchAgainst: SearchAgainstFn) => void;
 }
 
-export const useSearch: Hook<
-	UseSearchResult,
-	Dispatch<SetStateAction<TableState>>
-> = (setState = () => {}) => {
+export const useSearch = (setState = (() => {}) as Dispatch<SetStateAction<TableState>>) => {
 	const handleChangeSearchInput = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) =>
 			setState((state) => render(updateSearchInput(e.target.value, state))),

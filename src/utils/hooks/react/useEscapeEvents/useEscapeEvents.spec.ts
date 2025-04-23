@@ -4,7 +4,7 @@ import {
 	EscapeEventHandler,
 	isEscapeEventHandler as isEscapeHandler,
 } from '@/utils/types/handlers/EscapeEventHandler';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { useEscapeEvents } from './useEscapeEvents';
 
 describe('useEscapeEvents()', () => {

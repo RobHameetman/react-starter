@@ -51,3 +51,5 @@ export const isValuable = <T = string>(
 	 * value.value
 	 */
 	('value' in value ? isT(value.value) : true);
+
+export default Valuable;

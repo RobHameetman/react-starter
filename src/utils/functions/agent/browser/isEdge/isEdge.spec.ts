@@ -8,11 +8,7 @@ describe('isEdge()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isEdge({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isEdge();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

@@ -1,5 +1,5 @@
-import { btoaSpy, setItemSpy } from '@test/spies';
-import { b64 } from '@test/utils/b64';
+import { btoaSpy, setItemSpy } from '@@/spies';
+import { b64 } from '@@/utils/b64';
 import { setFormCache } from './setFormCache';
 import { isCachedForm } from '../../../types/CachedForm';
 import { fakeCachedForm } from '../../../types/CachedForm/__test__';

@@ -47,3 +47,5 @@ export const isAccessible = (value: unknown): value is Accessible =>
 	 * value.tabIndex
 	 */
 	('tabIndex' in value ? isNumber(value.tabIndex) : true);
+
+export default Accessible;

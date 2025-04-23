@@ -147,3 +147,5 @@ export const isTabbable = <T = Element>(value: unknown): value is Tabbable<T> =>
 	('onPressTabBackUpCapture' in value
 		? isTabBackEventHandler(value.onPressTabBackUpCapture)
 		: true);
+
+export default Tabbable;

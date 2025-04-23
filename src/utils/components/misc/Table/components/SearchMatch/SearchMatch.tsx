@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { $FC } from 'react';
 import { useTable } from '../../hooks';
 import styles from './SearchMatch.module.css';
 
-export const SearchMatch: FC = ({ children }) => {
+export const SearchMatch: $FC = ({ children }) => {
 	const { state } = useTable();
 
 	const { filter } = state;

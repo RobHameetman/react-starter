@@ -1,6 +1,6 @@
 import { Component, ErrorInfo, FC, PropsWithChildren, ReactNode } from 'react';
 import { noop } from '@/utils/functions/misc/noop';
-import { ErrorView } from '@/utils/views/ErrorView';
+import { ErrorPage } from '@/utils/pages/ErrorPage';
 
 export interface CatchErrorProps {
 	readonly as?: string | ReactNode | FC<Partial<Error>>;
@@ -35,7 +35,7 @@ export class CatchError extends Component<
 	}
 
 	readonly state = Object.freeze({
-		as: <ErrorView />,
+		as: <ErrorPage />,
 		children: null,
 		error: null,
 		silent: false,

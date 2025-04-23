@@ -1,7 +1,7 @@
 import { InteractionModality } from '@/utils/enums/InteractionModalities';
 import { randomInteractionModality } from '@/utils/enums/InteractionModalities/__test__';
 import { Func } from '@/utils/types/misc/Func';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { interactionModality } from './interactionModality';
 
 describe('interactionModality()', () => {

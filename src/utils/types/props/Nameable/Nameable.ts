@@ -46,3 +46,5 @@ export const isNameable = (value: unknown): value is Nameable =>
 	 * value.name
 	 */
 	('name' in value ? isString(value.name) : true);
+
+export default Nameable;

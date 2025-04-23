@@ -1,25 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { TableColumns } from '../../../../../../modules';
+import { render } from '@testing-library/react';
+import { TableColumns } from './TableColumns';
 
-describe('TableColumns', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			$renderedComponent = shallow(<TableColumns />);
-		} catch (err) {
-			error = err;
-		}
+describe('<TableColumns />', () => {
+	it('should render', () => {
+		expect(() => render(<TableColumns />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<TableColumns />)).toMatchSnapshot();
 	});
 });

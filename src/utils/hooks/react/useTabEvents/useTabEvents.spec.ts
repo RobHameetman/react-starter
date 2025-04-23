@@ -8,21 +8,21 @@ import {
 	TabBackEventHandler,
 	isTabBackEventHandler as isTabBackHandler,
 } from '@/utils/types/handlers/TabBackEventHandler';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { useTabEvents } from './useTabEvents';
 
 describe('useTabEvents()', () => {
 	let capturing: boolean | null = null;
 	let error: Error | null = null;
 	let invalidEvent: Record<string, unknown> | null = null;
-	let mockOnTab: jest.Mock | null = null;
-	let mockOnTabCapture: jest.Mock | null = null;
-	let mockOnTabBack: jest.Mock | null = null;
-	let mockOnTabBackCapture: jest.Mock | null = null;
-	let mockOnTabBackUp: jest.Mock | null = null;
-	let mockOnTabBackUpCapture: jest.Mock | null = null;
-	let mockOnTabUp: jest.Mock | null = null;
-	let mockOnTabUpCapture: jest.Mock | null = null;
+	let mockOnPressTab: jest.Mock | null = null;
+	let mockOnPressTabCapture: jest.Mock | null = null;
+	let mockOnPressTabBack: jest.Mock | null = null;
+	let mockOnPressTabBackCapture: jest.Mock | null = null;
+	let mockOnPressTabBackUp: jest.Mock | null = null;
+	let mockOnPressTabBackUpCapture: jest.Mock | null = null;
+	let mockOnPressTabUp: jest.Mock | null = null;
+	let mockOnPressTabUpCapture: jest.Mock | null = null;
 	let onKeyDown: unknown = null;
 	let onKeyDownCapture: unknown = null;
 	let onKeyUp: unknown = null;
@@ -36,14 +36,14 @@ describe('useTabEvents()', () => {
 		try {
 			index++;
 
-			mockOnTab = jest.fn();
-			mockOnTabCapture = jest.fn();
-			mockOnTabBack = jest.fn();
-			mockOnTabBackCapture = jest.fn();
-			mockOnTabBackUp = jest.fn();
-			mockOnTabBackUpCapture = jest.fn();
-			mockOnTabUp = jest.fn();
-			mockOnTabUpCapture = jest.fn();
+			mockOnPressTab = jest.fn();
+			mockOnPressTabCapture = jest.fn();
+			mockOnPressTabBack = jest.fn();
+			mockOnPressTabBackCapture = jest.fn();
+			mockOnPressTabBackUp = jest.fn();
+			mockOnPressTabBackUpCapture = jest.fn();
+			mockOnPressTabUp = jest.fn();
+			mockOnPressTabUpCapture = jest.fn();
 
 			onTest(index, {
 				2: () => {
@@ -95,14 +95,14 @@ describe('useTabEvents()', () => {
 				result: { current: result },
 			} = renderHook(() =>
 				useTabEvents({
-					onTab: mockOnTab as TabEventHandler,
-					onTabCapture: mockOnTabCapture as TabEventHandler,
-					onTabBack: mockOnTabBack as TabBackEventHandler,
-					onTabBackCapture: mockOnTabBackCapture as TabBackEventHandler,
-					onTabBackUp: mockOnTabBackUp as TabBackEventHandler,
-					onTabBackUpCapture: mockOnTabBackUpCapture as TabBackEventHandler,
-					onTabUp: mockOnTabUp as TabEventHandler,
-					onTabUpCapture: mockOnTabUpCapture as TabEventHandler,
+					onPressTab: mockOnPressTab as TabEventHandler,
+					onPressTabCapture: mockOnPressTabCapture as TabEventHandler,
+					onPressTabBack: mockOnPressTabBack as TabBackEventHandler,
+					onPressTabBackCapture: mockOnPressTabBackCapture as TabBackEventHandler,
+					onPressTabBackUp: mockOnPressTabBackUp as TabBackEventHandler,
+					onPressTabBackUpCapture: mockOnPressTabBackUpCapture as TabBackEventHandler,
+					onPressTabUp: mockOnPressTabUp as TabEventHandler,
+					onPressTabUpCapture: mockOnPressTabUpCapture as TabEventHandler,
 				}),
 			));
 
@@ -119,14 +119,14 @@ describe('useTabEvents()', () => {
 		capturing = null;
 		error = null;
 		invalidEvent = null;
-		mockOnTab = null;
-		mockOnTabCapture = null;
-		mockOnTabBack = null;
-		mockOnTabBackCapture = null;
-		mockOnTabBackUp = null;
-		mockOnTabBackUpCapture = null;
-		mockOnTabUp = null;
-		mockOnTabUpCapture = null;
+		mockOnPressTab = null;
+		mockOnPressTabCapture = null;
+		mockOnPressTabBack = null;
+		mockOnPressTabBackCapture = null;
+		mockOnPressTabBackUp = null;
+		mockOnPressTabBackUpCapture = null;
+		mockOnPressTabUp = null;
+		mockOnPressTabUpCapture = null;
 		onKeyDown = null;
 		onKeyDownCapture = null;
 		onKeyUp = null;
@@ -158,8 +158,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabBackHandler(onKeyDown, validEvent ?? {})).toBe(true);
 		expect(isTabBackHandler(onKeyDown, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabBack).toBeCalledTimes(1);
-		expect(mockOnTabBack).toBeCalledWith(validEvent);
+		expect(mockOnPressTabBack).toBeCalledTimes(1);
+		expect(mockOnPressTabBack).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keydown" events correctly when shift is not pressed', () => {
@@ -170,8 +170,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabHandler(onKeyDown, validEvent ?? {})).toBe(true);
 		expect(isTabHandler(onKeyDown, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTab).toBeCalledTimes(1);
-		expect(mockOnTab).toBeCalledWith(validEvent);
+		expect(mockOnPressTab).toBeCalledTimes(1);
+		expect(mockOnPressTab).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keydown" events correctly during capturing when shift is pressed', () => {
@@ -182,8 +182,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabBackHandler(onKeyDownCapture, validEvent ?? {})).toBe(true);
 		expect(isTabBackHandler(onKeyDownCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabBackCapture).toBeCalledTimes(1);
-		expect(mockOnTabBackCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressTabBackCapture).toBeCalledTimes(1);
+		expect(mockOnPressTabBackCapture).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keydown" events correctly during capturing when shift is not pressed', () => {
@@ -194,8 +194,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabHandler(onKeyDownCapture, validEvent ?? {})).toBe(true);
 		expect(isTabHandler(onKeyDownCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabCapture).toBeCalledTimes(1);
-		expect(mockOnTabCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressTabCapture).toBeCalledTimes(1);
+		expect(mockOnPressTabCapture).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly when shift is pressed', () => {
@@ -206,8 +206,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabBackHandler(onKeyUp, validEvent ?? {})).toBe(true);
 		expect(isTabBackHandler(onKeyUp, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabBackUp).toBeCalledTimes(1);
-		expect(mockOnTabBackUp).toBeCalledWith(validEvent);
+		expect(mockOnPressTabBackUp).toBeCalledTimes(1);
+		expect(mockOnPressTabBackUp).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly when shift is not pressed', () => {
@@ -218,8 +218,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabHandler(onKeyUp, validEvent ?? {})).toBe(true);
 		expect(isTabHandler(onKeyUp, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabUp).toBeCalledTimes(1);
-		expect(mockOnTabUp).toBeCalledWith(validEvent);
+		expect(mockOnPressTabUp).toBeCalledTimes(1);
+		expect(mockOnPressTabUp).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly during capturing when shift is pressed', () => {
@@ -230,8 +230,8 @@ describe('useTabEvents()', () => {
 
 		expect(isTabBackHandler(onKeyUpCapture, validEvent ?? {})).toBe(true);
 		expect(isTabBackHandler(onKeyUpCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabBackUpCapture).toBeCalledTimes(1);
-		expect(mockOnTabBackUpCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressTabBackUpCapture).toBeCalledTimes(1);
+		expect(mockOnPressTabBackUpCapture).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly during capturing when shift is not pressed', () => {
@@ -242,7 +242,7 @@ describe('useTabEvents()', () => {
 
 		expect(isTabHandler(onKeyUpCapture, validEvent ?? {})).toBe(true);
 		expect(isTabHandler(onKeyUpCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnTabUpCapture).toBeCalledTimes(1);
-		expect(mockOnTabUpCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressTabUpCapture).toBeCalledTimes(1);
+		expect(mockOnPressTabUpCapture).toBeCalledWith(validEvent);
 	});
 });

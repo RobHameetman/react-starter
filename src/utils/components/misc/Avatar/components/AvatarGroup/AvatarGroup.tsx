@@ -4,7 +4,6 @@ import { isString } from '@/utils/functions/check/js/core/isString';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { withId } from '@/utils/hocs/withId';
 import { usePropsWithChildren } from '@/utils/hooks/react/usePropsWithChildren';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import type { Animatable } from '@/utils/types/props/Animatable';
 import type { Changeable } from '@/utils/types/props/Changeable';
 import type { Disablable } from '@/utils/types/props/Disablable';
@@ -26,7 +25,7 @@ import styles from './AvatarGroup.module.css';
 /**
  * Compositional prop types for the {@link AvatarGroup} component.
  */
-type ComposedProps = Pick<AvatarProps, 'label' | 'readonly'> &
+type ComposedProps = Partial<Pick<AvatarProps, 'label' | 'readonly'>> &
 	Animatable &
 	Changeable &
 	Disablable &
@@ -58,7 +57,7 @@ export interface AvatarGroupProps extends ComposedProps {
 export const AvatarGroup: $FC<AvatarGroupProps> = withId(
 	({
 		animated = !prefersReducedMotion(),
-		as: _as = 'fieldset',
+		as: As = 'fieldset',
 		className = '',
 		children: _children,
 		disabled,
@@ -72,8 +71,6 @@ export const AvatarGroup: $FC<AvatarGroupProps> = withId(
 		vertical = false,
 		...remainingProps
 	}) => {
-		const As = useSemanticAsProp({ as: _as });
-
 		const css = cssClasses(
 			'avatarGroup',
 			styles.avatarGroup,

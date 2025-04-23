@@ -1,2 +1,2 @@
-export * from 'Attr';
-export * from 'Attributes';
+export * from './Attr';
+export * from './Attributes';

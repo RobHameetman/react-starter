@@ -6,49 +6,49 @@ import {
 	fakeNonPaginatedTable,
 } from '../isPaginated/__test__';
 
-describe('enablePagination()', (): void => {
+describe('enablePagination()', () => {
 	let result: TableState | null = null;
 
-	describe('when the table is not paginated', (): void => {
+	describe('when the table is not paginated', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeNonPaginatedTable();
 			result = enablePagination(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should enable pagination', (): void => {
+		it('should enable pagination', () => {
 			expect(isPaginated(result as TableState)).toBe(true);
 		});
 	});
 
-	describe('when the table is paginated', (): void => {
+	describe('when the table is paginated', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakePaginatedTable();
 			result = enablePagination(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should not enable pagination', (): void => {
+		it('should not enable pagination', () => {
 			expect(result === state).toBe(true);
 		});
 	});

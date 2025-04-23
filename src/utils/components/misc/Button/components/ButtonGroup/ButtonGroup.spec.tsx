@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
-import { NewComponent } from './ButtonGroup';
+import { ButtonGroup } from './ButtonGroup';
 
-describe('<NewComponent />', () => {
+describe('<ButtonGroup />', () => {
 	it('should render', () => {
-		expect(() => render(<NewComponent />)).not.toThrowError();
+		expect(() => render(<ButtonGroup />)).not.toThrowError();
 	});
 
 	it('should not regress', () => {
-		expect(() => render(<NewComponent />)).toMatchSnapshot();
+		expect(() => render(<ButtonGroup />)).toMatchSnapshot();
 	});
 });

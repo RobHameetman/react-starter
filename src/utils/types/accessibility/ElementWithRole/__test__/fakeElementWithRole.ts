@@ -3,7 +3,7 @@ import { fakeHtmlElement } from '@/utils/functions/check/html/isHtmlElement/__te
 import { fakeAttributes } from '@/utils/types/dom/Attributes/__test__';
 import { ElementWithRole } from '../ElementWithRole';
 
-export const fakeElementWithRole = <T extends string>({
+export const fakeElementWithRole = <R extends string>({
 	ssr = typeof window === 'undefined',
 	role = faker.lorem.word(),
 	...overrideProps
@@ -25,5 +25,5 @@ export const fakeElementWithRole = <T extends string>({
 		});
 	});
 
-	return elementWithRole as ElementWithRole<T>;
+	return elementWithRole as unknown as ElementWithRole<R>;
 };

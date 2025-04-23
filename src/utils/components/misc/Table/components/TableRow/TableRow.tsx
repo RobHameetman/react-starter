@@ -1,5 +1,5 @@
-import { FC, MouseEventHandler, useCallback } from 'react';
-import * as Mui from '@material-ui/core';
+import { $FC, MouseEventHandler, useCallback } from 'react';
+// import * as Mui from '@material-ui/core';
 import { useRouter } from '@/nav/hooks/useRouter';
 import { noop } from '@/utils/functions/misc/noop';
 import { uniqueId } from '@/utils/functions/misc/uniqueId';
@@ -26,30 +26,30 @@ export interface TableRowProps {
 	readonly onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const TableRow: FC<TableRowProps> = ({
+export const TableRow: $FC<TableRowProps> = ({
 	children,
 	href = '',
 	onClick = noop,
 }) => {
-	const { push } = useRouter();
+	const { navigate } = useRouter();
 
-	const handleClick = useCallback(() => {
-		onClick();
+	const handleClick = useCallback<MouseEventHandler<HTMLDivElement>>((e) => {
+		onClick(e);
 
 		if (href) {
-			push(href);
+			navigate(href);
 		}
-	}, [href, onClick, push]);
+	}, [href, onClick, navigate]);
 
 	return (
-		<Mui.TableRow
+		<div
 			key={uniqueId()}
-			hover
+			// hover
 			color="inherit"
 			className={href || !isNoop(onClick) ? styles.link : ''}
 			onClick={handleClick}
 		>
 			{children}
-		</Mui.TableRow>
+		</div>
 	);
 };

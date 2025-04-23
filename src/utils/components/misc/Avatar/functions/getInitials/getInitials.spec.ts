@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { getInitials } from './getInitials';
 
 describe('getInitials()', () => {

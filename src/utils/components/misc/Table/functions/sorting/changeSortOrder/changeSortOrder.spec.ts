@@ -1,17 +1,19 @@
+import { randomSortOrder } from '../../../enums/SortOrder/__test__';
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { changeSortOrder } from './changeSortOrder';
 
-describe('changeSortOrder()', (): void => {
+describe('changeSortOrder()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = changeSortOrder();
+	beforeEach(() => {
+		result = changeSortOrder(randomSortOrder(), fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

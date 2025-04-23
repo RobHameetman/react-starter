@@ -47,3 +47,5 @@ export const isRoundable = (value: unknown): value is Roundable =>
 	 * value.rounded
 	 */
 	('rounded' in value ? isBoolean(value.rounded) : true);
+
+export default Roundable;

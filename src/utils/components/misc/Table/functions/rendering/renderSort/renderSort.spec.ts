@@ -1,17 +1,18 @@
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { renderSort } from './renderSort';
 
-describe('renderSort()', (): void => {
+describe('renderSort()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = renderSort();
+	beforeEach(() => {
+		result = renderSort(fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

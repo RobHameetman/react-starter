@@ -8,11 +8,7 @@ describe('isIphone()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isIphone({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isIphone();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

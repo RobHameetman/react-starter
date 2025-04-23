@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { SortOrder, SortType } from '../../../enums';
 
 type TableStateObj = Record<string, Record<string, unknown>>;
 
@@ -46,8 +47,8 @@ export const fakeTableState = ({ ...overrideProperties } = {}) => {
 			...(overrideProperties as TableStateObj).filter,
 		},
 		sort: {
-			active: '',
-			direction: 'asc',
+			active: SortType.NONE,
+			direction: SortOrder.ASC,
 			options: {},
 			...(overrideProperties as TableStateObj).sort,
 		},

@@ -52,14 +52,14 @@ export interface UseTabEventsInput<T = Element> extends Tabbable<T> {
  * in your component.
  */
 export const useTabEvents = <T = Element>({
-	onTab = noop,
-	onTabCapture = noop,
-	onTabBack = noop,
-	onTabBackCapture = noop,
-	onTabUp = noop,
-	onTabUpCapture = noop,
-	onTabBackUp = noop,
-	onTabBackUpCapture = noop,
+	onPressTab = noop,
+	onPressTabCapture = noop,
+	onPressTabBack = noop,
+	onPressTabBackCapture = noop,
+	onPressTabUp = noop,
+	onPressTabUpCapture = noop,
+	onPressTabBackUp = noop,
+	onPressTabBackUpCapture = noop,
 	_dependencies = {},
 }: UseTabEventsInput<T>) => {
 	const {
@@ -71,12 +71,12 @@ export const useTabEvents = <T = Element>({
 	const handleKeyDown = useCallback<KeyboardEventHandler<T>>(
 		(e) => {
 			if (isTabBackEvent(e)) {
-				onTabBack(e);
+				onPressTabBack(e);
 			} else if (isTabEvent(e)) {
-				onTab(e);
+				onPressTab(e);
 			}
 		},
-		[onTab, onTabBack],
+		[onPressTab, onPressTabBack],
 	);
 
 	const handleKeyDownCapture = useCallback<KeyboardEventHandler<T>>(
@@ -84,23 +84,23 @@ export const useTabEvents = <T = Element>({
 			const capturing = isCapturing<T>(e);
 
 			if (isTabBackEvent(e) && capturing) {
-				onTabBackCapture(e);
+				onPressTabBackCapture(e);
 			} else if (isTabEvent(e) && capturing) {
-				onTabCapture(e);
+				onPressTabCapture(e);
 			}
 		},
-		[onTabCapture, onTabBackCapture],
+		[onPressTabCapture, onPressTabBackCapture],
 	);
 
 	const handleKeyUp = useCallback<KeyboardEventHandler<T>>(
 		(e) => {
 			if (isTabBackEvent(e)) {
-				onTabBackUp(e);
+				onPressTabBackUp(e);
 			} else if (isTabEvent(e)) {
-				onTabUp(e);
+				onPressTabUp(e);
 			}
 		},
-		[onTabUp, onTabBackUp],
+		[onPressTabUp, onPressTabBackUp],
 	);
 
 	const handleKeyUpCapture = useCallback<KeyboardEventHandler<T>>(
@@ -108,12 +108,12 @@ export const useTabEvents = <T = Element>({
 			const capturing = isCapturing<T>(e);
 
 			if (isTabBackEvent(e) && capturing) {
-				onTabBackUpCapture(e);
+				onPressTabBackUpCapture(e);
 			} else if (isTabEvent(e) && capturing) {
-				onTabUpCapture(e);
+				onPressTabUpCapture(e);
 			}
 		},
-		[onTabUpCapture, onTabBackUpCapture],
+		[onPressTabUpCapture, onPressTabBackUpCapture],
 	);
 
 	return {

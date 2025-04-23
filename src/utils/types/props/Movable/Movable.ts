@@ -12,7 +12,7 @@ import { isFunction } from '@/utils/functions/check/js/core/isFunction';
  *
  * @example
  * ```TSX
- * export interface MyComponentProps extends Pointerable<HTMLDivElement> {
+ * export interface MyComponentProps extends Movable<HTMLDivElement> {
  *   readonly text: string;
  * }
  *
@@ -23,7 +23,7 @@ import { isFunction } from '@/utils/functions/check/js/core/isFunction';
  * );
  * ```
  */
-export interface Pointerable<T = Element> {
+export interface Movable<T = Element> {
 	/**
 	 * [Optional] Handle an event when a mouse is moved.
 	 * @defaultValue - A no-op function.
@@ -50,7 +50,7 @@ export interface Pointerable<T = Element> {
 }
 
 /**
- * Checks that an `unknown` value is {@link Pointerable}.
+ * Checks that an `unknown` value is {@link Movable}.
  *
  * Requirements:
  *   - `value` must be an object.
@@ -65,11 +65,11 @@ export interface Pointerable<T = Element> {
  * @param value - An `unknown` value. Expected to be a set of props provided to
  * a React component.
  *
- * @returns The determination that `value` is or is not {@link Pointerable}.
+ * @returns The determination that `value` is or is not {@link Movable}.
  */
-export const isPointerable = <T = Element>(
+export const isMovable = <T = Element>(
 	value: unknown,
-): value is Pointerable<T> =>
+): value is Movable<T> =>
 	/**
 	 * value
 	 */
@@ -90,3 +90,5 @@ export const isPointerable = <T = Element>(
 	 * value.onKeyUpCapture()
 	 */
 	('onKeyUpCapture' in value ? isFunction(value.onKeyUpCapture) : true);
+
+export default Movable;

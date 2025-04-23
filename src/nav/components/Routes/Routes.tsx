@@ -1,11 +1,13 @@
 import { FC } from 'react';
-import { Route, Routes as Switch } from 'react-router-dom';
+import { Route, Routes as Switch } from 'react-router';
 import { useAuth } from '@/auth/hooks/useAuth';
-import { LoginView, SignupView } from '@/auth/views';
-import { HomeView } from '@/home/views/HomeView';
-import { SupportView } from '@/support/views/SupportView';
-import { NotificationsView, SettingsView } from '@/users/views';
-import { ErrorView } from '@/utils/views/ErrorView';
+import { LoginPage } from '@/auth/pages/LoginPage';
+import { SignupPage } from '@/auth/pages/SignupPage';
+import { HomePage } from '@/home/pages/HomePage';
+import { SupportPage } from '@/support/pages/SupportPage';
+import { NotificationsPage } from '@/users/pages/NotificationsPage';
+import { SettingsPage } from '@/users/pages/SettingsPage';
+import { ErrorPage } from '@/utils/pages/ErrorPage';
 import { DEFAULT_ERROR_MESSAGE } from '../../constants/DEFAULT_ERROR_MESSAGE';
 
 /**
@@ -28,23 +30,23 @@ export const Routes: FC = () => {
 	return (
 		<Switch>
 			{/* Home */}
-			<Route path="/" element={<HomeView />} />
+			<Route path="/" element={<HomePage />} />
 
 			{/* Auth */}
-			<Route path="/login" element={<LoginView force={__DEV__} />} />
-			<Route path="/join" element={<SignupView force={__DEV__} />} />
+			<Route path="/login" element={<LoginPage force={__DEV__} />} />
+			<Route path="/join" element={<SignupPage force={__DEV__} />} />
 
 			{/* Support */}
-			<Route path="/support" element={<SupportView />} />
+			<Route path="/support" element={<SupportPage />} />
 
 			{/* User */}
-			<Route path="/notifications" element={<NotificationsView />} />
-			<Route path="/settings" element={<SettingsView />} />
+			<Route path="/notifications" element={<NotificationsPage />} />
+			<Route path="/settings" element={<SettingsPage />} />
 
 			{/* Fallback */}
 			<Route
 				path="*"
-				element={<ErrorView name="Error" message={DEFAULT_ERROR_MESSAGE} />}
+				element={<ErrorPage name="Error" message={DEFAULT_ERROR_MESSAGE} />}
 			/>
 		</Switch>
 	);

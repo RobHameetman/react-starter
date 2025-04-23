@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-import { render } from '@test/utils/render';
+import { render } from '@@/utils/render';
 import { VisibilityOffIcon as Icon } from './VisibilityOffIcon';
 
 describe('<VisibilityOffIcon />', () => {

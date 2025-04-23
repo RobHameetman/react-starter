@@ -1,17 +1,18 @@
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { renderPagination } from './renderPagination';
 
-describe('renderPagination()', (): void => {
+describe('renderPagination()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = renderPagination();
+	beforeEach(() => {
+		result = renderPagination(fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

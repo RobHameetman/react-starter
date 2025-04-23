@@ -64,4 +64,22 @@ declare module 'react' {
 	export function forwardRef<T, P, S = Subcomponents>(
 			render: ForwardRefRenderFunction<T, PropsWithChildren<P>>,
 	): ForwardRefExoticComponent<PropsWithChildren<PropsWithoutRef<P> & RefAttributes<T>>> & CC<P, S>;
+
+	// type EventHandler<E extends SyntheticEvent<any>> = { bivarianceHack(event: E): void }["bivarianceHack"];
+
+	type $ReactEventHandler<T = Element> = <U extends T = T>(event: SyntheticEvent<U>) => void;
+	type $ClipboardEventHandler<T = Element> = <U extends T = T>(event: ClipboardEvent<U>) => void
+	type $CompositionEventHandler<T = Element> = <U extends T = T>(event: CompositionEvent<U>) => void
+	type $DragEventHandler<T = Element> = <U extends T = T>(event: DragEvent<U>) => void
+	type $FocusEventHandler<T = Element> = <U extends T = T>(event: FocusEvent<U>) => void
+	type $FormEventHandler<T = Element> = <U extends T = T>(event: FormEvent<U>) => void
+	type $ChangeEventHandler<T = Element> = <U extends T = T>(event: ChangeEvent<U>) => void
+	type $KeyboardEventHandler<T = Element> = <U extends T = T>(event: KeyboardEvent<U>) => void
+	type $MouseEventHandler<T = Element> = <U extends T = T>(event: MouseEvent<U>) => void
+	type $TouchEventHandler<T = Element> = <U extends T = T>(event: TouchEvent<U>) => void
+	type $PointerEventHandler<T = Element> = <U extends T = T>(event: PointerEvent<U>) => void
+	type $UIEventHandler<T = Element> = <U extends T = T>(event: UIEvent<U>) => void
+	type $WheelEventHandler<T = Element> = <U extends T = T>(event: WheelEvent<U>) => void
+	type $AnimationEventHandler<T = Element> = <U extends T = T>(event: AnimationEvent<U>) => void
+	type $TransitionEventHandler<T = Element> = <U extends T = T>(event: TransitionEvent<U>) => void
 }

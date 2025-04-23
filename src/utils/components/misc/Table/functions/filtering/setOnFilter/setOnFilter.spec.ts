@@ -5,50 +5,50 @@ import {
 	fakeNonFilterableTable,
 } from '../isFilterable/__test__';
 
-describe('setOnFilter()', (): void => {
+describe('setOnFilter()', () => {
 	let onFilter = jest.fn();
 	let result: TableState | null = null;
 
-	describe('when the table is filterable', (): void => {
+	describe('when the table is filterable', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeFilterableTable();
 			result = setOnFilter(onFilter, state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should set the onFilter function', (): void => {
+		it('should set the onFilter function', () => {
 			expect(result?.filter?.onFilter).toEqual(onFilter);
 		});
 	});
 
-	describe('when the table is not filterable', (): void => {
+	describe('when the table is not filterable', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeNonFilterableTable();
 			result = setOnFilter(onFilter, state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should not set the onFilter function', (): void => {
+		it('should not set the onFilter function', () => {
 			expect(result === state).toBe(true);
 		});
 	});

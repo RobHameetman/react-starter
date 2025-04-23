@@ -1,25 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { TableRow } from '../../../../../../modules';
+import { render } from '@testing-library/react';
+import { TableRow } from './TableRow';
 
-describe('TableRow', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			$renderedComponent = shallow(<TableRow />);
-		} catch (err) {
-			error = err;
-		}
+describe('<TableRow />', () => {
+	it('should render', () => {
+		expect(() => render(<TableRow />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it.skip('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<TableRow />)).toMatchSnapshot();
 	});
 });

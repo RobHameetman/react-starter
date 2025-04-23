@@ -69,3 +69,5 @@ export const isErrorable = <T = Element>(
 	 * value.onError()
 	 */
 	('onError' in value ? isFunction(value.onError) : true);
+
+export default Errorable;

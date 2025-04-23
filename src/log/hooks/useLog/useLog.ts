@@ -30,7 +30,7 @@ export interface UseLogInput {
 	 * May be "debug", "error", "info", or "warn".
 	 * @defaultValue - `"info"`
 	 */
-	readonly severity?: StatusType;
+	readonly severity?: StatusType & keyof Console;
 	/**
 	 * [Optional] Extra information to log.
 	 */
@@ -100,7 +100,7 @@ export const useLog = ({
 			severity = _severity,
 			message = _message,
 			silent = _silent,
-		} = {}) => {
+		} = {} as UseLogInput) => {
 			if (!message) {
 				throw new Error(errorMessageNotFound);
 			}

@@ -17,7 +17,6 @@ import {
 	ChangeRowsPerPageHandler,
 	TableState,
 } from '../../types';
-import { Hook } from '../../../../../types';
 
 export interface UsePaginationResult {
 	readonly handleChangeRowsPerPage: ChangeRowsPerPageHandler;
@@ -25,10 +24,7 @@ export interface UsePaginationResult {
 	readonly setPaginated: (virtual?: boolean) => void;
 }
 
-export const usePagination: Hook<
-	UsePaginationResult,
-	Dispatch<SetStateAction<TableState>>
-> = (setState = () => {}) => {
+export const usePagination = (setState = (() => {}) as Dispatch<SetStateAction<TableState>>) => {
 	const handleChangePage = useCallback(
 		(_: MouseEvent<HTMLButtonElement> | null, page: number) =>
 			setState((state) => render(goToPage(page + 1, state))),

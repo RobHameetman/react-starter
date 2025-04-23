@@ -1,4 +1,4 @@
-export const mockUserAgent = (userAgentData?: NavigatorUAData): void => {
+export const mockUserAgent = (userAgentData?: NavigatorUAData) => {
 	jest.mock(window.navigator.userAgentData, () => ({
 		brands: [
 			{ brand: 'Not.A/Brand', version: '8' },

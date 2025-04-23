@@ -51,3 +51,5 @@ export const isAnimatable = (value: unknown): value is Animatable =>
 	 * value.animated
 	 */
 	('animated' in value ? isBoolean(value.animated) : true);
+
+export default Animatable;

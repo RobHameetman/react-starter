@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-import { render } from '@test/utils/render';
+import { render } from '@@/utils/render';
 import { CheckIcon as Icon } from './CheckIcon';
 
 describe('<CheckIcon />', () => {

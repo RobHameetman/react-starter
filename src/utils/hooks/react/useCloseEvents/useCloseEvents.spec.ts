@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react';
 import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
 import { isPressEventHandler } from '@/utils/types/handlers/PressEventHandler';
-import { usePressEvents } from './useCloseEvents';
+import useCloseEvents from './useCloseEvents';
 
-describe('usePressEvents()', () => {
+describe('useCloseEvents()', () => {
 	let mockOnPress: jest.Mock | null = null;
 	let invalidEvent: Record<string, unknown> | null = null;
 	let validEvent: Record<string, unknown> | null = null;
@@ -19,7 +19,7 @@ describe('usePressEvents()', () => {
 			result: { current: result },
 		} = renderHook(() =>
 			/* @ts-expect-error - Type signatures don't match */
-			usePressEvents({ onPress: mockOnPress }),
+			useCloseEvents({ onPress: mockOnPress }),
 		));
 	});
 

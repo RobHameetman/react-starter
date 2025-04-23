@@ -16,7 +16,7 @@ describe('useNewContext()', () => {
 		result = null;
 	});
 
-	it('should return a valid ThemeContext', () => {
+	it('should return a valid NewContext', () => {
 		expect(result).not.toBeNull();
 		expect(isNewContext(result)).toBe(true);
 	});

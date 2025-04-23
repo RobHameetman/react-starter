@@ -1,33 +1,34 @@
 import { getTableState, setTableState } from './TableState';
 
-describe('getTableState()', (): void => {
+describe('getTableState()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
+	beforeEach(() => {
 		result = getTableState('test');
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });
 
-describe('setTableState()', (): void => {
+describe('setTableState()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
+	beforeEach(() => {
+		/* @ts-expect-error - Argument of type '{}' is not assignable to parameter of type 'TableState'. */
 		result = setTableState('test', {});
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

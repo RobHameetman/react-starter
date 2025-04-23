@@ -5,3 +5,5 @@
  */
 export const useQueryParams = () =>
 	Object.fromEntries(new URLSearchParams(window.location.search));
+
+export default useQueryParams;

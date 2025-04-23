@@ -1,8 +1,13 @@
 import { FC, ReactElement, useLayoutEffect, useState } from 'react';
-import * as Mui from '@material-ui/core';
-import * as MuiLab from '@material-ui/lab';
+// import * as Mui from '@material-ui/core';
+// import * as MuiLab from '@material-ui/lab';
 import { noop } from '@/utils/functions/misc/noop';
-import { useTable } from '../../hooks';
+import { Skeleton } from '@/utils/components/misc/Skeleton';
+import { uniqueId } from '@/utils/functions/misc/uniqueId';
+import { useTable } from '../../hooks/useTable';
+import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
+import { TableRow } from '../TableRow';
 
 export interface TableRowsProps {
 	readonly each: (data: unknown, index: number) => ReactElement | null;
@@ -30,25 +35,25 @@ export const TableRows: FC<TableRowsProps> = ({ each }) => {
 	return (
 		<>
 			{caption ? <caption>{caption}</caption> : null}
-			<Mui.TableBody>
+			<TableBody width="lg">
 				{loading
 					? Array.from({ length: pageSize }, () => {
 							if (columns) {
 								return (
-									<Mui.TableRow key={uniqueId()}>
+									<TableRow key={uniqueId()}>
 										{Array.from({ length: columns }, () => (
-											<Mui.TableCell key={uniqueId()}>
-												<MuiLab.Skeleton className="h2" variant="text" />
-											</Mui.TableCell>
+											<TableCell key={uniqueId()}>
+												<Skeleton className="h2" variant="text" />
+											</TableCell>
 										))}
-									</Mui.TableRow>
+									</TableRow>
 								);
 							}
 
 							return null;
 					  })
 					: displayedData?.map(each) || null}
-			</Mui.TableBody>
+			</TableBody>
 		</>
 	);
 };

@@ -1,7 +1,7 @@
-import { mix } from 'chroma-js';
+import chroma from 'chroma-js';
 
 export const colorMix = (to: string, base: string, by = 0.5) =>
-	mix(base, to, by, 'rgb').hex('rgba');
+	chroma.mix(base, to, by, 'rgb').hex('rgba');
 
 /* Core: One-off Color Tokens */
 export enum OneOffColors {
@@ -12,6 +12,7 @@ export enum OneOffColors {
 	Grey = '#B5B5B5FF',
 	LightGrey = '#F5F5F5FF',
 	DarkGrey = '#363636FF',
+	Shadow = '#00000029',
 }
 
 /* Core: Scalar Color Tokens */
@@ -328,7 +329,7 @@ export const SocialBrandColors = Object.freeze({
 	LinkedInEngaged: '#2480DCFF',
 });
 
-export type BaseToken =
+export type Color =
 	| OneOffColors
 	| Amber
 	| Azure
@@ -336,4 +337,9 @@ export type BaseToken =
 	| Emerald
 	| Slate;
 
-export type Color = BaseToken | string;
+export type HexColor = `#${number}`;
+export type RGBColor = `rgb(#${number}, #${number}, #${number})`;
+export type RGBAColor = `rgba(#${number}, #${number}, #${number}, ${number})`;
+export type HSLColor = `hsl(#${number}, #${number}, #${number})`;
+export type HSLAColor = `hsla(#${number}, #${number}, #${number}, ${number})`;
+export type AnyColor = HexColor | RGBColor | RGBAColor | HSLColor | HSLAColor;

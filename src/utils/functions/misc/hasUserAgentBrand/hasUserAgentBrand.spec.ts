@@ -1,18 +1,18 @@
 import { hasUserAgentBrand } from './hasUserAgentBrand';
 
 describe('hasUserAgentBrand()', () => {
-	let mockDependency: jest.Mock | null = null;
 	let error: Error | null = null;
+	let result: unknown = null;
+
+	beforeAll(() => {
+		jest.spyOn(window.navigator.userAgentData as NavigatorUAData, 'brands', 'get')
+			.mockReturnValueOnce([{ brand: 'test', version: '' }])
+			.mockReturnValue([{ brand: 'Firefox', version: '' }]);
+	});
 
 	beforeEach(() => {
 		try {
-			mockDependency = jest.fn();
-
-			hasUserAgentBrand({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			result = hasUserAgentBrand(/^test$/i);
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);
@@ -22,15 +22,17 @@ describe('hasUserAgentBrand()', () => {
 	afterEach(() => {
 		jest.restoreAllMocks();
 
-		mockDependency = null;
+		result = null;
 		error = null;
 	});
 
-	it('should not throw an error', () => {
+	it('should return true given a regex that matches the current user agent brand', () => {
+		expect(result).toBe(true);
 		expect(error).toBeNull();
 	});
 
-	it('should depend on the given dependency', () => {
-		expect(mockDependency).toBeCalled();
+	it('should return false given a regex that does not match the current user agent brand', () => {
+		expect(result).toBe(false);
+		expect(error).toBeNull();
 	});
 });

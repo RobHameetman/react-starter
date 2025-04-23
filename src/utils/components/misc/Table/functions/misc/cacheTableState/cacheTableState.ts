@@ -9,7 +9,7 @@ import { setCache } from '../../cache/setCache';
  *
  * @returns The updated table state.
  */
-export const cacheTableState = (state: TableState): void => {
+export const cacheTableState = (state: TableState) => {
 	const {
 		columns: _columns,
 		data: _data,

@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { getItemMock } from '@test/mocks';
-import { atobSpy, btoaSpy, getItemSpy } from '@test/spies';
+import { getItemMock } from '@@/mocks';
+import { atobSpy, btoaSpy, getItemSpy } from '@@/spies';
 import { getItem } from './getItem';
 
 describe('getItem()', () => {
@@ -10,7 +10,7 @@ describe('getItem()', () => {
 
 	beforeEach(() => {
 		key = 'test';
-		value = faker.datatype.string();
+		value = faker.string.alphanumeric();
 
 		getItemSpy();
 		getItemMock(btoa(value));

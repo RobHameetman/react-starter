@@ -1,7 +1,5 @@
 import {
-	ChangeEvent,
 	ChangeEventHandler,
-	FocusEvent,
 	FocusEventHandler,
 	ForwardRefExoticComponent,
 	forwardRef,
@@ -11,7 +9,6 @@ import {
 } from 'react';
 import { isString } from '@/utils/functions/check/js/core/isString';
 import { noop } from '@/utils/functions/misc/noop';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { Polymorphic } from '@/utils/types/props/Polymorphic';
 import { FormModes } from '../../enums';
 import { useForm } from '../../hooks';
@@ -87,7 +84,7 @@ export interface FormFieldProps extends ComposedProps {
 export const FormField: ForwardRefExoticComponent<FormFieldProps> = forwardRef(
 	(
 		{
-			as: _as = 'input',
+			as: As = 'input',
 			name,
 			value: _value,
 			format = (value: string) => value,
@@ -101,8 +98,6 @@ export const FormField: ForwardRefExoticComponent<FormFieldProps> = forwardRef(
 	) => {
 		const { fields, mode, initField, setFieldValue, validateField } = useForm();
 		const [initialized, setInitialized] = useState(false);
-
-		const As = useSemanticAsProp({ as: _as });
 
 		const thisField = fields[name];
 		const { value = _value } = thisField || {};

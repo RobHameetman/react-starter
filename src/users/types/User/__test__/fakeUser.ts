@@ -2,12 +2,12 @@ import { faker } from '@faker-js/faker';
 
 export const fakeUser = ({ ...overrideProps } = {}) => {
 	const user = {
-		required: faker.datatype.string(),
-		method: jest.fn(() => faker.datatype.string()),
+		required: faker.string.alphanumeric(),
+		method: jest.fn(() => faker.string.alphanumeric()),
 	} as Record<string, unknown>;
 
 	faker.helpers.maybe(() => {
-		user.optional = faker.datatype.string();
+		user.optional = faker.string.alphanumeric();
 	});
 
 	return {

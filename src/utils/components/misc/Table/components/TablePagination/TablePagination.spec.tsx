@@ -1,25 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { TablePagination } from '../../../../../../modules';
+import { render } from '@testing-library/react';
+import { TablePagination } from './TablePagination';
 
-describe('TablePagination', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			$renderedComponent = shallow(<TablePagination />);
-		} catch (err) {
-			error = err;
-		}
+describe('<TablePagination />', () => {
+	it('should render', () => {
+		expect(() => render(<TablePagination />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<TablePagination />)).toMatchSnapshot();
 	});
 });

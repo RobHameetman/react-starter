@@ -1,10 +1,12 @@
 import { $FC } from 'react';
-import { As } from '@/utils/components/structure/As';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import type { Polymorphic } from '@/utils/types/props/Polymorphic';
 import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './NewComponent.module.css';
 
+/**
+ * Compositional prop types for the {@link NewComponent} component.
+ */
 type ComposedProps = Polymorphic & Stylable;
 
 /**
@@ -22,7 +24,7 @@ export interface NewComponentProps extends ComposedProps {
  * @TODO - A short description of the component here.
  */
 export const NewComponent: $FC<NewComponentProps> = ({
-	as: _as = 'div',
+	as: As = 'div',
 	className = '',
 	children,
 	prop = false,
@@ -31,7 +33,7 @@ export const NewComponent: $FC<NewComponentProps> = ({
 	const css = cssClasses(styles.newComponent, className);
 
 	return (
-		<As element={_as} className={css} {...props}>
+		<As className={css} {...props}>
 			{children}
 		</As>
 	);

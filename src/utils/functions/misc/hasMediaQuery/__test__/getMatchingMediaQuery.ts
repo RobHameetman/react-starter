@@ -1,4 +1,4 @@
-import { mockWindow } from '@test/mocks/misc/mockWindow';
+import { mockWindow } from '@@/mocks/misc/mockWindow';
 
 export const getMatchingMediaQuery = () => {
 	const query = '(prefers-color-scheme: dark)';

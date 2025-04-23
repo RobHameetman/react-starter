@@ -68,3 +68,5 @@ export const isChangeable = <T = Element>(
 	 * value.onChangeCapture()
 	 */
 	('onChangeCapture' in value ? isFunction(value.onChangeCapture) : true);
+
+export default Changeable;

@@ -1,20 +1,20 @@
 import { usePagination } from '../../../../../../modules';
 
-describe('usePagination', (): void => {
+describe('usePagination', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
+	beforeEach(() =>
 		/**
 		 * TODO - Call hook here and set the output to result.
 		 */
 		result = null;
 	});
 
-	afterEach((): void => {
+	afterEach(() =>
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () =>
 		expect(result).not.toBeNull();
 	});
 });

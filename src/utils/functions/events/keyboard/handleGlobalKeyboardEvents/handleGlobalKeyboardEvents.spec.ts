@@ -1,6 +1,6 @@
 import { fakeKeyboardEvent } from '@/utils/functions/check/react/isKeyboardEvent/__test__';
 import { manageKeyboardModality } from '@/utils/functions/events/interactions/manageKeyboardModality';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { handleGlobalKeyboardEvents } from './handleGlobalKeyboardEvents';
 
 jest.mock(

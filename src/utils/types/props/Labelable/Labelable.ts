@@ -46,3 +46,5 @@ export const isLabelable = (value: unknown): value is Labelable =>
 	 * value.label
 	 */
 	('label' in value ? isString(value.label) : true);
+
+export default Labelable;

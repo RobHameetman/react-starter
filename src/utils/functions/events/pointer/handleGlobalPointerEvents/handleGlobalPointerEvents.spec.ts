@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
 import { managePointerModality } from '@/utils/functions/events/interactions/managePointerModality';
 import { noop } from '@/utils/functions/misc/noop';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { handleGlobalPointerEvents } from './handleGlobalPointerEvents';
 
 jest.mock(

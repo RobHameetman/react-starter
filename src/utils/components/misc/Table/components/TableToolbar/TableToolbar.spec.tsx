@@ -1,25 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { TableToolbar } from '../../../../../../modules';
+import { render } from '@testing-library/react';
+import { TableToolbar } from './TableToolbar';
 
-describe('TableToolbar', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			$renderedComponent = shallow(<TableToolbar />);
-		} catch (err) {
-			error = err;
-		}
+describe('<TableToolbar />', () => {
+	it('should render', () => {
+		expect(() => render(<TableToolbar />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<TableToolbar />)).toMatchSnapshot();
 	});
 });

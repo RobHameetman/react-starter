@@ -43,5 +43,5 @@ export const isTabsRenderFn = (
 	 * value(...args)
 	 */
 	isObject(value(...args)) &&
-		'type' in value(...args) &&
-		'props' in value(...args);
+	'type' in (value(...args) as Record<string, unknown>) &&
+	'props' in (value(...args) as Record<string, unknown>);

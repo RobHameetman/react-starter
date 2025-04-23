@@ -5,57 +5,47 @@ import { useEffect, useState } from 'react';
  * as the application begins to render in `src/App.tsx`.
  */
 export const useBreakpoints = () => {
-	const [breakpoints, setBreakpoints] = useState({
-		isXs: false,
-		isSm: false,
-		isMd: false,
-		isLg: false,
-		isXl: false,
-		isXxl: false,
-		isMobile: false,
-		breakpoint: 'XL',
-	});
+	const getCurrentBreakpoint = () => {
+		const viewportSizes = { XS: 0, SM: 650, MD: 960, LG: 1280, XL: 1440, XXL: 1920 };
 
-	useEffect(() => {
-		const checkBreakpoints = () => {
-			const isXs = window.innerWidth <= 650;
-			const isSm = window.innerWidth > 650 && window.innerWidth <= 960;
-			const isMd = window.innerWidth > 960 && window.innerWidth <= 1280;
-			const isLg = window.innerWidth > 1280 && window.innerWidth <= 1440;
-			const isXl = window.innerWidth > 1440 && window.innerWidth <= 1920;
-			const isXxl = window.innerWidth > 1920;
-
-			const isMobile = window.innerWidth <= 960;
-			let breakpoint = '';
-
-			if (isXs) {
-				breakpoint = 'XS';
-			} else if (isSm) {
-				breakpoint = 'SM';
-			} else if (isMd) {
-				breakpoint = 'MD';
-			} else if (isLg) {
-				breakpoint = 'LG';
-			} else if (isXl) {
-				breakpoint = 'XL';
-			} else if (isXxl) {
-				breakpoint = 'XXL';
+		return Object.entries(viewportSizes).reduce((result, [upToBp, atLeast]) => {
+			if (window.innerWidth > atLeast) {
+				return upToBp;
 			}
 
-			setBreakpoints({
-				isXs,
-				isSm,
-				isMd,
-				isLg,
-				isXl,
-				isXxl,
-				isMobile,
-				breakpoint,
-			});
-		};
+			return result;
+		}, '');
+	};
 
-		checkBreakpoints();
+	const breakpoint = getCurrentBreakpoint();
 
+	const [breakpoints, setBreakpoints] = useState({
+		isXs: breakpoint === 'XS',
+		isSm: breakpoint === 'SM',
+		isMd: breakpoint === 'MD',
+		isLg: breakpoint === 'LG',
+		isXl: breakpoint === 'XL',
+		isXxl: breakpoint === 'XXL',
+		isMobile: breakpoint === 'XS' || breakpoint === 'SM',
+		breakpoint: 'XS',
+	});
+
+	const checkBreakpoints = () => {
+		const breakpoint = getCurrentBreakpoint();
+
+		setBreakpoints({
+			isXs: breakpoint === 'XS',
+			isSm: breakpoint === 'SM',
+			isMd: breakpoint === 'MD',
+			isLg: breakpoint === 'LG',
+			isXl: breakpoint === 'XL',
+			isXxl: breakpoint === 'XXL',
+			isMobile: breakpoint === 'XS' || breakpoint === 'SM',
+			breakpoint,
+		});
+	};
+
+	useEffect(() => {
 		window.addEventListener('resize', checkBreakpoints);
 
 		return () => {

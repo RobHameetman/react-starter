@@ -310,3 +310,5 @@ export const isMousable = <T = Element>(value: unknown): value is Mousable<T> =>
 	 * value.onMouseUpCapture()
 	 */
 	('onMouseUpCapture' in value ? isFunction(value.onMouseUpCapture) : true);
+
+export default Mousable;

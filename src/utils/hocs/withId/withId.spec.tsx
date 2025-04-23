@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { act } from '@testing-library/react';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { withId } from './withId';
 import { MockComponent, MockComponentProps, render } from './__test__';
 

@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { noop } from '@/utils/functions/misc/noop';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { usePressEvents } from '@/utils/hooks/react/usePressEvents/usePressEvents';
 import type { Expansible } from '@/utils/types/props/Expansible';
 import type { Hoverable } from '@/utils/types/props/Hoverable';
@@ -63,7 +62,7 @@ export interface CardComponents {
 }
 
 export const Card: CC<CardComponents, CardProps> = ({
-	as: _as = 'div',
+	as: As = 'div',
 	className = '',
 	children,
 	fullWidth = false,
@@ -75,7 +74,6 @@ export const Card: CC<CardComponents, CardProps> = ({
 	onPressCapture = noop,
 	...props
 }) => {
-	const As = useSemanticAsProp({ as: _as });
 	const ref = useRef<typeof As>(null);
 
 	const { triggerAnimation } = useButtonAnimations({

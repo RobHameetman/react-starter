@@ -4,7 +4,7 @@ import {
 	HoverEventHandler,
 	isHoverEventHandler as isHoverHandler,
 } from '@/utils/types/handlers/HoverEventHandler';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { useHoverEvents } from './useHoverEvents';
 
 describe('useHoverEvents()', () => {

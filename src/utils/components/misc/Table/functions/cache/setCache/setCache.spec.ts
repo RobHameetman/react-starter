@@ -1,20 +1,16 @@
-import {
-	TABLE_CACHE_KEY,
-	TableCache,
-	setCache,
-} from '../../../../../../../modules';
-import {
-	btoaSpy,
-	setItemSpy,
-	tableCacheFixture,
-} from '../../../../../../../../test';
+import tableCacheFixture from '@@/fixtures/tableCacheFixture.json';
+import { btoaSpy } from '@@/spies/encoding/btoaSpy';
+import { setItemSpy } from '@@/spies/storage/setItemSpy';
+import { TABLE_CACHE_KEY } from '../../../constants/TABLE_CACHE_KEY';
+import { TableCache } from '../../../types/TableCache';
+import { setCache } from './setCache';
 
-describe('setCache', (): void => {
+describe('setCache()', () => {
 	let _btoaSpy: jest.SpyInstance | null = null;
 	let name: string | null = null;
 	let result: unknown = null;
 
-	beforeEach((): void => {
+	beforeEach(() => {
 		_btoaSpy = btoaSpy();
 		setItemSpy();
 
@@ -26,7 +22,7 @@ describe('setCache', (): void => {
 		);
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		_btoaSpy?.mockReset();
 
 		_btoaSpy = null;
@@ -34,15 +30,15 @@ describe('setCache', (): void => {
 		result = null;
 	});
 
-	it('should use LocalStorage', (): void => {
+	it('should use LocalStorage', () => {
 		expect(window.localStorage.__proto__.setItem).toHaveBeenCalled();
 	});
 
-	it('should use an encoded key and encode the state', (): void => {
+	it('should use an encoded key and encode the state', () => {
 		expect(window.btoa).toHaveBeenCalledTimes(2);
 	});
 
-	it('should set the current table cache', (): void => {
+	it('should set the current table cache', () => {
 		expect(result).toBe(
 			JSON.stringify(
 				Buffer.from(JSON.stringify(tableCacheFixture.tableCache)).toString(

@@ -66,3 +66,5 @@ export const isLoadable = <T = Element>(value: unknown): value is Loadable<T> =>
 	 * value.onError()
 	 */
 	('onError' in value ? isFunction(value.onError) : true);
+
+export default Loadable;

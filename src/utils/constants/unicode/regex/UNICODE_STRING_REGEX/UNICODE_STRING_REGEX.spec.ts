@@ -1,4 +1,4 @@
-import { default as unicodeFixture } from '@test/fixtures/unicodeFixture.json';
+import { default as unicodeFixture } from '@@/fixtures/unicodeFixture.json';
 import { UNICODE_STRING_REGEX } from './UNICODE_STRING_REGEX';
 
 describe('UNICODE_STRING_REGEX', () => {

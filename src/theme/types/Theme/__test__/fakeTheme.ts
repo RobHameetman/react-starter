@@ -1,15 +1,15 @@
 import { faker } from '@faker-js/faker';
 
-export const fakeNewType = ({
+export const fakeTheme = ({
 	...overrideProps
 }: Record<string, unknown> = {}) => {
 	const theme = {
-		required: faker.datatype.string(),
-		method: jest.fn(() => faker.datatype.string()),
+		required: faker.string.alphanumeric(),
+		method: jest.fn(() => faker.string.alphanumeric()),
 	} as Record<string, unknown>;
 
 	faker.helpers.maybe(() => {
-		theme.optional = faker.datatype.string();
+		theme.optional = faker.string.alphanumeric();
 	});
 
 	return {

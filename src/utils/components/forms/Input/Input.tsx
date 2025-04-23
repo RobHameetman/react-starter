@@ -1,8 +1,8 @@
 import { ReactElement, forwardRef, useCallback, useState } from 'react';
-import { Button, ButtonStyles } from '@/utils/components/misc/Button';
+import { Button, ButtonFills } from '@/utils/components/misc/Button';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { noop } from '@/utils/functions/misc/noop';
-import { useFocus } from '@/utils/hooks/react/useFocus';
+import { useFocus } from '@/utils/hooks/misc/useFocus';
 import { VisibilityOffIcon } from '@/utils/icons/VisibilityOffIcon';
 import { VisibilityOnIcon } from '@/utils/icons/VisibilityOnIcon';
 import { Changeable } from '@/utils/types/props/Changeable';
@@ -155,7 +155,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 						icon={
 							passwordVisible ? <VisibilityOnIcon /> : <VisibilityOffIcon />
 						}
-						fill={isOutlined ? ButtonStyles.outlined : ButtonStyles.filled}
+						fill={isOutlined ? ButtonFills.outlined : ButtonFills.filled}
 						onClick={togglePasswordVisibility}
 					/>
 				)}

@@ -1,14 +1,15 @@
 import { $FC, useCallback } from 'react';
-import * as Mui from '@material-ui/core';
+// import * as Mui from '@material-ui/core';
 import { SortOrder, SortType } from '../../enums';
 import { useTable } from '../../hooks';
-import { Button, ButtonStyles, ButtonTypes } from '../../../Button';
+import { Button } from '@/utils/components/misc/Button';
 import styles from './TableColumn.module.css';
+import { TableCell } from '../TableCell';
 
 /**
  * Props for the <TableColumn> component.
  */
-export interface TableColumnProps extends Mui.TableCellProps {
+export interface TableColumnProps {
 	/**
 	 * @param active - [Optional] Determines whether or not the column is selected
 	 * for sorting.
@@ -66,29 +67,29 @@ export const TableColumn: $FC<TableColumnProps> = ({
 	const cssClassName = className ? ` ${className}` : '';
 
 	return (
-		<Mui.TableCell
+		<TableCell
 			className={`${styles.tableColumn}${cssClassName}`}
 			{...props}
 		>
 			{!shouldNotSort ? (
-				<Mui.TableSortLabel
+				<label
 					className={styles.label}
-					active={isActive}
-					direction={direction}
+					// active={isActive}
+					// direction={direction}
 				>
 					<Button
 						className={styles.sortButton}
-						type={isActive ? ButtonTypes.warning : ButtonTypes.standard}
-						fill={ButtonStyles.outlined}
+						// type={isActive ? ButtonTypes.warning : ButtonTypes.standard}
+						// fill={ButtonStyles.outlined}
 						value={sortType}
 						onClick={handleClick}
 					>
 						{children}
 					</Button>
-				</Mui.TableSortLabel>
+				</label>
 			) : (
 				children
 			)}
-		</Mui.TableCell>
+		</TableCell>
 	);
 };

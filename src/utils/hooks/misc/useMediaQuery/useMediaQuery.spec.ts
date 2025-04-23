@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { renderHook } from '@testing-library/react';
-import { mockWindow } from '@test/mocks/misc/mockWindow';
+import { mockWindow } from '@@/mocks/misc/mockWindow';
 import { useMediaQuery } from './useMediaQuery';
 
 describe('useMediaQuery()', () => {

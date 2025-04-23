@@ -1,5 +1,5 @@
-import { btoaSpy, removeItemSpy } from '@test/spies';
-import { b64 } from '@test/utils/b64';
+import { btoaSpy, removeItemSpy } from '@@/spies';
+import { b64 } from '@@/utils/b64';
 import { deleteFormCache } from './deleteFormCache';
 
 describe('deleteFormCache()', () => {

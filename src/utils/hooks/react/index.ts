@@ -4,6 +4,5 @@ export * from './useEscapeEvents';
 export * from './useFocusEvents';
 export * from './usePressEvents';
 export * from './usePropsWithChildren';
-export * from './useSemanticAsProp';
 export * from './useSpaceEvents';
 export * from './useTabEvents';

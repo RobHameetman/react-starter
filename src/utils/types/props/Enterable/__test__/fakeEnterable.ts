@@ -15,11 +15,11 @@ export const fakeEnterable = ({
 	});
 
 	faker.helpers.maybe(() => {
-		enterable.onPressEnterUp = mockEnterEventHandler();
+		enterable.onReleaseEnter = mockEnterEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		enterable.onPressEnterUpCapture = mockEnterEventHandler();
+		enterable.onReleaseEnterCapture = mockEnterEventHandler();
 	});
 
 	return {

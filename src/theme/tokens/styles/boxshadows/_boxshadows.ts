@@ -1,44 +1,48 @@
 // import { Color } from '../colors';
 import { CoreTokens } from '../../core';
-import { Length } from '../spacing';
-
-type Color = `#${string}`;
-
-/**
- * {@link Length}
- */
-export type BoxShadowOffset = `${Length} ${Length}`;
+import { AnyColor } from '../colors';
+import { DefaultLength, Length } from '../spacing';
 
 /**
  * {@link Length}
  */
-export type BoxShadowFeathering = Length | `${Length} ${Length}`;
+export type BoxShadowOffset<L extends DefaultLength = DefaultLength> = `${L} ${L}`;
+// export type BoxShadowOffset = `${Length} ${Length}`;
+
+/**
+ * {@link Length}
+ */
+export type BoxShadowFeathering<L extends DefaultLength = DefaultLength> = L | `${L} ${L}`;
+// export type BoxShadowFeathering = Length | `${Length} ${Length}`;
 
 /**
  * {@link Color}
  */
-export type BoxShadowShorthand =
-	| BoxShadowOffset
-	| `${BoxShadowOffset} ${BoxShadowFeathering}`
-	| `${Color} ${BoxShadowOffset}`
-	| `${BoxShadowOffset} ${Color} `
-	| `${Color} ${BoxShadowOffset} ${BoxShadowFeathering}`
-	| `${BoxShadowOffset} ${BoxShadowFeathering} ${Color}`;
+export type BoxShadowShorthand<L extends DefaultLength = DefaultLength> =
+	| BoxShadowOffset<L>
+	| `${BoxShadowOffset<L>} ${BoxShadowFeathering<L>}`
+	| `${AnyColor} ${BoxShadowOffset<L>}`
+	| `${BoxShadowOffset<L>} ${AnyColor} `
+	| `${AnyColor} ${BoxShadowOffset<L>} ${BoxShadowFeathering<L>}`
+	| `${BoxShadowOffset<L>} ${BoxShadowFeathering<L>} ${AnyColor}`;
+
+// export type BoxShadowShorthand<L extends DefaultLength = DefaultLength> =
+// 	`${`${'inset'} ` | ''}${`${Color} ` | ''}${BoxShadowOffset<L>}${` ${BoxShadowFeathering<L>}` | ''}${` ${'inset'}` | ''}${` ${Color}` | ''}`;
 
 /**
  * {@link BoxShadowShorthand}
  */
-export type InsetBoxShadow =
-	| `inset ${BoxShadowShorthand}`
-	| `${BoxShadowShorthand} inset`;
+export type InsetBoxShadow<L extends DefaultLength = DefaultLength> =
+	| `inset ${BoxShadowShorthand<L>}`
+	| `${BoxShadowShorthand<L>} inset`;
 
 /**
  * {@link BoxShadowShorthand},
  * {@link InsetBoxShadow}
  */
-export type BoxShadow =
-	| BoxShadowShorthand
-	| InsetBoxShadow
+export type BoxShadow<L extends DefaultLength = DefaultLength> =
+	| BoxShadowShorthand<L>
+	| InsetBoxShadow<L>
 	| 'inherit'
 	| 'initial'
 	| 'none'
@@ -54,15 +58,11 @@ const inset: BoxShadow = 'inset 0 1px 2px 0 #00000029';
 const inset2: BoxShadow = '#00000029 0 1px 2px 0 inset';
 
 // ❌ not assignable to type 'BoxShadow'
-const hasTypo: BoxShadow = '0 1px 2x #00000029';
-const badSize: BoxShadow = '0 1px 2vh #00000029';
-const notHex: BoxShadow = '0 1px 2px rgba(0, 0, 0, 0.16)';
-const extraSpace: BoxShadow = '0 1px 2px 0 inset ';
-const wrongKeyword: BoxShadow = 'none';
-
-type Test = String;
-
-const str = String('');
+// const hasTypo: BoxShadow = '0 1px 2x #00000029';
+// const badSize: BoxShadow = '0 1px 2vh #00000029';
+// const notHex: BoxShadow = '0 1px 2px rgba(0, 0, 0, 0.16)';
+// const extraSpace: BoxShadow = '0 1px 2px 0 inset ';
+// const wrongKeyword: BoxShadow = 'auto';
 
 /**
  * {@link CoreTokens}

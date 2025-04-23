@@ -8,11 +8,7 @@ describe('isFirefox()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isFirefox({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isFirefox();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

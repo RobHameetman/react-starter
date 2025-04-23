@@ -58,3 +58,5 @@ export const isAuxClickable = <T = Element>(
 	 * value.onAuxClickCapture()
 	 */
 	('onAuxClickCapture' in value ? isFunction(value.onAuxClickCapture) : true);
+
+export default AuxClickable;

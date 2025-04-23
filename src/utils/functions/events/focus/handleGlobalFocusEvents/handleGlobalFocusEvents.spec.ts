@@ -3,7 +3,7 @@ import { fakeFocusEvent } from '@/utils/functions/check/react/isFocusEvent/__tes
 import { handleWindowBlur } from '@/utils/functions/events/focus/handleWindowBlur';
 import { manageFocusModality } from '@/utils/functions/events/interactions/manageFocusModality';
 import { noop } from '@/utils/functions/misc/noop';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { handleGlobalFocusEvents } from './handleGlobalFocusEvents';
 
 jest.mock('@/utils/functions/events/focus/handleWindowBlur', () => ({

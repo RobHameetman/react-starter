@@ -310,3 +310,5 @@ export const isPointerable = <T = Element>(
 	 * value.onPointerUpCapture()
 	 */
 	('onPointerUpCapture' in value ? isFunction(value.onPointerUpCapture) : true);
+
+export default Pointerable;

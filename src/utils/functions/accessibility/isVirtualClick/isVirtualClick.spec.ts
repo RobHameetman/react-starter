@@ -1,4 +1,4 @@
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { isVirtualClick } from './isVirtualClick';
 import { fakePointerEvent } from '../../check/react/isPointerEvent/__test__';
 

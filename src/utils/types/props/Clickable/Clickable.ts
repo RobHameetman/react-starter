@@ -113,3 +113,5 @@ export const isClickable = <T = Element>(
 	 * value.onPointerUpCapture()
 	 */
 	('onPointerUpCapture' in value ? isFunction(value.onPointerUpCapture) : true);
+
+export default Clickable;

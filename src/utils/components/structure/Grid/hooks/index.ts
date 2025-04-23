@@ -1,1 +1,1 @@
-export * from './useCompoundComponentContext';
+export * from './useGridContext';

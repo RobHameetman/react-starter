@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
-import { NewComponent } from './DropoverItem';
+import { DropoverItem } from './DropoverItem';
 
-describe('<NewComponent />', () => {
+describe('<DropoverItem />', () => {
 	it('should render', () => {
-		expect(() => render(<NewComponent />)).not.toThrowError();
+		expect(() => render(<DropoverItem />)).not.toThrowError();
 	});
 
 	it('should not regress', () => {
-		expect(() => render(<NewComponent />)).toMatchSnapshot();
+		expect(() => render(<DropoverItem />)).toMatchSnapshot();
 	});
 });

@@ -1,6 +1,5 @@
 import { $FC } from 'react';
-import { History } from 'history';
-import { CompoundComponentContext } from '../CompoundComponentContext'
+import { INITIAL_COMPOUND_COMPONENT_CONTEXT, CompoundComponentContext } from '../CompoundComponentContext'
 
 /**
  * Prop types for the {@link CompoundComponentProvider} component.
@@ -22,7 +21,7 @@ export interface CompoundComponentProviderProps {
  * analytics utilities.
  */
 export const CompoundComponentProvider: $FC<CompoundComponentProviderProps> = ({ children, value = {} }) => (
-	<CompoundComponentContext.Provider value={value}>
+	<CompoundComponentContext.Provider value={{ ...INITIAL_COMPOUND_COMPONENT_CONTEXT, ...(value as CompoundComponentContext) }}>
 		{children}
 	</CompoundComponentContext.Provider>
 );

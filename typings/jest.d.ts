@@ -1,3 +1,5 @@
+/// <reference types="@testing-library/jest-dom" />
+
 declare namespace jest {
 	/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 	interface Matchers<R, T> {

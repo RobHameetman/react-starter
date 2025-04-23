@@ -12,9 +12,13 @@ describe('useNewHook()', () => {
 
 			({
 				result: { current: result },
-			} = renderHook(() =>
+			} = renderHook((props) =>
 				/* @ts-expect-error - Argument of type '{ _dependencies: { dependency: jest.Mock<any, any, any> | null; }; }' is not assignable to parameter of type 'UseNewHookInput'. */
-				useNewHook({ _dependencies: { dependency: mockDependency } }),
+				useNewHook(props), {
+					initialProps: {
+						_dependencies: { dependency: mockDependency },
+					}
+				}
 			));
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();

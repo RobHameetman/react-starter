@@ -1,4 +1,4 @@
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { handlerPropsOf, isHandlerPropsOf } from './HandlerPropsOf';
 import { fakeHandlerPropsOf as fakePropsOf } from './__test__';
 

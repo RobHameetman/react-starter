@@ -1,51 +1,15 @@
-import { isSortOrder } from '../../../../../../modules';
+import { isSortOrder } from './SortOrder';
 
-describe('isSortOrder', (): void => {
-	describe("given the string value 'asc'", (): void => {
-		let value: unknown = null;
-
-		beforeEach((): void => {
-			value = 'asc';
-		});
-
-		afterEach((): void => {
-			value = null;
-		});
-
-		it('should return true', (): void => {
-			expect(isSortOrder(value)).toBe(true);
-		});
+describe('isSortOrder', () => {
+	it("should return true given the string value 'asc'", () => {
+		expect(isSortOrder('asc')).toBe(true);
 	});
 
-	describe("given the string value 'desc'", (): void => {
-		let value: unknown = null;
-
-		beforeEach((): void => {
-			value = 'desc';
-		});
-
-		afterEach((): void => {
-			value = null;
-		});
-
-		it('should return true', (): void => {
-			expect(isSortOrder(value)).toBe(true);
-		});
+	it("should return true given the string value 'desc'", () => {
+		expect(isSortOrder('desc')).toBe(true);
 	});
 
-	describe('given an empty string', (): void => {
-		let value: unknown = null;
-
-		beforeEach((): void => {
-			value = '';
-		});
-
-		afterEach((): void => {
-			value = null;
-		});
-
-		it('should return false', (): void => {
-			expect(isSortOrder(value)).toBe(false);
-		});
+	it('should return false given an empty string', () => {
+		expect(isSortOrder('')).toBe(false);
 	});
 });

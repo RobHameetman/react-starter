@@ -24,7 +24,7 @@ export interface CompoundComponentContext {
 /**
  * {@link CompoundComponentContext} default values.
  */
-export const INITIAL_NEW_CONTEXT = Object.freeze({
+export const INITIAL_COMPOUND_COMPONENT_CONTEXT = Object.freeze({
 	/**
 	 * Default value of `newState`.
 	 */
@@ -40,7 +40,7 @@ export const INITIAL_NEW_CONTEXT = Object.freeze({
  * Create {@link CompoundComponentContext} with React {@link Provider} and {@link Consumer}.
  */
 export const CompoundComponentContext = createContext<CompoundComponentContext>({
-	...INITIAL_NEW_CONTEXT,
+	...INITIAL_COMPOUND_COMPONENT_CONTEXT,
 });
 
 /**

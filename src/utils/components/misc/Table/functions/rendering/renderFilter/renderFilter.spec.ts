@@ -1,17 +1,18 @@
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { renderFilter } from './renderFilter';
 
-describe('renderFilter()', (): void => {
+describe('renderFilter()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = renderFilter();
+	beforeEach(() => {
+		result = renderFilter(fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

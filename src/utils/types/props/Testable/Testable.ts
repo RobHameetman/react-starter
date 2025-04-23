@@ -45,3 +45,5 @@ export const isTestable = (value: unknown): value is Testable =>
 	 * value.testId
 	 */
 	('testId' in value ? isString(value.testId) : true);
+
+export default Testable;

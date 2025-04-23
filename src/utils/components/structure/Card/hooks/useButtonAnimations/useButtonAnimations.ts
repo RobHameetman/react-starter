@@ -60,9 +60,9 @@ export const useButtonAnimations = ({
 			break;
 	}
 
-	const triggerAnimation = useCallback((e: PressEvent) => {
+	const triggerAnimation = useCallback((e: PressEvent<Element>) => {
 		if (Animation) {
-			const { x, y } = getPressPosition(e);
+			const { x, y } = getPressPosition(e as PressEvent);
 
 			animate({ event: e, x, y });
 		}

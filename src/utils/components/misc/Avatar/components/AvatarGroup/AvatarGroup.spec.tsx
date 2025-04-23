@@ -1,15 +1,15 @@
 import { act, waitFor } from '@testing-library/react';
-import { matchMediaSpy } from '@test/spies/misc/matchMediaSpy';
-import { onTest } from '@test/utils/onTest';
+import { matchMediaSpy } from '@@/spies/misc/matchMediaSpy';
+import { onTest } from '@@/utils/onTest';
 import { Intent } from '@/theme/enums/Intents';
 import { randomIntent } from '@/theme/enums/Intents/__test__/randomIntent';
 import { Size } from '@/theme/enums/Sizes';
 import { randomSize } from '@/theme/enums/Sizes/__test__/randomSize';
 import { anyRadioButton, render } from './__test__';
-import { RadioGroup } from './AvatarGroup';
-import { Radio } from '../../Radio';
+import { AvatarGroup } from './AvatarGroup';
+import { Radio } from '../../../../forms/Radio';
 
-describe('<RadioGroup />', () => {
+describe('<AvatarGroup />', () => {
 	let $boxes: ReadonlyArray<HTMLDivElement> | null = null;
 	let $checkmarks: ReadonlyArray<HTMLDivElement> | null = null;
 	let $children: ReadonlyArray<HTMLDivElement> | null = null;
@@ -44,11 +44,11 @@ describe('<RadioGroup />', () => {
 				 */
 				2: () => {
 					({ $component } = render(
-						<RadioGroup as="section">
+						<AvatarGroup as="section">
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -56,11 +56,11 @@ describe('<RadioGroup />', () => {
 				 */
 				3: () => {
 					({ $component } = render(
-						<RadioGroup>
+						<AvatarGroup>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -68,11 +68,11 @@ describe('<RadioGroup />', () => {
 				 */
 				4: () => {
 					({ $component } = render(
-						<RadioGroup animated={false}>
+						<AvatarGroup animated={false}>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -80,11 +80,11 @@ describe('<RadioGroup />', () => {
 				 */
 				5: () => {
 					({ $component } = render(
-						<RadioGroup className="test">
+						<AvatarGroup className="test">
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -98,11 +98,11 @@ describe('<RadioGroup />', () => {
 					});
 
 					({ $component, pressRandomRadioButton } = render(
-						<RadioGroup onChange={mockOnChange} disabled>
+						<AvatarGroup onChange={mockOnChange} disabled>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 
 					act(() => {
@@ -114,11 +114,11 @@ describe('<RadioGroup />', () => {
 				 */
 				7: () => {
 					({ $component } = render(
-						<RadioGroup id="test">
+						<AvatarGroup id="test">
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -128,11 +128,11 @@ describe('<RadioGroup />', () => {
 					intent = randomIntent() as Intent;
 
 					({ $children } = render(
-						<RadioGroup intent={intent}>
+						<AvatarGroup intent={intent}>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 
 					result = $children
@@ -148,11 +148,11 @@ describe('<RadioGroup />', () => {
 				 */
 				9: () => {
 					({ $component } = render(
-						<RadioGroup name="test">
+						<AvatarGroup name="test">
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -160,11 +160,11 @@ describe('<RadioGroup />', () => {
 				 */
 				10: () => {
 					({ $component } = render(
-						<RadioGroup id="test">
+						<AvatarGroup id="test">
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -178,11 +178,11 @@ describe('<RadioGroup />', () => {
 					});
 
 					({ $component, pressRandomRadioButton } = render(
-						<RadioGroup onChange={mockOnChange} readonly>
+						<AvatarGroup onChange={mockOnChange} readonly>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 
 					act(() => {
@@ -196,11 +196,11 @@ describe('<RadioGroup />', () => {
 					size = randomSize() as Size;
 
 					({ $children } = render(
-						<RadioGroup size={size}>
+						<AvatarGroup size={size}>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 
 					result = $children
@@ -216,11 +216,11 @@ describe('<RadioGroup />', () => {
 				 */
 				13: () => {
 					({ checked, value } = render(
-						<RadioGroup value={'Test 1'}>
+						<AvatarGroup value={'Test 1'}>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 				/**
@@ -228,11 +228,11 @@ describe('<RadioGroup />', () => {
 				 */
 				14: () => {
 					const { getValue, pressRandomRadioButton } = render(
-						<RadioGroup>
+						<AvatarGroup>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					);
 
 					act(() => {
@@ -245,11 +245,11 @@ describe('<RadioGroup />', () => {
 				 */
 				15: () => {
 					const { getValue, pressRadioButton } = render(
-						<RadioGroup value={'Test 1'}>
+						<AvatarGroup value={'Test 1'}>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					);
 
 					act(() => {
@@ -262,11 +262,11 @@ describe('<RadioGroup />', () => {
 				 */
 				16: () => {
 					({ $component } = render(
-						<RadioGroup vertical>
+						<AvatarGroup vertical>
 							<Radio>Test 1</Radio>
 							<Radio>Test 2</Radio>
 							<Radio>Test 3</Radio>
-						</RadioGroup>,
+						</AvatarGroup>,
 					));
 				},
 			});
@@ -309,8 +309,8 @@ describe('<RadioGroup />', () => {
 		expect(index).toBe(1);
 		expect(error).toBeNull();
 
-		expect(() => render(<RadioGroup />)).not.toThrowError();
-		expect(render(<RadioGroup />, 1).result).toMatchSnapshot();
+		expect(() => render(<AvatarGroup />)).not.toThrowError();
+		expect(render(<AvatarGroup />, 1).result).toMatchSnapshot();
 	});
 
 	it('should be polymorphic', () => {

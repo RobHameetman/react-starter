@@ -1,25 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { TableRows } from '../../../../../../modules';
+import { render } from '@testing-library/react';
+import { TableRows } from './TableRows';
 
-describe('TableRows', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			$renderedComponent = shallow(<TableRows each={jest.fn()} />);
-		} catch (err) {
-			error = err;
-		}
+describe('<TableRows />', () => {
+	it('should render', () => {
+		expect(() => render(<TableRows each={jest.fn()} />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<TableRows each={jest.fn()} />)).toMatchSnapshot();
 	});
 });

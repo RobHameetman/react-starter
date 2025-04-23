@@ -4,17 +4,17 @@ import {
 	SpaceEventHandler,
 	isSpaceEventHandler as isSpaceHandler,
 } from '@/utils/types/handlers/SpaceEventHandler';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { useSpaceEvents } from './useSpaceEvents';
 
 describe('useSpaceEvents()', () => {
 	let capturing: boolean | null = null;
 	let error: Error | null = null;
 	let invalidEvent: Record<string, unknown> | null = null;
-	let mockOnSpace: jest.Mock | null = null;
-	let mockOnSpaceCapture: jest.Mock | null = null;
-	let mockOnSpaceUp: jest.Mock | null = null;
-	let mockOnSpaceUpCapture: jest.Mock | null = null;
+	let mockOnPressSpace: jest.Mock | null = null;
+	let mockOnPressSpaceCapture: jest.Mock | null = null;
+	let mockOnReleaseSpace: jest.Mock | null = null;
+	let mockOnReleaseSpaceCapture: jest.Mock | null = null;
 	let onKeyDown: unknown = null;
 	let onKeyDownCapture: unknown = null;
 	let onKeyUp: unknown = null;
@@ -27,10 +27,10 @@ describe('useSpaceEvents()', () => {
 		try {
 			index++;
 
-			mockOnSpace = jest.fn();
-			mockOnSpaceCapture = jest.fn();
-			mockOnSpaceUp = jest.fn();
-			mockOnSpaceUpCapture = jest.fn();
+			mockOnPressSpace = jest.fn();
+			mockOnPressSpaceCapture = jest.fn();
+			mockOnReleaseSpace = jest.fn();
+			mockOnReleaseSpaceCapture = jest.fn();
 
 			onTest(index, {
 				2: () => {
@@ -54,10 +54,10 @@ describe('useSpaceEvents()', () => {
 				result: { current: result },
 			} = renderHook(() =>
 				useSpaceEvents({
-					onSpace: mockOnSpace as SpaceEventHandler,
-					onSpaceCapture: mockOnSpaceCapture as SpaceEventHandler,
-					onSpaceUp: mockOnSpaceUp as SpaceEventHandler,
-					onSpaceUpCapture: mockOnSpaceUpCapture as SpaceEventHandler,
+					onPressSpace: mockOnPressSpace as SpaceEventHandler,
+					onPressSpaceCapture: mockOnPressSpaceCapture as SpaceEventHandler,
+					onReleaseSpace: mockOnReleaseSpace as SpaceEventHandler,
+					onReleaseSpaceCapture: mockOnReleaseSpaceCapture as SpaceEventHandler,
 				}),
 			));
 
@@ -74,10 +74,10 @@ describe('useSpaceEvents()', () => {
 		capturing = null;
 		error = null;
 		invalidEvent = null;
-		mockOnSpace = null;
-		mockOnSpaceCapture = null;
-		mockOnSpaceUp = null;
-		mockOnSpaceUpCapture = null;
+		mockOnPressSpace = null;
+		mockOnPressSpaceCapture = null;
+		mockOnReleaseSpace = null;
+		mockOnReleaseSpaceCapture = null;
 		onKeyDown = null;
 		onKeyDownCapture = null;
 		onKeyUp = null;
@@ -107,8 +107,8 @@ describe('useSpaceEvents()', () => {
 
 		expect(isSpaceHandler(onKeyDown, validEvent ?? {})).toBe(true);
 		expect(isSpaceHandler(onKeyDown, invalidEvent ?? {})).toBe(false);
-		expect(mockOnSpace).toBeCalledTimes(1);
-		expect(mockOnSpace).toBeCalledWith(validEvent);
+		expect(mockOnPressSpace).toBeCalledTimes(1);
+		expect(mockOnPressSpace).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keydown" events correctly during capturing', () => {
@@ -118,8 +118,8 @@ describe('useSpaceEvents()', () => {
 
 		expect(isSpaceHandler(onKeyDownCapture, validEvent ?? {})).toBe(true);
 		expect(isSpaceHandler(onKeyDownCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnSpaceCapture).toBeCalledTimes(1);
-		expect(mockOnSpaceCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressSpaceCapture).toBeCalledTimes(1);
+		expect(mockOnPressSpaceCapture).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly', () => {
@@ -129,8 +129,8 @@ describe('useSpaceEvents()', () => {
 
 		expect(isSpaceHandler(onKeyUp, validEvent ?? {})).toBe(true);
 		expect(isSpaceHandler(onKeyUp, invalidEvent ?? {})).toBe(false);
-		expect(mockOnSpaceUp).toBeCalledTimes(1);
-		expect(mockOnSpaceUp).toBeCalledWith(validEvent);
+		expect(mockOnReleaseSpace).toBeCalledTimes(1);
+		expect(mockOnReleaseSpace).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly during capturing', () => {
@@ -140,7 +140,7 @@ describe('useSpaceEvents()', () => {
 
 		expect(isSpaceHandler(onKeyUpCapture, validEvent ?? {})).toBe(true);
 		expect(isSpaceHandler(onKeyUpCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnSpaceUpCapture).toBeCalledTimes(1);
-		expect(mockOnSpaceUpCapture).toBeCalledWith(validEvent);
+		expect(mockOnReleaseSpaceCapture).toBeCalledTimes(1);
+		expect(mockOnReleaseSpaceCapture).toBeCalledWith(validEvent);
 	});
 });

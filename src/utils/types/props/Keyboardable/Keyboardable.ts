@@ -89,3 +89,5 @@ export const isKeyboardable = <T = Element>(
 	 * value.onKeyUpCapture()
 	 */
 	('onKeyUpCapture' in value ? isFunction(value.onKeyUpCapture) : true);
+
+export default Keyboardable;

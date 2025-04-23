@@ -1,8 +1,8 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react';
 import { isFunction } from '@/utils/functions/check/js/core/isFunction';
-import { mockCloneElement } from '@test/mocks/react/mockCloneElement';
-import { mockUseLayoutEffect } from '@test/mocks/react/mockUseLayoutEffect';
+import { mockCloneElement } from '@@/mocks/react/mockCloneElement';
+import { mockUseLayoutEffect } from '@@/mocks/react/mockUseLayoutEffect';
 import { usePropsWithChildren } from './usePropsWithChildren';
 import { children } from './__test__';
 
@@ -23,11 +23,11 @@ describe('usePropsWithChildren()', () => {
 
 				switch (component) {
 					case 'FirstChild':
-						firstChildSize = props.size;
+						firstChildSize = (props as Record<string, string>).size;
 
 						break;
 					case 'SecondChild':
-						secondChildSize = props.size;
+						secondChildSize = (props as Record<string, string>).size;
 
 						break;
 					default:

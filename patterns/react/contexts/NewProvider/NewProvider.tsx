@@ -1,6 +1,5 @@
 import { $FC } from 'react';
-import { History } from 'history';
-import { NewContext } from '../NewContext'
+import { INITIAL_NEW_CONTEXT, NewContext } from '../NewContext'
 
 /**
  * Prop types for the {@link NewProvider} component.
@@ -22,7 +21,7 @@ export interface NewProviderProps {
  * analytics utilities.
  */
 export const NewProvider: $FC<NewProviderProps> = ({ children, value = {} }) => (
-	<NewContext.Provider value={value}>
+	<NewContext.Provider value={{ ...INITIAL_NEW_CONTEXT, ...(value as NewContext) }}>
 		{children}
 	</NewContext.Provider>
 );

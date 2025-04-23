@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
-import { NewComponent } from './Avatar';
+import { Avatar } from './Avatar';
 
-describe('<NewComponent />', () => {
+describe('<Avatar />', () => {
 	it('should render', () => {
-		expect(() => render(<NewComponent />)).not.toThrowError();
+		expect(() => render(<Avatar />)).not.toThrowError();
 	});
 
 	it('should not regress', () => {
-		expect(() => render(<NewComponent />)).toMatchSnapshot();
+		expect(() => render(<Avatar />)).toMatchSnapshot();
 	});
 });

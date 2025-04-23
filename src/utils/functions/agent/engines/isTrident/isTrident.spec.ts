@@ -8,11 +8,7 @@ describe('isTrident()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isTrident({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isTrident();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

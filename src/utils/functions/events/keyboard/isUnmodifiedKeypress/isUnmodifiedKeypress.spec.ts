@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { fakeKeyboardEvent } from '@/utils/functions/check/react/isKeyboardEvent/__test__';
 import { isUnmodifiedKeypress } from './isUnmodifiedKeypress';
 

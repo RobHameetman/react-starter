@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { fakeFocusEvent } from '@/utils/functions/check/react/isFocusEvent/__test__';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { manageFocusModality } from './manageFocusModality';
 
 describe('manageFocusModality()', () => {

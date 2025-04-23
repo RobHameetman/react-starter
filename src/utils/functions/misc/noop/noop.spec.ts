@@ -8,4 +8,8 @@ describe('noop()', () => {
 	it('should take any number of arguments', () => {
 		expect(noop('foo', 'bar', 'baz')).toBeUndefined();
 	});
+
+	it('should take any type of arguments', () => {
+		expect(noop(1, true, 'foo', {})).toBeUndefined();
+	});
 });

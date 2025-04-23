@@ -1,12 +1,14 @@
 import { CC } from 'react';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
-import { As } from '@/utils/components/structure/As';
 import type { Polymorphic } from '@/utils/types/props/Polymorphic';
 import type { Stylable } from '@/utils/types/props/Stylable';
+import CompoundComponentProvider from './contexts/CompoundComponentProvider';
 import CompoundComponentSubcomponent from './components/CompoundComponentSubcomponent';
 import styles from './CompoundComponent.module.css';
-import CompoundComponentProvider from './contexts/CompoundComponentProvider/CompoundComponentProvider';
 
+/**
+ * Compositional prop types for the {@link CompoundComponent} component.
+ */
 type ComposedProps = Polymorphic & Stylable;
 
 /**
@@ -35,7 +37,7 @@ export interface CompoundComponentParts {
  * @TODO - A short description of the component here.
  */
 export const CompoundComponent: CC<CompoundComponentProps, CompoundComponentParts> = ({
-	as: _as = 'div',
+	as: As = 'div',
 	className = '',
 	children,
 	prop = false,

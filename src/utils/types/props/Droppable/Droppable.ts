@@ -121,3 +121,5 @@ export const isDroppable = <T = Element>(
 	 * value.onDropCapture()
 	 */
 	('onDropCapture' in value ? isFunction(value.onDropCapture) : true);
+
+export default Droppable;

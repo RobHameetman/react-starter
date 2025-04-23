@@ -53,20 +53,6 @@ type ComposedProps<T = Element> = Keyboardable<T> &
  */
 export interface Pressable<T = Element> extends ComposedProps<T> {
 	/**
-	 * [Optional] Handle an event when the component is pressed and held before
-	 * release.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onLongPress?: PressEventHandler<T>;
-
-	/**
-	 * [Optional] Handle an event when the component is pressed and held before
-	 * release during capturing.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onLongPressCapture?: PressEventHandler<T>;
-
-	/**
 	 * [Optional] Handle an event when the component is pressed.
 	 * @defaultValue - A no-op function.
 	 */
@@ -79,49 +65,11 @@ export interface Pressable<T = Element> extends ComposedProps<T> {
 	readonly onPressCapture?: PressEventHandler<T>;
 
 	/**
-	 * [Optional] Handle an event when the press state changes.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onPressChange?: PressEventHandler<T>;
-
-	/**
-	 * [Optional] Handle an event when the press state changes during capturing.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onPressChangeCapture?: PressEventHandler<T>;
-
-	/**
-	 * [Optional] Handle an event when a press interaction ends, either over the
-	 * target or when the pointer leaves the target.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onPressEnd?: PressEventHandler<T>;
-
-	/**
-	 * [Optional] Handle an event when a press interaction ends during capturing,
-	 * either over the target or when the pointer leaves the target.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onPressEndCapture?: PressEventHandler<T>;
-
-	/**
-	 * [Optional] Handle an event when a press interaction starts.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onPressStart?: PressEventHandler<T>;
-
-	/**
-	 * [Optional] Handle an event when a press interaction starts during capturing.
-	 * @defaultValue - A no-op function.
-	 */
-	readonly onPressStartCapture?: PressEventHandler<T>;
-
-	/**
 	 * [Optional] Handle an event when a press interaction is released over the
 	 * target, regardless of whether it started on the target or not.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressUp?: PressEventHandler<T>;
+	readonly onRelease?: PressEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when a press interaction is released over the
@@ -129,7 +77,7 @@ export interface Pressable<T = Element> extends ComposedProps<T> {
 	 * not.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressUpCapture?: PressEventHandler<T>;
+	readonly onReleaseCapture?: PressEventHandler<T>;
 }
 
 /**
@@ -139,14 +87,8 @@ export interface Pressable<T = Element> extends ComposedProps<T> {
  *   - `value` must be an object.
  *   - `value.onPress()` is optional and must be a valid {@link PressEventHandler} if provided.
  *   - `value.onPressCapture()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressChange()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressChangeCapture()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressEnd()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressEndCapture()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressStart()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressStartCapture()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressUp()` is optional and must be a valid {@link PressEventHandler} if provided.
- *   - `value.onPressUpCapture()` is optional and must be a valid {@link PressEventHandler} if provided.
+ *   - `value.onRelease()` is optional and must be a valid {@link PressEventHandler} if provided.
+ *   - `value.onReleaseCapture()` is optional and must be a valid {@link PressEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -177,50 +119,16 @@ export const isPressable = <T = Element>(
 		? isPressEventHandler<T>(value.onPressCapture, event)
 		: true) &&
 	/**
-	 * value.onPressChange()
+	 * value.onRelease()
 	 */
-	('onPressChange' in value
-		? isPressEventHandler<T>(value.onPressChange, event)
+	('onRelease' in value
+		? isPressEventHandler<T>(value.onRelease, event)
 		: true) &&
 	/**
-	 * value.onPressChangeCapture()
+	 * value.onReleaseCapture()
 	 */
-	('onPressChangeCapture' in value
-		? isPressEventHandler<T>(value.onPressChangeCapture, event)
-		: true) &&
-	/**
-	 * value.onPressEnd()
-	 */
-	('onPressEnd' in value
-		? isPressEventHandler<T>(value.onPressEnd, event)
-		: true) &&
-	/**
-	 * value.onPressEndCapture()
-	 */
-	('onPressEndCapture' in value
-		? isPressEventHandler<T>(value.onPressEndCapture, event)
-		: true) &&
-	/**
-	 * value.onPressStart()
-	 */
-	('onPressStart' in value
-		? isPressEventHandler<T>(value.onPressStart, event)
-		: true) &&
-	/**
-	 * value.onPressStartCapture()
-	 */
-	('onPressStartCapture' in value
-		? isPressEventHandler<T>(value.onPressStartCapture, event)
-		: true) &&
-	/**
-	 * value.onPressUp()
-	 */
-	('onPressUp' in value
-		? isPressEventHandler<T>(value.onPressUp, event)
-		: true) &&
-	/**
-	 * value.onPressUpCapture()
-	 */
-	('onPressUpCapture' in value
-		? isPressEventHandler<T>(value.onPressUpCapture, event)
+	('onReleaseCapture' in value
+		? isPressEventHandler<T>(value.onReleaseCapture, event)
 		: true);
+
+export default Pressable;

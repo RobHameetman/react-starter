@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { mockRoute } from '@test/utils';
+import { mockRoute } from '@@/utils';
 import { getSubdomain } from './getSubdomain';
 
 describe('getSubdomain()', () => {

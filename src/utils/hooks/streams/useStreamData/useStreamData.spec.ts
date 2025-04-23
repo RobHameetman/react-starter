@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 import { act, renderHook, waitFor } from '@testing-library/react';
-import { mockSetState, mockUseState } from '@test/mocks/react/mockUseState';
+import { mockSetState, mockUseState } from '@@/mocks/react/mockUseState';
 import { useStreamData } from './useStreamData';
 
 type Data = number | undefined;

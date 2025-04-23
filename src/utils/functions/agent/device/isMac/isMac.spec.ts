@@ -8,11 +8,7 @@ describe('isMac()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isMac({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isMac();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

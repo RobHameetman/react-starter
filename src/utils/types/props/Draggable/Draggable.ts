@@ -191,3 +191,5 @@ export const isDraggable = <T = Element>(
 	 * value.onDragStartCapture()
 	 */
 	('onDragStartCapture' in value ? isFunction(value.onDragStartCapture) : true);
+
+export default Draggable;

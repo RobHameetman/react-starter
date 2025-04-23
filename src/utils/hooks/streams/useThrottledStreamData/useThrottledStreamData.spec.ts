@@ -1,7 +1,7 @@
 import { BehaviorSubject } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 import { renderHook, waitFor } from '@testing-library/react';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import {
 	DEFAULT_THROTTLE_TIME,
 	useThrottledStreamData,

@@ -49,3 +49,5 @@ export const isRequirable = (value: unknown): value is Requirable =>
 	 * value.required
 	 */
 	('required' in value ? isBoolean(value.required) : true);
+
+export default Requirable;

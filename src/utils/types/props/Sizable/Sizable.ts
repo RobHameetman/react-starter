@@ -46,3 +46,5 @@ export const isSizable = (value: unknown): value is Sizable =>
 	 * value.size
 	 */
 	('size' in value ? isSize(value.size) : true);
+
+export default Sizable;

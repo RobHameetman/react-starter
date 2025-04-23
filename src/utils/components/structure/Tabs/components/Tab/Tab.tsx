@@ -7,7 +7,7 @@ import {
 	useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
-import { Badge } from '@nextui-org/react';
+import Badge from '@/utils/components/info/Badge';
 import { noop } from '@/utils/functions/misc/noop';
 import { snakeCase } from '@/utils/functions/string/snakeCase';
 import { useControlProp } from '@/utils/hooks/react/useControlProp';
@@ -125,7 +125,7 @@ export const Tab: $FC<TabProps> = ({
 	const cssDisabled = disabled || locked ? ` ${styles.disabled}` : '';
 	const cssOverride = className ? ` ${className}` : '';
 
-	const _handleClick = useCallback<MouseEventHandler>(
+	const _handleClick = useCallback<MouseEventHandler<HTMLElement>>(
 		(e) => {
 			if (!disabled && !locked) {
 				handleChangeTab(null, index);
@@ -169,7 +169,6 @@ export const Tab: $FC<TabProps> = ({
 	return (
 		<>
 			{!isNoop(renderTab) ? (
-				/* @ts-expect-error - Type 'never' has no call signatures. */
 				renderTab(name, selected)
 			) : (
 				<button

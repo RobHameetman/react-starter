@@ -97,3 +97,5 @@ export const isEscapable = <T = Element>(
 	('onPressEscapeUpCapture' in value
 		? isEscapeEventHandler(value.onPressEscapeUpCapture)
 		: true);
+
+export default Escapable;

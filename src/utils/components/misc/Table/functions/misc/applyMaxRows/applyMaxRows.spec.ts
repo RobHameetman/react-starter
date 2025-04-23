@@ -1,17 +1,18 @@
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { applyMaxRows } from './applyMaxRows';
 
-describe('applyMaxRows()', (): void => {
+describe('applyMaxRows()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = applyMaxRows('', 0);
+	beforeEach(() => {
+		result = applyMaxRows(fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

@@ -7,6 +7,6 @@ describe('isSpaceable()', () => {
 	});
 
 	it('should return false for an invalid set of Spaceable props', () => {
-		expect(isSpaceable(fakeSpaceable({ onSpace: null }))).toBe(false);
+		expect(isSpaceable(fakeSpaceable({ onPressSpace: null }))).toBe(false);
 	});
 });

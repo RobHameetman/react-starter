@@ -11,7 +11,7 @@ import './App.css';
 const AppProvider = lazy(
 	() => import('./utils/contexts/AppProvider/AppProvider'),
 );
-const ErrorView = lazy(() => import('./utils/views/ErrorView/ErrorView'));
+const ErrorView = lazy(() => import('./utils/pages/ErrorPage/ErrorPage'));
 const Router = lazy(() => import('./nav/components/Router/Router'));
 const Routes = lazy(() => import('./nav/components/Routes/Routes'));
 

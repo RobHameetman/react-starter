@@ -1,18 +1,18 @@
 import { hasUserAgentPlatform } from './hasUserAgentPlatform';
 
 describe('hasUserAgentPlatform()', () => {
-	let mockDependency: jest.Mock | null = null;
 	let error: Error | null = null;
+	let result: unknown = null;
+
+	beforeAll(() => {
+		jest.spyOn(window.navigator, 'userAgent', 'get')
+			.mockReturnValueOnce('test')
+			.mockReturnValue('Mac OS X');
+	});
 
 	beforeEach(() => {
 		try {
-			mockDependency = jest.fn();
-
-			hasUserAgentPlatform({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			result = hasUserAgentPlatform(/^test$/i);
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);
@@ -22,15 +22,17 @@ describe('hasUserAgentPlatform()', () => {
 	afterEach(() => {
 		jest.restoreAllMocks();
 
-		mockDependency = null;
+		result = null;
 		error = null;
 	});
 
-	it('should not throw an error', () => {
+	it('should return true given a regex that matches the current user agent string', () => {
+		expect(result).toBe(true);
 		expect(error).toBeNull();
 	});
 
-	it('should depend on the given dependency', () => {
-		expect(mockDependency).toBeCalled();
+	it('should return false given a regex that does not match the current user agent string', () => {
+		expect(result).toBe(false);
+		expect(error).toBeNull();
 	});
 });

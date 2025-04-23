@@ -1,18 +1,19 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react';
+import { useRouter } from '../useRouter';
 import { useQueryParam } from './useQueryParam';
 
 // Mock the useRouter hook
-jest.mock('next/router', () => ({
+jest.mock('../useRouter', () => ({
   useRouter: jest.fn(),
 }));
 
-describe('useQueryParam', () => {
+describe('useQueryParam()', () => {
   const mockReplace = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
 
-    useRouter.mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       pathname: '/path/value',
       query: { param: 'value' },
       replace: mockReplace,
@@ -21,7 +22,7 @@ describe('useQueryParam', () => {
 
   it('should get the query parameter correctly', () => {
     const { result } = renderHook(() =>
-      useQueryParam({ param: 'param', type: 'query' }),
+      useQueryParam('test'),
     );
 
     const [param] = result.current;
@@ -30,7 +31,7 @@ describe('useQueryParam', () => {
 
   it('should set the query parameter correctly', () => {
     const { result } = renderHook(() =>
-      useQueryParam({ param: 'param', type: 'query' }),
+      useQueryParam('test'),
     );
 
     const [, setParam] = result.current;
@@ -46,14 +47,14 @@ describe('useQueryParam', () => {
   });
 
   it('should handle multiple query parameters correctly', () => {
-    useRouter.mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       pathname: '/path/value',
       query: { param: ['value1', 'value2'] },
       replace: mockReplace,
     });
 
     const { result } = renderHook(() =>
-      useQueryParam({ param: 'param', type: 'query' }),
+      useQueryParam('test'),
     );
 
     const [param] = result.current;
@@ -62,7 +63,7 @@ describe('useQueryParam', () => {
 
   it('should delete the query parameter correctly', () => {
     const { result } = renderHook(() =>
-      useQueryParam({ param: 'param', type: 'query' }),
+      useQueryParam('test'),
     );
 
     const [, setParam] = result.current;
@@ -78,14 +79,14 @@ describe('useQueryParam', () => {
   })
 
   it('should handle path parameters correctly', () => {
-    useRouter.mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       pathname: '/path/value/param/value',
       query: {},
       replace: mockReplace,
     });
 
     const { result } = renderHook(() =>
-      useQueryParam({ param: 'param', type: 'path' }),
+      useQueryParam('test'),
     );
 
     const [param] = result.current;
@@ -93,14 +94,14 @@ describe('useQueryParam', () => {
   })
 
   it('should set path parameters correctly', () => {
-    useRouter.mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       pathname: '/path/value/param/value',
       query: {},
       replace: mockReplace,
     });
 
     const { result } = renderHook(() =>
-      useQueryParam({ param: 'param', type: 'path' }),
+      useQueryParam('test'),
     );
 
     const [, setParam] = result.current;

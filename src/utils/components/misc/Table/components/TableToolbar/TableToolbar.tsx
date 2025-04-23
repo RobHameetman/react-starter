@@ -1,5 +1,4 @@
 import { $FC } from 'react';
-import { Toolbar } from '@material-ui/core';
 import styles from './TableToolbar.module.css';
 
 export const TableToolbar: $FC = ({ children }) => {
@@ -8,9 +7,10 @@ export const TableToolbar: $FC = ({ children }) => {
 		(typeof children === 'object' && children !== null);
 
 	return hasValidChildren ? (
-		<Toolbar className={styles.tableToolbar} disableGutters>
+		// <Toolbar className={styles.tableToolbar} disableGutters>
+		<div className={styles.tableToolbar}>
 			{children}
-		</Toolbar>
+		</div>
 	) : (
 		<>{children}</>
 	);

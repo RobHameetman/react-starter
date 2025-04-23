@@ -6,3 +6,5 @@ import { useContext } from 'react';
  * provider is instantiated in the `AppProvider`.
  */
 export const useNewContext = () => useContext(NewContext);
+
+export default useNewContext;

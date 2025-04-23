@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { btoaSpy, setItemSpy } from '@test/spies';
+import { btoaSpy, setItemSpy } from '@@/spies';
 import { setItem } from './setItem';
 
 describe('setItem()', () => {

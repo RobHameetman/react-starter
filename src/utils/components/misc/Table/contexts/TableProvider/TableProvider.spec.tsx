@@ -1,12 +1,13 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { SortOrder, SortType, TableProvider } from '../../../../../../modules';
+import { SortOrder } from '../../enums/SortOrder';
+import { SortType } from '../../enums/SortType';
+import { TableProvider } from './TableProvider';
 
-describe('TableProvider', (): void => {
+describe('TableProvider', () => {
 	let html: string | undefined;
 	let error: Error | null = null;
 
-	beforeEach((): void => {
+	beforeEach(() => {
 		try {
 			const { container } = render(
 				<TableProvider
@@ -40,6 +41,7 @@ describe('TableProvider', (): void => {
 							direction: SortOrder.ASC,
 							options: {
 								[SortType.DATE]: {
+									/* @ts-expect-error - Type 'unknown' is not assignable to type 'Record<string, string>'. */
 									sortBy: ({ date }: Record<string, string>) => new Date(date),
 									sortOrder: SortOrder.ASC,
 								},
@@ -57,21 +59,21 @@ describe('TableProvider', (): void => {
 
 			html = container.innerHTML;
 		} catch (err) {
-			error = err;
+			error = err as Error;
 		}
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		html = undefined;
 		error = null;
 	});
 
-	it.skip('should render', async (): Promise<void> => {
+	it.skip('should render', async () => {
 		expect(html).not.toBeNull();
 		expect(error).toBeNull();
 	});
 
-	it.skip('should not regress', async (): Promise<void> => {
+	it.skip('should not regress', async () => {
 		expect(html).toMatchSnapshot();
 	});
 });

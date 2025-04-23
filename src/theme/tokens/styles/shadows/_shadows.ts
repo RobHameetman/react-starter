@@ -1,53 +1,37 @@
-import { Color } from '../colors';
 import { CoreTokens } from '../../core';
-import { Length } from '../spacing';
+import { AnyColor, HexColor } from '../colors';
+import { DefaultLength, Length } from '../spacing';
 
 /**
  * {@link Length}
  */
-export type BoxShadowOffset = `${Length} ${Length}`;
+export type DropShadowOffset<L extends DefaultLength = DefaultLength> = `${L} ${L}`;
 
 /**
- * {@link Length}
+ * {@link DefaultLength}
  */
-export type BoxShadowFeathering = Length | `${Length} ${Length}`;
-
-/**
- * {@link Color}
- */
-export type BoxShadowShorthand =
-	| `${BoxShadowOffset} ${Color}`
-	| `${BoxShadowOffset} ${BoxShadowFeathering} ${Color}`;
-
-/**
- * {@link BoxShadowShorthand}
- */
-export type InsetBoxShadow = `inset ${BoxShadowShorthand}`;
+export type DropShadowBlur<L extends DefaultLength = DefaultLength> = L;
 
 /**
  * {@link BoxShadowShorthand},
  * {@link InsetBoxShadow}
  */
-export type BoxShadow =
-	| BoxShadowShorthand
-	| InsetBoxShadow
-	| 'inherit'
-	| 'initial'
-	| 'none'
-	| 'revert-layer'
-	| 'revert'
-	| 'unset';
+export type DropShadow<L extends DefaultLength = DefaultLength, C extends AnyColor = HexColor> =
+	| `${C} ${DropShadowOffset<L>}`
+	| `${DropShadowOffset<L>} ${C}`
+	| `${C} ${DropShadowOffset<L>} ${DropShadowBlur<L>}`
+	| `${DropShadowOffset<L>} ${DropShadowBlur<L>} ${C}`;
 
 /**
  * {@link CoreTokens}
  */
-export const BOX_SHADOW_1: BoxShadow = `0 ${CoreTokens.BaseLength * 0.125}rem ${
+export const DROP_SHADOW_1: DropShadow = `0 ${CoreTokens.BaseLength * 0.125}rem ${
 	CoreTokens.BaseLength * 0.325
-}rem 0 #00000029`;
+}rem #00000029`;
 
 /**
  * {@link CoreTokens}
  */
-export const BOX_SHADOW_2: BoxShadow = `0 ${CoreTokens.BaseLength * 0.325}rem ${
+export const DROP_SHADOW_2: DropShadow = `0 ${CoreTokens.BaseLength * 0.325}rem ${
 	CoreTokens.BaseLength * 0.125
-}rem 0 #00000029`;
+}rem #00000029`;

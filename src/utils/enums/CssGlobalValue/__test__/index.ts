@@ -1,1 +1,1 @@
-export * from './randomClipboardEventType';
+export * from './randomCssGlobalValue';

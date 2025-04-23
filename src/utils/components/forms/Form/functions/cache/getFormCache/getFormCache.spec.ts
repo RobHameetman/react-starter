@@ -1,6 +1,6 @@
-import { atobSpy, btoaSpy, getItemSpy } from '@test/spies';
-import { getItemMock } from '@test/mocks/storage/getItemMock';
-import { b64 } from '@test/utils/b64';
+import { atobSpy, btoaSpy, getItemSpy } from '@@/spies';
+import { getItemMock } from '@@/mocks/storage/getItemMock';
+import { b64 } from '@@/utils/b64';
 import { getFormCache } from './getFormCache';
 import { isCachedForm } from '../../../types/CachedForm';
 import { fakeCachedForm } from '../../../types/CachedForm/__test__';

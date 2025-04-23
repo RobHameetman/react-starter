@@ -52,3 +52,5 @@ export const useNewHook = ({ _dependencies = {} }: UseNewHookInput) => {
 	 */
 	dependency();
 };
+
+export default useNewHook;

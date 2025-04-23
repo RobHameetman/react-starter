@@ -5,6 +5,9 @@ import { Table } from '@/utils/components/misc/Table';
 import { Search } from '@/utils/components/misc/Table/components/Search';
 import styles from './Inbox.module.css';
 
+/**
+ * Compositional prop types for the {@link Inbox} component.
+ */
 type ComposedProps = Polymorphic & Stylable;
 
 /**

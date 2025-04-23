@@ -149,3 +149,5 @@ export const isTouchable = <T = Element>(
 	('onTouchStartCapture' in value
 		? isFunction(value.onTouchStartCapture)
 		: true);
+
+export default Touchable;

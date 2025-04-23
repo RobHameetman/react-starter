@@ -1,8 +1,10 @@
 import {
+	FocusEvent,
 	FocusEventHandler,
 	ForwardedRef,
 	useCallback,
 	useEffect,
+	useRef,
 	useState,
 } from 'react';
 import { noop } from '@/utils/functions/misc/noop';
@@ -14,7 +16,7 @@ export interface UseFocusInput<T extends HTMLElement = HTMLElement> {
 	/**
 	 * A ref passed to the HTML element which will be focused.
 	 */
-	readonly ref: ForwardedRef<T>;
+	readonly ref?: ForwardedRef<T>;
 
 	/**
 	 * [Optional] A callback triggered when the current element receives a 'blur'
@@ -40,16 +42,17 @@ export interface UseFocusInput<T extends HTMLElement = HTMLElement> {
  * @returns A boolean which is `true` if the media query matches or `false`.
  */
 export const useFocus = <T extends HTMLElement = HTMLElement>({
-	ref,
+	ref: forwardedRef,
 	onBlur = noop,
 	onFocus = noop,
 }: UseFocusInput<T>) => {
 	const [focused, setFocused] = useState(false);
+	const ref = useRef(null);
 
 	const handleBlur = useCallback<FocusEventHandler<T> & EventListener>(
 		(e) => {
 			setFocused(false);
-			onBlur(e);
+			onBlur(e as FocusEvent<T>);
 		},
 		[setFocused],
 	);
@@ -57,14 +60,16 @@ export const useFocus = <T extends HTMLElement = HTMLElement>({
 	const handleFocus = useCallback<FocusEventHandler<T> & EventListener>(
 		(e) => {
 			setFocused(true);
-			onFocus(e);
+			onFocus(e as FocusEvent<T>);
 		},
 		[setFocused],
 	);
 
 	useEffect(() => {
-		if (typeof ref === 'object' && ref !== null) {
-			const { current: $element } = ref;
+		const _ref = forwardedRef || ref;
+
+		if (typeof _ref === 'object' && _ref !== null) {
+			const { current: $element } = _ref;
 
 			if ($element) {
 				$element.addEventListener('blur', handleBlur);
@@ -82,5 +87,7 @@ export const useFocus = <T extends HTMLElement = HTMLElement>({
 		return noop;
 	}, [handleBlur, handleFocus, ref]);
 
-	return { focused, ref };
+	return { focused, ref: forwardedRef || ref };
 };
+
+export default useFocus;

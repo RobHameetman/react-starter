@@ -1,12 +1,12 @@
-import { isKeyboardable } from './Movable';
+import { isMovable } from './Movable';
 import { fakeKeyboardable } from './__test__';
 
-describe('isKeyboardable()', () => {
+describe('isMovable()', () => {
 	it('should return true for a valid set of Keyboardable props', () => {
-		expect(isKeyboardable(fakeKeyboardable())).toBe(true);
+		expect(isMovable(fakeKeyboardable())).toBe(true);
 	});
 
 	it('should return false for an invalid set of Keyboardable props', () => {
-		expect(isKeyboardable(fakeKeyboardable({ onKeyDown: null }))).toBe(false);
+		expect(isMovable(fakeKeyboardable({ onKeyDown: null }))).toBe(false);
 	});
 });

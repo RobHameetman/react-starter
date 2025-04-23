@@ -1,20 +1,23 @@
-import { useTable } from '../../../../../../modules';
+import { renderHook } from '@testing-library/react';
+import { isTableContext as isTable } from '../../contexts/TableContext';
+import { useTable } from './useTable';
+import { MockTableProvider } from './__test__';
 
-describe('useTable', (): void => {
+describe('useTable()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		/**
-		 * TODO - Call hook here and set the output to result.
-		 */
+	beforeEach(() => {
+		({
+			result: { current: result },
+		} = renderHook(() => useTable(), { wrapper: MockTableProvider }));
+	});
+
+	afterEach(() => {
 		result = null;
 	});
 
-	afterEach((): void => {
-		result = null;
-	});
-
-	it.skip('should return the expected output', (): void => {
+	it('should return a valid ThemeContext', () => {
 		expect(result).not.toBeNull();
+		expect(isTable(result)).toBe(true);
 	});
 });

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-import { default as unicodeFixture } from '@test/fixtures/unicodeFixture.json';
+import { default as unicodeFixture } from '@@/fixtures/unicodeFixture.json';
 import { words } from './words';
 import { fakeLargeWord, perf } from './__test__';
 

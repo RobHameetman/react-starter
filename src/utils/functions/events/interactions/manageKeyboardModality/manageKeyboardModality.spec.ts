@@ -1,5 +1,5 @@
 import { fakeKeyboardEvent } from '@/utils/functions/check/react/isKeyboardEvent/__test__';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { manageKeyboardModality } from './manageKeyboardModality';
 
 describe('manageKeyboardModality()', () => {

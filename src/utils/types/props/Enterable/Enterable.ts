@@ -42,14 +42,14 @@ export interface Enterable<T = Element> {
 	 * [Optional] Handle an event when the 'Enter' key is released.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressEnterUp?: EnterEventHandler<T>;
+	readonly onReleaseEnter?: EnterEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Enter' key is released during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressEnterUpCapture?: EnterEventHandler<T>;
+	readonly onReleaseEnterCapture?: EnterEventHandler<T>;
 }
 
 /**
@@ -59,8 +59,8 @@ export interface Enterable<T = Element> {
  *   - `value` must be an object.
  *   - `value.onPressEnter()` is optional and must be a valid {@link EnterEventHandler} if provided.
  *   - `value.onPressEnterCapture()` is optional and must be a valid {@link EnterEventHandler} if provided.
- *   - `value.onPressEnterUp()` is optional and must be a valid {@link EnterEventHandler} if provided.
- *   - `value.onPressEnterUpCapture()` is optional and must be a valid {@link EnterEventHandler} if provided.
+ *   - `value.onReleaseEnter()` is optional and must be a valid {@link EnterEventHandler} if provided.
+ *   - `value.onReleaseEnterCapture()` is optional and must be a valid {@link EnterEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -88,12 +88,14 @@ export const isEnterable = <T = Element>(
 		? isEnterEventHandler(value.onPressEnterCapture)
 		: true) &&
 	/**
-	 * value.onPressEnterUp()
+	 * value.onReleaseEnter()
 	 */
-	('onPressEnterUp' in value ? isEnterEventHandler(value.onPressEnterUp) : true) &&
+	('onReleaseEnter' in value ? isEnterEventHandler(value.onReleaseEnter) : true) &&
 	/**
-	 * value.onPressEnterUpCapture()
+	 * value.onReleaseEnterCapture()
 	 */
-	('onPressEnterUpCapture' in value
-		? isEnterEventHandler(value.onPressEnterUpCapture)
+	('onReleaseEnterCapture' in value
+		? isEnterEventHandler(value.onReleaseEnterCapture)
 		: true);
+
+export default Enterable;

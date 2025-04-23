@@ -1,0 +1,18 @@
+{
+	"tableCache": {
+		"filter": {
+			"filterBy": ["Sell"],
+			"searchBy": ""
+		},
+		"name": "Order History",
+		"sort": {
+			"active": "TIME",
+			"direction": "asc"
+		},
+		"pagination": {
+			"count": 1000,
+			"currentPage": 2,
+			"pageSize": 10
+		}
+	}
+}

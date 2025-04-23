@@ -1,17 +1,16 @@
-import { getCache, isTableCache } from '../../../../../../../modules';
-import {
-	atobSpy,
-	btoaSpy,
-	getItemMock,
-	getItemSpy,
-	tableCacheFixture,
-} from '../../../../../../../../test';
+import tableCacheFixture from '@@/fixtures/tableCacheFixture.json';
+import { getItemMock } from '@@/mocks/storage/getItemMock';
+import { atobSpy } from '@@/spies/encoding/atobSpy';
+import { btoaSpy } from '@@/spies/encoding/btoaSpy';
+import { getItemSpy } from '@@/spies/storage/getItemSpy';
+import { isTableCache } from './../../../types/TableCache';
+import { getCache } from './getCache';
 
-describe('getCache()', (): void => {
+describe('getCache()', () => {
 	let name: string | null = null;
 	let result: unknown = null;
 
-	beforeEach((): void => {
+	beforeEach(() => {
 		atobSpy();
 		btoaSpy();
 
@@ -29,24 +28,24 @@ describe('getCache()', (): void => {
 		result = getCache(name);
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		name = null;
 		result = null;
 	});
 
-	it('should use LocalStorage', (): void => {
+	it('should use LocalStorage', () => {
 		expect(window.localStorage.__proto__.getItem).toHaveBeenCalled();
 	});
 
-	it('should use an encoded key', (): void => {
+	it('should use an encoded key', () => {
 		expect(window.btoa).toHaveBeenCalled();
 	});
 
-	it('should retrieve an encoded value', (): void => {
+	it('should retrieve an encoded value', () => {
 		expect(window.atob).toHaveBeenCalled();
 	});
 
-	it('should retrieve the current table cache', (): void => {
+	it('should retrieve the current table cache', () => {
 		expect(isTableCache(result)).toBe(true);
 	});
 });

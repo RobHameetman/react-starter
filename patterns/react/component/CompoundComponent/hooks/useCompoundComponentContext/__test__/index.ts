@@ -1,1 +1,1 @@
-export * from './MockNewProvider';
+export * from './MockCompoundComponentProvider';

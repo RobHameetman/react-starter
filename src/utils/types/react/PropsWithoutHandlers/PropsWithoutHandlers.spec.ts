@@ -1,4 +1,4 @@
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import {
 	propsWithoutHandlers,
 	isPropsWithoutHandlers,

@@ -68,9 +68,9 @@ export const useButtonAnimations = ({
 	}
 
 	const triggerAnimation = useCallback(
-		(e: PressEvent) => {
+		(e: PressEvent<Element>) => {
 			if (!disabled) {
-				const { x, y } = getPressPosition(e);
+				const { x, y } = getPressPosition(e as PressEvent);
 
 				animate({ event: e, x, y });
 			}

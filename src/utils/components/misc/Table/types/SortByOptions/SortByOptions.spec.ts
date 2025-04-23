@@ -1,41 +1,23 @@
-import {
-	SortOrder,
-	SortType,
-	isSortByOptions,
-} from '../../../../../../modules';
+import { isSortByOptions } from './SortByOptions';
+import { SortOrder } from '../../enums/SortOrder';
+import { SortType } from '../../enums/SortType';
 
-describe('isSortByOptions', (): void => {
-	describe('given a valid SortByOptions', (): void => {
-		let value: unknown;
-
-		beforeEach((): void => {
-			value = {
-				[SortType.DATE]: {
-					sortBy: ({ date }: Record<string, string>) => new Date(date),
-					sortOrder: SortOrder.ASC,
-				},
-			};
-		});
-
-		it('should return true', (): void => {
-			expect(isSortByOptions(value)).toBe(true);
-		});
+describe('isSortByOptions()', () => {
+	it('should return true given a valid SortByOptions', () => {
+		expect(isSortByOptions({
+			[SortType.DATE]: {
+				sortBy: ({ date }: Record<string, string>) => new Date(date),
+				sortOrder: SortOrder.ASC,
+			},
+		})).toBe(true);
 	});
 
-	describe('given an invalid SortByOptions', (): void => {
-		let value: unknown;
-
-		beforeEach((): void => {
-			value = {
-				newest: {
-					sortBy: ({ date }: Record<string, string>) => new Date(date),
-					sortOrder: SortOrder.ASC,
-				},
-			};
-		});
-
-		it('should return false', (): void => {
-			expect(isSortByOptions(value)).toBe(false);
-		});
+	it('should return false given an invalid SortByOptions', () => {
+		expect(isSortByOptions({
+			newest: {
+				sortBy: ({ date }: Record<string, string>) => new Date(date),
+				sortOrder: SortOrder.ASC,
+			},
+		})).toBe(false);
 	});
 });

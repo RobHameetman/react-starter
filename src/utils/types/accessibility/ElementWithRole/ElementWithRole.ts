@@ -6,19 +6,18 @@ import { Attributes } from '@/utils/types/dom/Attributes';
  *
  * @typeParam T - The role that the element has as a string literal type.
  */
-export interface ElementWithRole<T extends string> extends Element {
-	readonly attributes: Attributes<'role', T>;
-	readonly role: T;
+export interface ElementWithRole<R extends string> extends Element {
+	readonly attributes: Attributes<'role', R>;
+	readonly role: R;
 }
 
 /**
  * Checks that an `unknown` value is an {@link ElementWithRole}.
  *
  * Requirements:
- *   - `value` must be a valid {@link EscapeEvent} or {@link PressEvent}.
+ *   - `value` must be a valid {@link HTMLElement} with a `role` of type {@link R}.
  *
- * @typeParam T - The type of HTML element that will be the target of the event.
- * Defaults to type {@link Element}.
+ * @typeParam R - The string literal type for the role.
  *
  * @param value - An `unknown` value.
  * @param role - The role to check for.

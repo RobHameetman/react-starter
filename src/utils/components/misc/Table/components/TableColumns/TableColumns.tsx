@@ -1,5 +1,5 @@
 import { $FC, Children, useLayoutEffect } from 'react';
-import * as Mui from '@material-ui/core';
+// import * as Mui from '@material-ui/core';
 import { useTable } from '../../hooks';
 
 export const TableColumns: $FC = ({ children }) => {
@@ -14,8 +14,8 @@ export const TableColumns: $FC = ({ children }) => {
 	}, [children, setColumnCount]);
 
 	return (
-		<Mui.TableHead>
-			<Mui.TableRow>{children}</Mui.TableRow>
-		</Mui.TableHead>
+		<th>
+			<tr>{children}</tr>
+		</th>
 	);
 };

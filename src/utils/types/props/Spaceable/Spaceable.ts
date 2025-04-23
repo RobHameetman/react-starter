@@ -3,6 +3,7 @@ import {
 	SpaceEventHandler,
 	isSpaceEventHandler,
 } from '@/utils/types/handlers/SpaceEventHandler';
+import { Keyboardable } from '../Keyboardable';
 
 /**
  * A compositional prop type for React components that allow you to trigger an
@@ -24,7 +25,7 @@ import {
  * );
  * ```
  */
-export interface Spaceable<T = Element> {
+export interface Spaceable<T = Element> extends Keyboardable<T> {
 	/**
 	 * [Optional] Handle an event when the 'Space' key is pressed.
 	 * @defaultValue - A no-op function.
@@ -42,14 +43,14 @@ export interface Spaceable<T = Element> {
 	 * [Optional] Handle an event when the 'Space' key is released.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressSpaceUp?: SpaceEventHandler<T>;
+	readonly onReleaseSpace?: SpaceEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Space' key is released during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressSpaceUpCapture?: SpaceEventHandler<T>;
+	readonly onReleaseSpaceCapture?: SpaceEventHandler<T>;
 }
 
 /**
@@ -59,8 +60,8 @@ export interface Spaceable<T = Element> {
  *   - `value` must be an object.
  *   - `value.onPressSpace()` is optional and must be a valid {@link SpaceEventHandler} if provided.
  *   - `value.onPressSpaceCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
- *   - `value.onPressSpaceUp()` is optional and must be a valid {@link SpaceEventHandler} if provided.
- *   - `value.onPressSpaceUpCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
+ *   - `value.onReleaseSpace()` is optional and must be a valid {@link SpaceEventHandler} if provided.
+ *   - `value.onReleaseSpaceCapture()` is optional and must be a valid {@link SpaceEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -70,9 +71,7 @@ export interface Spaceable<T = Element> {
  *
  * @returns The determination that `value` is or is not {@link Spaceable}.
  */
-export const isSpaceable = <T = Element>(
-	value: unknown,
-): value is Spaceable<T> =>
+export const isSpaceable = <T = Element>(value: unknown): value is Spaceable<T> =>
 	/**
 	 * value
 	 */
@@ -88,12 +87,14 @@ export const isSpaceable = <T = Element>(
 		? isSpaceEventHandler(value.onPressSpaceCapture)
 		: true) &&
 	/**
-	 * value.onPressSpaceUp()
+	 * value.onReleaseSpace()
 	 */
-	('onPressSpaceUp' in value ? isSpaceEventHandler(value.onPressSpaceUp) : true) &&
+	('onReleaseSpace' in value ? isSpaceEventHandler(value.onReleaseSpace) : true) &&
 	/**
-	 * value.onPressSpaceUpCapture()
+	 * value.onReleaseSpaceCapture()
 	 */
-	('onPressSpaceUpCapture' in value
-		? isSpaceEventHandler(value.onPressSpaceUpCapture)
+	('onReleaseSpaceCapture' in value
+		? isSpaceEventHandler(value.onReleaseSpaceCapture)
 		: true);
+
+export default Spaceable;

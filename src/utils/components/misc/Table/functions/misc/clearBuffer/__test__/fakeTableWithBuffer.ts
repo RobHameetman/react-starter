@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { fakeTableState } from '../../../../state/TableState/__test__';
 
 export const fakeTableWithBuffer = ({
@@ -10,7 +10,7 @@ export const fakeTableWithBuffer = ({
 			...(overrideProperties.data as Record<string, unknown>),
 			buffer: Array.from(
 				{
-					length: faker.datatype.number({ min: 2, max: 100 }),
+					length: faker.number.int({ min: 2, max: 100 }),
 				},
 				() => ({
 					color: faker.vehicle.color(),

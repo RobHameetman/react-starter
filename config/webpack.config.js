@@ -146,6 +146,7 @@ const STYLE_LOADERS = {
 			loader: 'css-loader',
 			options: {
 				importLoaders: 2,
+				namedExport: false,
 				url: false,
 			},
 		},
@@ -157,6 +158,7 @@ const STYLE_LOADERS = {
 				modules: {
 					exportLocalsConvention: 'camelCase',
 					localIdentName: '[name]__[local]--[hash:base64:5]',
+					namedExport: false,
 				},
 			},
 		},

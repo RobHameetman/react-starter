@@ -1,6 +1,6 @@
 import { act, fireEvent } from '@testing-library/react';
-import { matchMediaSpy } from '@test/spies/misc/matchMediaSpy';
-import { onTest } from '@test/utils/onTest';
+import { matchMediaSpy } from '@@/spies/misc/matchMediaSpy';
+import { onTest } from '@@/utils/onTest';
 import { Radio } from './Radio';
 import { render } from './__test__';
 

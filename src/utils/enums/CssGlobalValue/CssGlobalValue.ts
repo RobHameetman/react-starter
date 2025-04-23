@@ -41,7 +41,7 @@ export enum CssGlobalValue {
 /**
  * Any one of the above {@link CssGlobalValues}.
  */
-export type CssGlobalValue = keyof typeof CssGlobalValue;
+export type AnyCssGlobalValue = `${CssGlobalValue}`;
 
 /**
  * A list of all {@link CssGlobalValue} values.
@@ -55,7 +55,7 @@ export const CSS_GLOBAL_VALUES = Object.freeze(
  *
  * Requirements:
  *   - `value` must be a non-empty string and must be included as a string key
- *     of {@link CssGlobalValues}.
+ *     of {@link CssGlobalValue}.
  *
  * @param value - An `unknown` value.
  *

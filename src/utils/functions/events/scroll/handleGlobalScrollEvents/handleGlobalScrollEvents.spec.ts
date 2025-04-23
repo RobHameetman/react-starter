@@ -1,6 +1,6 @@
 import { fakeScrollEvent } from '@/utils/functions/check/react/isScrollEvent/__test__';
 import { noop } from '@/utils/functions/misc/noop';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { handleGlobalScrollEvents } from './handleGlobalScrollEvents';
 
 jest.mock('@/utils/functions/misc/noop', () => ({

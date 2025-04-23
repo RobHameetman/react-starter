@@ -5,51 +5,51 @@ import {
 	fakeTableWithNoBuffer,
 } from '../clearBuffer/__test__';
 
-describe('initializeBuffer()', (): void => {
+describe('initializeBuffer()', () => {
 	let result: TableState | null = null;
 
-	describe('when the table is not buffering', (): void => {
+	describe('when the table is not buffering', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeTableWithNoBuffer();
 			result = initializeBuffer(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should set the buffer to the initial data', (): void => {
+		it('should set the buffer to the initial data', () => {
 			expect(result?.data.buffer).toHaveLength(
 				result?.data?.initialData.length || 0,
 			);
 		});
 	});
 
-	describe('when the table is buffering', (): void => {
+	describe('when the table is buffering', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeTableWithBuffer();
 			result = initializeBuffer(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should not set the buffer to the initial data', (): void => {
+		it('should not set the buffer to the initial data', () => {
 			expect(result === state).toBe(true);
 		});
 	});

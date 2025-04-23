@@ -1,51 +1,15 @@
-import { isSortType } from '../../../../../../modules';
+import { isSortType } from './SortType';
 
-describe('isSortType', (): void => {
-	describe("given the string value 'DATE'", (): void => {
-		let value: unknown = null;
-
-		beforeEach((): void => {
-			value = 'DATE';
-		});
-
-		afterEach((): void => {
-			value = null;
-		});
-
-		it('should return true', (): void => {
-			expect(isSortType(value)).toBe(true);
-		});
+describe('isSortType', () => {
+	it("should return true given the string value 'DATE'", () => {
+		expect(isSortType('DATE')).toBe(true);
 	});
 
-	describe("given the string value 'QUANTITY'", (): void => {
-		let value: unknown = null;
-
-		beforeEach((): void => {
-			value = 'QUANTITY';
-		});
-
-		afterEach((): void => {
-			value = null;
-		});
-
-		it('should return true', (): void => {
-			expect(isSortType(value)).toBe(true);
-		});
+	it("should return true given the string value 'QUANTITY'", () => {
+		expect(isSortType('QUANTITY')).toBe(true);
 	});
 
-	describe('given an empty string', (): void => {
-		let value: unknown = null;
-
-		beforeEach((): void => {
-			value = '';
-		});
-
-		afterEach((): void => {
-			value = null;
-		});
-
-		it('should return true', (): void => {
-			expect(isSortType(value)).toBe(true);
-		});
+	it('should return true given an empty string', () => {
+		expect(isSortType('')).toBe(true);
 	});
 });

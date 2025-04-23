@@ -1,12 +1,12 @@
-import { renderView } from '@test/utils/renderView';
+import { renderPage } from '@@/utils/renderPage';
 import { TabsProvider } from './TabsProvider';
 
 describe('<TabsProvider />', () => {
 	it('should render', () => {
-		expect(() => renderView(<TabsProvider />)).not.toThrowError();
+		expect(() => renderPage(<TabsProvider />)).not.toThrowError();
 	});
 
 	it('should match the current snapshot', () => {
-		expect(renderView(<TabsProvider />)).toMatchSnapshot();
+		expect(renderPage(<TabsProvider />)).toMatchSnapshot();
 	});
 });

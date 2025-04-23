@@ -46,3 +46,5 @@ export const isStylable = (value: unknown): value is Stylable =>
 	 * value.className
 	 */
 	('className' in value ? isString(value.className) : true);
+
+export default Stylable;

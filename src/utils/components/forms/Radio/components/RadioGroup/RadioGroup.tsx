@@ -4,7 +4,6 @@ import { isString } from '@/utils/functions/check/js/core/isString';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { withId } from '@/utils/hocs/withId';
 import { usePropsWithChildren } from '@/utils/hooks/react/usePropsWithChildren';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import type { Animatable } from '@/utils/types/props/Animatable';
 import type { Changeable } from '@/utils/types/props/Changeable';
 import type { Disablable } from '@/utils/types/props/Disablable';
@@ -59,7 +58,7 @@ export interface RadioGroupProps extends ComposedProps {
 export const RadioGroup: $FC<RadioGroupProps> = withId(
 	({
 		animated = !prefersReducedMotion(),
-		as: _as = 'fieldset',
+		as: As = 'fieldset',
 		className = '',
 		children: _children,
 		disabled,
@@ -73,8 +72,6 @@ export const RadioGroup: $FC<RadioGroupProps> = withId(
 		vertical = false,
 		...remainingProps
 	}) => {
-		const As = useSemanticAsProp({ as: _as });
-
 		const css = cssClasses(
 			'radioGroup',
 			styles.radioGroup,

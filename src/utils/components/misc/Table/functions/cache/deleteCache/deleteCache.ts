@@ -9,6 +9,6 @@ import { TABLE_CACHE_KEY } from '../../../constants';
  * Our table state is cached in LocalStorage for cross-session browser
  * persistence and user convenience.
  */
-export const deleteCache = (name: string): void => {
+export const deleteCache = (name: string) => {
 	return window.localStorage.removeItem(btoa(`${TABLE_CACHE_KEY} ${name}`));
 };

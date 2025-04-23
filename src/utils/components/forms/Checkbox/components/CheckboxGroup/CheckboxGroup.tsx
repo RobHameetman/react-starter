@@ -1,13 +1,10 @@
 import { $FC } from 'react';
 import { prefersReducedMotion } from '@/utils/functions/accessibility/prefersReducedMotion';
-import { isFunction } from '@/utils/functions/check/js/core/isFunction';
 import { isString } from '@/utils/functions/check/js/core/isString';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
-import { noop } from '@/utils/functions/misc/noop';
 import { uniqueId } from '@/utils/functions/misc/uniqueId';
 import { withId } from '@/utils/hocs/withId';
 import { usePropsWithChildren } from '@/utils/hooks/react/usePropsWithChildren';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import type { Animatable } from '@/utils/types/props/Animatable';
 import type { Changeable } from '@/utils/types/props/Changeable';
 import type { Disablable } from '@/utils/types/props/Disablable';
@@ -67,7 +64,7 @@ export interface CheckboxGroupProps extends ComposedProps {
 export const CheckboxGroup: $FC<CheckboxGroupProps> = withId(
 	({
 		animated = !prefersReducedMotion(),
-		as: _as = 'fieldset',
+		as: As = 'fieldset',
 		checked,
 		className = '',
 		children: _children,
@@ -84,8 +81,6 @@ export const CheckboxGroup: $FC<CheckboxGroupProps> = withId(
 		vertical = false,
 		...remainingProps
 	}) => {
-		const As = useSemanticAsProp({ as: _as });
-
 		const css = cssClasses(
 			'checkboxGroup',
 			styles.checkboxGroup,

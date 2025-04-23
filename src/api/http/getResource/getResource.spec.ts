@@ -19,7 +19,7 @@ const fakeResource = (resource: Record<string, unknown>): Resource => resource;
  * `'body'` property.
  */
 describe('getResource()', () => {
-	let result: Record<string, unknown> | null = null;
+	let result: unknown = null;
 	let testId: string | null = null;
 	let mockGetRequest: jest.Mock | null = null;
 

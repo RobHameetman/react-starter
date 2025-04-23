@@ -6,49 +6,49 @@ import {
 	fakeNonFilterableTable,
 } from '../isFilterable/__test__';
 
-describe('enableFiltering()', (): void => {
+describe('enableFiltering()', () => {
 	let result: TableState | null = null;
 
-	describe('when the table is not filterable', (): void => {
+	describe('when the table is not filterable', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeNonFilterableTable();
 			result = enableFiltering(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should enable filtering', (): void => {
+		it('should enable filtering', () => {
 			expect(isFilterable(result as TableState)).toBe(true);
 		});
 	});
 
-	describe('when the table is filterable', (): void => {
+	describe('when the table is filterable', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeFilterableTable();
 			result = enableFiltering(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should not enable filtering', (): void => {
+		it('should not enable filtering', () => {
 			expect(result === state).toBe(true);
 		});
 	});

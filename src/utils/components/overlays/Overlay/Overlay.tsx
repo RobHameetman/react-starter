@@ -8,6 +8,7 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { noop } from '@/utils/functions/misc/noop';
+import { usePageContext } from '@/utils/pages/Page/hooks/usePageContext';
 import { Clickable } from '@/utils/types/props/Clickable';
 import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './Overlay.module.css';
@@ -43,6 +44,8 @@ export const Overlay: $FC<OverlayProps> = ({
 	renderOverlay = noop,
 	onClick = noop,
 }) => {
+	const { refs: { pageOverlay } } = usePageContext();
+
 	const cssOverride = className ? ` ${className}` : '';
 	const cssOverlayLevel = app ? ` ${styles.app}` : '';
 
@@ -70,13 +73,15 @@ export const Overlay: $FC<OverlayProps> = ({
 		() => (
 			<div className={`${styles.container}${cssOverlayLevel}`}>
 				<div className={styles.content}>{children}</div>
-				{renderOverlay ? renderOverlay($overlay) : $overlay}
+				{renderOverlay ? renderOverlay($overlay) as ReactElement : $overlay}
 			</div>
 		),
 		[$overlay, children, cssOverlayLevel, renderOverlay],
 	);
 
-	return app && appOverlayRef.current
-		? createPortal($jsx, appOverlayRef.current)
+	return app && pageOverlay.current
+		? createPortal($jsx, pageOverlay.current)
 		: $jsx;
 };
+
+export default Overlay;

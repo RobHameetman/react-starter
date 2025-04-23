@@ -1,4 +1,4 @@
-import { btoaSpy, removeItemSpy } from '@test/spies';
+import { btoaSpy, removeItemSpy } from '@@/spies';
 import { removeItem } from './removeItem';
 
 describe('removeItem()', () => {

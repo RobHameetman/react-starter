@@ -6,49 +6,49 @@ import {
 	fakeNonSearchableTable,
 } from '../isSearchable/__test__';
 
-describe('enableSearching()', (): void => {
+describe('enableSearching()', () => {
 	let result: TableState | null = null;
 
-	describe('when the table is not searchable', (): void => {
+	describe('when the table is not searchable', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeNonSearchableTable();
 			result = enableSearching(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should enable searching', (): void => {
+		it('should enable searching', () => {
 			expect(isSearchable(result as TableState)).toBe(true);
 		});
 	});
 
-	describe('when the table is searchable', (): void => {
+	describe('when the table is searchable', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeSearchableTable();
 			result = enableSearching(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should not enable searching', (): void => {
+		it('should not enable searching', () => {
 			expect(result === state).toBe(true);
 		});
 	});

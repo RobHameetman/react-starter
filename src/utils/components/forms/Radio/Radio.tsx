@@ -7,7 +7,6 @@ import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { noop } from '@/utils/functions/misc/noop';
 import { withId } from '@/utils/hocs/withId';
 import { useControlProp } from '@/utils/hooks/react/useControlProp';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { useFocusEvents } from '@/utils/hooks/react/useFocusEvents';
 import { useHoverEvents } from '@/utils/hooks/react/useHoverEvents';
 import { usePressEvents } from '@/utils/hooks/react/usePressEvents';
@@ -84,7 +83,7 @@ export interface RadioComponents {
  */
 export const Radio = withId<CC<RadioComponents, RadioProps>>(
 	({
-		as: _as = 'div',
+		as: As = 'div',
 		animated = !prefersReducedMotion(),
 		checked: _checked = false,
 		children,
@@ -104,12 +103,11 @@ export const Radio = withId<CC<RadioComponents, RadioProps>>(
 		onChangeCapture = noop,
 		onPress = noop,
 		onPressCapture = noop,
-		onPressUp = noop,
-		onPressUpCapture = noop,
+		onRelease = noop,
+		onReleaseCapture = noop,
 		...extraProps
 	}) => {
-		const As = useSemanticAsProp({ as: _as });
-		const inputRef = useRef(null);
+		const inputRef = useRef<HTMLInputElement>(null);
 
 		const { getGroupValue = () => null, groupValueIs = () => false } =
 			useRadioContext();
@@ -140,8 +138,6 @@ export const Radio = withId<CC<RadioComponents, RadioProps>>(
 				onPress(e);
 			},
 			onPressCapture,
-			onPressUp,
-			onPressUpCapture,
 		});
 
 		const focusEvents = useFocusEvents({

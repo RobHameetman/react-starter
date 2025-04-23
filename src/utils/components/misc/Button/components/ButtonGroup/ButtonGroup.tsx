@@ -1,7 +1,6 @@
 import { $FC } from 'react';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { usePropsWithChildren } from '@/utils/hooks/react/usePropsWithChildren';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { Disablable } from '@/utils/types/props/Disablable';
 import { Intentable } from '@/utils/types/props/Intentable';
 import { Polymorphic } from '@/utils/types/props/Polymorphic';
@@ -46,7 +45,7 @@ export interface ButtonGroupProps extends ComposedProps {
 export const ButtonGroup: $FC<ButtonGroupProps> = ({
 	align,
 	auto,
-	as: _as = 'div',
+	as: As = 'div',
 	className = '',
 	children: _children,
 	disabled,
@@ -57,8 +56,6 @@ export const ButtonGroup: $FC<ButtonGroupProps> = ({
 	vertical = false,
 	...props
 }) => {
-	const As = useSemanticAsProp({ as: _as });
-
 	const css = cssClasses(
 		'buttonGroup',
 		styles.buttonGroup,

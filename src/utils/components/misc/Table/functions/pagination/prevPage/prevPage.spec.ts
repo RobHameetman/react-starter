@@ -1,17 +1,18 @@
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { prevPage } from './prevPage';
 
-describe('prevPage()', (): void => {
+describe('prevPage()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = prevPage();
+	beforeEach(() => {
+		result = prevPage(fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

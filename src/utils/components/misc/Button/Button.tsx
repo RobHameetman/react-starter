@@ -7,7 +7,6 @@ import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { noop } from '@/utils/functions/misc/noop';
 import { capitalize } from '@/utils/functions/string/capitalize';
 import { useControlProp } from '@/utils/hooks/react/useControlProp';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { useFocusEvents } from '@/utils/hooks/react/useFocusEvents';
 import { usePressEvents } from '@/utils/hooks/react/usePressEvents';
 import type { Accessible } from '@/utils/types/props/Accessible';
@@ -100,7 +99,7 @@ export const Button: CC<ButtonComponents, ButtonProps> = ({
 	align = 'center',
 	animated = !prefersReducedMotion(),
 	auto = false,
-	as: _as = 'button',
+	as: As = 'button',
 	className = '',
 	children,
 	disabled: _disabled = false,
@@ -122,7 +121,6 @@ export const Button: CC<ButtonComponents, ButtonProps> = ({
 	onPressCapture = noop,
 	...props
 }) => {
-	const As = useSemanticAsProp({ as: _as });
 	const ref = useRef<typeof As>(null);
 	const defaultId = useId();
 

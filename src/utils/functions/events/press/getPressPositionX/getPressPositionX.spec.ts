@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
 import { isPointerEvent } from '@/utils/functions';
-import { fakeDOMRect } from '@test/fakes/fakeDOMRect';
+import { fakeDOMRect } from '@@/fakes/fakeDOMRect';
 import { getPressPositionX } from './getPressPositionX';
 
 describe('getPressPositionX()', () => {

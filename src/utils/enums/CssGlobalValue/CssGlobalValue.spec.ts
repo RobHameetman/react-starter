@@ -1,27 +1,27 @@
-import { isClipboardEventType } from './CssGlobalValue';
+import { isCssGlobalValue } from './CssGlobalValue';
 
-describe('isClipboardEventType()', () => {
+describe('isCssGlobalValue()', () => {
 	it('should return true given the string value "inherit"', () => {
-		expect(isClipboardEventType('inherit')).toBe(true);
+		expect(isCssGlobalValue('inherit')).toBe(true);
 	});
 
 	it('should return true given the string value "initial"', () => {
-		expect(isClipboardEventType('initial')).toBe(true);
+		expect(isCssGlobalValue('initial')).toBe(true);
 	});
 
 	it('should return true given the string value "revert"', () => {
-		expect(isClipboardEventType('revert')).toBe(true);
+		expect(isCssGlobalValue('revert')).toBe(true);
 	});
 
 	it('should return true given the string value "revert-layer"', () => {
-		expect(isClipboardEventType('revert-layer')).toBe(true);
+		expect(isCssGlobalValue('revert-layer')).toBe(true);
 	});
 
 	it('should return true given the string value "unset"', () => {
-		expect(isClipboardEventType('unset')).toBe(true);
+		expect(isCssGlobalValue('unset')).toBe(true);
 	});
 
 	it('should return false given an empty string', () => {
-		expect(isClipboardEventType('')).toBe(false);
+		expect(isCssGlobalValue('')).toBe(false);
 	});
 });

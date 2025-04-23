@@ -1,5 +1,5 @@
 import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { manageVirtualClickModality } from './manageVirtualClickModality';
 
 describe('manageVirtualClickModality()', () => {

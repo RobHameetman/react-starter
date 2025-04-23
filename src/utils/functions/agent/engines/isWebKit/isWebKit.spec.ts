@@ -8,11 +8,7 @@ describe('isWebKit()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isWebKit({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isWebKit();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

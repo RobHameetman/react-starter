@@ -8,11 +8,7 @@ describe('isChrome()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isChrome({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isChrome();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

@@ -49,3 +49,5 @@ export const isExpansible = (value: unknown): value is Expansible =>
 	 * value.fullWidth
 	 */
 	('fullWidth' in value ? isBoolean(value.fullWidth) : true);
+
+export default Expansible;

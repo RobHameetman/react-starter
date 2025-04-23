@@ -1,2 +1,2 @@
 export * from './CompoundComponentContext';
-export { default as CompoundComponentContext } from './CompoundComponentContext';
+export { default } from './CompoundComponentContext';

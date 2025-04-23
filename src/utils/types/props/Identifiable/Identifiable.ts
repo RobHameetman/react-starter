@@ -46,3 +46,5 @@ export const isIdentifiable = (value: unknown): value is Identifiable =>
 	 * value.id
 	 */
 	('id' in value ? isString(value.id) : true);
+
+export default Identifiable;

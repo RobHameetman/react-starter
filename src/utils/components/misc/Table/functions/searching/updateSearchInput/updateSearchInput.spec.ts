@@ -1,17 +1,19 @@
+import { faker } from '@faker-js/faker';
 import { updateSearchInput } from './updateSearchInput';
+import { fakeTableState } from '../../../state/TableState/__test__';
 
-describe('updateSearchInput()', (): void => {
+describe('updateSearchInput()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = updateSearchInput();
+	beforeEach(() => {
+		result = updateSearchInput(faker.lorem.words(), fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

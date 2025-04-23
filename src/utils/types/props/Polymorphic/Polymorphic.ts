@@ -56,3 +56,5 @@ export const isPolymorphic = (value: unknown): value is Polymorphic =>
 		? (isString(value.as) && Boolean(value.as.length)) ||
 		  isReactElement(value.as)
 		: true);
+
+export default Polymorphic;

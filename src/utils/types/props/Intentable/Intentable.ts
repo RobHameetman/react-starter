@@ -50,3 +50,5 @@ export const isIntentable = (value: unknown): value is Intentable =>
 	 * value.intent
 	 */
 	('intent' in value ? isIntent(value.intent) : true);
+
+export default Intentable;

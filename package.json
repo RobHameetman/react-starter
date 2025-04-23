@@ -95,7 +95,6 @@
       "**/*.md"
     ],
     "rules": {
-      "indentation": "tab",
       "at-rule-no-unknown": [
         true,
         {
@@ -154,7 +153,7 @@
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1",
-      "^@test/(.*)$": "<rootDir>/test/resources/$1",
+      "^@@/(.*)$": "<rootDir>/test/resources/$1",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
     "preset": "ts-jest",
@@ -182,8 +181,8 @@
   "postcss": {
     "plugins": {
       "postcss-import": {},
-      "tailwindcss/nesting": {},
-      "tailwindcss": {},
+      "@tailwindcss/nesting": {},
+      "@tailwindcss/postcss": {},
       "postcss-custom-media": {},
       "autoprefixer": {},
       "postcss-preset-env": {

@@ -1,29 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { FilterBy } from '../../../../../../modules';
+import { render } from '@testing-library/react';
+import { FilterBy } from './FilterBy';
 
-describe('FilterBy', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			const handleFilter = jest.fn();
-
-			$renderedComponent = shallow(
-				<FilterBy menuItems={[]} onFilter={handleFilter} />,
-			);
-		} catch (err) {
-			error = err;
-		}
+describe('<FilterBy />', () => {
+	it('should render', () => {
+		expect(() => render(<FilterBy options={[]} onFilter={jest.fn()} />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<FilterBy options={[]} onFilter={jest.fn()} />)).toMatchSnapshot();
 	});
 });

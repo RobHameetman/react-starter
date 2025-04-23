@@ -5,3 +5,5 @@
  * functional arguments and event handler props are optional.
  */
 export const noop = (..._args: ReadonlyArray<unknown>) => {};
+
+export default noop;

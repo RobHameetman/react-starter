@@ -48,6 +48,7 @@ dependencies=(
 	@universe/address-parser
 	@welldone-software/why-did-you-render
 	core-js
+	chroma-js
 	history
 	lodash
 	path-browserify
@@ -63,14 +64,17 @@ dependencies=(
 # NODE_ENV is 'production'.
 devDependencies=(
 	@faker-js/faker
+	@graphql-tools/jest-transform
 	@pmmmwh/react-refresh-webpack-plugin
 	@rob.hameetman/eslint-config
 	@soda/friendly-errors-webpack-plugin
 	@tailwindcss/nesting
+	@tailwindcss/postcss
 	@testing-library/jest-dom
 	@testing-library/react
 	@testing-library/react-hooks
 	@testing-library/user-event
+	@types/chroma-js
 	@types/cypress
 	@types/fetch-mock
 	@types/jest
@@ -106,6 +110,7 @@ devDependencies=(
 	postcss-custom-media
 	postcss-import
 	postcss-loader
+	postcss-nesting
 	postcss-preset-env
 	process
 	react-refresh

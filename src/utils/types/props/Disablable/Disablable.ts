@@ -52,3 +52,5 @@ export const isDisablable = (value: unknown): value is Disablable =>
 	 * value.disabled
 	 */
 	('disabled' in value ? isBoolean(value.disabled) : true);
+
+export default Disablable;

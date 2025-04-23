@@ -7,3 +7,5 @@ import { CompoundComponentContext } from '../../contexts/CompoundComponentContex
  * <{@link CompoundComponent} />.
  */
 export const useCompoundComponentContext = () => useContext(CompoundComponentContext);
+
+export default useCompoundComponentContext;

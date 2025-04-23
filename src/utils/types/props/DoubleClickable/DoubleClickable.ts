@@ -61,3 +61,5 @@ export const isDoubleClickable = <T = Element>(
 	('onDoubleClickCapture' in value
 		? isFunction(value.onDoubleClickCapture)
 		: true);
+
+export default DoubleClickable;

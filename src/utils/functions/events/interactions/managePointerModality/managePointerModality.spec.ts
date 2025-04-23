@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { InteractionModality } from '@/utils/enums/InteractionModalities';
 import { randomInteractionModality } from '@/utils/enums/InteractionModalities/__test__';
 import { fakePointerEvent } from '@/utils/functions/check/react/isPointerEvent/__test__';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { managePointerModality } from './managePointerModality';
 
 describe('managePointerModality()', () => {

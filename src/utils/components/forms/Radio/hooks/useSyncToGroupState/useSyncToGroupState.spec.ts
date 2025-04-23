@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { renderHook } from '@testing-library/react';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { useSyncToGroupState } from './useSyncToGroupState';
 import { Props } from './__test__';
 

@@ -126,7 +126,7 @@ export const Tabs: $FC<TabsProps> = ({
 					id="content"
 					role="tabpanel"
 					tabIndex={0}
-					aria-labelledby={snakeCase(currentTabName) || ''}
+					aria-labelledby={snakeCase(currentTabName || '')}
 					ref={portalRef}
 				/>
 			)}

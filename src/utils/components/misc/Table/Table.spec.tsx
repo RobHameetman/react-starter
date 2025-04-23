@@ -1,25 +1,12 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { Table } from '../../../../modules';
+import { render } from '@testing-library/react';
+import { Table } from './Table';
 
-describe('Table', (): void => {
-	let $renderedComponent: ShallowWrapper | null = null;
-	let error: Error | null = null;
-
-	beforeEach((): void => {
-		try {
-			$renderedComponent = shallow(<Table initialData={[]} />);
-		} catch (err) {
-			error = err;
-		}
+describe('<Table />', () => {
+	it('should render', () => {
+		expect(() => render(<Table name="Test" initialData={[]} sortOptions={{}} />)).not.toThrowError();
 	});
 
-	afterEach((): void => {
-		$renderedComponent = null;
-	});
-
-	it('should render correctly', async (): Promise<void> => {
-		expect($renderedComponent).not.toBeNull();
-		expect(error).toBeNull();
+	it('should not regress', () => {
+		expect(() => render(<Table name="Test" initialData={[]} sortOptions={{}} />)).toMatchSnapshot();
 	});
 });

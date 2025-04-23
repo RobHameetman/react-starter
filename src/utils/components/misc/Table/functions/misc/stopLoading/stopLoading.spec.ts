@@ -1,50 +1,50 @@
-import { stopLoading } from './stopLoading';
 import { TableState, isTableState } from '../../../types';
 import { fakeLoadingTable, fakeNotLoadingTable } from '../isLoading/__test__';
+import { stopLoading } from './stopLoading';
 
-describe('stopLoading()', (): void => {
+describe('stopLoading()', () => {
 	let result: TableState | null = null;
 
-	describe('when the table is loading', (): void => {
+	describe('when the table is loading', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeLoadingTable();
 			result = stopLoading(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should stop loading', (): void => {
+		it('should stop loading', () => {
 			expect(result?.loading).toBe(false);
 		});
 	});
 
-	describe('when the table is not loading', (): void => {
+	describe('when the table is not loading', () => {
 		let state: TableState | null = null;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			state = fakeNotLoadingTable();
 			result = stopLoading(state);
 		});
 
-		afterEach((): void => {
+		afterEach(() => {
 			state = null;
 			result = null;
 		});
 
-		it('should return a valid TableState', (): void => {
+		it('should return a valid TableState', () => {
 			expect(isTableState(result)).toBe(true);
 		});
 
-		it('should not stop loading', (): void => {
+		it('should not stop loading', () => {
 			expect(result === state).toBe(true);
 		});
 	});

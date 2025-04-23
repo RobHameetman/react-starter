@@ -5,7 +5,6 @@ import { prefersReducedMotion } from '@/utils/functions/accessibility/prefersRed
 import { isString } from '@/utils/functions/check/js/core/isString';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { noop } from '@/utils/functions/misc/noop';
-import { withId } from '@/utils/hocs/withId';
 import { useControlProp } from '@/utils/hooks/react/useControlProp';
 import { useFocusEvents } from '@/utils/hooks/react/useFocusEvents';
 import { useHoverEvents } from '@/utils/hooks/react/useHoverEvents';
@@ -138,7 +137,7 @@ export const Checkbox: CC<CheckboxComponents, CheckboxProps> = ({
 		const { handleChange, handleInput } = useCheckboxInputHandlers({
 			disabled: disabled || readonly,
 			indeterminate,
-			value: _value,
+			value: _value as string,
 			onChange,
 			setChecked,
 			setIndeterminate,
@@ -148,7 +147,7 @@ export const Checkbox: CC<CheckboxComponents, CheckboxProps> = ({
 
 		const pressEvents = usePressEvents({
 			disabled: disabled || readonly,
-			ignore: ['click'],
+			// ignore: ['click'],
 			onClick: (e) => {
 				if (rendering) {
 					setRendering(false);
@@ -196,7 +195,7 @@ export const Checkbox: CC<CheckboxComponents, CheckboxProps> = ({
 			checked,
 			disabled: disabled || readonly,
 			indeterminate,
-			value: _value,
+			value: _value as string,
 		});
 
 		return (

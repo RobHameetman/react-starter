@@ -1,17 +1,18 @@
+import { fakeTableState } from '../../../state/TableState/__test__';
 import { render } from './render';
 
-describe('render()', (): void => {
+describe('render()', () => {
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		result = render();
+	beforeEach(() => {
+		result = render(fakeTableState());
 	});
 
-	afterEach((): void => {
+	afterEach(() => {
 		result = null;
 	});
 
-	it.skip('should return the expected output', (): void => {
+	it.skip('should return the expected output', () => {
 		expect(result).not.toBeNull();
 	});
 });

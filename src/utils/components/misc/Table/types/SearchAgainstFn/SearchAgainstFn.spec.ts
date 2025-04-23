@@ -1,27 +1,11 @@
-import { isSearchAgainstFn } from '../../../../../../modules';
+import { isSearchAgainstFn } from './SearchAgainstFn';
 
-describe('isSearchAgainstFn', (): void => {
-	describe('given a valid SearchAgainstFn', (): void => {
-		let value: unknown;
-
-		beforeEach((): void => {
-			value = () => '';
-		});
-
-		it('should return true', (): void => {
-			expect(isSearchAgainstFn(value)).toBe(true);
-		});
+describe('isSearchAgainstFn', () => {
+	it('should return true given a valid SearchAgainstFn', () => {
+		expect(isSearchAgainstFn(() => '')).toBe(true);
 	});
 
-	describe('given an invalid SearchAgainstFn', (): void => {
-		let value: unknown;
-
-		beforeEach((): void => {
-			value = () => null;
-		});
-
-		it('should return false', (): void => {
-			expect(isSearchAgainstFn(value)).toBe(false);
-		});
+	it('should return false given an invalid SearchAgainstFn', () => {
+		expect(isSearchAgainstFn(() => null)).toBe(false);
 	});
 });

@@ -1,6 +1,6 @@
-import { hasUserAgentBrand } from './isApple';
+import { isApple } from './isApple';
 
-describe('hasUserAgentBrand()', () => {
+describe('isApple()', () => {
 	let mockDependency: jest.Mock | null = null;
 	let error: Error | null = null;
 
@@ -8,11 +8,7 @@ describe('hasUserAgentBrand()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			hasUserAgentBrand({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isApple();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

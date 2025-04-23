@@ -1,7 +1,7 @@
 import { NativeInteractionEvent } from '@/utils/types/events/NativeInteractionEvent';
 import { fakeNativeInteractionEvent } from '@/utils/types/events/NativeInteractionEvent/__test__';
 import { Func } from '@/utils/types/misc/Func';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { interactionModalityListeners } from './interactionModalityListeners';
 
 describe('interactionModalityListeners()', () => {

@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { fakeMouseEvent } from '@/utils/functions/check/react/isMouseEvent/__test__';
 import { manageVirtualClickModality } from '@/utils/functions/events/interactions/manageVirtualClickModality';
 import { noop } from '@/utils/functions/misc/noop';
-import { onTest } from '@test/utils/onTest';
+import { onTest } from '@@/utils/onTest';
 import { handleGlobalMouseEvents } from './handleGlobalMouseEvents';
 
 jest.mock(

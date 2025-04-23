@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { isArray } from '@/utils/functions/check/js/core/isArray';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
 import { withId } from '@/utils/hocs/withId';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import type { Identifiable } from '@/utils/types/props/Identifiable';
 import { Polymorphic } from '@/utils/types/props/Polymorphic';
 import type { Stylable } from '@/utils/types/props/Stylable';
@@ -40,7 +39,7 @@ export interface KbdProps extends ComposedProps {
  */
 export const Kbd: FC<KbdProps> = withId(
 	({
-		as: _as = 'kbd',
+		as: As = 'kbd',
 		className = '',
 		children,
 		id,
@@ -48,7 +47,6 @@ export const Kbd: FC<KbdProps> = withId(
 		silent = false,
 		...props
 	}) => {
-		const As = useSemanticAsProp({ as: _as });
 		const css = cssClasses(styles.kbd, className);
 
 		const modifiers = isArray<KbdModifier>(modifiedBy)

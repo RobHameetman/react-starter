@@ -60,3 +60,5 @@ export const isPositionable = (value: unknown): value is Positionable =>
 	 * value.y
 	 */
 	('y' in value ? isNumber(value.y) : true);
+
+export default Positionable;

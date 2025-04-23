@@ -1,5 +1,5 @@
 import React, { FC, useLayoutEffect } from 'react';
-import * as Mui from '@material-ui/core';
+// import * as Mui from '@material-ui/core';
 import { useTable } from '../../hooks';
 import { isPaginated } from '../../functions';
 
@@ -32,13 +32,13 @@ export const TablePagination: FC = () => {
 	};
 
 	return (
-		<Mui.TablePagination
-			component="div"
-			count={count}
-			rowsPerPage={pageSize}
-			page={currentPage - 1}
-			onChangePage={_handlePageChange}
-			onChangeRowsPerPage={handleChangeRowsPerPage}
+		<div
+			// component="div"
+			// count={count}
+			// rowsPerPage={pageSize}
+			// page={currentPage - 1}
+			// onChangePage={_handlePageChange}
+			// onChangeRowsPerPage={handleChangeRowsPerPage}
 			hidden={count === 0}
 		/>
 	);

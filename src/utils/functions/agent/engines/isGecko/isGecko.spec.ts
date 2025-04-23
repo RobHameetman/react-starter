@@ -8,11 +8,7 @@ describe('isGecko()', () => {
 		try {
 			mockDependency = jest.fn();
 
-			isGecko({
-				_dependencies: {
-					dependency: mockDependency,
-				},
-			});
+			isGecko();
 		} catch (thrown) {
 			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
 			console.error(thrown);

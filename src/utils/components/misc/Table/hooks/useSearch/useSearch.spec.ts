@@ -1,20 +1,44 @@
-import { useSearch } from '../../../../../../modules';
+import { renderHook } from '@testing-library/react';
+import { useSearch } from './useSearch';
 
-describe('useSearch', (): void => {
+describe('useSearch()', () => {
+	let mockSetState: jest.Mock | null = null;
+	let error: Error | null = null;
 	let result: unknown = null;
 
-	beforeEach((): void => {
-		/**
-		 * TODO - Call hook here and set the output to result.
-		 */
+	beforeEach(() => {
+		try {
+			mockSetState = jest.fn();
+
+			({
+				result: { current: result },
+			} = renderHook(() =>
+				/* @ts-expect-error - Argument of type 'Mock<any, any, any> | null' is not assignable to parameter of type 'Dispatch<SetStateAction<TableState>> | undefined'. */
+				useSearch(mockSetState),
+			));
+		} catch (thrown) {
+			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
+			console.error(thrown);
+		}
+	});
+
+	afterEach(() => {
+		jest.restoreAllMocks();
+
+		mockSetState = null;
+		error = null;
 		result = null;
 	});
 
-	afterEach((): void => {
-		result = null;
+	it('should not throw an error', () => {
+		expect(error).toBeNull();
 	});
 
-	it.skip('should return the expected output', (): void => {
-		expect(result).not.toBeNull();
+	it('should depend on the given dependency', () => {
+		expect(mockSetState).toBeCalled();
+	});
+
+	it('should return the expected result', () => {
+		expect(result).toBe(expect.any(Object));
 	});
 });

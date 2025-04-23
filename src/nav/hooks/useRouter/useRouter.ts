@@ -7,8 +7,8 @@ import {
 	useNavigate,
 	useParams,
 	useResolvedPath,
-} from 'react-router-dom';
-import { createFromReadableStream } from 'react-server-dom-webpack/client';
+} from 'react-router';
+// import { createFromReadableStream } from 'react-server-dom-webpack/client';
 import { useQueryParams } from '../useQueryParams';
 
 export type Param = string | Record<string, string | undefined>;
@@ -57,3 +57,5 @@ export const useRouter = <T extends Param = Param>(): UseRouterResult<T> => {
 		[pathname, queryParams, search, params, match, location, navigate],
 	);
 };
+
+export default useRouter;

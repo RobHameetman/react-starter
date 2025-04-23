@@ -114,3 +114,5 @@ export const isFocusable = <T = Element>(
 	('onFocusVisibleCapture' in value
 		? isFunction(value.onFocusVisibleCapture)
 		: true);
+
+export default Focusable;

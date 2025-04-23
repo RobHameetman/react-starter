@@ -240,3 +240,5 @@ export const useCloseEvents = <T = Element>({
 		},
 	] as const;
 };
+
+export default useCloseEvents;

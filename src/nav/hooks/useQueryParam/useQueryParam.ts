@@ -68,3 +68,5 @@ export const useQueryParam = (paramName: string) => {
 
 	return [param, setParam] as const;
 };
+
+export default useQueryParam;

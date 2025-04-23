@@ -1,8 +1,12 @@
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { Polymorphic } from '@/utils/types/props/Polymorphic';
 import type { Stylable } from '@/utils/types/props/Stylable';
 import { CC } from '@/utils/types/react/CC';
+import DropoverContent from './components/DropoverContent';
+import DropoverItem from './components/DropoverItem';
+import DropoverMenu from './components/DropoverMenu';
+import DropoverSection from './components/DropoverSection';
+import DropoverTrigger from './components/DropoverTrigger';
 import styles from './Dropover.module.css';
 
 type ComposedProps = Polymorphic & Stylable;
@@ -21,6 +25,7 @@ export interface DropoverProps extends ComposedProps {
 export interface DropoverComponents {
 	Content: typeof DropoverContent;
 	Item: typeof DropoverItem;
+	Menu: typeof DropoverMenu;
 	Section: typeof DropoverSection;
 	Trigger: typeof DropoverTrigger;
 }
@@ -29,13 +34,12 @@ export interface DropoverComponents {
  * @TODO - A short description of the component here.
  */
 export const Dropover: CC<DropoverComponents, DropoverProps> = ({
-	as: _as = 'div',
+	as: As = 'div',
 	className = '',
 	children,
 	prop = false,
 	...props
 }) => {
-	const As = useSemanticAsProp({ as: _as });
 	const css = cssClasses(styles.dropover, className);
 
 	return (
@@ -47,5 +51,6 @@ export const Dropover: CC<DropoverComponents, DropoverProps> = ({
 
 Dropover.Content = DropoverContent;
 Dropover.Item = DropoverItem;
+Dropover.Menu = DropoverMenu;
 Dropover.Section = DropoverSection;
 Dropover.Trigger = DropoverTrigger;

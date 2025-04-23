@@ -77,53 +77,60 @@ export type LenghtAbsolute = LengthInCm | LengthInMm | LengthInQ | LengthInInche
 
 export type Length = LengthLocalFont | LengthRootFont | LengthViewport | LengthContainer | LengthInPercent | LenghtAbsolute | '0';
 
-export type SizeInCap = LengthInCap;
-export type SizeInCh = LengthInCh;
-export type SizeInEm = LengthInEm;
-export type SizeInEx = LengthInEx;
-export type SizeInIc = LengthInIc;
-export type SizeInLh = LengthInLh;
-export type SizeLocalFont = SizeInCap | SizeInCh | SizeInEm | SizeInEx | SizeInIc | SizeInLh;
+export type SizeInCap = `${LengthInCap} ${LengthInCap}`;
+export type SizeInCh = `${LengthInCh} ${LengthInCh}`;
+export type SizeInEm = `${LengthInEm} ${LengthInEm}`;
+export type SizeInEx = `${LengthInEx} ${LengthInEx}`;
+export type SizeInIc = `${LengthInIc} ${LengthInIc}`;
+export type SizeInLh = `${LengthInLh} ${LengthInLh}`;
+export type SizeLocalFont = `${LengthLocalFont} ${LengthLocalFont}`;
 
-export type SizeInRcap = LengthInRcap;
-export type SizeInRch = LengthInRch;
-export type SizeInRem = LengthInRem;
-export type SizeInRex = LengthInRex;
-export type SizeInRic = LengthInRic;
-export type SizeInRlh = LengthInRlh;
-export type SizeRootFont = SizeInRcap | SizeInRch | SizeInRem | SizeInRex | SizeInRic | SizeInRlh;
+export type SizeInRcap = `${LengthInRcap} ${LengthInRcap}`;
+export type SizeInRch = `${LengthInRch} ${LengthInRch}`;
+export type SizeInRem = `${LengthInRem} ${LengthInRem}`;
+export type SizeInRex = `${LengthInRex} ${LengthInRex}`;
+export type SizeInRic = `${LengthInRic} ${LengthInRic}`;
+export type SizeInRlh = `${LengthInRlh} ${LengthInRlh}`;
+export type SizeRootFont = `${LengthRootFont} ${LengthRootFont}`;
 
-export type SizeInDvh = LengthInDvh;
-export type SizeInDvw = LengthInDvw;
-export type SizeInLvh = LengthInLvh;
-export type SizeInLvw = LengthInLvw;
-export type SizeInSvh = LengthInSvh;
-export type SizeInSvw = LengthInSvw;
-export type SizeInVb = LengthInVb;
-export type SizeInVh = LengthInVh;
-export type SizeInVi = LengthInVi;
-export type SizeInVmax = LengthInVmax;
-export type SizeInVmin = LengthInVmin;
-export type SizeInVw = LengthInVw;
-export type SizeViewport = SizeInDvh | SizeInDvw | SizeInLvh | SizeInLvw | SizeInSvh | SizeInSvw | SizeInVb | SizeInVh | SizeInVi | SizeInVmax | SizeInVmin | SizeInVw;
+export type SizeInDvh = `${LengthInDvh} ${LengthInDvh}`;
+export type SizeInDvw = `${LengthInDvw} ${LengthInDvw}`;
+export type SizeInLvh = `${LengthInLvh} ${LengthInLvh}`;
+export type SizeInLvw = `${LengthInLvw} ${LengthInLvw}`;
+export type SizeInSvh = `${LengthInSvh} ${LengthInSvh}`;
+export type SizeInSvw = `${LengthInSvw} ${LengthInSvw}`;
+export type SizeInVb = `${LengthInVb} ${LengthInVb}`;
+export type SizeInVh = `${LengthInVh} ${LengthInVh}`;
+export type SizeInVi = `${LengthInVi} ${LengthInVi}`;
+export type SizeInVmax = `${LengthInVmax} ${LengthInVmax}`;
+export type SizeInVmin = `${LengthInVmin} ${LengthInVmin}`;
+export type SizeInVw = `${LengthInVw} ${LengthInVw}`;
+export type SizeViewport = `${LengthViewport} ${LengthViewport}`;
 
-export type SizeInCbq = LengthInCbq;
-export type SizeInCqh = LengthInCqh;
-export type SizeInCqi = LengthInCqi;
-export type SizeInCqmax = LengthInCqmax;
-export type SizeInCqmin = LengthInCqmin;
-export type SizeInCqw = LengthInCqw;
-export type SizeContainer = SizeInCbq | SizeInCqh | SizeInCqi | SizeInCqmax | SizeInCqmin | SizeInCqw;
+export type SizeInCbq = `${LengthInCbq} ${LengthInCbq}`;
+export type SizeInCqh = `${LengthInCqh} ${LengthInCqh}`;
+export type SizeInCqi = `${LengthInCqi} ${LengthInCqi}`;
+export type SizeInCqmax = `${LengthInCqmax} ${LengthInCqmax}`;
+export type SizeInCqmin = `${LengthInCqmin} ${LengthInCqmin}`;
+export type SizeInCqw = `${LengthInCqw} ${LengthInCqw}`;
+export type SizeContainer = `${LengthContainer} ${LengthContainer}`;
 
-export type SizeInPercent = LengthInPercent;
+export type SizeInPercent = `${LengthInPercent} ${LengthInPercent}`;
 
-export type SizeInCm = LengthInCm;
-export type SizeInMm = LengthInMm;
-export type SizeInQ = LengthInQ;
-export type SizeInInches = LengthInInches;
-export type SizeInPc = LengthInPc;
-export type SizeInPt = LengthInPt;
-export type SizeInPx = LengthInPx;
-export type SizeAbsolute = SizeInCm | SizeInMm | SizeInQ | SizeInInches | SizeInPc | SizeInPt | SizeInPx;
+export type SizeInCm = `${LengthInCm} ${LengthInCm}`;
+export type SizeInMm = `${LengthInMm} ${LengthInMm}`;
+export type SizeInQ = `${LengthInQ} ${LengthInQ}`;
+export type SizeInInches = `${LengthInInches} ${LengthInInches}`;
+export type SizeInPc = `${LengthInPc} ${LengthInPc}`;
+export type SizeInPt = `${LengthInPt} ${LengthInPt}`;
+export type SizeInPx = `${LengthInPx} ${LengthInPx}`;
+export type SizeAbsolute = `${LenghtAbsolute} ${LenghtAbsolute}`;
 
-export type Size = SizeLocalFont | SizeRootFont | SizeViewport | SizeContainer | SizeInPercent | SizeAbsolute | '0';
+export type Size = `${Length} ${Length}`;
+
+/**
+ * Override the {@link DefaultLength} type if you need specialized length types.
+ * This type is used to keep union complexity within limits.
+ */
+export type DefaultLength = LengthInRem | LengthInPx | LengthInPercent | LengthViewport | '0';
+export type DefaultSize = `${DefaultLength} ${DefaultLength}`;

@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
-import { NewComponent } from './Navbar';
+import { Navbar } from './Navbar';
 
-describe('<NewComponent />', () => {
+describe('<Navbar />', () => {
 	it('should render', () => {
-		expect(() => render(<NewComponent />)).not.toThrowError();
+		expect(() => render(<Navbar />)).not.toThrowError();
 	});
 
 	it('should not regress', () => {
-		expect(() => render(<NewComponent />)).toMatchSnapshot();
+		expect(() => render(<Navbar />)).toMatchSnapshot();
 	});
 });

@@ -1,22 +1,22 @@
 import { ChangeEvent, FC, useLayoutEffect } from 'react';
-import { MenuItem, Select } from '@material-ui/core';
+import { Select } from '@/utils/components/forms/Select';
 import { uniqueId } from '@/utils/functions/misc/uniqueId';
 import type { Stylable } from '@/utils/types/props/Stylable';
 import { useTable } from '../../hooks';
 import { OnFilterFn } from '../../types';
-import { FilterIcon } from '../../../../icons';
+import { FilterIcon } from '@/utils/icons/FilterIcon';
 import { isFilterable } from '../../functions';
 import styles from './FilterBy.module.css';
 
 export interface FilterByProps extends Stylable {
-	readonly menuItems: ReadonlyArray<string>;
+	readonly options: ReadonlyArray<string>;
 	readonly onFilter: OnFilterFn;
 }
 
 /**
  * A menu for changing the filters in filterable tables.
  */
-export const FilterBy: FC<FilterByProps> = ({ onFilter, menuItems }) => {
+export const FilterBy: FC<FilterByProps> = ({ onFilter, options }) => {
 	const { state, handleChangeFilter, setFilterable, setOnFilterFn } =
 		useTable();
 
@@ -26,10 +26,10 @@ export const FilterBy: FC<FilterByProps> = ({ onFilter, menuItems }) => {
 	useLayoutEffect(() => {
 		if (isFilterable(state) && !state.filter.filterBy.length) {
 			handleChangeFilter({
-				target: { value: menuItems[0] },
+				target: { value: options[0] },
 			} as ChangeEvent<{ value: unknown }>);
 		}
-	}, [menuItems, state]);
+	}, [options, state]);
 
 	useLayoutEffect(() => {
 		if (!isFilterable(state)) {
@@ -47,13 +47,13 @@ export const FilterBy: FC<FilterByProps> = ({ onFilter, menuItems }) => {
 				color="secondary"
 				className={styles.filterBy}
 				value={filterBy}
-				defaultValue={menuItems[0]}
-				onChange={handleChangeFilter}
+				defaultValue={options[0]}
+				// onChange={handleChangeFilter}
 			>
-				{menuItems.map((item) => (
-					<MenuItem className="capitalize" key={uniqueId()} value={item}>
+				{options.map((item) => (
+					<Select.Option className="capitalize" key={uniqueId()} value={item}>
 						{item}
-					</MenuItem>
+					</Select.Option>
 				))}
 			</Select>
 		</>

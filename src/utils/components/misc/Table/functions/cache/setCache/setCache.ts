@@ -11,7 +11,7 @@ import { TableCache } from '../../../types';
  * Our table state is cached in LocalStorage for cross-session browser
  * persistence and user convenience.
  */
-export const setCache = (name: string, cache: TableCache): void => {
+export const setCache = (name: string, cache: TableCache) => {
 	const encoded = btoa(JSON.stringify(cache));
 
 	window.localStorage.setItem(

@@ -1,11 +1,11 @@
-import { isTableContext } from '../../../../../../modules';
 import { fakeTableState } from '../../state/TableState/__test__';
+import { isTableContext } from './TableContext';
 
-describe('isTableContext()', (): void => {
-	describe('given a valid TableContext', (): void => {
+describe('isTableContext()', () => {
+	describe('given a valid TableContext', () => {
 		let value: unknown;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			value = {
 				initialData: null,
 				name: 'test',
@@ -25,15 +25,15 @@ describe('isTableContext()', (): void => {
 			};
 		});
 
-		it('should return true', (): void => {
+		it('should return true', () => {
 			expect(isTableContext(value)).toBe(true);
 		});
 	});
 
-	describe('given an invalid TableContext', (): void => {
+	describe('given an invalid TableContext', () => {
 		let value: unknown;
 
-		beforeEach((): void => {
+		beforeEach(() => {
 			value = {
 				initialData: null,
 				name: '',
@@ -53,7 +53,7 @@ describe('isTableContext()', (): void => {
 			};
 		});
 
-		it('should return false', (): void => {
+		it('should return false', () => {
 			expect(isTableContext(value)).toBe(false);
 		});
 	});

@@ -201,3 +201,5 @@ export const isHoverable = <T = Element>(
 	('onPointerOverCapture' in value
 		? isFunction(value.onPointerOverCapture)
 		: true);
+
+export default Hoverable;
