@@ -19,7 +19,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WebpackDevServerWaitpage = require('webpack-dev-server-waitpage');
 const envs = require('dotenv-conversion');
 const dotenv = require('dotenv');
-const eslintConfig = require('./eslint.config.js');
+// const eslintConfig = require('./eslint.config.js');
 
 /**
  * Here we use dotenv-conversion to cast env variable values into their expected
@@ -304,7 +304,7 @@ module.exports = () => ({
 				isDevelopment && '/src/!(*.spec.ts?(x))',
 			].filter(Boolean),
 			extensions: ['js', 'jsx', 'ts', 'tsx'],
-			baseConfig: eslintConfig,
+			// baseConfig: eslintConfig,
 			failOnWarning: isProduction,
 			lintDirtyModulesOnly: isDevelopment,
 			threads: true,
