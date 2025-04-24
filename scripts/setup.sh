@@ -129,6 +129,7 @@ devDependencies=(
 	webpack
 	webpack-bundle-analyzer
 	webpack-cli
+	webpack-dev-server
 	webpack-dev-server-waitpage
 )
 
