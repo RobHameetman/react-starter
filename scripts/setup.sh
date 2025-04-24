@@ -129,7 +129,7 @@ devDependencies=(
 	webpack
 	webpack-bundle-analyzer
 	webpack-cli
-	webpack-dev-server
+	webpack-dev-server@5.0.4
 	webpack-dev-server-waitpage
 )
 
