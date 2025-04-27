@@ -13,19 +13,12 @@ import {
 	setOnFilter,
 } from '../../functions';
 import { OnFilterFn, TableState } from '../../types';
-import { Hook } from '../../../../../types';
+import noop from '@/utils/functions/misc/noop';
 
-export interface UseFilterByResult {
-	readonly handleChangeFilter: ChangeEventHandler<HTMLSelectElement>;
-	readonly setFilterable: () => void;
-	readonly setOnFilterFn: (onFilter: OnFilterFn) => void;
-}
-
-export const useFilterBy: Hook<
-	UseFilterByResult,
-	Dispatch<SetStateAction<TableState>>
-> = (setState = () => {}) => {
-	const handleChangeFilter = useCallback(
+export const useFilterBy = (
+	setState = noop as Dispatch<SetStateAction<TableState>>,
+) => {
+	const handleChangeFilter = useCallback<ChangeEventHandler<HTMLInputElement>>(
 		(e) =>
 			setState((state) =>
 				render(addFilter(e.target.value, resetFilters(state))),
@@ -48,5 +41,5 @@ export const useFilterBy: Hook<
 		handleChangeFilter,
 		setFilterable,
 		setOnFilterFn,
-	};
+	} as const;
 };

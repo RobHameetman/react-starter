@@ -1,6 +1,5 @@
 import { $FC } from 'react';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
-import { As } from '@/utils/components/structure/As';
 import type { Polymorphic } from '@/utils/types/props/Polymorphic';
 import type { Stylable } from '@/utils/types/props/Stylable';
 import styles from './GridContainer.module.css';
@@ -22,7 +21,7 @@ export interface GridContainerProps extends ComposedProps {
  * @TODO - A short description of the component here.
  */
 export const GridContainer: $FC<GridContainerProps> = ({
-	as: _as = 'div',
+	as: As = 'div',
 	className = '',
 	children,
 	prop = false,
@@ -31,7 +30,7 @@ export const GridContainer: $FC<GridContainerProps> = ({
 	const css = cssClasses(styles.gridContainer, className);
 
 	return (
-		<As element={_as} className={css} {...props}>
+		<As className={css} {...props}>
 			{children}
 		</As>
 	);

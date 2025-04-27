@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { isThemeContext } from '@/utils/contexts/ThemeContext';
+import { isThemeContext } from '@/theme/contexts/ThemeContext';
 import { useTheme } from './useTheme';
 import { MockThemeProvider } from './__test__';
 

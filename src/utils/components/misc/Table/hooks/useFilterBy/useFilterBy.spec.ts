@@ -1,20 +1,48 @@
-import { useFilterBy } from '../../../../../../modules';
+import { renderHook } from '@testing-library/react';
+import { useFilterBy } from './useFilterBy';
 
-describe('useFilterBy', () => {
+describe('useFilterBy()', () => {
+	let mockDependency: jest.Mock | null = null;
+	let error: Error | null = null;
 	let result: unknown = null;
 
-	beforeEach(() =>
-		/**
-		 * TODO - Call hook here and set the output to result.
-		 */
+	beforeEach(() => {
+		try {
+			mockDependency = jest.fn();
+
+			({
+				result: { current: result },
+			} = renderHook((props) =>
+				/* @ts-expect-error - Argument of type '{ _dependencies: { dependency: jest.Mock<any, any, any> | null; }; }' is not assignable to parameter of type 'useFilterByInput'. */
+				useFilterBy(props), {
+					initialProps: {
+						_dependencies: { dependency: mockDependency },
+					}
+				}
+			));
+		} catch (thrown) {
+			error = !(thrown instanceof Error) ? (thrown as Error) : new Error();
+			console.error(thrown);
+		}
+	});
+
+	afterEach(() => {
+		jest.restoreAllMocks();
+
+		mockDependency = null;
+		error = null;
 		result = null;
 	});
 
-	afterEach(() =>
-		result = null;
+	it('should not throw an error', () => {
+		expect(error).toBeNull();
 	});
 
-	it.skip('should return the expected output', () =>
-		expect(result).not.toBeNull();
+	it('should depend on the given dependency', () => {
+		expect(mockDependency).toBeCalled();
+	});
+
+	it('should return the expected result', () => {
+		expect(result).toBe(expect.any(Object));
 	});
 });

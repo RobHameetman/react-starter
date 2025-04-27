@@ -7,7 +7,6 @@ import { useControlProp } from '@/utils/hooks/react/useControlProp';
 import { useFocusEvents } from '@/utils/hooks/react/useFocusEvents';
 import { useHoverEvents } from '@/utils/hooks/react/useHoverEvents';
 import { usePressEvents } from '@/utils/hooks/react/usePressEvents';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import { PersonIcon } from '@/utils/icons/PersonIcon';
 import type { Accessible } from '@/utils/types/props/Accessible';
 import type { Disablable } from '@/utils/types/props/Disablable';
@@ -75,7 +74,7 @@ export interface AvatarComponents {
 export const Avatar: CC<AvatarComponents, AvatarProps> = ({
 	id,
 	src,
-	as: _as = 'span',
+	as: As = 'span',
 	className = '',
 	disabled: _disabled = false,
 	fallback: _fallback = isUndefined(src),
@@ -85,8 +84,6 @@ export const Avatar: CC<AvatarComponents, AvatarProps> = ({
 	size = Sizes.md,
 	...extraProps
 }) => {
-	const As = useSemanticAsProp({ as: _as });
-
 	const [disabled] = useControlProp<AvatarProps['disabled']>(_disabled);
 	const [fallback] = useControlProp<AvatarProps['fallback']>(_fallback);
 

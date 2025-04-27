@@ -1,6 +1,5 @@
 import { prefersReducedMotion } from '@/utils/functions/accessibility/prefersReducedMotion';
 import { cssClasses } from '@/utils/functions/misc/cssClasses';
-import { useSemanticAsProp } from '@/utils/hooks/react/useSemanticAsProp';
 import type { Animatable } from '@/utils/types/props/Animatable';
 import type { Expansible } from '@/utils/types/props/Expansible';
 import type { Polymorphic } from '@/utils/types/props/Polymorphic';
@@ -37,14 +36,13 @@ export interface NavbarComponents {
  */
 export const Navbar: CC<NavbarComponents, NavbarProps> = ({
 	animated = !prefersReducedMotion(),
-	as: _as = 'header',
+	as: As = 'header',
 	blurred = false,
 	className = '',
 	children,
 	fullWidth = false,
 	...props
 }) => {
-	const As = useSemanticAsProp({ as: _as });
 	const css = cssClasses(styles.navbar, className);
 
 	return (

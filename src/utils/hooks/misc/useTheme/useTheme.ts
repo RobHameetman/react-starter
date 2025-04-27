@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext } from '@/utils/contexts/ThemeContext';
+import { ThemeContext } from '@/theme/contexts/ThemeContext';
 
 /**
  * Retrieve the current {@link ThemeContext} from the nearest `ThemeProvider`.

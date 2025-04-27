@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const FriendlyErrorsPlugin = require('@soda/friendly-errors-webpack-plugin');
 const FastRefresh = require('@pmmmwh/react-refresh-webpack-plugin');
-const FastRefreshTS = require('react-refresh-typescript');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -362,7 +361,7 @@ module.exports = () => ({
 						options: {
 							allowTsInNodeModules: true,
 							getCustomTransformers: () => ({
-								before: [isDevelopment && FastRefreshTS()].filter(Boolean),
+								before: [isDevelopment && require('react-refresh-typescript')?.default()].filter(Boolean),
 							}),
 							transpileOnly: isDevelopment,
 						},

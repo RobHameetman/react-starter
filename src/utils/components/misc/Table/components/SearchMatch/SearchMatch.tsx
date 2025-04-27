@@ -29,7 +29,13 @@ export const SearchMatch: $FC = ({ children }) => {
 								<></>
 							),
 						]);
-					}, [] as Array<JSX.Element>)}
+						/**
+						 * @TODO - This used to just be {@link JSX.Element} but required
+						 * the {@link React} namespace to work around this issue:
+						 *
+						 * @see https://github.com/styled-components/styled-components/issues/4359
+						 */
+					}, [] as Array<React.JSX.Element>)}
 				</>
 			);
 		}

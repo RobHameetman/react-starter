@@ -21,10 +21,7 @@ describe('useDataDog()', () => {
 		process.env.DATADOG_APPLICATION_ID = faker.string.uuid();
 		process.env.DATADOG_CLIENT_TOKEN = faker.string.sample();
 
-		/* @ts-expect-error - Type 'boolean' is not assignable to type 'string'. */
 		process.env.DATADOG_LOGS_ENABLED = true;
-
-		/* @ts-expect-error - Type 'boolean' is not assignable to type 'string'. */
 		process.env.DATADOG_RUM_ENABLED = true;
 
 		renderHook(() => {

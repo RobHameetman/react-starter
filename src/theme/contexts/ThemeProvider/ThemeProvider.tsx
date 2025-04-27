@@ -1,5 +1,4 @@
 import { $FC, useCallback, useEffect, useState } from 'react';
-import { NextUIProvider } from '@nextui-org/react';
 import { switchTheme } from '@/theme/functions/switchTheme';
 import { themeIsLoaded } from '@/theme/functions/themeIsLoaded';
 import { useMediaQuery } from '@/utils/hooks/misc/useMediaQuery';
@@ -75,7 +74,7 @@ export const ThemeProvider: $FC<Record<string, unknown>> = ({ children }) => {
 				setSystemTheme,
 			}}
 		>
-			<NextUIProvider>{children}</NextUIProvider>
+			{children}
 		</ThemeContext.Provider>
 	);
 };

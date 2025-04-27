@@ -20,5 +20,5 @@ export const mockRoute = (route: Partial<Location> | string) => {
 		protocol: url.protocol,
 		search: url.search,
 		...(isUrlOrRouteArg ? {} : location),
-	} as Location;
+	} as Location & string;
 };

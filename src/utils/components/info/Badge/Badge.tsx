@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { $FC } from 'react';
 import styles from './Badge.module.css';
 
 export enum BadgeTypes {
@@ -29,7 +29,7 @@ export interface BadgeProps {
 	readonly type?: BadgeTypes;
 }
 
-export const Badge: FC<BadgeProps> = ({
+export const Badge: $FC<BadgeProps> = ({
 	className = '',
 	children,
 	disabled = false,

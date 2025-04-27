@@ -15,11 +15,11 @@ export const fakeEscapable = ({
 	});
 
 	faker.helpers.maybe(() => {
-		escapable.onPressEscapeUp = mockEscapeEventHandler();
+		escapable.onReleaseEscape = mockEscapeEventHandler();
 	});
 
 	faker.helpers.maybe(() => {
-		escapable.onPressEscapeUpCapture = mockEscapeEventHandler();
+		escapable.onReleaseEscapeCapture = mockEscapeEventHandler();
 	});
 
 	return {

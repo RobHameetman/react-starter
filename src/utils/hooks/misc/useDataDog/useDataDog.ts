@@ -39,7 +39,7 @@ export const useDataDog = ({ logs = true, rum = true } = {}) => {
 			applicationId: DATADOG_APPLICATION_ID,
 			clientToken: DATADOG_CLIENT_TOKEN,
 			env: DATADOG_ENV || 'development',
-			sampleRate: 100,
+			// sampleRate: 100,
 			service: APP_NAME,
 			site: 'datadoghq.com',
 			trackLongTasks: true,

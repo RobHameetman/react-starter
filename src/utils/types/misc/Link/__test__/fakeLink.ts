@@ -1,11 +1,16 @@
 import { faker } from '@faker-js/faker';
-import { fakeEscapeEvent } from '@/utils/types/events/EscapeEvent/__test__';
-import { fakePressEvent } from '@/utils/types/events/PressEvent/__test__';
-import { CloseEvent } from '../Link';
+import { fakeElementWithRole } from '@/utils/types/accessibility/ElementWithRole/__test__';
+import { Link } from '../Link';
 
 export const fakeLink = <T = Element>({
 	...overrideProps
-}: Record<string, unknown> = {}) =>
-	faker.helpers.arrayElement([fakeEscapeEvent, fakePressEvent])({
-		...overrideProps,
-	}) as CloseEvent<T> & Record<string, unknown>;
+}: Record<string, unknown> = {}) => {
+	const $element = fakeElementWithRole({ role: 'link', ...overrideProps });
+	const { href = faker.internet.url(), target = faker.helpers.arrayElement(['_self', '_blank', '_parent', '_top']) } = overrideProps;
+
+	return {
+		...$element,
+		href,
+		target,
+	} as Link;
+};

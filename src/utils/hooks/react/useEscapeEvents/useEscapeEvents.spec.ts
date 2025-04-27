@@ -11,10 +11,10 @@ describe('useEscapeEvents()', () => {
 	let capturing: boolean | null = null;
 	let error: Error | null = null;
 	let invalidEvent: Record<string, unknown> | null = null;
-	let mockOnEscape: jest.Mock | null = null;
-	let mockOnEscapeCapture: jest.Mock | null = null;
-	let mockOnEscapeUp: jest.Mock | null = null;
-	let mockOnEscapeUpCapture: jest.Mock | null = null;
+	let mockOnPressEscape: jest.Mock | null = null;
+	let mockOnPressEscapeCapture: jest.Mock | null = null;
+	let mockOnReleaseEscape: jest.Mock | null = null;
+	let mockOnReleaseEscapeCapture: jest.Mock | null = null;
 	let onKeyDown: unknown = null;
 	let onKeyDownCapture: unknown = null;
 	let onKeyUp: unknown = null;
@@ -27,10 +27,10 @@ describe('useEscapeEvents()', () => {
 		try {
 			index++;
 
-			mockOnEscape = jest.fn();
-			mockOnEscapeCapture = jest.fn();
-			mockOnEscapeUp = jest.fn();
-			mockOnEscapeUpCapture = jest.fn();
+			mockOnPressEscape = jest.fn();
+			mockOnPressEscapeCapture = jest.fn();
+			mockOnReleaseEscape = jest.fn();
+			mockOnReleaseEscapeCapture = jest.fn();
 
 			onTest(index, {
 				2: () => {
@@ -54,10 +54,10 @@ describe('useEscapeEvents()', () => {
 				result: { current: result },
 			} = renderHook(() =>
 				useEscapeEvents({
-					onEscape: mockOnEscape as EscapeEventHandler,
-					onEscapeCapture: mockOnEscapeCapture as EscapeEventHandler,
-					onEscapeUp: mockOnEscapeUp as EscapeEventHandler,
-					onEscapeUpCapture: mockOnEscapeUpCapture as EscapeEventHandler,
+					onPressEscape: mockOnPressEscape as EscapeEventHandler,
+					onPressEscapeCapture: mockOnPressEscapeCapture as EscapeEventHandler,
+					onReleaseEscape: mockOnReleaseEscape as EscapeEventHandler,
+					onReleaseEscapeCapture: mockOnReleaseEscapeCapture as EscapeEventHandler,
 				}),
 			));
 
@@ -74,10 +74,10 @@ describe('useEscapeEvents()', () => {
 		capturing = null;
 		error = null;
 		invalidEvent = null;
-		mockOnEscape = null;
-		mockOnEscapeCapture = null;
-		mockOnEscapeUp = null;
-		mockOnEscapeUpCapture = null;
+		mockOnPressEscape = null;
+		mockOnPressEscapeCapture = null;
+		mockOnReleaseEscape = null;
+		mockOnReleaseEscapeCapture = null;
 		onKeyDown = null;
 		onKeyDownCapture = null;
 		onKeyUp = null;
@@ -107,8 +107,8 @@ describe('useEscapeEvents()', () => {
 
 		expect(isEscapeHandler(onKeyDown, validEvent ?? {})).toBe(true);
 		expect(isEscapeHandler(onKeyDown, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEscape).toBeCalledTimes(1);
-		expect(mockOnEscape).toBeCalledWith(validEvent);
+		expect(mockOnPressEscape).toBeCalledTimes(1);
+		expect(mockOnPressEscape).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keydown" events correctly during capturing', () => {
@@ -118,8 +118,8 @@ describe('useEscapeEvents()', () => {
 
 		expect(isEscapeHandler(onKeyDownCapture, validEvent ?? {})).toBe(true);
 		expect(isEscapeHandler(onKeyDownCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEscapeCapture).toBeCalledTimes(1);
-		expect(mockOnEscapeCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressEscapeCapture).toBeCalledTimes(1);
+		expect(mockOnPressEscapeCapture).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly', () => {
@@ -129,8 +129,8 @@ describe('useEscapeEvents()', () => {
 
 		expect(isEscapeHandler(onKeyUp, validEvent ?? {})).toBe(true);
 		expect(isEscapeHandler(onKeyUp, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEscapeUp).toBeCalledTimes(1);
-		expect(mockOnEscapeUp).toBeCalledWith(validEvent);
+		expect(mockOnReleaseEscape).toBeCalledTimes(1);
+		expect(mockOnReleaseEscape).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly during capturing', () => {
@@ -140,7 +140,7 @@ describe('useEscapeEvents()', () => {
 
 		expect(isEscapeHandler(onKeyUpCapture, validEvent ?? {})).toBe(true);
 		expect(isEscapeHandler(onKeyUpCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEscapeUpCapture).toBeCalledTimes(1);
-		expect(mockOnEscapeUpCapture).toBeCalledWith(validEvent);
+		expect(mockOnReleaseEscapeCapture).toBeCalledTimes(1);
+		expect(mockOnReleaseEscapeCapture).toBeCalledWith(validEvent);
 	});
 });

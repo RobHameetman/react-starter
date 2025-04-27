@@ -1,12 +1,12 @@
-import { isCloseEvent } from './Link';
-import { fakeCloseEvent } from './__test__';
+import { isLink } from './Link';
+import { fakeLink } from './__test__';
 
-describe('isCloseEvent()', () => {
+describe('isLink()', () => {
 	it('should return true given a valid CloseEvent', () => {
-		expect(isCloseEvent(fakeCloseEvent())).toBe(true);
+		expect(isLink(fakeLink())).toBe(true);
 	});
 
 	it('should return false given an invalid CloseEvent', () => {
-		expect(isCloseEvent(fakeCloseEvent({ type: 'drag' }))).toBe(false);
+		expect(isLink(fakeLink({ type: 'drag' }))).toBe(false);
 	});
 });

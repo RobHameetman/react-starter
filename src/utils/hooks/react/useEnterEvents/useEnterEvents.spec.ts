@@ -11,10 +11,10 @@ describe('useEnterEvents()', () => {
 	let capturing: boolean | null = null;
 	let error: Error | null = null;
 	let invalidEvent: Record<string, unknown> | null = null;
-	let mockOnEnter: jest.Mock | null = null;
-	let mockOnEnterCapture: jest.Mock | null = null;
-	let mockOnEnterUp: jest.Mock | null = null;
-	let mockOnEnterUpCapture: jest.Mock | null = null;
+	let mockOnPressEnter: jest.Mock | null = null;
+	let mockOnPressEnterCapture: jest.Mock | null = null;
+	let mockonReleaseEnter: jest.Mock | null = null;
+	let mockonReleaseEnterCapture: jest.Mock | null = null;
 	let onKeyDown: unknown = null;
 	let onKeyDownCapture: unknown = null;
 	let onKeyUp: unknown = null;
@@ -27,10 +27,10 @@ describe('useEnterEvents()', () => {
 		try {
 			index++;
 
-			mockOnEnter = jest.fn();
-			mockOnEnterCapture = jest.fn();
-			mockOnEnterUp = jest.fn();
-			mockOnEnterUpCapture = jest.fn();
+			mockOnPressEnter = jest.fn();
+			mockOnPressEnterCapture = jest.fn();
+			mockonReleaseEnter = jest.fn();
+			mockonReleaseEnterCapture = jest.fn();
 
 			onTest(index, {
 				2: () => {
@@ -54,10 +54,10 @@ describe('useEnterEvents()', () => {
 				result: { current: result },
 			} = renderHook(() =>
 				useEnterEvents({
-					onEnter: mockOnEnter as EnterEventHandler,
-					onEnterCapture: mockOnEnterCapture as EnterEventHandler,
-					onEnterUp: mockOnEnterUp as EnterEventHandler,
-					onEnterUpCapture: mockOnEnterUpCapture as EnterEventHandler,
+					onPressEnter: mockOnPressEnter as EnterEventHandler,
+					onPressEnterCapture: mockOnPressEnterCapture as EnterEventHandler,
+					onReleaseEnter: mockonReleaseEnter as EnterEventHandler,
+					onReleaseEnterCapture: mockonReleaseEnterCapture as EnterEventHandler,
 				}),
 			));
 
@@ -74,10 +74,10 @@ describe('useEnterEvents()', () => {
 		capturing = null;
 		error = null;
 		invalidEvent = null;
-		mockOnEnter = null;
-		mockOnEnterCapture = null;
-		mockOnEnterUp = null;
-		mockOnEnterUpCapture = null;
+		mockOnPressEnter = null;
+		mockOnPressEnterCapture = null;
+		mockonReleaseEnter = null;
+		mockonReleaseEnterCapture = null;
 		onKeyDown = null;
 		onKeyDownCapture = null;
 		onKeyUp = null;
@@ -107,8 +107,8 @@ describe('useEnterEvents()', () => {
 
 		expect(isEnterHandler(onKeyDown, validEvent ?? {})).toBe(true);
 		expect(isEnterHandler(onKeyDown, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEnter).toBeCalledTimes(1);
-		expect(mockOnEnter).toBeCalledWith(validEvent);
+		expect(mockOnPressEnter).toBeCalledTimes(1);
+		expect(mockOnPressEnter).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keydown" events correctly during capturing', () => {
@@ -118,8 +118,8 @@ describe('useEnterEvents()', () => {
 
 		expect(isEnterHandler(onKeyDownCapture, validEvent ?? {})).toBe(true);
 		expect(isEnterHandler(onKeyDownCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEnterCapture).toBeCalledTimes(1);
-		expect(mockOnEnterCapture).toBeCalledWith(validEvent);
+		expect(mockOnPressEnterCapture).toBeCalledTimes(1);
+		expect(mockOnPressEnterCapture).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly', () => {
@@ -129,8 +129,8 @@ describe('useEnterEvents()', () => {
 
 		expect(isEnterHandler(onKeyUp, validEvent ?? {})).toBe(true);
 		expect(isEnterHandler(onKeyUp, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEnterUp).toBeCalledTimes(1);
-		expect(mockOnEnterUp).toBeCalledWith(validEvent);
+		expect(mockonReleaseEnter).toBeCalledTimes(1);
+		expect(mockonReleaseEnter).toBeCalledWith(validEvent);
 	});
 
 	it('should handle "keyup" events correctly during capturing', () => {
@@ -140,7 +140,7 @@ describe('useEnterEvents()', () => {
 
 		expect(isEnterHandler(onKeyUpCapture, validEvent ?? {})).toBe(true);
 		expect(isEnterHandler(onKeyUpCapture, invalidEvent ?? {})).toBe(false);
-		expect(mockOnEnterUpCapture).toBeCalledTimes(1);
-		expect(mockOnEnterUpCapture).toBeCalledWith(validEvent);
+		expect(mockonReleaseEnterCapture).toBeCalledTimes(1);
+		expect(mockonReleaseEnterCapture).toBeCalledWith(validEvent);
 	});
 });

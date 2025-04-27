@@ -42,14 +42,14 @@ export interface Escapable<T = Element> {
 	 * [Optional] Handle an event when the 'Escape' key is released.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressEscapeUp?: EscapeEventHandler<T>;
+	readonly onReleaseEscape?: EscapeEventHandler<T>;
 
 	/**
 	 * [Optional] Handle an event when the 'Escape' key is released during
 	 * capturing.
 	 * @defaultValue - A no-op function.
 	 */
-	readonly onPressEscapeUpCapture?: EscapeEventHandler<T>;
+	readonly onReleaseEscapeCapture?: EscapeEventHandler<T>;
 }
 
 /**
@@ -59,8 +59,8 @@ export interface Escapable<T = Element> {
  *   - `value` must be an object.
  *   - `value.onPressEscape()` is optional and must be a valid {@link EscapeEventHandler} if provided.
  *   - `value.onPressEscapeCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
- *   - `value.onPressEscapeUp()` is optional and must be a valid {@link EscapeEventHandler} if provided.
- *   - `value.onPressEscapeUpCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
+ *   - `value.onReleaseEscape()` is optional and must be a valid {@link EscapeEventHandler} if provided.
+ *   - `value.onReleaseEscapeCapture()` is optional and must be a valid {@link EscapeEventHandler} if provided.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
@@ -88,14 +88,14 @@ export const isEscapable = <T = Element>(
 		? isEscapeEventHandler(value.onPressEscapeCapture)
 		: true) &&
 	/**
-	 * value.onPressEscapeUp()
+	 * value.onReleaseEscape()
 	 */
-	('onPressEscapeUp' in value ? isEscapeEventHandler(value.onPressEscapeUp) : true) &&
+	('onReleaseEscape' in value ? isEscapeEventHandler(value.onReleaseEscape) : true) &&
 	/**
-	 * value.onPressEscapeUpCapture()
+	 * value.onReleaseEscapeCapture()
 	 */
-	('onPressEscapeUpCapture' in value
-		? isEscapeEventHandler(value.onPressEscapeUpCapture)
+	('onReleaseEscapeCapture' in value
+		? isEscapeEventHandler(value.onReleaseEscapeCapture)
 		: true);
 
 export default Escapable;

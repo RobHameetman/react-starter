@@ -1,8 +1,5 @@
-import {
-	EscapeEvent,
-	isEscapeEvent,
-} from '@/utils/types/events/EscapeEvent';
-import { PressEvent, isPressEvent } from '@/utils/types/events/PressEvent';
+import { isAnchorElement } from '@/utils/functions/check/html';
+import { isElementWithRole } from '@/utils/types/accessibility/ElementWithRole';
 
 type RoleOf<T> = T extends Element ? T['role'] : never;
 type HasLinkRole<T> = RoleOf<T> extends 'link' ? T : never;
@@ -21,22 +18,22 @@ interface ElementWithRole<R extends string = string> extends Element {
 export type Link = HTMLAnchorElement | ElementWithRole<'link'>;
 
 /**
- * Checks that an `unknown` value is a {@link CloseEvent}.
+ * Checks that an `unknown` value is a {@link Link}.
  *
  * Requirements:
- *   - `value` must be a valid {@link EscapeEvent} or {@link PressEvent}.
+ *   - `value` must be a valid {@link HTMLAnchorElement} or {@link ElementWithRole<'link'>}.
  *
  * @typeParam T - The type of HTML element that will be the target of the event.
  * Defaults to type {@link Element}.
  *
  * @param value - An `unknown` value.
  *
- * @returns The determination that `value` is or is not a {@link CloseEvent}.
+ * @returns The determination that `value` is or is not a {@link Link}.
  */
-export const isCloseEvent = <T = Element>(
+export const isLink = <T = Element>(
 	value: unknown,
-): value is CloseEvent<T> =>
+): value is Link =>
 	/**
 	 * value
 	 */
-	isEscapeEvent(value) || isPressEvent(value);
+	isAnchorElement(value) || isElementWithRole(value, 'link');

@@ -1,19 +1,17 @@
 import { FC, ErrorInfo, Suspense, lazy, useCallback } from 'react';
-import { Loading } from '@nextui-org/react';
 import { createBrowserHistory } from 'history';
-import { useLogError } from './log/hooks/useLogError';
+// import { useLogError } from './log/hooks/useLogError';
 import { CatchError } from './utils/components/misc/CatchError';
 import { useGlobalEvents } from './utils/hooks/global/useGlobalEvents';
 import { useDataDog } from './utils/hooks/misc/useDataDog';
 import './tailwind.css';
 import './App.css';
 
-const AppProvider = lazy(
-	() => import('./utils/contexts/AppProvider/AppProvider'),
-);
 const ErrorView = lazy(() => import('./utils/pages/ErrorPage/ErrorPage'));
 const Router = lazy(() => import('./nav/components/Router/Router'));
 const Routes = lazy(() => import('./nav/components/Routes/Routes'));
+
+const Loading = () => <span>Loading....</span>;
 
 /**
  * The {{name}} client deployed at `{{subdomain}}.{{hostname}}`.
@@ -26,7 +24,9 @@ export const App: FC = () => {
 	useDataDog();
 
 	const history = createBrowserHistory();
-	const { error } = useLogError();
+	// const { error } = useLogError();
+
+	const { error } = console;
 
 	const handleError = useCallback(
 		(err: Error, info: ErrorInfo) => error({ error: err, extra: info }),
@@ -35,13 +35,11 @@ export const App: FC = () => {
 
 	return (
 		<Suspense fallback={<Loading />}>
-			<AppProvider history={history}>
-				<CatchError as={ErrorView} onError={handleError}>
-					<Router history={history}>
-						<Routes />
-					</Router>
-				</CatchError>
-			</AppProvider>
+			<CatchError as={ErrorView} onError={handleError}>
+				<Router history={history}>
+					<Routes />
+				</Router>
+			</CatchError>
 		</Suspense>
 	);
 };
